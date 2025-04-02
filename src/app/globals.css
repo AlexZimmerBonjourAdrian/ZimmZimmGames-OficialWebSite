@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-zinc-900/30 backdrop-blur-md border border-zinc-800/50;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500;
+  }
+  
+  .hover-effect {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .card {
+    @apply glass-effect rounded-lg overflow-hidden hover:border-zinc-700 hover-effect;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-red-600 to-orange-600 
+           hover:from-red-700 hover:to-orange-700 
+           text-white rounded-md hover-effect uppercase tracking-wider text-sm font-medium;
+  }
+
+  .button-secondary {
+    @apply px-6 py-3 glass-effect hover:bg-zinc-800/50 text-zinc-100 
+           rounded-md hover-effect uppercase tracking-wider text-sm font-medium;
+  }
+
+  .heading-1 {
+    @apply text-5xl md:text-7xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  .body-text {
+    @apply text-lg leading-relaxed text-zinc-300;
+  }
+} 
