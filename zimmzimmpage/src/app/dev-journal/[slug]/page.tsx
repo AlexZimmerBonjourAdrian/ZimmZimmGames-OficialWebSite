@@ -1,49 +1,36 @@
-'use client';
-
+// PÁGINA TEMPORALMENTE DESHABILITADA
+/*
 import React from 'react';
 import { motion } from 'framer-motion';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import Link from 'next/link';
+import { getEntryBySlug } from '@/lib/blog';
+import Footer from '@/components/Footer';
 
-export async function getStaticPaths() {
-  const entriesDirectory = path.join(process.cwd(), 'src/app/dev-journal/entries');
-  const files = fs.readdirSync(entriesDirectory);
-
-  const paths = files.map(filename => ({
-    params: {
-      slug: filename.replace('.mdx', ''),
-    },
-  }));
-
-  return {
-    paths,
-    fallback: false,
+interface Props {
+  params: {
+    slug: string;
   };
 }
 
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const filePath = path.join(process.cwd(), 'src/app/dev-journal/entries', `${slug}.mdx`);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContents);
-  const mdxSource = await serialize(content);
+const BlogPost = async ({ params }: Props) => {
+  const entry = await getEntryBySlug(params.slug);
+  
+  if (!entry) {
+    return (
+      <div className="min-h-screen bg-black text-white pt-24">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl font-bold text-center">Entrada no encontrada</h1>
+        </div>
+      </div>
+    );
+  }
 
-  return {
-    props: {
-      frontMatter: data,
-      slug,
-      mdxSource,
-    },
-  };
-}
+  const mdxSource = await serialize(entry.content || '');
 
-const BlogPost = ({ frontMatter, mdxSource }) => {
   return (
-    <div className="min-h-screen bg-black text-white py-16">
+    <div className="min-h-screen bg-black text-white pt-24">
       <div className="max-w-4xl mx-auto px-4">
         <Link 
           href="/dev-journal"
@@ -59,21 +46,21 @@ const BlogPost = ({ frontMatter, mdxSource }) => {
         >
           <header className="mb-8">
             <h1 className="text-4xl font-bold font-gothic mb-4">
-              {frontMatter.title}
+              {entry.title}
             </h1>
             <div className="flex items-center gap-4 text-sm text-gray-400">
-              <time dateTime={frontMatter.date} className="font-gothic">
-                {new Date(frontMatter.date).toLocaleDateString('es-ES', {
+              <time dateTime={entry.date} className="font-gothic">
+                {new Date(entry.date).toLocaleDateString('es-ES', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
                 })}
               </time>
               <span className="text-sm bg-blue-600 text-white px-3 py-1 rounded-full font-gothic">
-                {frontMatter.game}
+                {entry.game}
               </span>
               <span className="font-gothic">
-                Por {frontMatter.author}
+                Por {entry.author}
               </span>
             </div>
           </header>
@@ -83,8 +70,26 @@ const BlogPost = ({ frontMatter, mdxSource }) => {
           </div>
         </motion.article>
       </div>
+      <Footer />
     </div>
   );
 };
 
-export default BlogPost; 
+export default BlogPost;
+*/
+
+// Página temporal de "En construcción"
+export default function BlogPost() {
+  return (
+    <div className="min-h-screen bg-black text-white pt-24">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold mb-4 font-gothic">
+          Entrada del Diario
+        </h1>
+        <p className="text-gray-400 font-gothic">
+          Esta sección está temporalmente en construcción.
+        </p>
+      </div>
+    </div>
+  )
+} 

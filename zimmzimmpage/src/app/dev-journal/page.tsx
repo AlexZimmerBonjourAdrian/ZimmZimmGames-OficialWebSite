@@ -1,11 +1,10 @@
-'use client';
-
+// PÁGINA TEMPORALMENTE DESHABILITADA
+/*
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { getAllEntries } from '@/lib/blog';
+import Footer from '@/components/Footer';
 
 interface BlogEntry {
   slug: string;
@@ -16,33 +15,11 @@ interface BlogEntry {
   excerpt: string;
 }
 
-// Esta función se ejecuta en el servidor
-export async function getStaticProps() {
-  const entriesDirectory = path.join(process.cwd(), 'src/app/dev-journal/entries');
-  const files = fs.readdirSync(entriesDirectory);
+const DevJournal = async () => {
+  const entries = await getAllEntries();
 
-  const entries = files.map(filename => {
-    const slug = filename.replace('.mdx', '');
-    const filePath = path.join(entriesDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data } = matter(fileContents);
-
-    return {
-      slug,
-      ...data,
-    } as BlogEntry;
-  });
-
-  return {
-    props: {
-      entries: entries.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
-    },
-  };
-}
-
-const DevJournal = ({ entries }: { entries: BlogEntry[] }) => {
   return (
-    <div className="min-h-screen bg-black text-white py-16">
+    <div className="min-h-screen bg-black text-white pt-24">
       <div className="max-w-4xl mx-auto px-4">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
@@ -93,8 +70,26 @@ const DevJournal = ({ entries }: { entries: BlogEntry[] }) => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
 
-export default DevJournal; 
+export default DevJournal;
+*/
+
+// Página temporal de "En construcción"
+export default function DevJournal() {
+  return (
+    <div className="min-h-screen bg-black text-white pt-24">
+      <div className="max-w-4xl mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold mb-4 font-gothic">
+          Diario de Desarrollo
+        </h1>
+        <p className="text-gray-400 font-gothic">
+          Esta sección está temporalmente en construcción.
+        </p>
+      </div>
+    </div>
+  )
+} 

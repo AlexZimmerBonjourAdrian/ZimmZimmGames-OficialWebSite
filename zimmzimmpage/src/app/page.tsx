@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { games } from '@/data/games';
 import GameCard from '@/components/GameCard';
+import Footer from '@/components/Footer';
 
 const universes = [
   { id: 'all', name: 'TODOS', color: 'gray' },
@@ -13,13 +14,6 @@ const universes = [
   { id: 'dadasleep', name: 'DADASLEEP', color: 'gray' },
   { id: 'cults', name: 'CULTS', color: 'gray' },
   { id: 'corrupt', name: 'CORRUPT', color: 'gray' }
-];
-
-const menuItems = [
-  { id: 'about', name: 'SOBRE NOSOTROS' },
-  { id: 'faq', name: 'FAQ' },
-  { id: 'support', name: 'SOPORTE' },
-  { id: 'dev-journal', name: 'DIARIO DE DESARROLLO' }
 ];
 
 const getButtonClasses = (universe: typeof universes[0], isSelected: boolean) => {
@@ -32,20 +26,9 @@ const getButtonClasses = (universe: typeof universes[0], isSelected: boolean) =>
   }
 };
 
-const getMenuButtonClasses = (isSelected: boolean) => {
-  const baseClasses = "px-4 py-2 rounded-none font-gothic font-bold transition-all duration-500 border uppercase tracking-widest";
-  
-  if (isSelected) {
-    return `${baseClasses} bg-black text-white border-white shadow-lg shadow-white/20`;
-  } else {
-    return `${baseClasses} bg-black/50 text-gray-400 border-gray-600 hover:border-white hover:text-white hover:shadow-lg hover:shadow-white/20`;
-  }
-};
-
 export default function Home() {
   const [selectedUniverse, setSelectedUniverse] = useState<string>('all');
   const [selectedGame, setSelectedGame] = useState<string | null>(null);
-  const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
 
   const filteredGames = selectedUniverse === 'all'
     ? games
@@ -59,45 +42,6 @@ export default function Home() {
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/20 via-gray-500/20 to-white/20"></div>
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-white/20 via-gray-500/20 to-white/20"></div>
-
-      {/* Navbar */}
-      <motion.nav 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-        className="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-white/20"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
-              className="flex-shrink-0"
-            >
-              <h1 className="text-2xl font-gothic font-bold text-white tracking-widest">ZIMMZIMM GAMES</h1>
-            </motion.div>
-            <motion.div 
-              className="flex space-x-4"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
-            >
-              {menuItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => setSelectedMenu(selectedMenu === item.id ? null : item.id)}
-                  className={getMenuButtonClasses(selectedMenu === item.id)}
-                  whileHover={{ scale: 1.05, rotate: 1 }}
-                  whileTap={{ scale: 0.95, rotate: -1 }}
-                >
-                  {item.name}
-                </motion.button>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </motion.nav>
 
       {/* Main Content */}
       <main className="pt-20 min-h-screen relative z-10">
@@ -162,47 +106,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <motion.footer 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, type: "spring" }}
-        viewport={{ once: true }}
-        className="bg-black/95 py-8 border-t border-white/20 relative z-10"
-      >
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col items-center">
-            <motion.div 
-              className="flex space-x-6 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, type: "spring" }}
-              viewport={{ once: true }}
-            >
-              {['discord', 'twitter', 'youtube'].map((social, index) => (
-                <motion.a
-                  key={social}
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  whileTap={{ scale: 0.9, rotate: -5 }}
-                >
-                  <i className={`fab fa-${social} text-2xl`}></i>
-                </motion.a>
-              ))}
-            </motion.div>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, type: "spring" }}
-              viewport={{ once: true }}
-              className="text-gray-400 font-gothic tracking-widest"
-            >
-              &copy; 2025 ZIMMZIMM GAMES. TODOS LOS DERECHOS RESERVADOS.
-            </motion.p>
-          </div>
-        </div>
-      </motion.footer>
+      <Footer />
     </div>
   );
 }
