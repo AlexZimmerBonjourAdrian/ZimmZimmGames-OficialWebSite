@@ -18,7 +18,8 @@ const universes = [
 const menuItems = [
   { id: 'about', name: 'SOBRE NOSOTROS' },
   { id: 'faq', name: 'FAQ' },
-  { id: 'support', name: 'SOPORTE' }
+  { id: 'support', name: 'SOPORTE' },
+  { id: 'dev-journal', name: 'DIARIO DE DESARROLLO' }
 ];
 
 const getButtonClasses = (universe: typeof universes[0], isSelected: boolean) => {
