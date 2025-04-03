@@ -1,0 +1,126 @@
+.draconiano-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+}
+
+.game-section {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.game-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.game-header h2 {
+    color: #ff6b6b;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.game-platforms {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.platform {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.game-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.game-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-details {
+    color: #ffffff;
+}
+
+.game-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.game-features h3 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.game-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.game-features li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.game-features li:before {
+    content: "•";
+    color: #ff6b6b;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.steam-button {
+    background-color: #1b2838;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.steam-button:hover {
+    background-color: #2a475e;
+    transform: translateY(-2px);
+}
+
+.steam-icon {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .game-content {
+        grid-template-columns: 1fr;
+    }
+    .game-header h2 {
+        font-size: 2rem;
+    }
+}

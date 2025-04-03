@@ -197,7 +197,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-gray-400 font-gothic tracking-widest"
             >
-              &copy; 2024 ZIMMZIMM GAMES. TODOS LOS DERECHOS RESERVADOS.
+              &copy; 2025 ZIMMZIMM GAMES. TODOS LOS DERECHOS RESERVADOS.
             </motion.p>
           </div>
         </div>
