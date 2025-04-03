@@ -15,8 +15,24 @@ const universes = [
   { id: 'corrupt', name: 'CORRUPT', color: 'gray' }
 ];
 
+const menuItems = [
+  { id: 'about', name: 'SOBRE NOSOTROS' },
+  { id: 'faq', name: 'FAQ' },
+  { id: 'support', name: 'SOPORTE' }
+];
+
 const getButtonClasses = (universe: typeof universes[0], isSelected: boolean) => {
   const baseClasses = "px-6 py-3 rounded-none font-gothic font-bold transition-all duration-500 border-2 uppercase tracking-widest";
+  
+  if (isSelected) {
+    return `${baseClasses} bg-black text-white border-white shadow-lg shadow-white/20`;
+  } else {
+    return `${baseClasses} bg-black/50 text-gray-400 border-gray-600 hover:border-white hover:text-white hover:shadow-lg hover:shadow-white/20`;
+  }
+};
+
+const getMenuButtonClasses = (isSelected: boolean) => {
+  const baseClasses = "px-4 py-2 rounded-none font-gothic font-bold transition-all duration-500 border uppercase tracking-widest";
   
   if (isSelected) {
     return `${baseClasses} bg-black text-white border-white shadow-lg shadow-white/20`;
@@ -28,6 +44,7 @@ const getButtonClasses = (universe: typeof universes[0], isSelected: boolean) =>
 export default function Home() {
   const [selectedUniverse, setSelectedUniverse] = useState<string>('all');
   const [selectedGame, setSelectedGame] = useState<string | null>(null);
+  const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
 
   const filteredGames = selectedUniverse === 'all'
     ? games
@@ -58,6 +75,24 @@ export default function Home() {
               className="flex-shrink-0"
             >
               <h1 className="text-2xl font-gothic font-bold text-white tracking-widest">ZIMMZIMM GAMES</h1>
+            </motion.div>
+            <motion.div 
+              className="flex space-x-4"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
+            >
+              {menuItems.map((item) => (
+                <motion.button
+                  key={item.id}
+                  onClick={() => setSelectedMenu(selectedMenu === item.id ? null : item.id)}
+                  className={getMenuButtonClasses(selectedMenu === item.id)}
+                  whileHover={{ scale: 1.05, rotate: 1 }}
+                  whileTap={{ scale: 0.95, rotate: -1 }}
+                >
+                  {item.name}
+                </motion.button>
+              ))}
             </motion.div>
           </div>
         </div>
