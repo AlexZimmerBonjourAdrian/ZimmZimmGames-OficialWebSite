@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import { FaSteam, FaWindows, FaPlaystation } from 'react-icons/fa';
+import { FaWindows, FaPlaystation, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiNintendoswitch } from 'react-icons/si';
 import Image from 'next/image';
 
 const WhereAreTheAlices = () => {
-  const handleSteamClick = () => {
-    window.open('https://store.steampowered.com/app/2471961/Where_Are_The_Alices/', '_blank');
+  const handleWebsiteClick = () => {
+    window.open('https://wherearethealices.netlify.app/', '_blank');
   };
 
   return (
@@ -23,7 +23,7 @@ const WhereAreTheAlices = () => {
             />
           </div>
           
-          <div className="space-y-8">
+          <div>
             <div>
               <h1 className="text-4xl font-bold mb-4">Where Are The Alices</h1>
               <div className="flex gap-4 mb-6">
@@ -62,11 +62,11 @@ const WhereAreTheAlices = () => {
             </div>
 
             <button
-              onClick={handleSteamClick}
-              className="flex items-center gap-2 px-6 py-3 bg-[#171a21] text-white rounded-lg hover:bg-[#1b2838] transition-colors"
+              onClick={handleWebsiteClick}
+              className="flex items-center gap-2 px-6 py-3 bg-purple-900 text-white rounded-lg hover:bg-purple-800 transition-colors mt-6"
             >
-              <FaSteam className="text-2xl" />
-              Comprar en Steam
+              <FaExternalLinkAlt className="text-xl" />
+              Visitar Página Oficial
             </button>
           </div>
         </div>
