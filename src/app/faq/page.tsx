@@ -28,7 +28,13 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ question, answer }) => {
+// Añadir esta interfaz antes del componente FAQItem
+interface FAQItemProps {
+  question: string;
+  answer: string;
+}
+
+const FAQItem = ({ question, answer }: FAQItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
