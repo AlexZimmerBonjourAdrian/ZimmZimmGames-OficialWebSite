@@ -1,6 +1,6 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
-import Navigation from '@/components/Navigation';
+// import Navigation from '@/components/Navigation';
 
 export const metadata = {
   title: 'ZimmZimm Games',
@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="bg-black">
-        <Navigation />
+        {/* <Navigation /> */}
         {children}
       </body>
     </html>

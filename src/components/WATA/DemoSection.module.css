@@ -1,0 +1,74 @@
+.demoSection {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.demoSection h2 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.demoContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.demoContent p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.demoBtn {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.demoBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.demoBtn:hover::before {
+    left: 100%;
+}
+
+.demoBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .demoSection {
+        padding: 4rem 1rem;
+    }
+    .demoSection h2 {
+        font-size: 2.5rem;
+    }
+    .demoContent p {
+        font-size: 1.1rem;
+    }
+    .demoBtn {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+    }
+}

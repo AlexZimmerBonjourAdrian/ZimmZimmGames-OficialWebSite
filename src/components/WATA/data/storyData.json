@@ -1,0 +1,138 @@
+{
+    "start": {
+        "location": "The Doll Garden",
+        "text": "Mom always says we shouldn't talk to strangers... but what happens when strangers look like people we know? Juno discovered this one night while investigating Alice's disappearance. In front of her, through the garden mist, were dolls. Dozens of dolls with familiar faces, all seated in a circle around a tea table. And in the center... a white rabbit with button eyes.",
+        "choices": {
+            "approach": {
+                "text": "Approach the tea table",
+                "nextScene": "teaTable"
+            },
+            "examine": {
+                "text": "Observe the dolls' faces",
+                "nextScene": "dollFaces"
+            },
+            "investigate": {
+                "text": "Investigate the surroundings",
+                "nextScene": "surroundings"
+            }
+        }
+    },
+    "teaTable": {
+        "location": "The Tea Table",
+        "text": "As Juno approaches the table, the dolls' heads turn in unison. The white rabbit's button eyes seem to follow her every move. A teacup slides across the table, stopping right in front of an empty chair.",
+        "choices": {
+            "sit": {
+                "text": "Take a seat at the table",
+                "nextScene": "teaParty"
+            },
+            "cup": {
+                "text": "Examine the teacup",
+                "nextScene": "teacup"
+            },
+            "back": {
+                "text": "Step back slowly",
+                "nextScene": "start"
+            }
+        }
+    },
+    "dollFaces": {
+        "location": "The Dolls' Faces",
+        "text": "Looking closer at the dolls, Juno recognizes faces from her childhood. There's her kindergarten teacher, the old lady from the corner store, and... is that her grandmother? But something's wrong. Their expressions are too perfect, too still.",
+        "choices": {
+            "touch": {
+                "text": "Touch one of the faces",
+                "nextScene": "faceTouch"
+            },
+            "count": {
+                "text": "Count the dolls",
+                "nextScene": "dollCount"
+            },
+            "back": {
+                "text": "Look away",
+                "nextScene": "start"
+            }
+        }
+    },
+    "surroundings": {
+        "location": "The Garden",
+        "text": "The garden seems to stretch endlessly in all directions. The mist makes it hard to see, but Juno notices something strange: the flowers are made of paper, and the trees are... are they growing upside down?",
+        "choices": {
+            "flowers": {
+                "text": "Examine the paper flowers",
+                "nextScene": "paperFlowers"
+            },
+            "trees": {
+                "text": "Look at the upside-down trees",
+                "nextScene": "upsideDownTrees"
+            },
+            "back": {
+                "text": "Return to the clearing",
+                "nextScene": "start"
+            }
+        }
+    },
+    "teaParty": {
+        "location": "The Tea Party",
+        "text": "As Juno sits, the dolls begin to move. They pour tea, pass cakes, and engage in silent conversation. The white rabbit stands on the table, watching. The tea smells like... memories?",
+        "choices": {
+            "drink": {
+                "text": "Drink the tea",
+                "nextScene": "teaDrink"
+            },
+            "cake": {
+                "text": "Take a cake",
+                "nextScene": "cake"
+            },
+            "leave": {
+                "text": "Excuse yourself",
+                "nextScene": "start"
+            }
+        }
+    },
+    "teacup": {
+        "location": "The Teacup",
+        "text": "The teacup is old and chipped. Inside, instead of tea, there's a swirling liquid that reflects faces - different faces than those of the dolls. Juno sees her own reflection, but... something's wrong with it.",
+        "choices": {
+            "look": {
+                "text": "Look deeper into the reflection",
+                "nextScene": "reflection"
+            },
+            "touch": {
+                "text": "Touch the liquid",
+                "nextScene": "liquidTouch"
+            },
+            "back": {
+                "text": "Step away",
+                "nextScene": "teaTable"
+            }
+        }
+    },
+    "faceTouch": {
+        "location": "The Doll's Face",
+        "text": "As Juno's finger makes contact, the doll's face ripples like water. The features shift and change, becoming different faces in rapid succession. The last face it shows is... Alice's?",
+        "choices": {
+            "grab": {
+                "text": "Try to grab the face",
+                "nextScene": "faceGrab"
+            },
+            "scream": {
+                "text": "Scream and run",
+                "nextScene": "start"
+            }
+        }
+    },
+    "dollCount": {
+        "location": "Counting Dolls",
+        "text": "Juno starts counting: one, two, three... but the number keeps changing. Some dolls appear to multiply, others merge together. The white rabbit's watch ticks louder with each count.",
+        "choices": {
+            "continue": {
+                "text": "Keep counting",
+                "nextScene": "countingMadness"
+            },
+            "stop": {
+                "text": "Stop counting",
+                "nextScene": "start"
+            }
+        }
+    }
+}
