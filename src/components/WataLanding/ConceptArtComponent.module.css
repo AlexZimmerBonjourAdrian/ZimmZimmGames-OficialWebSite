@@ -1,0 +1,614 @@
+.conceptArtSection {
+    background: var(--darker-bg);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.conceptArtSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* Header Styles */
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-family: var(--font-alice);
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: var(--font-courier);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+/* View Mode Toggle */
+
+.viewModeToggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.toggleButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-courier);
+    font-size: 0.9rem;
+}
+
+.toggleButton:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.toggleButton.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.toggleIcon {
+    font-size: 1.1rem;
+}
+
+
+/* Gallery Grid */
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.galleryItem {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.galleryItem:hover {
+    box-shadow: 0 12px 48px rgba(255, 0, 0, 0.2);
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .image {
+    transform: scale(1.1);
+}
+
+
+/* Overlay */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.galleryItem:hover .overlay {
+    opacity: 1;
+}
+
+.overlayContent {
+    color: white;
+    text-align: left;
+}
+
+.imageTitle {
+    font-family: var(--font-alice);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.imageDescription {
+    font-family: var(--font-courier);
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.viewButton {
+    font-family: var(--font-courier);
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.viewButton:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+
+/* Modal Styles */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.modalContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.modalImageContainer {
+    width: 100%;
+    max-height: 70vh;
+    overflow: hidden;
+}
+
+.modalImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modalInfo {
+    padding: 2rem;
+    text-align: center;
+}
+
+.modalTitle {
+    font-family: var(--font-alice);
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.modalDescription {
+    font-family: var(--font-courier);
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+
+/* Navigation Buttons */
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.navButton:hover {
+    background: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+    left: 1rem;
+}
+
+.nextButton {
+    right: 1rem;
+}
+
+
+/* Image Counter */
+
+.imageCounter {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: var(--font-courier);
+    font-size: 0.9rem;
+}
+
+
+/* Carousel Styles */
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.carouselTrack {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.carouselSlide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carouselImageContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carouselImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carouselOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient( to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    padding: 3rem 2rem 2rem;
+    color: white;
+}
+
+.carouselContent {
+    text-align: center;
+}
+
+.carouselTitle {
+    font-family: var(--font-alice);
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carouselDescription {
+    font-family: var(--font-courier);
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.carouselViewButton {
+    font-family: var(--font-courier);
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.carouselViewButton:hover {
+    background: var(--accent-color-hover);
+    transform: translateY(-2px);
+}
+
+
+/* Carousel Navigation */
+
+.carouselNavButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carouselNavButton:hover {
+    background: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carouselPrevButton {
+    left: 1rem;
+}
+
+.carouselNextButton {
+    right: 1rem;
+}
+
+
+/* Carousel Indicators */
+
+.carouselIndicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.activeIndicator {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+
+/* Auto-play Indicator */
+
+.autoPlayIndicator {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-family: var(--font-courier);
+    font-size: 0.8rem;
+    z-index: 10;
+}
+
+.autoPlayDot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .conceptArtSection {
+        padding: 4rem 1rem;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .viewModeToggle {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .toggleButton {
+        width: 200px;
+        justify-content: center;
+    }
+    .galleryGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    .imageContainer {
+        height: 200px;
+    }
+    .carouselContainer {
+        height: 350px;
+    }
+    .carouselTitle {
+        font-size: 1.8rem;
+    }
+    .carouselDescription {
+        font-size: 1rem;
+    }
+    .carouselOverlay {
+        padding: 2rem 1rem 1rem;
+    }
+    .carouselNavButton {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .carouselPrevButton {
+        left: 0.5rem;
+    }
+    .carouselNextButton {
+        right: 0.5rem;
+    }
+    .modal {
+        padding: 1rem;
+    }
+    .modalContent {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+    .modalInfo {
+        padding: 1.5rem;
+    }
+    .modalTitle {
+        font-size: 1.5rem;
+    }
+    .navButton {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .prevButton {
+        left: 0.5rem;
+    }
+    .nextButton {
+        right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .galleryGrid {
+        grid-template-columns: 1fr;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .imageContainer {
+        height: 180px;
+    }
+    .overlay {
+        padding: 1rem;
+    }
+    .imageTitle {
+        font-size: 1.2rem;
+    }
+    .imageDescription {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Keyboard navigation support */
+
+.navButton:focus,
+.closeButton:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+
+/* Loading animation for images */
+
+.image {
+    opacity: 0;
+    animation: fadeInImage 0.5s ease forwards;
+}
+
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+    }
+}

@@ -45,27 +45,40 @@ export default function HeroSection() {
             Un viaje al interior de la mente
           </motion.p>
           
-          {/* Descripción minimalista */}
+          {/* Descripción simple */}
           <motion.p 
-            className="font-courier text-lg text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed tracking-wide"
+            className="font-courier text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            Sumérgete en un mundo de terror psicológico donde la realidad se desvanece.
+            Un juego de terror psicológico donde la realidad se desvanece.
           </motion.p>
           
-          {/* Botón principal */}
-          <motion.button
-            className="font-courier bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-md text-lg font-semibold transition-all duration-300 tracking-wide border border-red-500/20 hover:border-red-400/40"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            DESCARGAR AHORA
-          </motion.button>
+          {/* Botones de acción */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <motion.button
+              className="font-courier bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              DESCARGAR
+            </motion.button>
+            
+            <motion.button
+              className="font-courier bg-transparent border border-red-600 text-red-400 hover:bg-red-600/10 px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              VER MÁS
+            </motion.button>
+          </div>
         </motion.div>
       </div>
       
