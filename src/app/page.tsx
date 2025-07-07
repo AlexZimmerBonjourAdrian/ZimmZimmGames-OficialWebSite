@@ -2,6 +2,7 @@
 
 import HeroSection from '@/components/WataLanding/HeroSection';
 import ConceptArtComponent from '@/components/WataLanding/ConceptArtComponent';
+import CharactersComponent from '@/components/WataLanding/CharactersComponent';
 import Footer from '@/components/WataLanding/Footer';
 
 
@@ -13,6 +14,9 @@ export default function HomePage() {
       
       {/* Concept Art Section */}
       <ConceptArtComponent />
+      
+      {/* Characters Section */}
+      <CharactersComponent />
       
       {/* Footer */}
       <Footer />
