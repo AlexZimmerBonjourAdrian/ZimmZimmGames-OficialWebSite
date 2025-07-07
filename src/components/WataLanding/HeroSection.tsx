@@ -2,6 +2,13 @@
 
 import { motion } from 'framer-motion';
 
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -64,6 +71,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 1.6 }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => scrollToSection('demo')}
             >
               DESCARGAR
             </motion.button>
@@ -75,6 +83,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 1.8 }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => scrollToSection('extras')}
             >
               VER MÁS
             </motion.button>
