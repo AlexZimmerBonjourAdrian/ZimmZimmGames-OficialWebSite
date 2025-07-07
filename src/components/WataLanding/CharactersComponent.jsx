@@ -7,115 +7,59 @@ import styles from './CharactersComponent.module.css';
 const CharactersComponent = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
-
+  
   const characters = [
     {
       id: 1,
-      name: 'Alice',
-      alias: 'La Perdida',
-      age: 'Desconocida',
-      height: '1.65m',
-      weight: '55kg',
-      eyes: 'Azules',
-      hair: 'Rubio',
-      status: 'Desaparecida',
-      dangerLevel: 'Alto',
-      image: '/images/Wata/WhereAreTheAlices.JPG',
-      description: 'La protagonista principal que se adentra en el mundo de Wata. Su mente se desvanece entre la realidad y la locura.',
-      background: 'Alice era una joven normal hasta que encontró la puerta. Ahora su conciencia flota entre múltiples realidades.',
-      personality: 'Curiosa, valiente pero confundida. Su identidad se fragmenta a medida que avanza en su viaje.',
-      abilities: 'Puede percibir realidades alternativas, pero esto afecta su cordura.',
-      weaknesses: 'Vulnerable a la confusión mental, fácilmente manipulable por las voces.',
+      name: "Alice",
+      alias: "The Lost One",
+      image: "/images/Wata/Menu.PNG",
+      dangerLevel: "HIGH",
+      caseNumber: "CASE-001",
+      status: "Missing",
+      lastSeen: "Unknown",
+      description: "The main protagonist whose reality begins to unravel as she searches for answers in a twisted world.",
+      age: "Unknown",
+      height: "5'6\"",
+      weight: "Unknown",
+      eyes: "Blue",
+      hair: "Blonde",
+      background: "Alice was once a normal person until she discovered the truth about her existence and the world around her.",
+      personality: "Determined but increasingly unstable as her perception of reality shifts.",
+      abilities: "Reality manipulation, enhanced perception",
+      weaknesses: "Mental instability, confusion about what's real",
       evidence: [
-        'Fotografía encontrada en la puerta',
-        'Diario personal con entradas confusas',
-        'Huellas dactilares en múltiples objetos',
-        'Testimonio de vecinos sobre comportamiento extraño'
+        "Personal diary found in abandoned house",
+        "Photographs showing multiple versions of Alice",
+        "Audio recordings of her voice in different locations"
       ],
-      notes: 'Caso prioritario. Su desaparición coincide con otros incidentes similares en la zona.',
-      lastSeen: 'En la puerta del mundo interior',
-      caseNumber: 'WATA-001'
+      notes: "Subject appears to exist in multiple states simultaneously. Reality seems to bend around her presence."
     },
     {
       id: 2,
-      name: 'El Conejo',
-      alias: 'El Guía',
-      age: 'Inmortal',
-      height: '1.80m',
-      weight: '75kg',
-      eyes: 'Rojos',
-      hair: 'Gris',
-      status: 'Activo',
-      dangerLevel: 'Crítico',
-      image: '/images/Wata/Door.PNG',
-      description: 'Una entidad misteriosa que guía a Alice a través del mundo de Wata. Su verdadera naturaleza es desconocida.',
-      background: 'Aparece en múltiples relatos y leyendas. Siempre presente cuando alguien cruza el umbral.',
-      personality: 'Enigmático, manipulador, siempre un paso adelante. Habla en acertijos y metáforas.',
-      abilities: 'Puede manipular la realidad, aparecer y desaparecer a voluntad, controlar las mentes débiles.',
-      weaknesses: 'No puede actuar directamente, necesita que otros tomen decisiones.',
+      name: "The Watcher",
+      alias: "Shadow Figure",
+      image: "/images/Wata/Menu-3.PNG",
+      dangerLevel: "EXTREME",
+      caseNumber: "CASE-002",
+      status: "Active",
+      lastSeen: "Everywhere",
+      description: "A mysterious entity that observes Alice's journey from the shadows, its true nature unknown.",
+      age: "Unknown",
+      height: "Variable",
+      weight: "Unknown",
+      eyes: "None visible",
+      hair: "None",
+      background: "No background information available. Entity appears to have always existed.",
+      personality: "Enigmatic, manipulative, possibly malevolent",
+      abilities: "Shapeshifting, reality distortion, teleportation",
+      weaknesses: "Unknown",
       evidence: [
-        'Testimonios de múltiples testigos',
-        'Huellas de patas en lugares imposibles',
-        'Registros históricos de apariciones',
-        'Análisis de comportamiento predictivo'
+        "Security camera footage showing figure in multiple locations",
+        "Witness testimonies of shadowy presence",
+        "Distorted photographs with figure in background"
       ],
-      notes: 'Entidad de alto riesgo. Responsable de múltiples desapariciones. No se recomienda contacto directo.',
-      lastSeen: 'En los límites de la realidad',
-      caseNumber: 'WATA-002'
-    },
-    {
-      id: 3,
-      name: 'Las Voces',
-      alias: 'Los Susurros',
-      age: 'Eternas',
-      height: 'Variable',
-      weight: 'Inmaterial',
-      eyes: 'Invisibles',
-      hair: 'N/A',
-      status: 'Activas',
-      dangerLevel: 'Extremo',
-      image: '/images/Wata/Menu.PNG',
-      description: 'Entidades incorpóreas que susurran en la mente de Alice. Su origen y propósito son un misterio.',
-      background: 'Han existido desde el inicio del tiempo. Se alimentan de la confusión y el miedo.',
-      personality: 'Sádicas, manipuladoras, disfrutan del sufrimiento mental de sus víctimas.',
-      abilities: 'Telepatía, manipulación mental, creación de ilusiones, control emocional.',
-      weaknesses: 'No pueden manifestarse físicamente, dependen de la vulnerabilidad mental.',
-      evidence: [
-        'Registros de audio con voces inexplicables',
-        'Reportes de alucinaciones auditivas',
-        'Análisis de patrones de comportamiento',
-        'Testimonios de víctimas'
-      ],
-      notes: 'Amenaza psicológica máxima. Causan daño mental permanente. Protocolo de aislamiento recomendado.',
-      lastSeen: 'En la mente de Alice',
-      caseNumber: 'WATA-003'
-    },
-    {
-      id: 4,
-      name: 'El Mundo Interior',
-      alias: 'Wata',
-      age: 'Atemporal',
-      height: 'Infinita',
-      weight: 'Incalculable',
-      eyes: 'Múltiples',
-      hair: 'N/A',
-      status: 'Expansivo',
-      dangerLevel: 'Máximo',
-      image: '/images/Wata/Menu-3.PNG',
-      description: 'Una dimensión alternativa que existe dentro de la mente colectiva. Sus leyes desafían la física conocida.',
-      background: 'Se formó a partir de los pensamientos y miedos de todos los que han cruzado el umbral.',
-      personality: 'Caótico, impredecible, cambia constantemente según las emociones de sus habitantes.',
-      abilities: 'Manipulación de la realidad, control del tiempo, creación de espacios imposibles.',
-      weaknesses: 'Depende de la energía mental de sus habitantes, vulnerable a la claridad mental.',
-      evidence: [
-        'Fotografías de espacios imposibles',
-        'Testimonios de testigos',
-        'Análisis dimensional',
-        'Registros de fenómenos paranormales'
-      ],
-      notes: 'Dimensión de máxima prioridad. Requiere investigación continua. Posible amenaza existencial.',
-      lastSeen: 'En expansión constante',
-      caseNumber: 'WATA-004'
+      notes: "Entity seems to feed on fear and confusion. May be responsible for Alice's condition."
     }
   ];
 
@@ -139,9 +83,9 @@ const CharactersComponent = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className={styles.title}>Expedientes de Personajes</h2>
+          <h2 className={styles.title}>Characters</h2>
           <p className={styles.subtitle}>
-            Archivos clasificados de los habitantes del mundo de Wata
+            Meet the key figures in Alice's twisted journey
           </p>
         </motion.div>
 
@@ -172,12 +116,12 @@ const CharactersComponent = () => {
                     <h3 className={styles.characterName}>{character.name}</h3>
                     <p className={styles.characterAlias}>{character.alias}</p>
                     <div className={styles.dangerLevel}>
-                      <span className={styles.dangerLabel}>Nivel de Peligro:</span>
+                      <span className={styles.dangerLabel}>Danger Level:</span>
                       <span className={`${styles.dangerBadge} ${styles[character.dangerLevel.toLowerCase()]}`}>
                         {character.dangerLevel}
                       </span>
                     </div>
-                    <span className={styles.viewFileButton}>Ver Expediente</span>
+                    <span className={styles.viewFileButton}>View File</span>
                   </div>
                 </div>
               </div>
@@ -205,53 +149,44 @@ const CharactersComponent = () => {
                 {/* File Header */}
                 <div className={styles.fileHeader}>
                   <div className={styles.fileTitle}>
-                    <h2>EXPEDIENTE POLICIAL</h2>
-                    <div className={styles.caseNumber}>{selectedCharacter.caseNumber}</div>
+                    <h2>File: {selectedCharacter.name}</h2>
+                    <span className={styles.caseNumber}>{selectedCharacter.caseNumber}</span>
                   </div>
-                  <button className={styles.closeFileButton} onClick={closeCharacterFile}>
-                    ×
+                  <button 
+                    className={styles.closeButton}
+                    onClick={closeCharacterFile}
+                  >
+                    Close
                   </button>
                 </div>
 
                 {/* File Content */}
                 <div className={styles.fileContent}>
-                  {/* Character Image */}
-                  <div className={styles.fileImageContainer}>
-                    <img 
-                      src={selectedCharacter.image} 
-                      alt={selectedCharacter.name}
-                      className={styles.fileImage}
-                    />
-                    <div className={styles.statusBadge}>
-                      {selectedCharacter.status}
-                    </div>
-                  </div>
-
                   {/* Tabs */}
-                  <div className={styles.fileTabs}>
+                  <div className={styles.tabs}>
                     <button
-                      className={`${styles.tabButton} ${activeTab === 'overview' ? styles.activeTab : ''}`}
+                      className={`${styles.tab} ${activeTab === 'overview' ? styles.active : ''}`}
                       onClick={() => setActiveTab('overview')}
                     >
-                      Resumen
+                      Overview
                     </button>
                     <button
-                      className={`${styles.tabButton} ${activeTab === 'details' ? styles.activeTab : ''}`}
+                      className={`${styles.tab} ${activeTab === 'details' ? styles.active : ''}`}
                       onClick={() => setActiveTab('details')}
                     >
-                      Detalles
+                      Details
                     </button>
                     <button
-                      className={`${styles.tabButton} ${activeTab === 'evidence' ? styles.activeTab : ''}`}
+                      className={`${styles.tab} ${activeTab === 'evidence' ? styles.active : ''}`}
                       onClick={() => setActiveTab('evidence')}
                     >
-                      Evidencia
+                      Evidence
                     </button>
                     <button
-                      className={`${styles.tabButton} ${activeTab === 'notes' ? styles.activeTab : ''}`}
+                      className={`${styles.tab} ${activeTab === 'notes' ? styles.active : ''}`}
                       onClick={() => setActiveTab('notes')}
                     >
-                      Notas
+                      Notes
                     </button>
                   </div>
 
@@ -259,46 +194,23 @@ const CharactersComponent = () => {
                   <div className={styles.tabContent}>
                     {activeTab === 'overview' && (
                       <div className={styles.overviewTab}>
-                        <div className={styles.basicInfo}>
-                          <h3>Información Básica</h3>
-                          <div className={styles.infoGrid}>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Nombre:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.name}</span>
+                        <div className={styles.characterImageLarge}>
+                          <img src={selectedCharacter.image} alt={selectedCharacter.name} />
+                        </div>
+                        <div className={styles.overviewInfo}>
+                          <h3>{selectedCharacter.name}</h3>
+                          <p className={styles.alias}>Alias: {selectedCharacter.alias}</p>
+                          <p className={styles.description}>{selectedCharacter.description}</p>
+                          <div className={styles.quickStats}>
+                            <div className={styles.stat}>
+                              <span className={styles.statLabel}>Status:</span>
+                              <span className={styles.statValue}>{selectedCharacter.status}</span>
                             </div>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Alias:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.alias}</span>
-                            </div>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Edad:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.age}</span>
-                            </div>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Altura:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.height}</span>
-                            </div>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Peso:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.weight}</span>
-                            </div>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Ojos:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.eyes}</span>
-                            </div>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Cabello:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.hair}</span>
-                            </div>
-                            <div className={styles.infoItem}>
-                              <span className={styles.infoLabel}>Última Vez Visto:</span>
-                              <span className={styles.infoValue}>{selectedCharacter.lastSeen}</span>
+                            <div className={styles.stat}>
+                              <span className={styles.statLabel}>Last Seen:</span>
+                              <span className={styles.statValue}>{selectedCharacter.lastSeen}</span>
                             </div>
                           </div>
-                        </div>
-                        <div className={styles.description}>
-                          <h3>Descripción</h3>
-                          <p>{selectedCharacter.description}</p>
                         </div>
                       </div>
                     )}
@@ -306,19 +218,48 @@ const CharactersComponent = () => {
                     {activeTab === 'details' && (
                       <div className={styles.detailsTab}>
                         <div className={styles.detailSection}>
-                          <h3>Antecedentes</h3>
+                          <h4>Personal Information</h4>
+                          <div className={styles.detailGrid}>
+                            <div className={styles.detailItem}>
+                              <span className={styles.detailLabel}>Age:</span>
+                              <span className={styles.detailValue}>{selectedCharacter.age}</span>
+                            </div>
+                            <div className={styles.detailItem}>
+                              <span className={styles.detailLabel}>Height:</span>
+                              <span className={styles.detailValue}>{selectedCharacter.height}</span>
+                            </div>
+                            <div className={styles.detailItem}>
+                              <span className={styles.detailLabel}>Weight:</span>
+                              <span className={styles.detailValue}>{selectedCharacter.weight}</span>
+                            </div>
+                            <div className={styles.detailItem}>
+                              <span className={styles.detailLabel}>Eyes:</span>
+                              <span className={styles.detailValue}>{selectedCharacter.eyes}</span>
+                            </div>
+                            <div className={styles.detailItem}>
+                              <span className={styles.detailLabel}>Hair:</span>
+                              <span className={styles.detailValue}>{selectedCharacter.hair}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className={styles.detailSection}>
+                          <h4>Background</h4>
                           <p>{selectedCharacter.background}</p>
                         </div>
+
                         <div className={styles.detailSection}>
-                          <h3>Personalidad</h3>
+                          <h4>Personality</h4>
                           <p>{selectedCharacter.personality}</p>
                         </div>
+
                         <div className={styles.detailSection}>
-                          <h3>Habilidades</h3>
+                          <h4>Abilities</h4>
                           <p>{selectedCharacter.abilities}</p>
                         </div>
+
                         <div className={styles.detailSection}>
-                          <h3>Debilidades</h3>
+                          <h4>Weaknesses</h4>
                           <p>{selectedCharacter.weaknesses}</p>
                         </div>
                       </div>
@@ -326,7 +267,7 @@ const CharactersComponent = () => {
 
                     {activeTab === 'evidence' && (
                       <div className={styles.evidenceTab}>
-                        <h3>Evidencia Recolectada</h3>
+                        <h4>Collected Evidence</h4>
                         <ul className={styles.evidenceList}>
                           {selectedCharacter.evidence.map((item, index) => (
                             <li key={index} className={styles.evidenceItem}>
@@ -340,16 +281,8 @@ const CharactersComponent = () => {
 
                     {activeTab === 'notes' && (
                       <div className={styles.notesTab}>
-                        <h3>Notas del Investigador</h3>
-                        <div className={styles.notesContent}>
-                          <p>{selectedCharacter.notes}</p>
-                        </div>
-                        <div className={styles.fileFooter}>
-                          <div className={styles.investigatorInfo}>
-                            <span>Investigador: Agente WATA</span>
-                            <span>Fecha: {new Date().toLocaleDateString()}</span>
-                          </div>
-                        </div>
+                        <h4>Investigator Notes</h4>
+                        <p className={styles.notesText}>{selectedCharacter.notes}</p>
                       </div>
                     )}
                   </div>

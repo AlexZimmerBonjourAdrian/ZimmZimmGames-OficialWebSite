@@ -9,63 +9,49 @@ const ConceptArtComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'carousel'
   const [carouselIndex, setCarouselIndex] = useState(0);
-
+  
   const conceptArtImages = [
     {
       id: 1,
-      src: '/images/Wata/Door.PNG',
-      alt: 'Puerta misteriosa de Wata',
-      title: 'La Puerta',
-      description: 'El umbral entre la realidad y el mundo interior'
+      title: "Alice's Room",
+      description: "The starting location where Alice's journey begins. A seemingly normal bedroom that hides dark secrets.",
+      src: "/images/Wata/Menu.PNG",
+      alt: "Alice's Room Concept Art"
     },
     {
       id: 2,
-      src: '/images/Wata/Menu.PNG',
-      alt: 'Menú principal de Wata',
-      title: 'El Menú',
-      description: 'La interfaz que te guía hacia la locura'
+      title: "The Door",
+      description: "The mysterious door that leads to the unknown. Its appearance changes based on Alice's mental state.",
+      src: "/images/Wata/Door.PNG",
+      alt: "The Door Concept Art"
     },
     {
       id: 3,
-      src: '/images/Wata/Menu-3.PNG',
-      alt: 'Menú 3 de Wata',
-      title: 'Navegación',
-      description: 'Explorando las opciones del juego'
+      title: "Menu Interface",
+      description: "The game's menu system designed to feel like a corrupted computer interface.",
+      src: "/images/Wata/Menu-3.PNG",
+      alt: "Menu Interface Concept Art"
     },
     {
       id: 4,
-      src: '/images/Wata/Menu-4.PNG',
-      alt: 'Menú 4 de Wata',
-      title: 'Configuración',
-      description: 'Ajustando la experiencia'
+      title: "Shadow Corridors",
+      description: "The endless corridors where reality begins to break down and shadows come to life.",
+      src: "/images/Wata/Menu-4.PNG",
+      alt: "Shadow Corridors Concept Art"
     },
     {
       id: 5,
-      src: '/images/Wata/Menu-5.PNG',
-      alt: 'Menú 5 de Wata',
-      title: 'Opciones Avanzadas',
-      description: 'Personalizando tu viaje'
+      title: "The Watcher's Domain",
+      description: "The realm where The Watcher resides, a place of pure nightmare and psychological horror.",
+      src: "/images/Wata/Menu-5.PNG",
+      alt: "The Watcher's Domain Concept Art"
     },
     {
       id: 6,
-      src: '/images/Wata/Menu-6.PNG',
-      alt: 'Menú 6 de Wata',
-      title: 'Extras',
-      description: 'Contenido adicional'
-    },
-    {
-      id: 7,
-      src: '/images/Wata/Menu-7.PNG',
-      alt: 'Menú 7 de Wata',
-      title: 'Créditos',
-      description: 'Los creadores detrás de la experiencia'
-    },
-    {
-      id: 8,
-      src: '/images/Wata/Menu-8.PNG',
-      alt: 'Menú 8 de Wata',
-      title: 'Salida',
-      description: 'El final del viaje'
+      title: "Reality Fracture",
+      description: "A visual representation of how reality fractures and distorts as Alice's sanity wanes.",
+      src: "/images/Wata/Menu-6.PNG",
+      alt: "Reality Fracture Concept Art"
     }
   ];
 
@@ -128,7 +114,7 @@ const ConceptArtComponent = () => {
         >
           <h2 className={styles.title}>Concept Art</h2>
           <p className={styles.subtitle}>
-            Explora el arte conceptual que da vida al mundo de Wata
+            Explore the visual development and artistic vision behind WATA
           </p>
           
           {/* View Mode Toggle */}
@@ -177,7 +163,7 @@ const ConceptArtComponent = () => {
                     <div className={styles.overlayContent}>
                       <h3 className={styles.imageTitle}>{image.title}</h3>
                       <p className={styles.imageDescription}>{image.description}</p>
-                      <span className={styles.viewButton}>Ver más</span>
+                      <span className={styles.viewButton}>View</span>
                     </div>
                   </div>
                 </div>
@@ -201,54 +187,44 @@ const ConceptArtComponent = () => {
                       src={image.src} 
                       alt={image.alt}
                       className={styles.carouselImage}
-                      loading="lazy"
                     />
                     <div className={styles.carouselOverlay}>
                       <div className={styles.carouselContent}>
                         <h3 className={styles.carouselTitle}>{image.title}</h3>
                         <p className={styles.carouselDescription}>{image.description}</p>
-                        <button 
-                          className={styles.carouselViewButton}
-                          onClick={() => openModal(image, index)}
-                        >
-                          Ver en detalle
-                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
             </motion.div>
-
+            
             {/* Carousel Navigation */}
-            <button 
-              className={`${styles.carouselNavButton} ${styles.carouselPrevButton}`}
-              onClick={prevCarousel}
-            >
-              ‹
-            </button>
-            <button 
-              className={`${styles.carouselNavButton} ${styles.carouselNextButton}`}
-              onClick={nextCarousel}
-            >
-              ›
-            </button>
-
-            {/* Carousel Indicators */}
-            <div className={styles.carouselIndicators}>
-              {conceptArtImages.map((_, index) => (
-                <button
-                  key={index}
-                  className={`${styles.indicator} ${index === carouselIndex ? styles.activeIndicator : ''}`}
-                  onClick={() => setCarouselIndex(index)}
-                />
-              ))}
-            </div>
-
-            {/* Auto-play indicator */}
-            <div className={styles.autoPlayIndicator}>
-              <span className={styles.autoPlayText}>Auto-play</span>
-              <div className={styles.autoPlayDot} />
+            <div className={styles.carouselNavigation}>
+              <button 
+                className={styles.carouselButton}
+                onClick={prevCarousel}
+                aria-label="Previous"
+              >
+                Previous
+              </button>
+              <div className={styles.carouselDots}>
+                {conceptArtImages.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`${styles.carouselDot} ${index === carouselIndex ? styles.active : ''}`}
+                    onClick={() => setCarouselIndex(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+              <button 
+                className={styles.carouselButton}
+                onClick={nextCarousel}
+                aria-label="Next"
+              >
+                Next
+              </button>
             </div>
           </div>
         )}
@@ -270,8 +246,11 @@ const ConceptArtComponent = () => {
                 exit={{ scale: 0.8, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <button className={styles.closeButton} onClick={closeModal}>
-                  ×
+                <button 
+                  className={styles.closeButton}
+                  onClick={closeModal}
+                >
+                  Close
                 </button>
                 
                 <div className={styles.modalImageContainer}>
@@ -286,24 +265,25 @@ const ConceptArtComponent = () => {
                   <h3 className={styles.modalTitle}>{selectedImage.title}</h3>
                   <p className={styles.modalDescription}>{selectedImage.description}</p>
                 </div>
-
-                {/* Navigation arrows */}
-                <button 
-                  className={`${styles.navButton} ${styles.prevButton}`}
-                  onClick={prevImage}
-                >
-                  ‹
-                </button>
-                <button 
-                  className={`${styles.navButton} ${styles.nextButton}`}
-                  onClick={nextImage}
-                >
-                  ›
-                </button>
-
-                {/* Image counter */}
-                <div className={styles.imageCounter}>
-                  {currentIndex + 1} / {conceptArtImages.length}
+                
+                <div className={styles.modalNavigation}>
+                  <button 
+                    className={styles.modalNavButton}
+                    onClick={prevImage}
+                    aria-label="Previous image"
+                  >
+                    Previous
+                  </button>
+                  <span className={styles.modalCounter}>
+                    {currentIndex + 1} / {conceptArtImages.length}
+                  </span>
+                  <button 
+                    className={styles.modalNavButton}
+                    onClick={nextImage}
+                    aria-label="Next image"
+                  >
+                    Next
+                  </button>
                 </div>
               </motion.div>
             </motion.div>

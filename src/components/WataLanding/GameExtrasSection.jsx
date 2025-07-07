@@ -2,27 +2,6 @@
 
 import styles from './GameExtrasSection.module.css';
 
-const requirements = [
-  {
-    platform: 'PC',
-    icon: '🖥️',
-    details: [
-      'SO: Windows /10/11',
-      'Procesador: Intel Core 2 Duo 2.0 GHz',
-      'Memoria: 2 GB RAM',
-      'Gráficos: GPU con 2GB VRAM, DirectX 9.0c',
-      'Almacenamiento: 4 GB de espacio disponible'
-    ]
-  },
-  {
-    platform: 'Android',
-    icon: '📱',
-    details: [
-      'Próximamente'
-    ]
-  }
-];
-
 const socialLinks = [
   { name: 'Discord', icon: '🎮', url: '#' },
   { name: 'Twitter', icon: '🐦', url: '#' },
@@ -30,18 +9,42 @@ const socialLinks = [
 ];
 
 export default function GameExtrasSection() {
+  const requirements = [
+    {
+      platform: 'PC',
+      icon: '🖥️',
+      details: [
+        'Windows 10 64-bit',
+        'Intel Core i5 or equivalent',
+        '8 GB RAM',
+        'DirectX 11 compatible graphics',
+        '5 GB available space'
+      ]
+    },
+    {
+      platform: 'Android',
+      icon: '📱',
+      details: [
+        'Android 8.0 or higher',
+        '3 GB RAM',
+        'Adreno 530 or equivalent',
+        '2 GB available space'
+      ]
+    }
+  ];
+
   return (
     <section className={styles.extrasSection}>
       {/* Header with decorative elements */}
       <div className={styles.headerSection}>
         <div className={styles.decorativeLine}></div>
-        <h2 className={styles.sectionTitle}>Información del Juego</h2>
+        <h2 className={styles.sectionTitle}>Game Information</h2>
         <div className={styles.decorativeLine}></div>
       </div>
 
       {/* Social Links */}
       <div className={styles.socialSection}>
-        <span className={styles.socialLabel}>Comunidad:</span>
+        <span className={styles.socialLabel}>Join our community</span>
         <div className={styles.socialIcons}>
           {socialLinks.map((social) => (
             <a 
@@ -62,7 +65,7 @@ export default function GameExtrasSection() {
 
       {/* Technical Requirements */}
       <div className={styles.requirementsBlock}>
-        <h3 className={styles.requirementsTitle}>Requisitos Técnicos Completos</h3>
+        <h3 className={styles.requirementsTitle}>Technical Requirements</h3>
         <div className={styles.requirementsGrid}>
           {requirements.map((req) => (
             <div key={req.platform} className={styles.requirementCard}>

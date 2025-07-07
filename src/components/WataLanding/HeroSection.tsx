@@ -49,7 +49,7 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Un viaje al interior de la mente
+            Where Are The Alices
           </motion.p>
           
           {/* Descripción simple */}
@@ -59,7 +59,7 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            Un juego de terror psicológico donde la realidad se desvanece.
+            A psychological horror game where reality fades away.
           </motion.p>
           
           {/* Botones de acción */}
@@ -73,7 +73,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('demo')}
             >
-              DESCARGAR
+              Download Demo
             </motion.button>
             
             <motion.button
@@ -85,7 +85,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('extras')}
             >
-              VER MÁS
+              Learn More
             </motion.button>
           </div>
         </motion.div>

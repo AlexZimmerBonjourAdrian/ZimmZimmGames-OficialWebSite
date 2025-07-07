@@ -13,6 +13,8 @@ import ExtrasCarouselSection from '@/components/WataLanding/ExtrasCarouselSectio
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-black text-white">
+
+      
       {/* Hero Section */}
       <HeroSection />
       

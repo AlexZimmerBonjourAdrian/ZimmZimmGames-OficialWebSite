@@ -8,7 +8,7 @@ export default function TrailerSection() {
       {/* Header with decorative elements */}
       <div className={styles.headerSection}>
         <div className={styles.decorativeLine}></div>
-        <h2 className={styles.title}>Tráiler Oficial</h2>
+        <h2 className={styles.title}>Official Trailer</h2>
         <div className={styles.decorativeLine}></div>
       </div>
 
@@ -19,7 +19,7 @@ export default function TrailerSection() {
               width="100%"
               height="480"
               src="https://www.youtube.com/embed/s3ny03wibmQ"
-              title="Tráiler WATA"
+              title="WATA Trailer"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

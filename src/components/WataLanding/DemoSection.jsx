@@ -9,15 +9,15 @@ const DemoSection = () => {
   const [downloadProgress, setDownloadProgress] = useState(0);
 
   const demoInfo = {
-    title: 'WATA - Prototipo',
+    title: 'WATA - Prototype',
     version: 'v0.1.0',
     size: '156 MB',
     platform: 'Windows',
-    description: 'Experimenta los primeros momentos del viaje psicológico de Alice. Este prototipo te introduce al mundo de Wata y sus misterios.',
+    description: 'Experience the first moments of Alice\'s psychological journey. This prototype introduces you to the world of Wata and its mysteries.',
     features: [
-      'Primera hora de gameplay',
-      'Sistema de menús completo',
-      'Efectos visuales atmosféricos'
+      'First hour of gameplay',
+      'Complete menu system',
+      'Atmospheric visual effects'
     ],
     requirements: {
       os: 'Windows 10 64-bit',
@@ -55,10 +55,8 @@ const DemoSection = () => {
   };
 
   return (
-    <section className={styles.demoSection}>
+    <section id="demo" className={styles.demoSection}>
       <div className={styles.container}>
-
-
         {/* Header */}
         <motion.div 
           className={styles.header}
@@ -67,10 +65,10 @@ const DemoSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-                      <h2 className={styles.title}>Prototipo Disponible</h2>
-            <p className={styles.subtitle}>
-              Descarga y experimenta el primer capítulo de Wata
-            </p>
+          <h2 className={styles.title}>Download Demo</h2>
+          <p className={styles.subtitle}>
+            Experience the beginning of Alice's journey into madness
+          </p>
         </motion.div>
 
         {/* Main Content */}
@@ -86,13 +84,13 @@ const DemoSection = () => {
             <div className={styles.demoHeader}>
               <div className={styles.demoTitle}>
                 <h3>{demoInfo.title}</h3>
-                <span className={styles.version}>{demoInfo.version}</span>
+                <span className={styles.version}>v0.1.0</span>
               </div>
             </div>
 
             {/* Log line */}
             <div className={styles.logline}>
-              <p>Un viaje psicológico donde la realidad se desvanece.</p>
+              <p>A psychological horror adventure where reality and nightmare blur together</p>
             </div>
 
             <div className={styles.demoDescription}>
@@ -101,10 +99,13 @@ const DemoSection = () => {
 
             {/* System Requirements */}
             <div className={styles.requirements}>
-              <h4>Requisitos Técnicos</h4>
+              <h4>System Requirements</h4>
               <ul>
-                <li>Puede ser ejecutada en computadoras con requerimientos mínimos.</li>
-                <li>Disponible para Android versión 4 o superior.</li>
+                <li>OS: Windows 10 64-bit</li>
+                <li>Processor: Intel Core i3-6100 / AMD FX-6300</li>
+                <li>Memory: 4 GB RAM</li>
+                <li>Graphics: NVIDIA GTX 750 Ti / AMD Radeon R7 260X</li>
+                <li>Storage: 2 GB available space</li>
               </ul>
             </div>
           </motion.div>
@@ -119,7 +120,7 @@ const DemoSection = () => {
           >
             <div className={styles.downloadCard}>
               <div className={styles.downloadHeader}>
-                <h3>Descargar Prototipo</h3>
+                <h3>Download Demo</h3>
               </div>
 
               <div className={styles.downloadButtonsGroup}>
@@ -154,19 +155,15 @@ const DemoSection = () => {
                   <span className={styles.downloadIcon}>🌐</span>
                   Web
                 </motion.button>
-                <div className={styles.versionLabel}>v0.1.0 (solo prototipo online)</div>
+                <div className={styles.versionLabel}>v0.1.0 (online prototype only)</div>
               </div>
 
               <div className={styles.downloadNote}>
-                <p>⚠️ Este es un prototipo de desarrollo. Puede contener bugs y características incompletas.</p>
+                <p>⚠️ This is a prototype version. The final game may have different features and requirements.</p>
               </div>
             </div>
-
-
           </motion.div>
         </div>
-
-
       </div>
     </section>
   );

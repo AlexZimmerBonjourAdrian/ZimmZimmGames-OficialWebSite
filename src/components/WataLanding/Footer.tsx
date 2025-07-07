@@ -9,11 +9,11 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
           <h3>ZimmZimm Games</h3>
-          <p>Creating unique gaming experiences</p>
+          <p>An independent game development studio focused on creating unique psychological horror experiences.</p>
         </div>
         <div className={styles.footerSection}>
           <h3>WATA</h3>
-          <p>Un viaje misterioso te espera</p>
+          <p>A psychological horror game where reality and nightmare blur together in Alice&apos;s twisted journey.</p>
         </div>
       </div>
       <div className={styles.footerBottom}>
