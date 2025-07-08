@@ -1,6 +1,7 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
 import DustParticles from '../components/WataLanding/DustParticles';
+import MusicPlayer from '../components/WataLanding/MusicPlayer';
 // import Navigation from '@/components/Navigation';
 
 export const metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className="bg-black">
         {/* <Navigation /> */}
         <DustParticles />
+        <MusicPlayer />
         {children}
       </body>
     </html>
