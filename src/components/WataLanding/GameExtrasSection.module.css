@@ -1,3 +1,78 @@
+@font-face {
+    font-family: 'Alice_in_Wonderland_3';
+    src: url('/Font/Alice_in_Wonderland_3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+    --font-alice: 'Alice_in_Wonderland_3', cursive;
+    --font-courier: 'CourierPrime', monospace;
+}
+
+
+/* Forzar fuente Alice en todos los títulos */
+
+.sectionTitle,
+.teamName,
+.legend,
+.aboutSection h2,
+.aboutSection h4,
+.extrasSection h2,
+.extrasSection h3,
+.extrasSection h4 {
+    font-family: var(--font-alice), cursive;
+    letter-spacing: 1px;
+}
+
+.sectionText,
+.teamRole,
+.teamBio,
+.aboutDescription,
+.styleText,
+.trackName,
+.menuLink,
+.characterAiText,
+.footerSection p,
+.footerBottom,
+.keyLabel,
+.keyValue,
+.aliasValue,
+.notesText,
+.evidenceItem,
+.statValue,
+.statLabel {
+    font-family: var(--font-courier), monospace;
+}
+
 .extrasSection {
     background: var(--darker-bg);
     padding: 4rem 2rem 2rem;

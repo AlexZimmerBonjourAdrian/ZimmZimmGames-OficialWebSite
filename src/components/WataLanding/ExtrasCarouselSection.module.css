@@ -328,3 +328,21 @@
         font-size: 1.1rem;
     }
 }
+
+
+/* Títulos con fuente Alice */
+
+.title,
+.itemTitle {
+    font-family: var(--font-alice), cursive;
+    letter-spacing: 1px;
+}
+
+
+/* Textos con fuente CourierPrime */
+
+.viewText,
+.description,
+.type {
+    font-family: var(--font-courier), monospace;
+}

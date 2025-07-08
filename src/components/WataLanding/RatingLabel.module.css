@@ -34,6 +34,15 @@
     color: #ccc;
 }
 
+
+/* Textos con fuente CourierPrime */
+
+.text,
+.text strong,
+.text span {
+    font-family: var(--font-courier), monospace;
+}
+
 @media (max-width: 600px) {
     .ratingLabel {
         flex-direction: column;

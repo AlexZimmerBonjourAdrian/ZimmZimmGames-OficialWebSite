@@ -28,12 +28,22 @@
     margin-bottom: 4rem;
 }
 
-.title {
-    font-family: var(--font-alice);
-    font-size: 3.5rem;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+.title,
+.imageTitle,
+.modalTitle,
+.carouselTitle {
+    font-family: var(--font-alice), cursive;
+    letter-spacing: 1px;
+}
+
+.subtitle,
+.toggleButton,
+.imageDescription,
+.viewButton,
+.modalDescription,
+.carouselDescription,
+.carouselViewButton {
+    font-family: var(--font-courier), monospace;
 }
 
 .subtitle {

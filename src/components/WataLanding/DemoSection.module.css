@@ -602,3 +602,40 @@
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
+
+
+/* Títulos con fuente Alice */
+
+.title,
+.logline,
+.demoTitle h3,
+.features h4,
+.downloadHeader h3,
+.cta h3 {
+    font-family: var(--font-alice), cursive;
+    letter-spacing: 1px;
+}
+
+
+/* Textos con fuente CourierPrime */
+
+.subtitle,
+.version,
+.size,
+.platform,
+.date,
+.demoDescription p,
+.features li,
+.requirementSet h5,
+.requirementSet li,
+.fileSize,
+.progressText,
+.downloadButton,
+.downloadNote p,
+.changelog h4,
+.changelog li,
+.cta p,
+.socialLinks span,
+.socialButton {
+    font-family: var(--font-courier), monospace;
+}

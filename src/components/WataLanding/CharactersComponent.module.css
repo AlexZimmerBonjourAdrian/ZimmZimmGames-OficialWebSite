@@ -944,3 +944,42 @@
 .closeIconButtonSmall svg {
     display: block;
 }
+
+
+/* Títulos con fuente Alice */
+
+.title,
+.characterName,
+.fileTitle h2,
+.basicInfo h3,
+.sectionTitle {
+    font-family: var(--font-alice), cursive;
+    letter-spacing: 1px;
+}
+
+
+/* Textos con fuente CourierPrime */
+
+.subtitle,
+.characterAlias,
+.dangerLabel,
+.dangerBadge,
+.viewFileButton,
+.caseNumber,
+.closeFileButton,
+.tabButton,
+.infoLabel,
+.infoValue,
+.description p,
+.evidenceItem,
+.notesContent,
+.investigatorInfo,
+.keyLabel,
+.keyValue,
+.aliasValue,
+.sectionText,
+.evidenceItem,
+.statValue,
+.statLabel {
+    font-family: var(--font-courier), monospace;
+}

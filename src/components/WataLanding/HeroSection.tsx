@@ -34,7 +34,8 @@ export default function HeroSection() {
         >
           {/* Título principal */}
           <motion.h1 
-            className="font-alice text-8xl md:text-9xl font-bold mb-6 text-white tracking-wider"
+            className="text-8xl md:text-9xl font-bold mb-6 text-white tracking-wider"
+            style={{ fontFamily: 'var(--font-alice), cursive' }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
@@ -44,7 +45,8 @@ export default function HeroSection() {
           
           {/* Subtítulo */}
           <motion.p 
-            className="font-courier text-xl md:text-2xl text-gray-400 mb-8 tracking-wide"
+            className="text-xl md:text-2xl text-gray-400 mb-8 tracking-wide"
+            style={{ fontFamily: 'var(--font-courier), monospace' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -54,7 +56,8 @@ export default function HeroSection() {
           
           {/* Descripción simple */}
           <motion.p 
-            className="font-courier text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed"
+            style={{ fontFamily: 'var(--font-courier), monospace' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
@@ -65,7 +68,8 @@ export default function HeroSection() {
           {/* Botones de acción */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <motion.button
-              className="font-courier bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300"
+              style={{ fontFamily: 'var(--font-courier), monospace' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.6 }}

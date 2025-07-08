@@ -70,6 +70,24 @@
     line-height: 1.5;
 }
 
+
+/* Títulos con fuente Alice */
+
+.mainTitle,
+.heading {
+    font-family: var(--font-alice), cursive;
+    letter-spacing: 1px;
+}
+
+
+/* Textos con fuente CourierPrime */
+
+.text,
+.bullets,
+.bullets li {
+    font-family: var(--font-courier), monospace;
+}
+
 @media (max-width: 900px) {
     .row {
         flex-direction: column;

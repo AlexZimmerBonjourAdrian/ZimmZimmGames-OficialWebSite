@@ -102,7 +102,7 @@
 
 .menuLink {
     color: #fff;
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-courier), monospace;
     font-size: 1.18rem;
     text-decoration: none;
     font-weight: bold;

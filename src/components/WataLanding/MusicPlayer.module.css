@@ -22,14 +22,11 @@
     margin-bottom: 0.2rem;
 }
 
+
+/* Textos con fuente CourierPrime */
+
 .trackName {
-    color: #fff;
-    font-family: 'Courier Prime', monospace;
-    font-size: 1.08rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-family: var(--font-courier), monospace;
 }
 
 .controls {
