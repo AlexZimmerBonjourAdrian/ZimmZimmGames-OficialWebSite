@@ -834,6 +834,8 @@
 
 .policeHeader {
     font-size: 1.1rem;
+    padding-right: 90px;
+    position: relative;
 }
 
 .policeBodyScrollable {
@@ -880,6 +882,15 @@
     .policeBodyScrollable {
         max-height: 70vh;
     }
+    .statusBadge {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+        right: 0.7rem;
+        top: 1.2rem;
+    }
+    .policeHeader {
+        padding-right: 60px;
+    }
 }
 
 .closeIconButton {
@@ -905,5 +916,31 @@
 }
 
 .closeIconButton svg {
+    display: block;
+}
+
+.closeIconButtonSmall {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    padding: 0.1rem;
+    z-index: 20;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.18s;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeIconButtonSmall:hover {
+    background: #fff2;
+}
+
+.closeIconButtonSmall svg {
     display: block;
 }
