@@ -119,19 +119,30 @@
 
 @media (max-width: 600px) {
     .musicPlayer {
-        right: 0.7rem;
-        bottom: 0.7rem;
-        padding: 0.7rem 0.7rem 0.7rem 0.7rem;
-        min-width: 140px;
-        max-width: 90vw;
-    }
-    .trackName {
-        font-size: 0.95rem;
-    }
-    .controls {
+        right: 0.3rem;
+        bottom: 0.3rem;
+        padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+        min-width: 100px;
+        max-width: 95vw;
+        border-radius: 10px;
         gap: 0.3rem;
     }
+    .trackName {
+        font-size: 0.78rem;
+    }
+    .controls {
+        gap: 0.15rem;
+    }
+    .btn svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
     .volumeBox {
-        min-width: 60px;
+        min-width: 40px;
+        margin-left: 0.2rem;
+    }
+    .volumeSlider {
+        width: 38px;
+        height: 2px;
     }
 }

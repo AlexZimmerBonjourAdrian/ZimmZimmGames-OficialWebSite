@@ -5,6 +5,7 @@ import styles from './HamburgerMenu.module.css';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '#about' },
+  { name: 'Gameplay', href: '#gameplay' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'Extras', href: '#extras' },
   { name: 'Contact', href: '#contact' },
