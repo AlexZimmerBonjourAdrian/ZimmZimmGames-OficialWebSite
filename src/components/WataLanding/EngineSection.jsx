@@ -17,7 +17,7 @@ export default function EngineSection() {
         <p className={styles.description}>
           This game was developed using the Unity engine, a powerful and flexible platform for creating immersive experiences.
         </p>
-        <button className={styles.detailsBtn} disabled>DETAILS</button>
+       
       </div>
     </section>
   );
