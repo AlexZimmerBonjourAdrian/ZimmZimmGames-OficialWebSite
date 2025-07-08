@@ -39,7 +39,6 @@ const CharacterFile = ({ character, onClose }) => {
             <span className={styles.caseNumber}>{character.caseNumber}</span>
           </div>
           <span className={`${styles.statusBadge} ${styles[character.status.toLowerCase()]}`}>{character.status}</span>
-          {/*  /*<button className={styles.closeButton} onClick={onClose}>Close</button>* */}
         </div>
 
         <div className={styles.policeBodyScrollable}>
@@ -47,14 +46,22 @@ const CharacterFile = ({ character, onClose }) => {
             {/* Columna Izquierda: Foto y datos clave */}
             <div className={styles.leftCol}>
               <div className={styles.photoBox}>
-                <img src={character.image} alt={character.name} className={styles.fileImage} />
+                <img 
+                  src={character.profileImage || character.image} 
+                  alt={character.name} 
+                  className={styles.fileImage} 
+                  style={character.focusFace ? { objectFit: 'cover', objectPosition: 'center top' } : {}} 
+                />
               </div>
               <div className={styles.keyDataBox}>
                 <div><span className={styles.keyLabel}>Age:</span> <span className={styles.keyValue}>{character.age}</span></div>
+                <div><span className={styles.keyLabel}>Birth Date:</span> <span className={styles.keyValue}>{character.birthDate}</span></div>
+                <div><span className={styles.keyLabel}>Race:</span> <span className={styles.keyValue}>{character.race}</span></div>
+                <div><span className={styles.keyLabel}>Subspecies:</span> <span className={styles.keyValue}>{character.subspecies}</span></div>
+                <div><span className={styles.keyLabel}>Profession:</span> <span className={styles.keyValue}>{character.profession}</span></div>
                 <div><span className={styles.keyLabel}>Height:</span> <span className={styles.keyValue}>{character.height}</span></div>
                 <div><span className={styles.keyLabel}>Eyes:</span> <span className={styles.keyValue}>{character.eyes}</span></div>
                 <div><span className={styles.keyLabel}>Hair:</span> <span className={styles.keyValue}>{character.hair}</span></div>
-                <div><span className={styles.keyLabel}>Danger Level:</span> <span className={`${styles.dangerBadge} ${styles[character.dangerLevel.toLowerCase()]}`}>{character.dangerLevel}</span></div>
                 <div><span className={styles.keyLabel}>Last Seen:</span> <span className={styles.keyValue}>{character.lastSeen}</span></div>
               </div>
             </div>

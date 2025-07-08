@@ -12,55 +12,67 @@ const CharactersComponent = () => {
   const characters = [
     {
       id: 1,
-      name: "Alice",
-      alias: "The Lost One",
-      image: "/images/Wata/Menu.PNG",
-      dangerLevel: "HIGH",
-      caseNumber: "CASE-001",
-      status: "Missing",
-      lastSeen: "Unknown",
-      description: "The main protagonist whose reality begins to unravel as she searches for answers in a twisted world.",
-      age: "Unknown",
-      height: "5'6\"",
+      name: "Juno",
+      alias: "The Detective",
+      image: "/Characters/Juno.png",
+      profileImage: "/Characters/Profile/Juno.png",
+      focusFace: true,
+      caseNumber: "CASE-003",
+      status: "Active",
+      lastSeen: "2025-07-01",
+      description: "A determined detective investigating the mysterious disappearance of Alice. Her investigation leads her into a surreal world where reality and nightmare blend together.",
+      age: "37",
+      birthDate: "March 15, 1988",
+      race: "Wonderland Creature-Goblin hybrid",
+      subspecies: "Hare",
+      profession: "Detective",
+      height: "5'7\"",
       weight: "Unknown",
-      eyes: "Blue",
-      hair: "Blonde",
-      background: "Alice was once a normal person until she discovered the truth about her existence and the world around her.",
-      personality: "Determined but increasingly unstable as her perception of reality shifts.",
-      abilities: "Reality manipulation, enhanced perception",
-      weaknesses: "Mental instability, confusion about what's real",
+      eyes: "Green",
+      hair: "Brown",
+      background: "Juno discovered the case of Alice's disappearance while working as a detective. What started as a routine missing person investigation quickly spiraled into something far more sinister when she encountered dolls with familiar faces and a white rabbit with button eyes in a mysterious garden.",
+      personality: "Analytical and brave, but increasingly questioning her own sanity as the investigation progresses. She follows her instincts even when logic suggests otherwise, driven by a deep need to find the truth.",
+      abilities: "Sharp investigative skills, marksmanship, survival instincts, ability to navigate surreal environments",
+      weaknesses: "Her determination sometimes blinds her to danger, and the psychological toll of the investigation is affecting her perception of reality",
       evidence: [
-        "Personal diary found in abandoned house",
-        "Photographs showing multiple versions of Alice",
-        "Audio recordings of her voice in different locations"
+        "Case files documenting Alice's disappearance",
+        "Photographs of the doll garden with familiar faces",
+        "Audio recordings of impossible conversations",
+        "Teacup with swirling liquid that shows different reflections"
       ],
-      notes: "Subject appears to exist in multiple states simultaneously. Reality seems to bend around her presence."
+      notes: "Juno's investigation has led her deeper into Wonderland than any detective before. She's beginning to question whether she's still investigating Alice's disappearance or if she's become part of the mystery herself. Her encounters with CB suggest he knows more than he reveals."
     },
     {
       id: 2,
-      name: "The Watcher",
-      alias: "Shadow Figure",
-      image: "/images/Wata/Menu-3.PNG",
-      dangerLevel: "EXTREME",
-      caseNumber: "CASE-002",
-      status: "Active",
-      lastSeen: "Everywhere",
-      description: "A mysterious entity that observes Alice's journey from the shadows, its true nature unknown.",
+      name: "CB",
+      alias: "The White Rabbit",
+      image: "/Characters/CB.png",
+      profileImage: "/Characters/Profile/CB.png",
+      focusFace: true,
+      caseNumber: "CASE-004",
+      status: "Unknown",
+      lastSeen: "2025-07-01",
+      description: "A mysterious white rabbit with button eyes who appears to control the flow of time and reality in Wonderland. He serves as both guide and obstacle in Juno's investigation.",
       age: "Unknown",
-      height: "Variable",
+      birthDate: "Unknown",
+      race: "Wonderland Creature",
+      subspecies: "Rabbit",
+      profession: "CEO of Juno Enterprises",
+      height: "5'10\"",
       weight: "Unknown",
-      eyes: "None visible",
-      hair: "None",
-      background: "No background information available. Entity appears to have always existed.",
-      personality: "Enigmatic, manipulative, possibly malevolent",
-      abilities: "Shapeshifting, reality distortion, teleportation",
-      weaknesses: "Unknown",
+      eyes: "Button eyes (red)",
+      hair: "White",
+      background: "CB's true nature remains a mystery. He appears to be the guardian or controller of Wonderland, orchestrating Juno's journey through the surreal landscape. Whether he's helping her find Alice or leading her deeper into madness is unclear.",
+      personality: "Cryptic and unpredictable, speaking in riddles and enjoying the confusion he creates. He seems to test Juno's resolve while hiding crucial information about Alice's fate.",
+      abilities: "Time manipulation, reality distortion, illusion creation, ability to control the environment of Wonderland",
+      weaknesses: "Bound by the rules and logic of Wonderland, his cryptic nature can sometimes reveal more than intended",
       evidence: [
-        "Security camera footage showing figure in multiple locations",
-        "Witness testimonies of shadowy presence",
-        "Distorted photographs with figure in background"
+        "Playing cards with shifting symbols that change when not observed",
+        "A pocket watch that ticks backwards and forwards randomly",
+        "Photographs that show different scenes depending on who's looking",
+        "Tea party arrangements that appear and disappear"
       ],
-      notes: "Entity seems to feed on fear and confusion. May be responsible for Alice's condition."
+      notes: "CB appears to be testing Juno's ability to navigate Wonderland's twisted logic. His relationship with Alice is unclear - he may be protecting her, imprisoning her, or something else entirely. His button eyes suggest he might not be entirely real, or perhaps he's more real than the world around him."
     }
   ];
 
@@ -86,7 +98,7 @@ const CharactersComponent = () => {
         >
           <h2 className={styles.title}>Characters</h2>
           <p className={styles.subtitle}>
-            Meet the key figures in Alice's twisted journey
+            Meet the key figures in the world of WATA
           </p>
         </motion.div>
 
@@ -111,20 +123,13 @@ const CharactersComponent = () => {
                   alt={character.name}
                   className={styles.characterImage}
                   loading="lazy"
+                  style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%' }}
                 />
-                <div className={styles.characterOverlay}>
-                  <div className={styles.characterInfo}>
-                    <h3 className={styles.characterName}>{character.name}</h3>
-                    <p className={styles.characterAlias}>{character.alias}</p>
-                    <div className={styles.dangerLevel}>
-                      <span className={styles.dangerLabel}>Danger Level:</span>
-                      <span className={`${styles.dangerBadge} ${styles[character.dangerLevel.toLowerCase()]}`}>
-                        {character.dangerLevel}
-                      </span>
-                    </div>
-                    <span className={styles.viewFileButton}>View File</span>
-                  </div>
-                </div>
+              </div>
+              <div className={styles.characterInfo}>
+                <h3 className={styles.characterName}>{character.name}</h3>
+                <p className={styles.characterAlias}>{character.alias}</p>
+                <span className={styles.viewFileButton} onClick={() => openCharacterFile(character)}>View File</span>
               </div>
             </motion.div>
           ))}

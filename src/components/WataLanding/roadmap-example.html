@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Roadmap de Desarrollo - ZimmZimm Games</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .controls-panel {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ff0000;
+        }
+        
+        .controls-panel h3 {
+            color: #ff0000;
+            margin-top: 0;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier Prime', monospace;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: #cc0000;
+        }
+        
+        .input-group {
+            margin-bottom: 10px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #cccccc;
+        }
+        
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background: #2a2a2a;
+            color: white;
+            font-family: 'Courier Prime', monospace;
+        }
+        
+        .input-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        
+        .status {
+            background: #2a2a2a;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .progress-info {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .progress-card {
+            background: #2a2a2a;
+            padding: 10px;
+            border-radius: 4px;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .progress-card h4 {
+            margin: 0 0 5px 0;
+            color: #ff0000;
+        }
+        
+        .progress-card p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo-container">
+        <h1>Demo: Roadmap de Desarrollo</h1>
+
+        <!-- Panel de controles -->
+        <div class="controls-panel">
+            <h3>Panel de Control del Roadmap</h3>
+
+            <!-- Nueva fase personalizada -->
+            <div class="input-group">
+                <label for="phaseTitle">Título de la Fase:</label>
+                <input type="text" id="phaseTitle" placeholder="Ej: Fase de Testing">
+            </div>
+
+            <div class="input-group">
+                <label for="phaseDescription">Descripción:</label>
+                <textarea id="phaseDescription" placeholder="Descripción detallada de la fase"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="phaseStatus">Estado:</label>
+                <select id="phaseStatus">
+                    <option value="planned">Planificado</option>
+                    <option value="in-progress">En Progreso</option>
+                    <option value="completed">Completado</option>
+                    <option value="delayed">Retrasado</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="phaseDate">Fecha:</label>
+                <input type="text" id="phaseDate" placeholder="Ej: Q2 2024">
+            </div>
+
+            <div class="button-group">
+                <button onclick="addCustomPhase()">Añadir Fase</button>
+                <button onclick="updateRandomProgress()">Actualizar Progreso Aleatorio</button>
+            </div>
+
+            <!-- Botones rápidos -->
+            <h4>Fases Rápidas:</h4>
+            <div class="button-group">
+                <button onclick="addDevelopmentPhase()">Fase de Desarrollo</button>
+                <button onclick="addTestingPhase()">Fase de Testing</button>
+                <button onclick="addReleasePhase()">Fase de Lanzamiento</button>
+                <button onclick="addBugFixPhase()">Fase de Corrección</button>
+            </div>
+
+            <!-- Información de progreso -->
+            <div class="progress-info">
+                <div class="progress-card">
+                    <h4>Progreso General</h4>
+                    <p id="overallProgress">0%</p>
+                </div>
+                <div class="progress-card">
+                    <h4>Fases Completadas</h4>
+                    <p id="completedPhases">0</p>
+                </div>
+                <div class="progress-card">
+                    <h4>En Progreso</h4>
+                    <p id="inProgressPhases">0</p>
+                </div>
+                <div class="progress-card">
+                    <h4>Planificadas</h4>
+                    <p id="plannedPhases">0</p>
+                </div>
+            </div>
+
+            <!-- Estado -->
+            <div class="status" id="status">
+                Estado: Esperando acciones...
+            </div>
+        </div>
+
+        <!-- Aquí se renderizará el componente RoadmapSection -->
+        <div id="roadmap-section-container">
+            <!-- El componente React se montará aquí -->
+        </div>
+    </div>
+
+    <script>
+        // Funciones de ejemplo para interactuar con el componente
+
+        function updateStatus(message) {
+            document.getElementById('status').textContent = `Estado: ${message}`;
+        }
+
+        function updateProgressInfo() {
+            if (window.RoadmapManager) {
+                const overallProgress = window.getRoadmapProgress();
+                const phases = window.RoadmapManager.getPhases();
+                const completed = phases.filter(p => p.status === 'completed').length;
+                const inProgress = phases.filter(p => p.status === 'in-progress').length;
+                const planned = phases.filter(p => p.status === 'planned').length;
+
+                document.getElementById('overallProgress').textContent = `${overallProgress}%`;
+                document.getElementById('completedPhases').textContent = completed;
+                document.getElementById('inProgressPhases').textContent = inProgress;
+                document.getElementById('plannedPhases').textContent = planned;
+            }
+        }
+
+        function addCustomPhase() {
+            const title = document.getElementById('phaseTitle').value;
+            const description = document.getElementById('phaseDescription').value;
+            const status = document.getElementById('phaseStatus').value;
+            const date = document.getElementById('phaseDate').value;
+
+            if (!title || !description) {
+                updateStatus('Error: Título y descripción son requeridos');
+                return;
+            }
+
+            if (window.RoadmapManager && window.RoadmapManager.addPhase) {
+                const success = window.RoadmapManager.addPhase({
+                    title,
+                    description,
+                    status,
+                    date,
+                    features: [
+                        'Característica 1',
+                        'Característica 2',
+                        'Característica 3'
+                    ]
+                });
+
+                if (success) {
+                    updateStatus('Fase añadida exitosamente');
+                    document.getElementById('phaseTitle').value = '';
+                    document.getElementById('phaseDescription').value = '';
+                    document.getElementById('phaseDate').value = '';
+                    updateProgressInfo();
+                } else {
+                    updateStatus('Error al añadir fase');
+                }
+            } else {
+                updateStatus('Error: RoadmapManager no está disponible');
+            }
+        }
+
+        function updateRandomProgress() {
+            if (window.RoadmapManager) {
+                const phases = window.RoadmapManager.getPhases();
+                if (phases.length > 0) {
+                    const randomPhase = phases[Math.floor(Math.random() * phases.length)];
+                    const newProgress = Math.min(100, randomPhase.progress + Math.floor(Math.random() * 20) + 10);
+                    const success = window.updatePhaseProgress(randomPhase.id, newProgress);
+                    updateStatus(success ? `Progreso de fase ${randomPhase.id} actualizado a ${newProgress}%` : 'Error al actualizar progreso');
+                    updateProgressInfo();
+                } else {
+                    updateStatus('No hay fases para actualizar');
+                }
+            } else {
+                updateStatus('Error: RoadmapManager no está disponible');
+            }
+        }
+
+        function addDevelopmentPhase() {
+            if (window.addDevelopmentPhase) {
+                const success = window.addDevelopmentPhase(
+                    'Desarrollo de Características Principales',
+                    'Implementación de las mecánicas core del juego y sistemas fundamentales.', [
+                        'Sistema de movimiento avanzado',
+                        'Mecánicas de puzzle complejas',
+                        'Sistema de inventario',
+                        'IA de enemigos'
+                    ]
+                );
+                updateStatus(success ? 'Fase de desarrollo añadida' : 'Error al añadir fase');
+                updateProgressInfo();
+            } else {
+                updateStatus('Error: Función no disponible');
+            }
+        }
+
+        function addTestingPhase() {
+            if (window.addTestingPhase) {
+                const success = window.addTestingPhase(
+                    'Testing y Optimización',
+                    'Fase de testing exhaustivo y optimización del rendimiento.', [
+                        'Testing de funcionalidades',
+                        'Corrección de bugs críticos',
+                        'Optimización de FPS',
+                        'Testing de compatibilidad'
+                    ]
+                );
+                updateStatus(success ? 'Fase de testing añadida' : 'Error al añadir fase');
+                updateProgressInfo();
+            } else {
+                updateStatus('Error: Función no disponible');
+            }
+        }
+
+        function addReleasePhase() {
+            if (window.addReleasePhase) {
+                const success = window.addReleasePhase(
+                    'Preparación para Lanzamiento',
+                    'Preparación final para el lanzamiento oficial del juego.', [
+                        'Preparación de builds finales',
+                        'Marketing y promoción',
+                        'Configuración de plataformas',
+                        'Soporte post-lanzamiento'
+                    ]
+                );
+                updateStatus(success ? 'Fase de lanzamiento añadida' : 'Error al añadir fase');
+                updateProgressInfo();
+            } else {
+                updateStatus('Error: Función no disponible');
+            }
+        }
+
+        function addBugFixPhase() {
+            if (window.addBugFixPhase) {
+                const success = window.addBugFixPhase(
+                    'Corrección de Bugs Críticos',
+                    'Identificación y corrección de bugs reportados por la comunidad.', [
+                        'Análisis de reportes de bugs',
+                        'Desarrollo de correcciones',
+                        'Testing de correcciones',
+                        'Despliegue de parches'
+                    ]
+                );
+                updateStatus(success ? 'Fase de corrección añadida' : 'Error al añadir fase');
+                updateProgressInfo();
+            } else {
+                updateStatus('Error: Función no disponible');
+            }
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStatus('Sistema inicializado. Esperando acciones...');
+
+            // Verificar si el componente está disponible
+            const checkComponent = setInterval(() => {
+                if (window.RoadmapManager) {
+                    clearInterval(checkComponent);
+                    updateStatus('RoadmapManager detectado y listo para usar');
+                    updateProgressInfo();
+                }
+            }, 100);
+
+            // Timeout después de 10 segundos
+            setTimeout(() => {
+                if (!window.RoadmapManager) {
+                    clearInterval(checkComponent);
+                    updateStatus('Error: RoadmapManager no se pudo inicializar');
+                }
+            }, 10000);
+        });
+
+        // Actualizar información de progreso cada 5 segundos
+        setInterval(() => {
+            updateProgressInfo();
+        }, 5000);
+    </script>
+</body>
+
+</html>

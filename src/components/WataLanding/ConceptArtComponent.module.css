@@ -214,12 +214,18 @@
 
 .modalContent {
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 95vw;
+    max-height: 95vh;
     background: var(--card-bg);
     border-radius: 12px;
-    overflow: hidden;
+    overflow: auto;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: flex-start;
 }
 
 .closeButton {
@@ -245,34 +251,90 @@
 
 .modalImageContainer {
     width: 100%;
-    max-height: 70vh;
-    overflow: hidden;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    max-height: 80vh;
 }
 
 .modalImage {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: transparent;
+    display: block;
 }
 
 .modalInfo {
-    padding: 2rem;
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0;
     text-align: center;
+    flex-shrink: 0;
+    word-break: break-word;
+    background: none;
 }
 
 .modalTitle {
     font-family: var(--font-alice);
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
 }
 
 .modalDescription {
     font-family: var(--font-courier);
     font-size: 1rem;
     color: var(--text-color);
-    opacity: 0.8;
-    line-height: 1.6;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+}
+
+.modalNavigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    font-family: var(--font-courier);
+    font-size: 1rem;
+}
+
+.modalNavButton {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.modalNavButton:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.08);
+}
+
+.modalCounter {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    min-width: 60px;
+    text-align: center;
 }
 
 
@@ -328,11 +390,16 @@
 .carouselContainer {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 70vh;
+    min-height: 320px;
+    max-height: 90vh;
     overflow: hidden;
     border-radius: 12px;
     background: var(--card-bg);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carouselTrack {
@@ -344,21 +411,33 @@
 .carouselSlide {
     min-width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    background: transparent;
 }
 
 .carouselImageContainer {
     width: 100%;
     height: 100%;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    background: transparent;
 }
 
 .carouselImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    max-width: 100%;
+    max-height: 65vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    display: block;
 }
 
 .carouselOverlay {
@@ -569,8 +648,13 @@
         padding: 1rem;
     }
     .modalContent {
-        max-width: 95vw;
-        max-height: 95vh;
+        max-width: 98vw;
+        max-height: 98vh;
+        padding: 1rem;
+    }
+    .modalImageContainer {
+        max-height: 60vh;
+        margin: 0.5rem 0;
     }
     .modalInfo {
         padding: 1.5rem;
@@ -612,6 +696,61 @@
     }
 }
 
+@media (max-width: 900px) {
+    .modalContent {
+        max-width: 99vw;
+        max-height: 99vh;
+        padding: 1rem 0.5rem;
+    }
+    .modalImageContainer {
+        max-height: 60vh;
+        padding: 0.3rem;
+    }
+    .modalImage {
+        max-height: 55vh;
+    }
+    .modalTitle {
+        font-size: 1.2rem;
+    }
+    .modalDescription {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .modalContent {
+        max-width: 100vw;
+        max-height: 100vh;
+        padding: 0.5rem 0.2rem;
+        gap: 0.5rem;
+    }
+    .modalImageContainer {
+        max-height: 45vh;
+        padding: 0.1rem;
+    }
+    .modalImage {
+        max-height: 40vh;
+    }
+    .modalTitle {
+        font-size: 1rem;
+    }
+    .modalDescription {
+        font-size: 0.9rem;
+    }
+    .modalNavigation {
+        font-size: 0.9rem;
+        gap: 0.7rem;
+    }
+    .modalNavButton {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.9rem;
+    }
+    .modalCounter {
+        font-size: 0.85rem;
+        min-width: 40px;
+    }
+}
+
 
 /* Keyboard navigation support */
 
@@ -632,5 +771,107 @@
 @keyframes fadeInImage {
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .carouselContainer {
+        height: 45vh;
+        min-height: 180px;
+        max-height: 60vh;
+    }
+    .carouselImage {
+        max-height: 40vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .carouselContainer {
+        height: 30vh;
+        min-height: 120px;
+        max-height: 40vh;
+    }
+    .carouselImage {
+        max-height: 25vh;
+    }
+}
+
+.carouselTitleTop {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    pointer-events: none;
+    padding-top: 1.2rem;
+}
+
+.carouselTitleTop .carouselTitle {
+    font-family: var(--font-alice);
+    font-size: 2.1rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 0.2em 1.2em;
+}
+
+.carouselDescriptionBottom {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+    padding-bottom: 1.2rem;
+}
+
+.carouselDescriptionBottom .carouselDescription {
+    font-family: var(--font-courier);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.95;
+    text-align: center;
+    margin: 0;
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 0.5em 1.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+    .carouselTitleTop .carouselTitle {
+        font-size: 1.3rem;
+        padding: 0.2em 0.7em;
+    }
+    .carouselDescriptionBottom .carouselDescription {
+        font-size: 0.95rem;
+        padding: 0.3em 0.7em;
+    }
+}
+
+@media (max-width: 600px) {
+    .carouselTitleTop {
+        padding-top: 0.5rem;
+    }
+    .carouselTitleTop .carouselTitle {
+        font-size: 1rem;
+        padding: 0.1em 0.4em;
+    }
+    .carouselDescriptionBottom {
+        padding-bottom: 0.5rem;
+    }
+    .carouselDescriptionBottom .carouselDescription {
+        font-size: 0.85rem;
+        padding: 0.2em 0.4em;
     }
 }

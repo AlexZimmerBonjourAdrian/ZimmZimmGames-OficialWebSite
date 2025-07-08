@@ -11,6 +11,8 @@ import GameplaySection from '@/components/WataLanding/GameplaySection';
 //import PlatformsSection from '@/components/WataLanding/PlatformsSection';
 import EngineSection from '@/components/WataLanding/EngineSection';
 import SectionDivider from '@/components/WataLanding/SectionDivider';
+import RoadmapSection from '@/components/WataLanding/RoadmapSection';
+import UpdatesSection from '@/components/WataLanding/UpdatesSection';
 
 
 export default function HomePage() {
@@ -44,6 +46,15 @@ export default function HomePage() {
       {/* Game Extras Section */}
       <GameExtrasSection />
       <SectionDivider />
+
+      {/* Roadmap Section */}
+      <RoadmapSection />
+      <SectionDivider />
+
+      {/* Updates Section */}
+      <UpdatesSection />
+      <SectionDivider />
+
       {/* Engine Section */}
       <EngineSection />
       <SectionDivider />

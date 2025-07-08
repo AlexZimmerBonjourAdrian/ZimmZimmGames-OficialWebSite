@@ -1,0 +1,465 @@
+@font-face {
+    font-family: 'Alice_in_Wonderland_3';
+    src: url('/Font/Alice_in_Wonderland_3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --font-alice: 'Alice_in_Wonderland_3', cursive;
+    --font-courier: 'CourierPrime', monospace;
+    --accent-color: #ff0000;
+    --accent-color-hover: #cc0000;
+    --darker-bg: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --text-color: #ffffff;
+    --text-secondary: #cccccc;
+    --completed-color: #4CAF50;
+    --in-progress-color: #2196F3;
+    --planned-color: #FF9800;
+    --delayed-color: #f44336;
+}
+
+.roadmapSection {
+    background: var(--darker-bg);
+    padding: 4rem 2rem 2rem;
+    margin-top: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--accent-color);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.roadmapSection.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.roadmapSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0.6;
+}
+
+.headerSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 1rem;
+}
+
+.decorativeLine {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    max-width: 100px;
+}
+
+.sectionTitle {
+    font-family: var(--font-alice);
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(255, 0, 0, 0.1);
+}
+
+.roadmapContainer {
+    position: relative;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-color), transparent);
+    opacity: 0.3;
+}
+
+.phaseCard {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    margin-left: 60px;
+    opacity: 0.7;
+    transform: translateX(-20px);
+    animation: slideInPhase 0.6s ease forwards;
+}
+
+.phaseCard::before {
+    content: '';
+    position: absolute;
+    left: -45px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 3px solid var(--darker-bg);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.phaseCard.active {
+    opacity: 1;
+    transform: translateX(0);
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 32px rgba(255, 0, 0, 0.15);
+}
+
+.phaseCard.active::before {
+    background: var(--accent-color);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    transform: scale(1.2);
+}
+
+.phaseCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(255, 0, 0, 0.2);
+}
+
+.phaseHeader {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.phaseNumber {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 80px;
+}
+
+.phaseText {
+    font-family: var(--font-alice);
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.statusIcon {
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+.phaseInfo {
+    flex: 1;
+}
+
+.phaseTitle {
+    font-family: var(--font-alice);
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.phaseDate {
+    font-family: var(--font-courier);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.phaseDescription {
+    font-family: var(--font-courier);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+}
+
+.progressContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.progressBar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease;
+    position: relative;
+}
+
+.progressFill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.progressText {
+    font-family: var(--font-courier);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: right;
+}
+
+.featuresList {
+    margin-bottom: 1.5rem;
+}
+
+.featuresTitle {
+    font-family: var(--font-alice);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-courier);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.featureBullet {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* Action buttons removed - component is read-only for clients */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.phaseDots {
+    display: flex;
+    gap: 1rem;
+}
+
+.phaseDot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.phaseDot:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.phaseDot.activeDot {
+    background: var(--accent-color);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+
+/* Status-specific styles */
+
+.completed {
+    border-left: 4px solid var(--completed-color);
+}
+
+.completed .phaseText {
+    color: var(--completed-color);
+}
+
+.inProgress {
+    border-left: 4px solid var(--in-progress-color);
+}
+
+.inProgress .phaseText {
+    color: var(--in-progress-color);
+}
+
+.planned {
+    border-left: 4px solid var(--planned-color);
+}
+
+.planned .phaseText {
+    color: var(--planned-color);
+}
+
+.delayed {
+    border-left: 4px solid var(--delayed-color);
+}
+
+.delayed .phaseText {
+    color: var(--delayed-color);
+}
+
+
+/* Animation keyframes */
+
+@keyframes slideInPhase {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 0.7;
+        transform: translateX(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .roadmapSection {
+        padding: 2rem 1rem 1rem;
+        margin: 1rem;
+    }
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+    .timeline::before {
+        left: 20px;
+    }
+    .phaseCard {
+        margin-left: 40px;
+        padding: 1.5rem;
+    }
+    .phaseCard::before {
+        left: -30px;
+        width: 16px;
+        height: 16px;
+    }
+    .phaseHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .phaseNumber {
+        min-width: auto;
+    }
+    .phaseActions {
+        flex-direction: column;
+    }
+    .actionButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .roadmapSection {
+        padding: 1.5rem 0.5rem 1rem;
+    }
+    .sectionTitle {
+        font-size: 1.3rem;
+    }
+    .phaseCard {
+        padding: 1rem;
+        margin-left: 30px;
+    }
+    .phaseCard::before {
+        left: -25px;
+        width: 12px;
+        height: 12px;
+    }
+    .phaseTitle {
+        font-size: 1.2rem;
+    }
+    .phaseDescription {
+        font-size: 0.9rem;
+    }
+    .feature {
+        font-size: 0.85rem;
+    }
+}
