@@ -39,7 +39,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
           >
-            WATA
+            W.A.T.A
           </motion.h1>
           
           {/* Subtítulo */}
@@ -49,7 +49,7 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Where Are The Alices
+            Where Are The Alices?
           </motion.p>
           
           {/* Descripción simple */}
@@ -76,17 +76,7 @@ export default function HeroSection() {
               Download Demo
             </motion.button>
             
-            <motion.button
-              className="font-courier bg-transparent border border-red-600 text-red-400 hover:bg-red-600/10 px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => scrollToSection('extras')}
-            >
-              Learn More
-            </motion.button>
+        
           </div>
         </motion.div>
       </div>

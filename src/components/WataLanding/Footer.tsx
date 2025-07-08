@@ -6,6 +6,13 @@ import styles from './Footer.module.css';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+        <img
+          src="/Icon/ajuste_avatar_Documents-3.png"
+          alt="ZimmZimm Games Logo"
+          style={{ height: '64px', width: 'auto', display: 'block' }}
+        />
+      </div>
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
           <h3>ZimmZimm Games</h3>
