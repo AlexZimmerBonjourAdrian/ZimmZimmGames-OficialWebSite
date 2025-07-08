@@ -2,6 +2,7 @@ import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
 import DustParticles from '../components/WataLanding/DustParticles';
 import MusicPlayer from '../components/WataLanding/MusicPlayer';
+import HamburgerMenu from '../components/WataLanding/HamburgerMenu';
 // import Navigation from '@/components/Navigation';
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({
         <link rel="icon" href="/Icon/ajuste_avatar_Documents-3.png" type="image/png" />
       </head>
       <body className="bg-black">
+        <HamburgerMenu />
         {/* <Navigation /> */}
         <DustParticles />
         <MusicPlayer />
