@@ -760,6 +760,20 @@
     outline-offset: 2px;
 }
 
+.navButton,
+.carouselNavButton,
+.indicator {
+    border: none !important;
+    outline: none !important;
+}
+
+.navButton:focus,
+.carouselNavButton:focus,
+.indicator:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 
 /* Loading animation for images */
 
