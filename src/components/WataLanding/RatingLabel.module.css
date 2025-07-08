@@ -1,0 +1,48 @@
+.ratingLabel {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #181818;
+    border-radius: 12px;
+    padding: 18px 28px;
+    margin: 32px auto 0 auto;
+    max-width: 420px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+}
+
+.logo {
+    width: 64px;
+    height: auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.text strong {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.text span {
+    font-size: 0.98rem;
+    color: #ccc;
+}
+
+@media (max-width: 600px) {
+    .ratingLabel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 10px;
+        max-width: 98vw;
+    }
+    .logo {
+        width: 48px;
+        margin-bottom: 8px;
+    }
+}

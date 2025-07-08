@@ -407,29 +407,41 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.3);
     color: white;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.2s, transform 0.2s;
     z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 0;
 }
 
 .carouselNavButton:hover {
-    background: var(--accent-color);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-50%) scale(1.08);
 }
 
 .carouselPrevButton {
-    left: 1rem;
+    left: 12px;
 }
 
 .carouselNextButton {
-    right: 1rem;
+    right: 12px;
+}
+
+.carouselNavButton svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    stroke: white;
 }
 
 

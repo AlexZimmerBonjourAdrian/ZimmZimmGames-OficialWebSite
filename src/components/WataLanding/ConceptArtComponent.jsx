@@ -198,33 +198,31 @@ const ConceptArtComponent = () => {
                 </div>
               ))}
             </motion.div>
-            
-            {/* Carousel Navigation */}
-            <div className={styles.carouselNavigation}>
-              <button 
-                className={styles.carouselButton}
-                onClick={prevCarousel}
-                aria-label="Previous"
-              >
-                Previous
-              </button>
-              <div className={styles.carouselDots}>
-                {conceptArtImages.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`${styles.carouselDot} ${index === carouselIndex ? styles.active : ''}`}
-                    onClick={() => setCarouselIndex(index)}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-              <button 
-                className={styles.carouselButton}
-                onClick={nextCarousel}
-                aria-label="Next"
-              >
-                Next
-              </button>
+            {/* Minimal Arrow Navigation */}
+            <button 
+              className={`${styles.carouselNavButton} ${styles.carouselPrevButton}`}
+              onClick={prevCarousel}
+              aria-label="Previous"
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button 
+              className={`${styles.carouselNavButton} ${styles.carouselNextButton}`}
+              onClick={nextCarousel}
+              aria-label="Next"
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+            </button>
+            {/* Carousel Dots */}
+            <div className={styles.carouselDots}>
+              {conceptArtImages.map((_, index) => (
+                <button
+                  key={index}
+                  className={`${styles.carouselDot} ${index === carouselIndex ? styles.active : ''}`}
+                  onClick={() => setCarouselIndex(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         )}
