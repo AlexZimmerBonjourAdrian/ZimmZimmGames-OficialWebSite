@@ -1,0 +1,62 @@
+{
+    "name": "W.A.T.A - Where Are The Alices? | ZimmZimm Games",
+    "short_name": "W.A.T.A",
+    "description": "Un juego de terror psicológico independiente que desafía la realidad",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#dc2626",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "es",
+    "categories": ["games", "entertainment"],
+    "icons": [{
+            "src": "/Icon/ajuste_avatar_Documents-3.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/Icon/ajuste_avatar_Documents-3.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [{
+            "src": "/images/Wata/WhereAreTheAlices.JPG",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "W.A.T.A - Where Are The Alices?"
+        },
+        {
+            "src": "/images/Wata/Door.PNG",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "La puerta hacia el misterio"
+        }
+    ],
+    "shortcuts": [{
+            "name": "Descargar Demo",
+            "short_name": "Demo",
+            "description": "Descarga la demo de W.A.T.A",
+            "url": "/wata/demo",
+            "icons": [{
+                "src": "/Icon/ajuste_avatar_Documents-3.png",
+                "sizes": "96x96"
+            }]
+        },
+        {
+            "name": "Galería",
+            "short_name": "Galería",
+            "description": "Ver concept art y capturas",
+            "url": "/wata/gallery",
+            "icons": [{
+                "src": "/Icon/ajuste_avatar_Documents-3.png",
+                "sizes": "96x96"
+            }]
+        }
+    ]
+}
