@@ -6,7 +6,7 @@ import CharactersComponent from '@/components/WataLanding/CharactersComponent';
 import DemoSection from '@/components/WataLanding/DemoSection';
 import GameExtrasSection from '@/components/WataLanding/GameExtrasSection';
 import Footer from '@/components/WataLanding/Footer';
-import TrailerSection from '@/components/WataLanding/TrailerSection';
+//import TrailerSection from '@/components/WataLanding/TrailerSection';
 import GameplaySection from '@/components/WataLanding/GameplaySection';
 //import PlatformsSection from '@/components/WataLanding/PlatformsSection';
 import EngineSection from '@/components/WataLanding/EngineSection';
@@ -39,8 +39,8 @@ export default function HomePage() {
       <DemoSection />
       <SectionDivider />
 
-      {/* Trailer Section */}
-      <TrailerSection />
+      {/*  <TrailerSection /> */}
+     
       <SectionDivider />
 
       {/* Game Extras Section */}

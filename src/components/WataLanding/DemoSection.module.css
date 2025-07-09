@@ -346,24 +346,30 @@
 .downloadButton {
     width: 260px;
     padding: 1rem 2rem;
-    background: var(--accent-color);
-    color: white;
-    border: none;
+    background: #FFD700;
+    color: #18181c;
+    border: 2px solid #FFD700;
     border-radius: 8px;
     font-family: var(--font-courier);
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 0.2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    letter-spacing: 1px;
+    text-shadow: none;
 }
 
 .downloadButton:hover:not(:disabled) {
-    background: var(--accent-color-hover);
+    background: #18181c;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    box-shadow: 0 4px 24px #FFD70033;
     transform: translateY(-2px);
 }
 
