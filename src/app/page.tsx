@@ -13,6 +13,7 @@ import EngineSection from '@/components/WataLanding/EngineSection';
 import SectionDivider from '@/components/WataLanding/SectionDivider';
 //import RoadmapSection from '@/components/WataLanding/RoadmapSection';
 import UpdatesSection from '@/components/WataLanding/UpdatesSection';
+import PatreonSection from '@/components/WataLanding/PatreonSection';
 
 
 export default function HomePage() {
@@ -53,6 +54,10 @@ export default function HomePage() {
 
       {/* Updates Section */}
       <UpdatesSection />
+      <SectionDivider />
+
+      {/* Patreon Section */}
+      <PatreonSection />
       <SectionDivider />
 
       {/* Engine Section */}
