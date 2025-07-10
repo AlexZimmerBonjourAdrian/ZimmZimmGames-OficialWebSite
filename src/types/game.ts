@@ -5,6 +5,8 @@ export interface Game {
   image: string;
   platforms: string[];
   features: string[];
-  status: 'released' | 'coming_soon';
+  status: 'released' | 'development';
   universe: string;
+  repository?: string;
+  steamUrl?: string;
 } 
