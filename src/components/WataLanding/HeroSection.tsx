@@ -62,7 +62,7 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            Juega como una liebre detective en un mundo donde los dragones son taxis y los conejos parlantes dirigen corporaciones. Cada decisión deja una huella permanente en un sistema de relaciones donde los NPCs nunca olvidan.
+            Cuando la pequeña Alicia desaparece, una liebre detective se ve arrastrada al enfrentamiento con un antiguo enemigo: un conejo diminuto pero letal, cuya maldad es una peste olvidada. Este caso es solo la entrada a un infierno personal, una travesía donde resolver esta conspiración podría costarle la última pizca de su humanidad.
           </motion.p>
           
           {/* Botones de acción */}

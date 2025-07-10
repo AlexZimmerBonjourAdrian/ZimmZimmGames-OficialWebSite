@@ -14,6 +14,7 @@ import SectionDivider from '@/components/WataLanding/SectionDivider';
 //import RoadmapSection from '@/components/WataLanding/RoadmapSection';
 import UpdatesSection from '@/components/WataLanding/UpdatesSection';
 import PatreonSection from '@/components/WataLanding/PatreonSection';
+import TeamSelector from '@/components/WataLanding/TeamSelector';
 
 
 export default function HomePage() {
@@ -34,6 +35,10 @@ export default function HomePage() {
       
       {/* Characters Section */}
       <CharactersComponent />
+      <SectionDivider />
+
+      {/* Team Selector Section */}
+      <TeamSelector />
       <SectionDivider />
       
       {/* Demo Section */}

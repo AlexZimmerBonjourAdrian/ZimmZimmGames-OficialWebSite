@@ -16,15 +16,15 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
           <h3>ZimmZimm Games</h3>
-          <p>An independent game development studio focused on creating unique psychological horror experiences.</p>
+          <p>Estudio indie creando aventuras donde los conejos pueden ser villanos y tú puedes ser parte de la historia. ¡Gracias por apoyar y compartir la locura!</p>
         </div>
         <div className={styles.footerSection}>
-          <h3>WATA</h3>
-          <p>A psychological horror game where reality and nightmare blur together in Alice&apos;s twisted journey.</p>
+          <h3>W.A.T.A</h3>
+          <p>Un juego donde la aventura, el misterio y el humor se mezclan. ¿Te animas a luchar contra un conejo villanesco? Únete a la comunidad, apóyanos en Patreon o simplemente comparte el proyecto. ¡Cada ayuda cuenta!</p>
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <p>&copy; {new Date().getFullYear()} ZimmZimm Games. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} ZimmZimm Games. Todos los derechos reservados. <span role="img" aria-label="conejo">🐰</span></p>
       </div>
     </footer>
   );
