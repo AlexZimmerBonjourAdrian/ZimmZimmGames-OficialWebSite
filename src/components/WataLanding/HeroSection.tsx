@@ -56,13 +56,13 @@ export default function HeroSection() {
           
           {/* Descripción simple */}
           <motion.p 
-            className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed"
             style={{ fontFamily: 'var(--font-courier), monospace' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            A psychological horror game where reality fades away.
+            Juega como una liebre detective en un mundo donde los dragones son taxis y los conejos parlantes dirigen corporaciones. Cada decisión deja una huella permanente en un sistema de relaciones donde los NPCs nunca olvidan.
           </motion.p>
           
           {/* Botones de acción */}

@@ -5,23 +5,23 @@ import styles from './GameplaySection.module.css';
 const gameplayData = [
   {
     image: '/images/Wata/Menu-8.PNG',
-    heading: 'Descend into Madness',
-    text: `Step into Alice's fractured mind as you explore surreal environments where reality and nightmare blend. Each area is filled with secrets, dangers, and shifting perspectives that challenge your perception.`,
+    heading: 'Sistema de Emociones Reactivo',
+    text: `Tu estado emocional no es solo un número en pantalla. Cada decisión, cada interacción, cada descubrimiento altera tu psicología de forma permanente. La ira te hace más agresivo, la tristeza te vuelve más vulnerable, y la determinación puede salvarte de situaciones imposibles.`,
     bullets: [
-      'Uncover hidden paths and mind-bending puzzles',
-      'Face psychological horrors and shifting environments',
-      'Experience a story that adapts to your choices'
+      'Emociones que cambian tu forma de jugar',
+      'Estados psicológicos con ventajas y desventajas (Ej: Furia)',
+      'Narrativa que se adapta a tu estado mental adaptando tus respuestas a tu emoción'
     ],
     imageLeft: true
   },
   {
     image: '/images/Wata/Menu-7.PNG',
-    heading: 'Master Unique Abilities',
-    text: `Gain new powers as Alice confronts her fears. Use stealth, manipulation of reality, and quick reflexes to survive encounters with bizarre entities and escape deadly traps.`,
+    heading: 'Sistema de Relaciones Impactantes',
+    text: `"Que te odien, amen, admiren pero jamás sean indiferentes en tu presencia." En un mundo de fantasía urbana donde los dragones son taxis y los conejos parlantes dirigen compañías, cada interacción deja una huella permanente. Los NPCs recuerdan, reaccionan y evolucionan basándose en tus acciones, creando relaciones que pueden salvarte o destruirte.`,
     bullets: [
-      'Unlock reality-bending abilities',
-      'Evade and outsmart relentless pursuers',
-      'Adapt to ever-changing threats and environments'
+      'NPCs que nunca olvidan tus acciones',
+      'Relaciones que evolucionan de amor a odio',
+      'Consecuencias emocionales que afectan el gameplay'
     ],
     imageLeft: false
   }
