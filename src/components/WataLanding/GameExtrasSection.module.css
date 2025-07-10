@@ -33,11 +33,6 @@
     font-style: italic;
 }
 
-:root {
-    --font-alice: 'Alice_in_Wonderland_3', cursive;
-    --font-courier: 'CourierPrime', monospace;
-}
-
 
 /* Forzar fuente Alice en todos los títulos */
 

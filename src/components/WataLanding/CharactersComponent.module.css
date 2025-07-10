@@ -1,12 +1,3 @@
-:root {
-    --darker-bg: #18181c;
-    --card-bg: #23232b;
-    --accent-color: #e94560;
-    --text-color: #f5f5fa;
-    --text-secondary: #b0b0c3;
-    --border-color: #2d2d38;
-}
-
 .charactersSection {
     background: var(--darker-bg);
     padding: 6rem 2rem;

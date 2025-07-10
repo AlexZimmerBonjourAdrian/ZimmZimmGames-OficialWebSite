@@ -18,11 +18,19 @@ export const event = ({ action, category, label, value }: {
   value?: number;
 }) => {
   if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', action, {
+    const eventConfig: Record<string, string | number | boolean> = {
       event_category: category,
-      event_label: label,
-      value: value,
-    });
+    };
+    
+    if (label !== undefined) {
+      eventConfig.event_label = label;
+    }
+    
+    if (value !== undefined) {
+      eventConfig.value = value;
+    }
+    
+    window.gtag('event', action, eventConfig);
   }
 };
 
@@ -46,7 +54,7 @@ export const trackDownload = (fileType: string, fileName: string) => {
 };
 
 // Social media tracking
-export const trackSocialShare = (platform: string, _url: string) => {
+export const trackSocialShare = (platform: string) => {
   event({
     action: 'share',
     category: 'social',
@@ -66,7 +74,7 @@ export const trackPerformance = (metric: string, value: number) => {
 };
 
 // Error tracking
-export const trackError = (error: string, _errorInfo?: unknown) => {
+export const trackError = (error: string) => {
   event({
     action: 'error',
     category: 'error',

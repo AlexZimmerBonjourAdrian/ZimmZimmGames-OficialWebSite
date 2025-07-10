@@ -54,6 +54,11 @@
     --border-color: rgba(255, 0, 0, 0.3);
     --font-alice: 'Alice', serif;
     --font-courier: 'CourierPrime', monospace;
+    --text-secondary: #cccccc;
+    --completed-color: #4CAF50;
+    --in-progress-color: #2196F3;
+    --planned-color: #FF9800;
+    --delayed-color: #f44336;
 }
 
 @theme inline {

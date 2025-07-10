@@ -19,21 +19,6 @@
     font-style: normal;
 }
 
-:root {
-    --font-alice: 'Alice_in_Wonderland_3', cursive;
-    --font-courier: 'CourierPrime', monospace;
-    --accent-color: #ff0000;
-    --accent-color-hover: #cc0000;
-    --darker-bg: #1a1a1a;
-    --card-bg: #2a2a2a;
-    --text-color: #ffffff;
-    --text-secondary: #cccccc;
-    --completed-color: #4CAF50;
-    --in-progress-color: #2196F3;
-    --planned-color: #FF9800;
-    --delayed-color: #f44336;
-}
-
 .roadmapSection {
     background: var(--darker-bg);
     padding: 4rem 2rem 2rem;
