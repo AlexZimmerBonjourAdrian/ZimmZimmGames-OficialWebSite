@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import WATA from './WATA.jsx';
+import WATA from './WATA';
 
 export const metadata: Metadata = {
   title: 'W.A.T.A - Where Are The Alices? | Juego de Terror Psicológico',
