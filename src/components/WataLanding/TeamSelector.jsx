@@ -4,9 +4,30 @@ import styles from './TeamSelector.module.css';
 
 const teamMessages = {
   none: '¿De qué lado estás en esta aventura? Elige tu equipo:',
-  liebre: '¡Bienvenido al Team Liebre! Rápido, curioso y siempre un paso adelante. 🐇',
-  conejo: '¡Bienvenido al Team Conejo! Astuto, misterioso y con planes villanescos... 🐰'
+  juno: '¡Bienvenido al Team Juno! Detective, valiente y siempre buscando la verdad. 🔍',
+  cb: '¡Bienvenido al Team CB! Misterioso, astuto y con planes que van más allá de la realidad... 🐰'
 };
+
+const teams = [
+  {
+    id: 'juno',
+    name: 'Team Juno',
+    alias: 'The Detective',
+    profileImage: '/Characters/Profile/Juno.png',
+    description: 'Detective valiente que busca la verdad',
+    emoji: '🔍',
+    color: '#4CAF50'
+  },
+  {
+    id: 'cb',
+    name: 'Team CB',
+    alias: 'The White Rabbit',
+    profileImage: '/Characters/Profile/CB.png',
+    description: 'Misterioso conejo blanco con planes ocultos',
+    emoji: '🐰',
+    color: '#FF9800'
+  }
+];
 
 export default function TeamSelector() {
   const [team, setTeam] = useState('none');
@@ -20,7 +41,7 @@ export default function TeamSelector() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        ¿Eres Team Liebre o Team Conejo?
+        ¿Eres Team Juno o Team CB?
       </motion.h2>
       <motion.p 
         className={styles.message}
@@ -30,23 +51,44 @@ export default function TeamSelector() {
       >
         {teamMessages[team]}
       </motion.p>
-      <div className={styles.buttonGroup}>
-        <motion.button
-          className={`${styles.teamButton} ${team === 'liebre' ? styles.selected : ''}`}
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setTeam('liebre')}
-        >
-          Team Liebre 🐇
-        </motion.button>
-        <motion.button
-          className={`${styles.teamButton} ${team === 'conejo' ? styles.selected : ''}`}
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setTeam('conejo')}
-        >
-          Team Conejo 🐰
-        </motion.button>
+      
+      <div className={styles.teamsContainer}>
+        {teams.map((teamData) => (
+          <motion.div
+            key={teamData.id}
+            className={`${styles.teamCard} ${team === teamData.id ? styles.selected : ''}`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setTeam(teamData.id)}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: teamData.id === 'juno' ? 0.3 : 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className={styles.profileImageContainer}>
+              <img 
+                src={teamData.profileImage} 
+                alt={teamData.name}
+                className={styles.profileImage}
+                loading="lazy"
+              />
+              <div className={styles.teamEmoji}>{teamData.emoji}</div>
+            </div>
+            <div className={styles.teamInfo}>
+              <h3 className={styles.teamName}>{teamData.name}</h3>
+              <p className={styles.teamAlias}>{teamData.alias}</p>
+              <p className={styles.teamDescription}>{teamData.description}</p>
+            </div>
+            {team === teamData.id && (
+              <motion.div 
+                className={styles.selectedIndicator}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            )}
+          </motion.div>
+        ))}
       </div>
     </section>
   );

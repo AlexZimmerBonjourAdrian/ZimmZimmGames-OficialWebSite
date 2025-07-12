@@ -47,23 +47,23 @@ export default function HomePage() {
 
       {/*  <TrailerSection /> */}
      
-      <SectionDivider />
+
 
       {/* <GameExtrasSection /> */}
       
-      <SectionDivider />
+      
 
       {/* <RoadmapSection /> */}
       
-      <SectionDivider />
+      
 
       {/* Updates Section */}
-      <UpdatesSection />
-      <SectionDivider />
+     
+      
 
-      {/* Patreon Section */}
+      {/*    <SectionDivider /> */}
       <PatreonSection />
-      <SectionDivider />
+   
 
       {/* Engine Section */}
       <EngineSection />
