@@ -8,7 +8,7 @@ import Footer from '@/components/WataLanding/Footer';
 import GameplaySection from '@/components/WataLanding/GameplaySection';
 import EngineSection from '@/components/WataLanding/EngineSection';
 import SectionDivider from '@/components/WataLanding/SectionDivider';
-import UpdatesSection from '@/components/WataLanding/UpdatesSection';
+//import UpdatesSection from '@/components/WataLanding/UpdatesSection';
 import PatreonSection from '@/components/WataLanding/PatreonSection';
 import TeamSelector from '@/components/WataLanding/TeamSelector';
 import LaunchInfoSection from '@/components/WataLanding/LaunchInfoSection';
