@@ -1,0 +1,186 @@
+.launchInfoSection {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+}
+
+.launchInfoSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/Wata/Door.PNG') center/cover;
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 16px;
+    font-family: var(--font-alice), cursive;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: var(--font-courier), monospace;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.infoCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.infoCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(220, 38, 38, 0.3);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.infoCard h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-family: var(--font-courier), monospace;
+}
+
+.infoCard p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.infoCard ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.infoCard li {
+    color: #c0c0c0;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.infoCard li::before {
+    content: '•';
+    color: #dc2626;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #808080;
+    font-style: italic;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #10b981;
+    margin-bottom: 10px;
+}
+
+.ctaSection {
+    text-align: center;
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.ctaSection h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 16px;
+    font-family: var(--font-courier), monospace;
+}
+
+.ctaSection p {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ctaButton {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-courier), monospace;
+}
+
+.ctaButton:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .infoGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .infoCard {
+        padding: 25px;
+    }
+    .ctaSection {
+        padding: 30px 20px;
+    }
+    .ctaSection h3 {
+        font-size: 1.5rem;
+    }
+}
