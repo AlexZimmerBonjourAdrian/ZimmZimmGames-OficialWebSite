@@ -1,15 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import DustParticles from './DustParticles';
 import styles from './HomeSection.module.css';
 import { DialogueGame } from '@/components';
-import { SteamWishlistButton, CharacterGallery } from '@/components';
+import { SteamWishlistButton, CharacterGallery, Team } from '@/components';
 import LoadingPage from '@/components/LoadingPage';
 import graph from '@/components/DialogueGame/dialogue.example.json';
-import { getWishlistFromCookie, setWishlistCookie } from '@/lib/cookies';
+import { getWishlistFromCookie, setWishlistCookie, removeWishlistCookie } from '@/lib/cookies';
 
 const HomeSection = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [showDialogue, setShowDialogue] = useState(false);
   const [showSteam, setShowSteam] = useState(false);
@@ -36,6 +38,14 @@ const HomeSection = () => {
   useEffect(() => {
     setWishlistCookie(wishlistEnabled);
   }, [wishlistEnabled]);
+
+  const handleResetCookiesAndReturn = () => {
+    removeWishlistCookie();
+    setWishlistEnabled(false);
+    setShowSteam(false);
+    setShowDialogue(false);
+    router.push('/');
+  };
   // Mostrar página de carga si está cargando
   if (isLoading) {
     return <LoadingPage onComplete={handleLoadingComplete} duration={2000} />;
@@ -115,6 +125,24 @@ const HomeSection = () => {
                     duoDesc: 'They are adorable, I would love to see them together... oh, perhaps they already were?'
                   }}
                 />
+                <Team
+                  title="Team"
+                  members={[
+                    { name: 'Alex Zimmer', role: 'PM, Programmer and Writer', note: "Rabbit, femboy son of a bitch, my boy — so proud." },
+                    { name: 'Lily', role: 'Translator', note: "I make sappy CB memes." },
+                    { name: 'Pami', role: 'Literary Consultant', note: "I didn't know being experts at writing rabbits would be useful — poor thing." },
+                    { name: 'EveChan', role: 'Voice Actress: CB and Juno', note: "Look at this idiot, I want a PILLOW." },
+                    { name: 'Father', role: 'Marketing and Post-Producer', note: "It's fine." },
+                    { name: 'Yahjix', role: 'Lead Artist', note: "Yeah, right — 'warrior mom' Juno." },
+                  ]}
+                />
+                <button
+                  className={`${styles.heroSubtitle} ${styles.heroCta}`}
+                  onClick={handleResetCookiesAndReturn}
+                  aria-label="Return to Wonderland"
+                >
+                  Return to Wonderland
+                </button>
               </div>
             </div>
           )}
