@@ -130,7 +130,7 @@ const HomeSection = () => {
                   members={[
                     { name: 'Alex Zimmer', role: 'PM, Programmer and Writer', note: "Rabbit, femboy son of a bitch, my boy — so proud." },
                     { name: 'Lily', role: 'Translator', note: "I make sappy CB memes." },
-                    { name: 'Pami', role: 'Literary Consultant', note: "I didn't know being experts at writing rabbits would be useful — poor thing." },
+                    { name: 'Pami', role: 'Literary Consultant', note: "I LOVE IT! Then I remember he's a politician and it goes away." },
                     { name: 'EveChan', role: 'Voice Actress: CB and Juno', note: "Look at this idiot, I want a PILLOW." },
                     { name: 'Father', role: 'Marketing and Post-Producer', note: "It's fine." },
                     { name: 'Yahjix', role: 'Lead Artist', note: "Yeah, right — 'warrior mom' Juno." },
