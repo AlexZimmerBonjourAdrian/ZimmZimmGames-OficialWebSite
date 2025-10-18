@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import DustParticles from './DustParticles';
 import styles from './HomeSection.module.css';
 import { DialogueGame } from '@/components';
-import { SteamWishlistButton, CharacterGallery, Team } from '@/components';
+import { SteamWishlistButton, CharacterGallery, Team, ReserveCopyButton } from '@/components';
 import LoadingPage from '@/components/LoadingPage';
 import graph from '@/components/DialogueGame/dialogue.example.json';
 import { getWishlistFromCookie, setWishlistCookie, removeWishlistCookie } from '@/lib/cookies';
@@ -116,7 +117,15 @@ const HomeSection = () => {
                   key={`wl-${transitionKey}`}
                   className={`${styles.enterContainer} ${styles.enterWishlist}`}
                   size="medium" 
-                  enabled={wishlistEnabled}
+                  enabled={false}
+                />
+                <ReserveCopyButton
+                  key={`reserve-${transitionKey}`}
+                  className={`${styles.enterContainer} ${styles.enterWishlist}`}
+                  size="medium"
+                  enabled={true}
+                  href="https://forms.gle/i73jWkaX8JdcsE8r7"
+                  target="_blank"
                 />
                 <CharacterGallery 
                   key={`gal-${transitionKey}`}
@@ -131,6 +140,23 @@ const HomeSection = () => {
                     duoDesc: 'They are adorable, I would love to see them together... oh, perhaps they already were?'
                   }}
                 />
+                {/* Gameplay showcase (below gallery, before team) */}
+                <div className={`${styles.enterContainer} ${styles.enterGallery} ${styles.gameplaySection}`} key={`gameplay-${transitionKey}`}>
+                  <div className={styles.gameplayCard}>
+                    <Image
+                      src="/Gameplay/Case00-CB.jpg"
+                      alt="W.A.T.A - CB interrogation - gameplay still"
+                      width={1280}
+                      height={720}
+                      className={styles.gameplayImage}
+                      priority
+                    />
+                  </div>
+                  <div className={styles.gameplayCaption}>
+                    <div className={styles.gameplayCaptionTitle}>Juno:</div>
+                    <div className={styles.gameplayCaptionText}>Where is Alice Rabbit??!! Answer me!</div>
+                  </div>
+                </div>
                 <Team
                   key={`team-${transitionKey}`}
                   className={`${styles.enterContainer}`}

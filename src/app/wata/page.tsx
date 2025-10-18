@@ -23,6 +23,13 @@ export const metadata: Metadata = {
     siteName: 'ZimmZimm Games',
     images: [
       {
+        url: '/Gameplay/Case00-CB.jpg',
+        width: 1280,
+        height: 720,
+        alt: 'W.A.T.A - CB interrogation - gameplay still',
+        type: 'image/jpeg',
+      },
+      {
         url: '/ConceptArt/ConceptJunoAndCB.png',
         width: 1200,
         height: 630,
@@ -40,6 +47,7 @@ export const metadata: Metadata = {
     title: 'W.A.T.A - Where Are The Alices? | Psychological Horror',
     description: "A Wonderland detective fights to rescue the Alices from a fate worse than death at the hands of a 'monstrous' rabbit.",
     images: [
+      '/Gameplay/Case00-CB.jpg',
       '/ConceptArt/ConceptJunoAndCB.png',
       '/Characters/Profile/CB.png',
       '/Characters/Profile/Juno.png'

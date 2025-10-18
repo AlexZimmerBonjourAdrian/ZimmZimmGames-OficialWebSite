@@ -163,6 +163,57 @@
 	animation-delay: 260ms;
 }
 
+/* Gameplay showcase styles */
+.gameplaySection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameplayCard {
+    width: min(1080px, 92vw);
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+.gameplayImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gameplayCaption {
+    width: min(1080px, 92vw);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #e6e6e6;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    font-family: var(--font-courier);
+    text-align: center;
+    margin-top: 4px;
+}
+
+.gameplayCaptionTitle {
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.2rem;
+    font-family: var(--font-courier);
+}
+
+.gameplayCaptionText {
+    opacity: 0.95;
+}
+
 @keyframes enterSmooth {
     0% {
         opacity: 0;

@@ -20,7 +20,7 @@ const SteamSection: React.FC<SteamSectionProps> = ({
       <div className={styles.container}>
         {/* Botón de Steam */}
         <div className={styles.steamButtonContainer}>
-          <SteamWishlistButton size={buttonSize} />
+          <SteamWishlistButton size={buttonSize} enabled={false} />
         </div>
         
         {/* Galería de personajes */}
