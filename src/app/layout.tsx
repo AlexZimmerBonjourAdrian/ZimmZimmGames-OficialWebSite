@@ -120,8 +120,8 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        <link rel="icon" href="/Icon/ajuste_avatar_Documents-3.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/Icon/ajuste_avatar_Documents-3.png" />
+        <link rel="icon" href="/Icon/ajuste_avatar_Documents-3-Black.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/Icon/ajuste_avatar_Documents-3-Black.png" />
         <link rel="manifest" href="/manifest.json" />
         
         {/* Preconnect para mejorar performance */}
