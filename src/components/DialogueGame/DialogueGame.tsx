@@ -12,7 +12,27 @@ export interface DialogueGameProps {
 }
 
 const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', className, onSkip }) => {
+  // Validar que el graph existe y tiene la estructura correcta
+  if (!graph || !graph.start || !graph.nodes) {
+    console.error('DialogueGame: Invalid graph structure', graph);
+    return (
+      <div className={[styles.container, className].filter(Boolean).join(' ')}>
+        <div className={styles.text}>Error: Invalid dialogue data</div>
+      </div>
+    );
+  }
+
   const { currentNode, selectChoice, getIsChoiceDisabled } = useDialogueEngine(graph, locale);
+
+  // Validar que currentNode existe
+  if (!currentNode) {
+    console.error('DialogueGame: No current node available');
+    return (
+      <div className={[styles.container, className].filter(Boolean).join(' ')}>
+        <div className={styles.text}>Error: No dialogue content available</div>
+      </div>
+    );
+  }
 
   const choices = useMemo(() => currentNode.choices ?? [], [currentNode]);
 

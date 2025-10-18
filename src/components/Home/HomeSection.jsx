@@ -55,6 +55,7 @@ const HomeSection = () => {
   const [heroFading, setHeroFading] = useState(false);
   const [wishlistEnabled, setWishlistEnabled] = useState(false); // Controla si el wishlist está habilitado
   const [particleMode, setParticleMode] = useState('auto'); // Controla el modo de partículas
+  const [isTransitioning, setIsTransitioning] = useState(false); // Controla si está en transición
 
   const transitionKey = `${wishlistEnabled}-${showSteam}-${showDialogue}`;
 
@@ -66,6 +67,13 @@ const HomeSection = () => {
       setShowSteam(true);
     }
   }, []);
+
+  // Debug: Log cuando se muestra el diálogo
+  useEffect(() => {
+    if (showDialogue) {
+      console.log('DialogueGame: Showing dialogue', { graph, showDialogue, dialogueFading });
+    }
+  }, [showDialogue, graph, dialogueFading]);
 
   // Función para completar la carga
   const handleLoadingComplete = () => {
@@ -82,6 +90,9 @@ const HomeSection = () => {
     setWishlistEnabled(false);
     setShowSteam(false);
     setShowDialogue(false);
+    setDialogueFading(false); // Reset dialogue fading state
+    setHeroFading(false); // Reset hero fading state
+    setIsTransitioning(false); // Reset transition state
     router.push('/');
   };
 
@@ -126,8 +137,14 @@ const HomeSection = () => {
               <button
                 className={`${styles.heroSubtitle} ${styles.heroCta}`}
                 onClick={() => {
+                  if (isTransitioning) return; // Prevenir múltiples clics
+                  setIsTransitioning(true);
                   setHeroFading(true);
-                  setTimeout(() => setShowDialogue(true), FLOW_MS);
+                  setTimeout(() => {
+                    setShowDialogue(true);
+                    setHeroFading(false); // Reset heroFading después de la transición
+                    setIsTransitioning(false); // Reset transition state
+                  }, FLOW_MS);
                 }}
                 aria-label="Enter the rabbit hole"
               >
@@ -149,17 +166,38 @@ const HomeSection = () => {
 
           {showDialogue && (
             <div className={`${styles.dialogueInline} ${dialogueFading ? styles.fadeOut : styles.dialogueFadeIn}`} style={{ ['--flow-duration']: `${FLOW_MS}ms` }}>
-              <DialogueGame
-                graph={graph}
-                onSkip={() => {
-                  setDialogueFading(true);
-                  setTimeout(() => {
-                    setShowDialogue(false);
-                    setShowSteam(true);
-                    setWishlistEnabled(true); // Habilita automáticamente el wishlist
-                  }, FLOW_MS);
-                }}
-              />
+              {graph && graph.start && graph.nodes ? (
+                <DialogueGame
+                  graph={graph}
+                  onSkip={() => {
+                    setDialogueFading(true);
+                    setTimeout(() => {
+                      setShowDialogue(false);
+                      setDialogueFading(false); // Reset dialogueFading
+                      setShowSteam(true);
+                      setWishlistEnabled(true); // Habilita automáticamente el wishlist
+                    }, FLOW_MS);
+                  }}
+                />
+              ) : (
+                <div className={styles.dialogueError}>
+                  <div className={styles.text}>Error: No dialogue data available</div>
+                  <button
+                    className={styles.skipButton}
+                    onClick={() => {
+                      setDialogueFading(true);
+                      setTimeout(() => {
+                        setShowDialogue(false);
+                        setDialogueFading(false);
+                        setShowSteam(true);
+                        setWishlistEnabled(true);
+                      }, FLOW_MS);
+                    }}
+                  >
+                    Continue
+                  </button>
+                </div>
+              )}
             </div>
           )}
 

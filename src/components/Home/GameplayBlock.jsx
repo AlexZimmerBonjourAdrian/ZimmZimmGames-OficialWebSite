@@ -7,6 +7,7 @@ import styles from './HomeSection.module.css';
 const GameplayBlock = () => {
   return (
     <div className={`${styles.enterContainer} ${styles.enterGallery} ${styles.gameplaySection}`}>
+      <h2 className={styles.gameplayTitle}>Gameplay</h2>
       <div className={styles.gameplayCard}>
         <Image
           src="/Gameplay/Case00-CB.jpg"

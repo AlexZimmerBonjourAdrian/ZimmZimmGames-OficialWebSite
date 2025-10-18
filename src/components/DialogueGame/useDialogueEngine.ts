@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState, useEffect } from 'react';
 
 export type LocalizedText = string | { en?: string; es?: string };
 
@@ -63,6 +63,26 @@ export function useDialogueEngine(
   graph: DialogueGraph,
   locale: 'en' | 'es' = 'en'
 ): UseDialogueEngineReturn {
+  // Validar que el graph tiene la estructura correcta
+  if (!graph || !graph.start || !graph.nodes) {
+    console.error('useDialogueEngine: Invalid graph structure', graph);
+    // Retornar un estado por defecto seguro
+    return {
+      currentNode: {
+        id: 'error',
+        speaker: 'System',
+        text: 'Error: Invalid dialogue data',
+        choices: []
+      },
+      askedChoicesByNode: {},
+      nodeHistory: [],
+      selectChoice: () => {},
+      goBack: () => {},
+      reset: () => {},
+      getIsChoiceDisabled: () => false
+    };
+  }
+
   const unknownRouteText = getLocalizedText(
     graph.unknownRouteText ?? { en: "I can't tell you that.", es: 'Eso no te lo puedo decir.' },
     locale
@@ -89,11 +109,22 @@ export function useDialogueEngine(
     [graph.nodes, unknownRouteText]
   );
 
-  const [currentNodeId, setCurrentNodeId] = useState<string>(graph.start);
+  // Validar que el nodo inicial existe
+  const initialNodeId = graph.nodes[graph.start] ? graph.start : Object.keys(graph.nodes)[0] || 'error';
+  
+  const [currentNodeId, setCurrentNodeId] = useState<string>(initialNodeId);
   const [askedChoicesByNode, setAskedChoicesByNode] = useState<Record<string, Set<string>>>(
     {}
   );
   const nodeHistoryRef = useRef<string[]>([]);
+
+  // Resetear el estado si el graph cambia
+  useEffect(() => {
+    const newInitialNodeId = graph.nodes[graph.start] ? graph.start : Object.keys(graph.nodes)[0] || 'error';
+    setCurrentNodeId(newInitialNodeId);
+    setAskedChoicesByNode({});
+    nodeHistoryRef.current = [];
+  }, [graph.start, graph.nodes]);
 
   const currentNode = useMemo<ResolvedNode>(() => {
     const raw = getNodeSafe(currentNodeId);
