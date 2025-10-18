@@ -3,7 +3,7 @@
  * Utiliza las rutas definidas en routes.ts
  */
 
-import { routes, getExistingRoutes, getWATARoutes, getMainRoutes } from '../routes';
+import { routes, getExistingRoutes } from '../routes';
 
 export interface NavigationItem {
   label: string;

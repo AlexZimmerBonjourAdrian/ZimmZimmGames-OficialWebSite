@@ -10,4 +10,4 @@ export * from '../routes';
 export * from './navigation';
 
 // Re-exportar componentes de navegación
-export { default as Navigation } from '../components/Navigation';
+// Eliminado: componente de navegación no existe actualmente
