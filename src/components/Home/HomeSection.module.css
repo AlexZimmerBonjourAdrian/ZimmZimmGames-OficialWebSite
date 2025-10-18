@@ -143,6 +143,44 @@
     justify-content: center;
 }
 
+/* Transiciones profesionales para wishlist + galería */
+.enterContainer {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    filter: blur(4px);
+    animation: enterSmooth 600ms ease forwards;
+}
+
+.enterWishlist {
+    animation-delay: 80ms;
+}
+
+.enterGallery {
+    animation-delay: 180ms;
+}
+
+.enterButton {
+	animation-delay: 260ms;
+}
+
+@keyframes enterSmooth {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+        filter: blur(4px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0) scale(1.0);
+        filter: blur(0.5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1.0);
+        filter: blur(0);
+    }
+}
+
 .fadeOut {
     animation: fadeOut var(--flow-duration, 0.45s) ease forwards;
 }

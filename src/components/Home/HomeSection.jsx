@@ -20,6 +20,8 @@ const HomeSection = () => {
   const [heroFading, setHeroFading] = useState(false);
   const [wishlistEnabled, setWishlistEnabled] = useState(false); // Controla si el wishlist está habilitado
 
+  const transitionKey = `${wishlistEnabled}-${showSteam}-${showDialogue}`;
+
   // Cargar estado del wishlist desde cookies al montar el componente
   useEffect(() => {
     const savedWishlistState = getWishlistFromCookie();
@@ -111,10 +113,14 @@ const HomeSection = () => {
             <div className={`${styles.steamSectionInline} ${styles.fadeIn}`} style={{ ['--flow-duration']: `${FLOW_MS}ms` }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
                 <SteamWishlistButton 
+                  key={`wl-${transitionKey}`}
+                  className={`${styles.enterContainer} ${styles.enterWishlist}`}
                   size="medium" 
                   enabled={wishlistEnabled}
                 />
                 <CharacterGallery 
+                  key={`gal-${transitionKey}`}
+                  className={`${styles.enterContainer} ${styles.enterGallery}`}
                   layout="grid" 
                   showTitles={false} 
                   variant="heroInline"
@@ -126,10 +132,12 @@ const HomeSection = () => {
                   }}
                 />
                 <Team
+                  key={`team-${transitionKey}`}
+                  className={`${styles.enterContainer}`}
                   title="Team"
                   members={[
                     { name: 'Alex Zimmer', role: 'PM, Programmer and Writer', note: "Rabbit, femboy son of a bitch, my boy — so proud." },
-                    { name: 'Lily', role: 'Translator', note: "I make sappy CB memes." },
+                    { name: 'Lily', role: 'Translator', note: "I make cursed CB memes." },
                     { name: 'Pami', role: 'Literary Consultant', note: "I LOVE IT! Then I remember he's a politician and it goes away." },
                     { name: 'EveChan', role: 'Voice Actress: CB and Juno', note: "Look at this idiot, I want a PILLOW." },
                     { name: 'Father', role: 'Marketing and Post-Producer', note: "It's fine." },
@@ -137,7 +145,8 @@ const HomeSection = () => {
                   ]}
                 />
                 <button
-                  className={`${styles.heroSubtitle} ${styles.heroCta}`}
+                  key={`btn-${transitionKey}`}
+                  className={`${styles.heroSubtitle} ${styles.heroCta} ${styles.enterContainer} ${styles.enterButton}`}
                   onClick={handleResetCookiesAndReturn}
                   aria-label="Return to Wonderland"
                 >
