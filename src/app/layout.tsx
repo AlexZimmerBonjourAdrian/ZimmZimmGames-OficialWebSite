@@ -1,7 +1,6 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
-import DustParticles from '../components/WataLanding/DustParticles';
-import MusicPlayer from '../components/WataLanding/MusicPlayer';
+import DustParticles from '../components/Home/DustParticles';
 //import HamburgerMenu from '../components/WataLanding/HamburgerMenu';
 // import Navigation from '@/components/Navigation';
 
@@ -213,7 +212,6 @@ export default function RootLayout({
        
         {/*  <HamburgerMenu />*/}
         <DustParticles />
-        <MusicPlayer />
         {children}
       </body>
     </html>

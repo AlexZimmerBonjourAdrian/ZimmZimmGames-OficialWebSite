@@ -1,0 +1,122 @@
+.steamSection {
+    width: 100%;
+    background: linear-gradient(180deg, #0f1419 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.steamSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(102, 192, 244, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(199, 213, 224, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.steamButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+}
+
+.characterGalleryContainer {
+    width: 100%;
+}
+
+
+/* Animaciones de entrada */
+
+.steamButtonContainer {
+    animation: slideInDown 0.8s ease-out;
+}
+
+.characterGalleryContainer {
+    animation: slideInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .steamSection {
+        padding: 2rem 0;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+    .steamButtonContainer {
+        margin-bottom: 3rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .steamSection {
+        padding: 1.5rem 0;
+    }
+    .container {
+        padding: 0 0.5rem;
+    }
+    .steamButtonContainer {
+        margin-bottom: 2rem;
+    }
+}
+
+
+/* Efectos de hover para toda la sección */
+
+.steamSection:hover .steamButtonContainer {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+
+/* Separador visual */
+
+.steamButtonContainer::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #66c0f4, transparent);
+    border-radius: 1px;
+}

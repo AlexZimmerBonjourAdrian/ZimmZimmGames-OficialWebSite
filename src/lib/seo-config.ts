@@ -12,8 +12,8 @@ export const siteConfig = {
 
 export const gameConfig = {
   name: 'W.A.T.A - Where Are The Alices?',
-  description: 'Una novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Dark fantasy, furry, noir y thriller político.',
-  genre: ['Visual Novel', 'Terror Psicológico', 'Dark Fantasy', 'Noir', 'Thriller Político', 'Furry', 'Bad Romance'],
+  description: 'A psychological horror visual novel inspired by Alice in Wonderland. Dark fantasy, furry, noir and political thriller.',
+  genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
   platform: ['PC', 'Windows', 'Android'],
   releaseDate: '2024',
   developer: 'ZimmZimm Games',
@@ -29,24 +29,24 @@ export const gameConfig = {
 // SEO metadata for different pages
 export const   seoMetadata = {
     home: {
-      title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico',
-      description: 'W.A.T.A (Where Are The Alices?) - Una novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Dark fantasy, furry, noir y thriller político.',
+      title: 'ZimmZimm Games - W.A.T.A | Psychological Horror Visual Novel',
+      description: 'W.A.T.A (Where Are The Alices?) - A psychological horror visual novel inspired by Alice in Wonderland. Dark fantasy, furry, noir and political thriller.',
       keywords: ['W.A.T.A', 'Where Are The Alices?', 'Alicia en el País de las Maravillas', 'Alice in Wonderland', 'visual novel', 'novela visual', 'dark fantasy', 'furry', 'noir', 'thriller político', 'terror psicológico', 'ZimmZimm Games'],
     },
     wata: {
-      title: 'W.A.T.A - Where Are The Alices? | Novela Visual de Terror Psicológico',
-      description: 'Una novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Combina dark fantasy, furry, noir y thriller político en una experiencia única.',
+      title: 'W.A.T.A - Where Are The Alices? | Psychological Horror Visual Novel',
+      description: 'A psychological horror visual novel inspired by Alice in Wonderland. Combines dark fantasy, furry, noir and political thriller in a unique experience.',
       keywords: ['W.A.T.A', 'Where Are The Alices?', 'Alicia en el País de las Maravillas', 'Alice in Wonderland', 'visual novel', 'novela visual', 'dark fantasy', 'furry', 'noir', 'thriller político', 'conejo', 'rabbit', 'reina', 'queen', 'detective', 'bad romance', 'Steam', 'itch.io', 'GameJolt'],
     },
   about: {
-    title: 'Acerca de ZimmZimm Games | Estudio de Desarrollo Independiente',
-    description: 'Conoce más sobre ZimmZimm Games, un estudio independiente dedicado a crear experiencias únicas en videojuegos.',
-    keywords: ['ZimmZimm Games', 'estudio independiente', 'desarrollo de videojuegos', 'juegos indie'],
+    title: 'About ZimmZimm Games | Independent Development Studio',
+    description: 'Learn more about ZimmZimm Games, an independent studio dedicated to creating unique gaming experiences.',
+    keywords: ['ZimmZimm Games', 'independent studio', 'game development', 'indie games'],
   },
   support: {
-    title: 'Soporte | ZimmZimm Games',
-    description: 'Obtén ayuda y soporte para nuestros juegos. Encuentra respuestas a preguntas frecuentes y contacta con nuestro equipo.',
-    keywords: ['soporte', 'ayuda', 'ZimmZimm Games', 'W.A.T.A', 'preguntas frecuentes'],
+    title: 'Support | ZimmZimm Games',
+    description: 'Get help and support for our games. Find answers to frequently asked questions and contact our team.',
+    keywords: ['support', 'help', 'ZimmZimm Games', 'W.A.T.A', 'frequently asked questions'],
   },
 };
 
@@ -68,8 +68,8 @@ export const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'VideoGame',
       name: 'W.A.T.A - Where Are The Alices?',
-      description: 'Una novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Combina dark fantasy, furry, noir y thriller político en una experiencia única.',
-      genre: ['Visual Novel', 'Terror Psicológico', 'Dark Fantasy', 'Noir', 'Thriller Político', 'Furry', 'Bad Romance'],
+      description: 'A psychological horror visual novel inspired by Alice in Wonderland. Combines dark fantasy, furry, noir and political thriller in a unique experience.',
+      genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
       gamePlatform: ['PC', 'Windows', 'Android'],
     applicationCategory: 'Game',
     operatingSystem: 'Windows',

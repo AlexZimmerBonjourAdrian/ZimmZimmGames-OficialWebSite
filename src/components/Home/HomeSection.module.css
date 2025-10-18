@@ -1,0 +1,505 @@
+/* Home Section Styles - Tema Negro con Door.PNG */
+
+.homeContainer {
+    min-height: 100vh;
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Geist Sans', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/* Fondo con Door.PNG apenas visible */
+
+.homeContainer::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/Wata/Door.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.03;
+    /* Apenas visible */
+    z-index: -2;
+    filter: grayscale(100%) brightness(0.1);
+}
+
+
+/* Overlay oscuro para mayor contraste */
+
+.homeContainer::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.98) 50%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: -1;
+}
+
+
+/* Hero Section */
+
+.heroSection {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.heroContent {
+    text-align: center;
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+}
+
+.heroStack {
+    display: contents;
+}
+
+.heroTitle {
+    font-size: 6rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.1em;
+    font-family: var(--font-alice);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.5), 0 0 70px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    font-family: var(--font-courier);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.heroCta {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.heroCta:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.heroFadeOut {
+    animation: heroFadeOut var(--flow-duration, 0.45s) ease forwards;
+}
+
+@keyframes heroFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+.dialogueSection {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.dialogueInline {
+    margin-top: 0.5rem;
+}
+
+.steamSectionInline {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.fadeOut {
+    animation: fadeOut var(--flow-duration, 0.45s) ease forwards;
+}
+
+.fadeIn {
+    animation: fadeIn var(--flow-duration, 0.45s) ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+}
+
+.dialogueFadeIn {
+    animation: dialogueFadeIn var(--flow-duration, 0.45s) ease forwards;
+}
+
+@keyframes dialogueFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.heroDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #cccccc;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.primaryButton {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.primaryButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.primaryButton:hover::before {
+    left: 100%;
+}
+
+.primaryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.secondaryButton {
+    background: transparent;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.secondaryButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #FFD700;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.secondaryButton:hover::before {
+    width: 100%;
+}
+
+.secondaryButton:hover {
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+
+/* Game Info Section */
+
+.gameInfoSection {
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.gameInfoContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gameInfoCard {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.gameInfoCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.gameInfoCard:hover::before {
+    transform: scaleX(1);
+}
+
+.gameInfoCard:hover {
+    transform: translateY(-5px);
+    border-color: #FFD700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.gameInfoCard h3 {
+    color: #FFD700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.gameInfoCard p {
+    opacity: 0.8;
+    line-height: 1.5;
+    color: #cccccc;
+}
+
+
+/* Features Section */
+
+.featuresSection {
+    padding: 6rem 2rem;
+    background: rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.featuresGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.featureCard {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 40, 40, 0.9) 100%);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.featureCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.featureCard:hover::before {
+    transform: scaleX(1);
+}
+
+.featureCard:hover {
+    transform: translateY(-8px);
+    border-color: #FFD700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1), 0 0 40px rgba(255, 215, 0, 0.05);
+}
+
+.featureCard h3 {
+    color: #FFD700;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.featureCard p {
+    opacity: 0.8;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+
+/* Footer */
+
+.footer {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.footer p {
+    opacity: 0.6;
+    font-size: 0.9rem;
+    color: #888888;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 4rem;
+    }
+    .heroSubtitle {
+        font-size: 1.2rem;
+    }
+    .heroDescription {
+        font-size: 1rem;
+    }
+    .heroButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+        max-width: 300px;
+    }
+    .gameInfoContent {
+        grid-template-columns: 1fr;
+    }
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+    .sectionTitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        padding: 1rem;
+    }
+    .heroTitle {
+        font-size: 3rem;
+    }
+    .gameInfoSection,
+    .featuresSection {
+        padding: 3rem 1rem;
+    }
+    .featureCard {
+        padding: 2rem;
+    }
+}
+
+
+/* Efectos adicionales para el tema oscuro */
+
+.homeContainer {
+    background-attachment: fixed;
+}
+
+
+/* Animación sutil para las partículas */
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* Mejoras de contraste para mejor legibilidad */
+
+.heroContent {
+    background: transparent;
+    padding: 3rem 2rem;
+    border-radius: 0;
+    backdrop-filter: none;
+    border: none;
+}
