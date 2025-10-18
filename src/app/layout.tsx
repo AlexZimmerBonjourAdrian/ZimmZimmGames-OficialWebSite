@@ -1,6 +1,5 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
-import DustParticles from '../components/Home/DustParticles';
 //import HamburgerMenu from '../components/WataLanding/HamburgerMenu';
 // import Navigation from '@/components/Navigation';
 
@@ -126,12 +125,13 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/Icon/ajuste_avatar_Documents-3-Black.png" />
         <link rel="manifest" href="/manifest.json" />
         
-        {/* Preconnect para mejorar performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* DNS prefetch para recursos externos */}
-        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        {/* Preload de recursos críticos */}
+        <link rel="preload" href="/Font/Alice_in_Wonderland_3.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/Font/CourierPrime-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/images/Wata/WhereAreTheAlices.JPG" as="image" />
+        <link rel="preload" href="/images/Wata/Door.PNG" as="image" />
+        <link rel="preload" href="/Characters/Profile/CB.png" as="image" />
+        <link rel="preload" href="/Characters/Profile/Juno.png" as="image" />
         
         {/* Schema.org markup para el juego */}
         <script
@@ -225,9 +225,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-black">
-       
         {/*  <HamburgerMenu />*/}
-        <DustParticles />
         {children}
       </body>
     </html>

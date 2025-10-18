@@ -1,33 +1,76 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './LoadingPage.module.css';
+import { ResourcePreloader, criticalResources, pagePreloadConfigs } from '@/lib/preloader';
 
 interface LoadingPageProps {
   onComplete: () => void;
-  duration?: number; // Duración en milisegundos
+  duration?: number; // Duración mínima en milisegundos
+  page?: 'home' | 'wata'; // Página específica para preloading
+  enablePreloading?: boolean; // Habilitar preloading real
 }
 
 const LoadingPage: React.FC<LoadingPageProps> = ({ 
   onComplete, 
-  duration = 2000 
+  duration = 2000,
+  page = 'home',
+  enablePreloading = true
 }) => {
   const [progress, setProgress] = useState(0);
   const [currentText, setCurrentText] = useState('');
+  const [isPreloading, setIsPreloading] = useState(enablePreloading);
+  const [preloadProgress, setPreloadProgress] = useState(0);
+  const preloaderRef = useRef<ResourcePreloader | null>(null);
+  const startTimeRef = useRef<number>(Date.now());
+
+  // Configuración de recursos según la página
+  const getPreloadConfig = () => {
+    return pagePreloadConfigs[page] || criticalResources;
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        const newProgress = prev + 2;
-        if (newProgress >= 100) {
-          clearInterval(interval);
-          setTimeout(onComplete, 300); // Pequeña pausa antes de completar
-          return 100;
-        }
-        return newProgress;
-      });
-    }, duration / 50);
+    if (!enablePreloading) {
+      // Fallback al comportamiento original si no hay preloading
+      const interval = setInterval(() => {
+        setProgress(prev => {
+          const newProgress = prev + 2;
+          if (newProgress >= 100) {
+            clearInterval(interval);
+            setTimeout(onComplete, 300);
+            return 100;
+          }
+          return newProgress;
+        });
+      }, duration / 50);
 
-    return () => clearInterval(interval);
-  }, [duration, onComplete]);
+      return () => clearInterval(interval);
+    }
+
+    // Iniciar preloading real
+    const config = getPreloadConfig();
+    preloaderRef.current = new ResourcePreloader(
+      (progress) => {
+        setPreloadProgress(progress);
+        // Combinar progreso de preloading con progreso mínimo
+        const minProgress = Math.min(progress, 90); // Máximo 90% hasta completar preloading
+        setProgress(minProgress);
+      },
+      () => {
+        setIsPreloading(false);
+        // Completar hasta 100% después del preloading
+        setProgress(100);
+        // Asegurar duración mínima
+        const elapsed = Date.now() - startTimeRef.current;
+        const remainingTime = Math.max(0, duration - elapsed);
+        setTimeout(onComplete, Math.max(remainingTime, 300));
+      }
+    );
+
+    preloaderRef.current.startPreloading(config);
+
+    return () => {
+      preloaderRef.current = null;
+    };
+  }, [duration, onComplete, enablePreloading, page]);
 
   useEffect(() => {
     const loadingTexts = [
@@ -67,19 +110,31 @@ const LoadingPage: React.FC<LoadingPageProps> = ({
       "Casi listo para la locura..."
     ];
 
+    // Textos específicos para preloading
+    const preloadTexts = [
+      "Cargando imágenes del País de las Maravillas...",
+      "Preparando las fuentes mágicas...",
+      "Descargando los secretos de Alicia...",
+      "Cargando los personajes más curiosos...",
+      "Preparando la experiencia visual...",
+      "Casi listo para la aventura..."
+    ];
+
+    const allTexts = enablePreloading ? [...preloadTexts, ...loadingTexts] : loadingTexts;
+
     const textInterval = setInterval(() => {
       setCurrentText(prev => {
-        const currentIndex = loadingTexts.indexOf(prev);
-        const nextIndex = (currentIndex + 1) % loadingTexts.length;
-        return loadingTexts[nextIndex];
+        const currentIndex = allTexts.indexOf(prev);
+        const nextIndex = (currentIndex + 1) % allTexts.length;
+        return allTexts[nextIndex];
       });
-    }, 800); // Más tiempo para leer las frases más largas
+    }, enablePreloading ? 600 : 800); // Más rápido durante preloading
 
     // Establecer el primer texto inmediatamente
-    setCurrentText(loadingTexts[0]);
+    setCurrentText(allTexts[0]);
 
     return () => clearInterval(textInterval);
-  }, []);
+  }, [enablePreloading]);
 
   return (
     <div className={styles.loadingContainer}>
@@ -98,7 +153,14 @@ const LoadingPage: React.FC<LoadingPageProps> = ({
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className={styles.progressText}>{progress}%</div>
+          <div className={styles.progressText}>
+            {progress}%
+            {enablePreloading && isPreloading && (
+              <span className={styles.preloadIndicator}>
+                {' '}(Preloading: {preloadProgress}%)
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Texto de carga */}

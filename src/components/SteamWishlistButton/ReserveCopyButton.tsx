@@ -38,7 +38,6 @@ const ReserveCopyButton: React.FC<ReserveCopyButtonProps> = ({
             width={32}
             height={32}
             className={styles.logo}
-            priority
           />
         </div>
         <div className={styles.textContainer}>

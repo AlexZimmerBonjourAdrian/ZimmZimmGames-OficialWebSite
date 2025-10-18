@@ -100,6 +100,13 @@
     font-weight: 600;
 }
 
+.preloadIndicator {
+    font-size: 0.8rem;
+    color: #66c0f4;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
 
 /* Texto de carga */
 

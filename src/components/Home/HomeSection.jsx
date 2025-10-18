@@ -2,14 +2,43 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
-import DustParticles from './DustParticles';
 import styles from './HomeSection.module.css';
-import { DialogueGame } from '@/components';
-import { SteamWishlistButton, CharacterGallery, Team, ReserveCopyButton } from '@/components';
-import LoadingPage from '@/components/LoadingPage';
+import { SteamWishlistButton, ReserveCopyButton } from '@/components';
 import graph from '@/components/DialogueGame/dialogue.example.json';
 import { getWishlistFromCookie, setWishlistCookie, removeWishlistCookie } from '@/lib/cookies';
+
+// Cargas diferidas para reducir el JS inicial
+const DialogueGame = dynamic(() => import('@/components/DialogueGame/DialogueGame'), {
+  ssr: false,
+  loading: () => <div style={{ width: '100%', height: 200 }} aria-hidden="true" />,
+});
+
+const CharacterGallery = dynamic(() => import('@/components/CharacterGallery/CharacterGallery'), {
+  ssr: false,
+  loading: () => <div style={{ width: '100%', height: 300 }} aria-hidden="true" />,
+});
+
+const GameplayBlock = dynamic(() => import('./GameplayBlock'), {
+  ssr: false,
+  loading: () => <div style={{ width: '100%', height: 300 }} aria-hidden="true" />,
+});
+
+const Team = dynamic(() => import('@/components/Team/Team'), {
+  ssr: false,
+  loading: () => <div style={{ width: '100%', height: 200 }} aria-hidden="true" />,
+});
+
+const LoadingPage = dynamic(() => import('@/components/LoadingPage/LoadingPage'), {
+  ssr: false,
+  loading: () => null,
+});
+
+const DustParticles = dynamic(() => import('./DustParticles'), {
+  ssr: false,
+  loading: () => null,
+});
 
 const HomeSection = () => {
   const router = useRouter();
@@ -51,7 +80,14 @@ const HomeSection = () => {
   };
   // Mostrar página de carga si está cargando
   if (isLoading) {
-    return <LoadingPage onComplete={handleLoadingComplete} duration={2000} />;
+    return (
+      <LoadingPage 
+        onComplete={handleLoadingComplete} 
+        duration={2000}
+        page="home"
+        enablePreloading={true}
+      />
+    );
   }
 
   return (
@@ -141,22 +177,7 @@ const HomeSection = () => {
                   }}
                 />
                 {/* Gameplay showcase (below gallery, before team) */}
-                <div className={`${styles.enterContainer} ${styles.enterGallery} ${styles.gameplaySection}`} key={`gameplay-${transitionKey}`}>
-                  <div className={styles.gameplayCard}>
-                    <Image
-                      src="/Gameplay/Case00-CB.jpg"
-                      alt="W.A.T.A - CB interrogation - gameplay still"
-                      width={1280}
-                      height={720}
-                      className={styles.gameplayImage}
-                      priority
-                    />
-                  </div>
-                  <div className={styles.gameplayCaption}>
-                    <div className={styles.gameplayCaptionTitle}>Juno:</div>
-                    <div className={styles.gameplayCaptionText}>Where is Alice Rabbit??!! Answer me!</div>
-                  </div>
-                </div>
+                <GameplayBlock key={`gameplay-${transitionKey}`} />
                 <Team
                   key={`team-${transitionKey}`}
                   className={`${styles.enterContainer}`}

@@ -82,7 +82,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
                   width={200}
                   height={300}
                   className={styles.characterImage}
-                  priority
+                  sizes="(max-width: 768px) 45vw, (max-width: 1200px) 25vw, 200px"
                 />
               </div>
               <div className={styles.characterInfo}>
@@ -107,7 +107,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
                   width={400}
                   height={300}
                   className={styles.conceptImage}
-                  priority
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 400px"
                 />
               </div>
               <div className={styles.conceptInfo}>

@@ -69,6 +69,24 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: '/Music/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/Books/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
     ];
   },
 
@@ -135,30 +153,18 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Configuración de webpack para optimización
-  webpack: (config, { dev, isServer }) => {
-    // Optimización para producción
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-        },
-      };
-    }
-
-    return config;
-  },
+  // Nota: sin configuración webpack personalizada para compatibilidad con Turbopack
 
   // Configuración de experimental features
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['framer-motion', 'react-icons'],
+    // Optimizaciones de preloading
+    webpackBuildWorker: true,
   },
+
+  // Configuración de paquetes externos del servidor
+  serverExternalPackages: [],
 
   // Configuración de TypeScript
   typescript: {
@@ -188,8 +194,7 @@ const nextConfig: NextConfig = {
   // Configuración de react strict mode
   reactStrictMode: true,
 
-  // Configuración de swc minify
-  swcMinify: true,
+  // Nota: swcMinify es obsoleto en Next 15
 };
 
 export default nextConfig;
