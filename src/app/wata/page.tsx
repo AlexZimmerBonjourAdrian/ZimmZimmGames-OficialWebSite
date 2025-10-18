@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'visual novel',
     'indie game',
     'Wonderland detective',
-    "monstrous rabbit",
+    'monstrous rabbit',
     'dark fantasy',
     'noir',
     'ZimmZimm Games'
@@ -27,7 +27,10 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'W.A.T.A - Juno and C.B. together',
+        type: 'image/png',
       },
+      { url: '/Characters/Profile/CB.png', width: 800, height: 800, alt: 'W.A.T.A - Character: C.B. profile', type: 'image/png' },
+      { url: '/Characters/Profile/Juno.png', width: 800, height: 800, alt: 'W.A.T.A - Character: Juno profile', type: 'image/png' },
     ],
     locale: 'en_US',
     type: 'website',
@@ -36,7 +39,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'W.A.T.A - Where Are The Alices? | Psychological Horror',
     description: "A Wonderland detective fights to rescue the Alices from a fate worse than death at the hands of a 'monstrous' rabbit.",
-    images: ['/ConceptArt/ConceptJunoAndCB.png'],
+    images: [
+      '/ConceptArt/ConceptJunoAndCB.png',
+      '/Characters/Profile/CB.png',
+      '/Characters/Profile/Juno.png'
+    ],
   },
   alternates: {
     canonical: '/wata',
@@ -56,4 +63,4 @@ export const metadata: Metadata = {
 
 export default function WATAPage() {
   return <WATA />;
-}
+} 
