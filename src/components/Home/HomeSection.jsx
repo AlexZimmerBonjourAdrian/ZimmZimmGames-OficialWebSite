@@ -50,7 +50,6 @@ const HomeSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showDialogue, setShowDialogue] = useState(false);
   const [showSteam, setShowSteam] = useState(false);
-  const [dialogueFading, setDialogueFading] = useState(false);
   const FLOW_MS = 600; // duración unificada de fade in/out (ms)
   const [heroFading, setHeroFading] = useState(false);
   const [wishlistEnabled, setWishlistEnabled] = useState(false); // Controla si el wishlist está habilitado
@@ -71,9 +70,9 @@ const HomeSection = () => {
   // Debug: Log cuando se muestra el diálogo
   useEffect(() => {
     if (showDialogue) {
-      console.log('DialogueGame: Showing dialogue', { graph, showDialogue, dialogueFading });
+      console.log('DialogueGame: Showing dialogue', { graph, showDialogue });
     }
-  }, [showDialogue, graph, dialogueFading]);
+  }, [showDialogue, graph]);
 
   // Función para completar la carga
   const handleLoadingComplete = () => {
@@ -90,7 +89,6 @@ const HomeSection = () => {
     setWishlistEnabled(false);
     setShowSteam(false);
     setShowDialogue(false);
-    setDialogueFading(false); // Reset dialogue fading state
     setHeroFading(false); // Reset hero fading state
     setIsTransitioning(false); // Reset transition state
     router.push('/');
@@ -165,18 +163,14 @@ const HomeSection = () => {
           )}
 
           {showDialogue && (
-            <div className={`${styles.dialogueInline} ${dialogueFading ? styles.fadeOut : styles.dialogueFadeIn}`} style={{ ['--flow-duration']: `${FLOW_MS}ms` }}>
+            <div className={styles.dialogueInline}>
               {graph && graph.start && graph.nodes ? (
                 <DialogueGame
                   graph={graph}
                   onSkip={() => {
-                    setDialogueFading(true);
-                    setTimeout(() => {
-                      setShowDialogue(false);
-                      setDialogueFading(false); // Reset dialogueFading
-                      setShowSteam(true);
-                      setWishlistEnabled(true); // Habilita automáticamente el wishlist
-                    }, FLOW_MS);
+                    setShowDialogue(false);
+                    setShowSteam(true);
+                    setWishlistEnabled(true); // Habilita automáticamente el wishlist
                   }}
                 />
               ) : (
@@ -185,13 +179,9 @@ const HomeSection = () => {
                   <button
                     className={styles.skipButton}
                     onClick={() => {
-                      setDialogueFading(true);
-                      setTimeout(() => {
-                        setShowDialogue(false);
-                        setDialogueFading(false);
-                        setShowSteam(true);
-                        setWishlistEnabled(true);
-                      }, FLOW_MS);
+                      setShowDialogue(false);
+                      setShowSteam(true);
+                      setWishlistEnabled(true);
                     }}
                   >
                     Continue

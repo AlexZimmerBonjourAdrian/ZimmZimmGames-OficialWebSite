@@ -135,14 +135,6 @@
 
 .dialogueInline {
     margin-top: 0.5rem;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.dialogueInline.dialogueFadeIn {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .dialogueError {
@@ -285,27 +277,6 @@
     }
 }
 
-.dialogueFadeIn {
-    animation: dialogueFadeIn var(--flow-duration, 0.45s) ease forwards;
-}
-
-@keyframes dialogueFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(8px) scale(0.98);
-        filter: blur(2px);
-    }
-    50% {
-        opacity: 0.7;
-        transform: translateY(4px) scale(0.99);
-        filter: blur(1px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0px) scale(1);
-        filter: blur(0);
-    }
-}
 
 .heroDescription {
     font-size: 1.1rem;
