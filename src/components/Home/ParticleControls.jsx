@@ -104,9 +104,10 @@ const ParticleControls = ({ onPerformanceChange, currentMode }) => {
           </div>
           {[
             { key: 'auto', label: 'Automático', desc: 'Detecta automáticamente' },
-            { key: 'high', label: 'Alto', desc: '50 partículas, alta calidad' },
-            { key: 'medium', label: 'Medio', desc: '30 partículas, calidad media' },
-            { key: 'low', label: 'Bajo', desc: '15 partículas, baja calidad' },
+            { key: 'high', label: 'Alto', desc: '30 partículas, alta calidad' },
+            { key: 'medium', label: 'Medio', desc: '20 partículas, calidad media' },
+            { key: 'low', label: 'Bajo', desc: '10 partículas, baja calidad' },
+            { key: 'ultra_low', label: 'Ultra Bajo', desc: '5 partículas, máximo ahorro CPU' },
           ].map(({ key, label, desc }) => (
             <label
               key={key}
