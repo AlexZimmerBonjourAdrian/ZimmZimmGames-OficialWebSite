@@ -121,6 +121,8 @@ export default function RootLayout({
     <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <link rel="icon" href="/Icon/ajuste_avatar_Documents-3-Black.png" type="image/png" />
+        <link rel="icon" href="/Icon/ryanlerch-Alice-In-Wonderland-2-the-white-rabbit.svg" type="image/svg+xml" />
+        <link rel="mask-icon" href="/Icon/ryanlerch-Alice-In-Wonderland-2-the-white-rabbit.svg" color="#000000" />
         <link rel="apple-touch-icon" href="/Icon/ajuste_avatar_Documents-3-Black.png" />
         <link rel="manifest" href="/manifest.json" />
         
