@@ -40,6 +40,11 @@ const DustParticles = dynamic(() => import('./DustParticles'), {
   loading: () => null,
 });
 
+const ParticleControls = dynamic(() => import('./ParticleControls'), {
+  ssr: false,
+  loading: () => null,
+});
+
 const HomeSection = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +54,7 @@ const HomeSection = () => {
   const FLOW_MS = 600; // duración unificada de fade in/out (ms)
   const [heroFading, setHeroFading] = useState(false);
   const [wishlistEnabled, setWishlistEnabled] = useState(false); // Controla si el wishlist está habilitado
+  const [particleMode, setParticleMode] = useState('auto'); // Controla el modo de partículas
 
   const transitionKey = `${wishlistEnabled}-${showSteam}-${showDialogue}`;
 
@@ -78,6 +84,11 @@ const HomeSection = () => {
     setShowDialogue(false);
     router.push('/');
   };
+
+  // Función para manejar cambios en el modo de partículas
+  const handleParticleModeChange = (mode) => {
+    setParticleMode(mode);
+  };
   // Mostrar página de carga si está cargando
   if (isLoading) {
     return (
@@ -93,7 +104,13 @@ const HomeSection = () => {
   return (
     <main className={styles.homeContainer}>
       {/* Partículas de fondo */}
-      <DustParticles />
+      <DustParticles mode={particleMode} />
+      
+      {/* Controles de partículas */}
+      <ParticleControls 
+        onPerformanceChange={handleParticleModeChange}
+        currentMode={particleMode}
+      />
       
       {/* Hero Section - Solo June Hare */}
       <section className={styles.heroSection}>
