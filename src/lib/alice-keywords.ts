@@ -139,6 +139,46 @@ export const aliceKeywords = {
     'horror Wonderland',
     'dark fantasy Alice',
     'noir Alice game',
+    // Focused on corrupted Wonderland lore and entities
+    'corrupted Wonderland',
+    'Wonderland is hell',
+    'functional psychopaths Wonderland',
+    'beheading queen Wonderland',
+    'tyrant queen Wonderland',
+    'White Rabbit true king',
+    'Dormouse final letter',
+    'no compassion Wonderland',
+    'survival state Wonderland',
+    'traitor to the system Wonderland'
+  ],
+
+  // Long-tail English queries focused on discoverability (not generic SEO)
+  longTailEnglish: [
+    'Alice in Wonderland psychological horror visual novel with noir and political thriller',
+    'corrupted Wonderland visual novel about a rabbit detective and a tyrant queen',
+    'twisted Wonderland dark fantasy furry noir visual novel indie game',
+    'Dormouse letter against the Queen White Rabbit the only true king',
+    'no compassion survival Wonderland beheading fear tyrant child queen',
+    'multiple Alices mystery visual novel dark Alice narrative',
+    'rabbit detective vs evil rabbit in a decaying Wonderland',
+    'political oppression in Wonderland visual novel bad romance',
+    'functional psychopaths society Wonderland horror narrative',
+    'letter from the Dormouse final words Wonderland is a prison'
+  ],
+
+  // Entities and concepts from the provided lore, in English
+  loreEntitiesEnglish: [
+    'Dormouse',
+    'White Rabbit',
+    'the Queen',
+    'beheading',
+    'traitor',
+    'system',
+    'tyrant child queen',
+    'mocking death',
+    'no compassion',
+    'survival',
+    'functional psychopaths'
   ],
 
   // Términos de búsqueda en español

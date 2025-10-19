@@ -31,6 +31,13 @@ export const routes: Route[] = [
 		component: 'WATAOptions',
 		exists: true
 	},
+	{
+		path: '/wata/lore',
+		name: 'Lore',
+		description: 'Corrupted Wonderland — Final Letter of the Dormouse',
+		component: 'WATALore',
+		exists: true
+	},
 
 	// Planned routes
 	{ path: '/wata/download', name: 'Descarga', description: 'Página de descarga', component: 'WATADownload', exists: false },

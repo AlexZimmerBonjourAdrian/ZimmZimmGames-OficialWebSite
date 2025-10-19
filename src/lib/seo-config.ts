@@ -1,19 +1,21 @@
-// SEO Configuration for ZimmZimm Games
+// SEO Configuration for ZimmZimm Games - Optimized for Maximum Browser Visibility
 export const siteConfig = {
   name: 'ZimmZimm Games',
-  description: 'Estudio independiente de desarrollo de videojuegos',
+  description: 'Estudio independiente de desarrollo de videojuegos especializado en terror psicológico y novelas visuales únicas como W.A.T.A',
   url: 'https://zimmzimmgames.com',
-  ogImage: '/images/Wata/WhereAreTheAlices.JPG',
+  ogImage: '/images/Wata/WhereAreTheAlices.JPG', // Imagen que SÍ existe
   links: {
     twitter: 'https://twitter.com/ZimmZimmGames',
     github: 'https://github.com/ZimmZimmGames',
+    discord: 'https://discord.gg/zimmzimm',
+    youtube: 'https://youtube.com/@zimmzimmgames',
   },
 };
 
 export const gameConfig = {
   name: 'W.A.T.A - Where Are The Alices?',
-  description: 'A psychological horror visual novel inspired by Alice in Wonderland. Dark fantasy, furry, noir and political thriller.',
-  genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
+  description: 'Novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Combina fantasía oscura, furry, noir y thriller político.',
+  genre: ['Novela Visual', 'Terror Psicológico', 'Fantasía Oscura', 'Noir', 'Thriller Político', 'Furry', 'Bad Romance'],
   platform: ['PC', 'Windows', 'Android'],
   releaseDate: '2024',
   developer: 'ZimmZimm Games',
@@ -23,34 +25,40 @@ export const gameConfig = {
   price: '0',
   currency: 'USD',
   stores: ['Steam', 'itch.io', 'GameJolt'],
-  themes: ['Alice in Wonderland', 'Dark Fantasy', 'Furry', 'Noir', 'Political Thriller', 'Psychological Horror'],
+  themes: ['Alicia en el País de las Maravillas', 'Fantasía Oscura', 'Furry', 'Noir', 'Thriller Político', 'Terror Psicológico'],
 };
 
-// SEO metadata for different pages
-export const   seoMetadata = {
-    home: {
-      title: 'ZimmZimm Games - W.A.T.A | Psychological Horror Visual Novel',
-      description: 'W.A.T.A (Where Are The Alices?) - A psychological horror visual novel inspired by Alice in Wonderland. Dark fantasy, furry, noir and political thriller.',
-      keywords: ['W.A.T.A', 'Where Are The Alices?', 'Alicia en el País de las Maravillas', 'Alice in Wonderland', 'visual novel', 'novela visual', 'dark fantasy', 'furry', 'noir', 'thriller político', 'terror psicológico', 'ZimmZimm Games'],
-    },
-    wata: {
-      title: 'W.A.T.A - Where Are The Alices? | Psychological Horror Visual Novel',
-      description: 'A psychological horror visual novel inspired by Alice in Wonderland. Combines dark fantasy, furry, noir and political thriller in a unique experience.',
-      keywords: ['W.A.T.A', 'Where Are The Alices?', 'Alicia en el País de las Maravillas', 'Alice in Wonderland', 'visual novel', 'novela visual', 'dark fantasy', 'furry', 'noir', 'thriller político', 'conejo', 'rabbit', 'reina', 'queen', 'detective', 'bad romance', 'Steam', 'itch.io', 'GameJolt'],
-    },
+// SEO metadata optimizada para máxima visibilidad en navegadores
+export const seoMetadata = {
+  home: {
+    title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
+    description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+    keywords: [
+      'ZimmZimm Games', 'W.A.T.A', 'novela visual', 'terror psicológico', 
+      'Alicia en el País de las Maravillas', 'juego indie', 'Steam', 
+      'fantasía oscura', 'furry', 'noir', 'thriller político', 'videojuegos indie'
+    ],
+  },
+  wata: {
+    title: 'W.A.T.A - Where Are The Alices? | Novela Visual de Terror Psicológico',
+    description: 'W.A.T.A es una novela visual de terror psicológico donde una liebre detective investiga la desaparición de Alicia en un Wonderland corrupto. Juego indie único disponible en Steam.',
+    keywords: [
+      'W.A.T.A', 'Where Are The Alices', 'novela visual', 'terror psicológico', 
+      'Alicia en el País de las Maravillas', 'liebre detective', 'conejo malvado', 
+      'Wonderland corrupto', 'Steam', 'juego indie', 'ZimmZimm Games'
+    ],
+  },
   about: {
-    title: 'About ZimmZimm Games | Independent Development Studio',
-    description: 'Learn more about ZimmZimm Games, an independent studio dedicated to creating unique gaming experiences.',
-    keywords: ['ZimmZimm Games', 'independent studio', 'game development', 'indie games'],
-  },
-  support: {
-    title: 'Support | ZimmZimm Games',
-    description: 'Get help and support for our games. Find answers to frequently asked questions and contact our team.',
-    keywords: ['support', 'help', 'ZimmZimm Games', 'W.A.T.A', 'frequently asked questions'],
+    title: 'Sobre ZimmZimm Games | Estudio de Videojuegos Indie Especializado en Terror',
+    description: 'Conoce a ZimmZimm Games, estudio independiente especializado en crear experiencias únicas de terror psicológico y novelas visuales como W.A.T.A.',
+    keywords: [
+      'ZimmZimm Games', 'estudio indie', 'desarrollo de videojuegos', 
+      'terror psicológico', 'novelas visuales', 'juegos únicos'
+    ],
   },
 };
 
-// Structured data for different content types
+// Datos estructurados CRÍTICOS para visibilidad en navegadores
 export const structuredData = {
   organization: {
     '@context': 'https://schema.org',
@@ -58,27 +66,25 @@ export const structuredData = {
     name: 'ZimmZimm Games',
     url: 'https://zimmzimmgames.com',
     logo: 'https://zimmzimmgames.com/Icon/ajuste_avatar_Documents-3.png',
-    description: 'Estudio independiente de desarrollo de videojuegos',
+    description: 'Estudio independiente de desarrollo de videojuegos especializado en terror psicológico y novelas visuales únicas',
     sameAs: [
       'https://twitter.com/ZimmZimmGames',
       'https://github.com/ZimmZimmGames',
     ],
   },
-      videoGame: {
-      '@context': 'https://schema.org',
-      '@type': 'VideoGame',
-      name: 'W.A.T.A - Where Are The Alices?',
-      description: 'A psychological horror visual novel inspired by Alice in Wonderland. Combines dark fantasy, furry, noir and political thriller in a unique experience.',
-      genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
-      gamePlatform: ['PC', 'Windows', 'Android'],
+  videoGame: {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: 'W.A.T.A - Where Are The Alices?',
+    description: 'Novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Combina fantasía oscura, furry, noir y thriller político.',
+    genre: ['Novela Visual', 'Terror Psicológico', 'Fantasía Oscura', 'Noir', 'Thriller Político', 'Furry', 'Bad Romance'],
+    gamePlatform: ['PC', 'Windows', 'Android'],
     applicationCategory: 'Game',
     operatingSystem: 'Windows',
-    softwareVersion: '1.0',
     datePublished: '2024',
     publisher: {
       '@type': 'Organization',
       name: 'ZimmZimm Games',
-      url: 'https://zimmzimmgames.com',
     },
     creator: {
       '@type': 'Organization',
@@ -86,13 +92,6 @@ export const structuredData = {
     },
     image: 'https://zimmzimmgames.com/images/Wata/WhereAreTheAlices.JPG',
     url: 'https://zimmzimmgames.com/wata',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.5',
-      ratingCount: '150',
-      bestRating: '5',
-      worstRating: '1',
-    },
     offers: {
       '@type': 'Offer',
       price: '0',

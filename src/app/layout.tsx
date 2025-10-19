@@ -1,33 +1,18 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
-//import HamburgerMenu from '../components/WataLanding/HamburgerMenu';
-// import Navigation from '@/components/Navigation';
+// import Navigation from '@/components/Navigation'; // Componente no existe aún
+import { structuredData } from '@/lib/seo-config';
 
 export const metadata = {
   title: {
-    default: 'ZimmZimm Games - W.A.T.A | Where Are The Alices?',
+    default: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
     template: '%s | ZimmZimm Games'
   },
-  description: "W.A.T.A (Where Are The Alices?) — A psychological horror experience inspired by Alice in Wonderland. A Wonderland detective fights to rescue the Alices from a fate worse than death at the hands of a 'monstrous' rabbit.",
+  description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
   keywords: [
-    'W.A.T.A',
-    'Where Are The Alices?',
-    'Alice in Wonderland',
-    'visual novel',
-    'psychological horror',
-    'indie game',
-    'dark fantasy',
-    'noir',
-    'political thriller',
-    'detective',
-    'rabbit',
-    'queen',
-    'Steam',
-    'itch.io',
-    'GameJolt',
-    'Android',
-    'Windows',
-    'ZimmZimm Games'
+    'ZimmZimm Games', 'W.A.T.A', 'novela visual', 'terror psicológico', 
+    'Alicia en el País de las Maravillas', 'juego indie', 'Steam', 
+    'fantasía oscura', 'furry', 'noir', 'thriller político', 'videojuegos indie'
   ],
   authors: [{ name: 'ZimmZimm Games' }],
   creator: 'ZimmZimm Games',
@@ -41,56 +26,29 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-      openGraph: {
-      type: 'website',
-      locale: 'en_US',
-      url: 'https://zimmzimmgames.com',
-      siteName: 'ZimmZimm Games',
-      title: 'W.A.T.A - Where Are The Alices? | Psychological Horror',
-      description: "A Wonderland detective fights to rescue the Alices from a fate worse than death at the hands of a 'monstrous' rabbit.",
+  openGraph: {
+    title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
+    description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+    url: 'https://zimmzimmgames.com',
+    siteName: 'ZimmZimm Games',
     images: [
       {
-        url: '/Gameplay/Case00-CB.jpg',
-        width: 1280,
-        height: 720,
-        alt: 'W.A.T.A - CB interrogation - gameplay still',
-        type: 'image/jpeg',
-      },
-      {
-        url: '/ConceptArt/ConceptJunoAndCB.png',
+        url: '/images/Wata/WhereAreTheAlices.JPG', // Imagen que SÍ existe
         width: 1200,
         height: 630,
-        alt: 'W.A.T.A - Juno and C.B. together',
-        type: 'image/png',
-      },
-      {
-        url: '/Characters/Profile/CB.png',
-        width: 800,
-        height: 800,
-        alt: 'W.A.T.A - Character: C.B. profile',
-        type: 'image/png',
-      },
-      {
-        url: '/Characters/Profile/Juno.png',
-        width: 800,
-        height: 800,
-        alt: 'W.A.T.A - Character: Juno profile',
-        type: 'image/png',
+        alt: 'ZimmZimm Games - W.A.T.A Novela Visual de Terror Psicológico',
+        type: 'image/jpeg',
       },
     ],
+    locale: 'es_ES',
+    type: 'website',
   },
-      twitter: {
-      card: 'summary_large_image',
-      title: 'W.A.T.A - Where Are The Alices? | Psychological Horror',
-      description: "A Wonderland detective fights to rescue the Alices from a fate worse than death at the hands of a 'monstrous' rabbit.",
-    images: [
-      '/Gameplay/Case00-CB.jpg',
-      '/ConceptArt/ConceptJunoAndCB.png',
-      '/Characters/Profile/CB.png',
-      '/Characters/Profile/Juno.png'
-    ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
+    description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+    images: ['/images/Wata/WhereAreTheAlices.JPG'], // Imagen que SÍ existe
     creator: '@ZimmZimmGames',
-    site: '@ZimmZimmGames',
   },
   robots: {
     index: true,
@@ -104,11 +62,8 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'tu-codigo-de-verificacion-google',
-    yandex: 'tu-codigo-de-verificacion-yandex',
-    yahoo: 'tu-codigo-de-verificacion-yahoo',
+    google: 'HDPNeSBJ5V-Ky_nmGbiWlhO1gteiXdTwhSeuR5IhL9w',
   },
-  category: 'games',
 };
 
 export default function RootLayout({
@@ -119,113 +74,21 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        <link rel="icon" href="/Icon/ajuste_avatar_Documents-3-Black.png" type="image/png" />
-        <link rel="icon" href="/Icon/ryanlerch-Alice-In-Wonderland-2-the-white-rabbit.svg" type="image/svg+xml" />
-        <link rel="mask-icon" href="/Icon/ryanlerch-Alice-In-Wonderland-2-the-white-rabbit.svg" color="#000000" />
-        <link rel="apple-touch-icon" href="/Icon/ajuste_avatar_Documents-3-Black.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        
-        {/* Preload de recursos críticos */}
-        <link rel="preload" href="/Font/Alice_in_Wonderland_3.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" href="/Font/CourierPrime-Regular.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
-        <link rel="preload" href="/images/Wata/WhereAreTheAlices.JPG" as="image" />
-        <link rel="preload" href="/images/Wata/Door.PNG" as="image" />
-        <link rel="preload" href="/Characters/Profile/CB.png" as="image" />
-        <link rel="preload" href="/Characters/Profile/Juno.png" as="image" />
-        
-        {/* Schema.org markup para el juego */}
+        <meta name="theme-color" content="#000000" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* DATOS ESTRUCTURADOS CRÍTICOS PARA VISIBILIDAD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "VideoGame",
-                          "name": "W.A.T.A - Where Are The Alices?",
-            "description": "Una novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Combina dark fantasy, furry, noir y thriller político en una experiencia única.",
-            "genre": ["Visual Novel", "Terror Psicológico", "Dark Fantasy", "Noir", "Thriller Político", "Furry", "Bad Romance"],
-            "gamePlatform": ["PC", "Windows", "Android"],
-              "applicationCategory": "Game",
-              "operatingSystem": "Windows",
-              "softwareVersion": "1.0",
-              "datePublished": "2024",
-              "publisher": {
-                "@type": "Organization",
-                "name": "ZimmZimm Games",
-                "url": "https://zimmzimmgames.com"
-              },
-              "creator": {
-                "@type": "Organization",
-                "name": "ZimmZimm Games"
-              },
-              "image": [
-                "https://zimmzimmgames.com/images/Wata/WhereAreTheAlices.JPG",
-                "https://zimmzimmgames.com/images/Wata/Door.PNG"
-              ],
-              "screenshot": [
-                "https://zimmzimmgames.com/images/Wata/Menu.PNG",
-                "https://zimmzimmgames.com/images/Wata/Menu-3.PNG",
-                "https://zimmzimmgames.com/images/Wata/Menu-4.PNG"
-              ],
-              "url": "https://zimmzimmgames.com",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.5",
-                "ratingCount": "150",
-                "bestRating": "5",
-                "worstRating": "1"
-              },
-                          "offers": [
-              {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": "https://zimmzimmgames.com/wata",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "ZimmZimm Games"
-                }
-              },
-              {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": "https://store.steampowered.com/app/wata",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "Steam"
-                }
-              },
-              {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": "https://zimmzimmgames.itch.io/wata",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "itch.io"
-                }
-              },
-              {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": "https://gamejolt.com/games/wata",
-                "seller": {
-                  "@type": "Organization",
-                  "name": "GameJolt"
-                }
-              }
-            ]
-            })
+            __html: JSON.stringify(structuredData.organization),
           }}
         />
       </head>
       <body className="bg-black">
-        {/*  <HamburgerMenu />*/}
+        {/* <Navigation /> */}
         {children}
       </body>
     </html>
