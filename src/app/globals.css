@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/* Fuentes personalizadas */
+
+@font-face {
+    font-family: 'Alice';
+    src: url('/Font/Alice_in_Wonderland_3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CourierPrime';
+    src: url('/Font/CourierPrime-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+ :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --dark-bg: #0a0a0a;
+    --darker-bg: #050505;
+    --card-bg: #151515;
+    --text-color: #ffffff;
+    --accent-color: #ff0000;
+    --accent-color-hover: #cc0000;
+    --border-color: rgba(255, 0, 0, 0.3);
+    --font-alice: 'Alice', serif;
+    --font-courier: 'CourierPrime', monospace;
+    --text-secondary: #cccccc;
+    --completed-color: #4CAF50;
+    --in-progress-color: #2196F3;
+    --planned-color: #FF9800;
+    --delayed-color: #f44336;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-courier);
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    background: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* Tipografía personalizada */
+
+.font-alice {
+    font-family: var(--font-alice);
+    letter-spacing: 1px;
+}
+
+.font-courier {
+    font-family: var(--font-courier);
+    letter-spacing: 0.5px;
+}
+
+
+/* Scrollbar personalizado */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darker-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 6px;
+    border: 2px solid var(--darker-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color-hover);
+}
+
+
+/* Selección de texto */
+
+::selection {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+
+/* Animaciones globales */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+
+/* Clases de utilidad */
+
+.fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.slideUp {
+    animation: slideUp 0.8s ease-in-out;
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+
+/* Efectos de hover mejorados */
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+
+/* Estilos responsivos */
+
+@media (max-width: 768px) {
+     :root {
+        --container-padding: 1rem;
+    }
+    .font-alice {
+        letter-spacing: 0.5px;
+    }
+    .font-courier {
+        letter-spacing: 0.3px;
+    }
+}
+
+
+/* Mejoras de accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,283 @@
+// Keywords específicas para Alicia en el País de las Maravillas y elementos del juego W.A.T.A
+
+export const aliceKeywords = {
+  // Términos principales de Alicia
+  primary: [
+    'Alicia en el País de las Maravillas',
+    'Alice in Wonderland',
+    'Alicia País Maravillas',
+    'Alice Wonderland',
+    'Lewis Carroll',
+    'Alicia Carroll',
+  ],
+
+  // Personajes de Alicia
+  characters: [
+    'Alicia',
+    'Alice',
+    'Conejo Blanco',
+    'White Rabbit',
+    'Reina de Corazones',
+    'Queen of Hearts',
+    'Sombrerero Loco',
+    'Mad Hatter',
+    'Gato de Cheshire',
+    'Cheshire Cat',
+    'Oruga Azul',
+    'Blue Caterpillar',
+    'Liebre de Marzo',
+    'March Hare',
+    'Reina Blanca',
+    'White Queen',
+    'Reina Roja',
+    'Red Queen',
+  ],
+
+  // Elementos del mundo de Alicia
+  worldElements: [
+    'País de las Maravillas',
+    'Wonderland',
+    'Mad Tea Party',
+    'Fiesta del Té Loca',
+    'Jardín de las Flores',
+    'Garden of Live Flowers',
+    'Bosque de los Árboles',
+    'Forest of Trees',
+    'Castillo de la Reina',
+    'Queen\'s Castle',
+    'Madre de Alicia',
+    'Alice\'s Mother',
+  ],
+
+  // Géneros y temas del juego
+  gameGenres: [
+    'visual novel',
+    'novela visual',
+    'dark fantasy',
+    'fantasía oscura',
+    'noir',
+    'thriller político',
+    'political thriller',
+    'terror psicológico',
+    'psychological horror',
+    'horror',
+    'terror',
+    'bad romance',
+    'romance oscuro',
+    'furry',
+    'detective',
+    'misterio',
+    'mystery',
+  ],
+
+  // Plataformas de distribución
+  platforms: [
+    'Steam',
+    'itch.io',
+    'GameJolt',
+    'Windows',
+    'Android',
+    'PC',
+    'desktop',
+    'móvil',
+    'mobile',
+  ],
+
+  // Elementos específicos del juego W.A.T.A
+  wataSpecific: [
+    'W.A.T.A',
+    'Where Are The Alices?',
+    '¿Dónde están las Alicias?',
+    'Alicias perdidas',
+    'Lost Alices',
+    'múltiples Alicias',
+    'multiple Alices',
+    'realidad desvanecida',
+    'fading reality',
+    'misterio Alicia',
+    'Alice mystery',
+  ],
+
+  // Términos de búsqueda populares
+  searchTerms: [
+    'juego Alicia País Maravillas',
+    'Alice in Wonderland game',
+    'novela visual Alicia',
+    'visual novel Alice',
+    'horror Alicia País Maravillas',
+    'Alice in Wonderland horror',
+    'dark fantasy game',
+    'juego fantasía oscura',
+    'furry visual novel',
+    'novela visual furry',
+    'noir game',
+    'juego noir',
+    'thriller político juego',
+    'political thriller game',
+    'conejo detective',
+    'rabbit detective',
+    'reina malvada',
+    'evil queen',
+    'bad romance game',
+    'juego romance oscuro',
+  ],
+
+  // Términos de búsqueda en inglés
+  englishSearchTerms: [
+    'Alice in Wonderland visual novel',
+    'dark fantasy visual novel',
+    'furry horror game',
+    'noir detective game',
+    'political thriller visual novel',
+    'psychological horror Alice',
+    'bad romance visual novel',
+    'rabbit detective game',
+    'queen horror game',
+    'Alice Wonderland horror',
+    'dark Alice game',
+    'twisted Wonderland',
+    'horror Wonderland',
+    'dark fantasy Alice',
+    'noir Alice game',
+    // Focused on corrupted Wonderland lore and entities
+    'corrupted Wonderland',
+    'Wonderland is hell',
+    'functional psychopaths Wonderland',
+    'beheading queen Wonderland',
+    'tyrant queen Wonderland',
+    'White Rabbit true king',
+    'Dormouse final letter',
+    'no compassion Wonderland',
+    'survival state Wonderland',
+    'traitor to the system Wonderland'
+  ],
+
+  // Long-tail English queries focused on discoverability (not generic SEO)
+  longTailEnglish: [
+    'Alice in Wonderland psychological horror visual novel with noir and political thriller',
+    'corrupted Wonderland visual novel about a rabbit detective and a tyrant queen',
+    'twisted Wonderland dark fantasy furry noir visual novel indie game',
+    'Dormouse letter against the Queen White Rabbit the only true king',
+    'no compassion survival Wonderland beheading fear tyrant child queen',
+    'multiple Alices mystery visual novel dark Alice narrative',
+    'rabbit detective vs evil rabbit in a decaying Wonderland',
+    'political oppression in Wonderland visual novel bad romance',
+    'functional psychopaths society Wonderland horror narrative',
+    'letter from the Dormouse final words Wonderland is a prison'
+  ],
+
+  // Entities and concepts from the provided lore, in English
+  loreEntitiesEnglish: [
+    'Dormouse',
+    'White Rabbit',
+    'the Queen',
+    'beheading',
+    'traitor',
+    'system',
+    'tyrant child queen',
+    'mocking death',
+    'no compassion',
+    'survival',
+    'functional psychopaths'
+  ],
+
+  // Términos de búsqueda en español
+  spanishSearchTerms: [
+    'juego de Alicia en el País de las Maravillas',
+    'novela visual de Alicia',
+    'horror psicológico Alicia',
+    'fantasía oscura Alicia',
+    'juego noir Alicia',
+    'thriller político Alicia',
+    'conejo detective Alicia',
+    'reina malvada Alicia',
+    'romance oscuro Alicia',
+    'furry Alicia',
+    'misterio Alicia',
+    'terror Alicia País Maravillas',
+    'juego indie Alicia',
+    'Alicia terror psicológico',
+    'País Maravillas oscuro',
+  ],
+};
+
+// Combinaciones de palabras clave para SEO
+export const keywordCombinations = [
+  // Combinaciones principales
+  'Alicia en el País de las Maravillas juego',
+  'Alice in Wonderland game',
+  'visual novel Alicia País Maravillas',
+  'Alice in Wonderland visual novel',
+  'horror psicológico Alicia',
+  'Alice psychological horror',
+  'dark fantasy Alicia',
+  'Alice dark fantasy',
+  'noir Alicia País Maravillas',
+  'Alice in Wonderland noir',
+  'thriller político Alicia',
+  'Alice political thriller',
+  'furry Alicia País Maravillas',
+  'Alice in Wonderland furry',
+  'bad romance Alicia',
+  'Alice bad romance',
+  'conejo detective Alicia',
+  'Alice rabbit detective',
+  'reina malvada Alicia',
+  'Alice evil queen',
+
+  // Combinaciones con plataformas
+  'Alicia País Maravillas Steam',
+  'Alice in Wonderland Steam',
+  'Alicia País Maravillas itch.io',
+  'Alice in Wonderland itch.io',
+  'Alicia País Maravillas GameJolt',
+  'Alice in Wonderland GameJolt',
+
+  // Combinaciones con géneros
+  'novela visual terror psicológico',
+  'visual novel psychological horror',
+  'novela visual dark fantasy',
+  'visual novel dark fantasy',
+  'novela visual noir',
+  'visual novel noir',
+  'novela visual thriller político',
+  'visual novel political thriller',
+  'novela visual furry',
+  'visual novel furry',
+  'novela visual bad romance',
+  'visual novel bad romance',
+];
+
+// Metadatos optimizados para Alicia
+export const aliceMetadata = {
+  title: 'W.A.T.A - Where Are The Alices? | Alicia en el País de las Maravillas - Novela Visual de Terror Psicológico',
+  description: 'Una novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Dark fantasy, furry, noir y thriller político. ¿Dónde están las Alicias?',
+  keywords: [
+    'W.A.T.A',
+    'Where Are The Alices?',
+    'Alicia en el País de las Maravillas',
+    'Alice in Wonderland',
+    'visual novel',
+    'novela visual',
+    'dark fantasy',
+    'fantasía oscura',
+    'noir',
+    'thriller político',
+    'political thriller',
+    'terror psicológico',
+    'psychological horror',
+    'furry',
+    'bad romance',
+    'conejo',
+    'rabbit',
+    'reina',
+    'queen',
+    'detective',
+    'Steam',
+    'itch.io',
+    'GameJolt',
+    'Windows',
+    'Android',
+    'ZimmZimm Games'
+  ],
+}; 

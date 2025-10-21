@@ -1,0 +1,32 @@
+{
+    "start": "intro",
+    "unknownRouteText": { "en": "I can't tell you that.", "es": "Eso no te lo puedo decir." },
+    "nodes": {
+        "intro": {
+            "id": "intro",
+            "speaker": "Juno",
+            "text": { "en": "What do you want to know?", "es": "¿Qué quieres saber?" },
+            "choices": [
+                { "id": "q_alicia", "text": { "en": "Where is Alice?", "es": "¿Dónde está Alicia?" }, "next": "noExiste" },
+                { "id": "q_ciudad", "text": { "en": "Tell me about the city", "es": "Háblame de la ciudad" }, "next": "city" },
+                { "id": "q_fin", "text": { "en": "That's all", "es": "Eso es todo" }, "next": "end" }
+            ]
+        },
+        "city": {
+            "id": "city",
+            "speaker": "Juno",
+            "text": { "en": "The city sleeps, yet it listens.", "es": "La ciudad duerme, pero escucha." },
+            "choices": [
+                { "id": "volver", "text": { "en": "Back", "es": "Volver" }, "next": "intro" }
+            ]
+        },
+        "end": {
+            "id": "end",
+            "speaker": "Juno",
+            "text": { "en": "See you soon.", "es": "Nos vemos pronto." },
+            "choices": [
+                { "id": "reiniciar", "text": { "en": "Restart", "es": "Reiniciar" }, "next": "intro" }
+            ]
+        }
+    }
+}
