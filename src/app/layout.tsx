@@ -5,14 +5,14 @@ import { structuredData } from '@/lib/seo-config';
 
 export const metadata = {
   title: {
-    default: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
+    default: 'ZimmZimm Games | Indie Studio Specialized in Psychological Horror and Mystery',
     template: '%s | ZimmZimm Games'
   },
-  description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+  description: 'ZimmZimm Games is an indie studio specialized in creating unique psychological horror and mystery experiences. Discover W.A.T.A: Where Are The Alices? and other immersive games.',
   keywords: [
-    'ZimmZimm Games', 'W.A.T.A', 'novela visual', 'terror psicológico', 
-    'Alicia en el País de las Maravillas', 'juego indie', 'Steam', 
-    'fantasía oscura', 'furry', 'noir', 'thriller político', 'videojuegos indie'
+    'ZimmZimm Games', 'W.A.T.A', 'psychological horror', 'visual novel', 
+    'Alice in Wonderland', 'indie game', 'Steam', 
+    'dark fantasy', 'noir', 'mystery games', 'indie studio'
   ],
   authors: [{ name: 'ZimmZimm Games' }],
   creator: 'ZimmZimm Games',
@@ -27,8 +27,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
-    description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+    title: 'ZimmZimm Games | Indie Studio Specialized in Psychological Horror and Mystery',
+    description: 'ZimmZimm Games is an indie studio specialized in creating unique psychological horror and mystery experiences. Discover W.A.T.A: Where Are The Alices? and other immersive games.',
     url: 'https://zimmzimmgames.com',
     siteName: 'ZimmZimm Games',
     images: [
@@ -36,17 +36,17 @@ export const metadata = {
         url: '/images/Wata/WhereAreTheAlices.JPG', // Imagen que SÍ existe
         width: 1200,
         height: 630,
-        alt: 'ZimmZimm Games - W.A.T.A Novela Visual de Terror Psicológico',
+        alt: 'ZimmZimm Games - Indie Studio Specialized in Psychological Horror and Mystery',
         type: 'image/jpeg',
       },
     ],
-    locale: 'es_ES',
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
-    description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+    title: 'ZimmZimm Games | Indie Studio Specialized in Psychological Horror and Mystery',
+    description: 'ZimmZimm Games is an indie studio specialized in creating unique psychological horror and mystery experiences. Discover W.A.T.A: Where Are The Alices? and other immersive games.',
     images: ['/images/Wata/WhereAreTheAlices.JPG'], // Imagen que SÍ existe
     creator: '@ZimmZimmGames',
   },
