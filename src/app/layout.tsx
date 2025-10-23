@@ -1,15 +1,19 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
 // import Navigation from '@/components/Navigation'; // Componente no existe aún
-import { structuredData, seoMetadata } from '@/lib/site-config';
+import { structuredData } from '@/lib/seo-config';
 
 export const metadata = {
   title: {
-    default: seoMetadata.home.title,
+    default: 'ZimmZimm Games | Indie Studio Specialized in Psychological Horror and Mystery',
     template: '%s | ZimmZimm Games'
   },
-  description: seoMetadata.home.description,
-  keywords: seoMetadata.home.keywords,
+  description: 'ZimmZimm Games is an indie studio specialized in creating unique psychological horror and mystery experiences. Discover W.A.T.A: Where Are The Alices? and other immersive games.',
+  keywords: [
+    'ZimmZimm Games', 'W.A.T.A', 'psychological horror', 'visual novel', 
+    'Alice in Wonderland', 'indie game', 'Steam', 
+    'dark fantasy', 'noir', 'mystery games', 'indie studio'
+  ],
   authors: [{ name: 'ZimmZimm Games' }],
   creator: 'ZimmZimm Games',
   publisher: 'ZimmZimm Games',
@@ -23,31 +27,17 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: seoMetadata.home.title,
-    description: seoMetadata.home.description,
+    title: 'ZimmZimm Games | Indie Studio Specialized in Psychological Horror and Mystery',
+    description: 'ZimmZimm Games is an indie studio specialized in creating unique psychological horror and mystery experiences. Discover W.A.T.A: Where Are The Alices? and other immersive games.',
     url: 'https://zimmzimmgames.com',
     siteName: 'ZimmZimm Games',
     images: [
       {
-        url: '/images/Wata/WhereAreTheAlices.JPG',
+        url: '/images/Wata/WhereAreTheAlices.JPG', // Imagen que SÍ existe
         width: 1200,
         height: 630,
-        alt: 'W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Visual Novel',
+        alt: 'ZimmZimm Games - Indie Studio Specialized in Psychological Horror and Mystery',
         type: 'image/jpeg',
-      },
-      {
-        url: '/Gameplay/Case00-CB.jpg',
-        width: 1280,
-        height: 720,
-        alt: 'W.A.T.A - C.B. Detective Interrogation Scene',
-        type: 'image/jpeg',
-      },
-      {
-        url: '/ConceptArt/ConceptJunoAndCB.png',
-        width: 1200,
-        height: 630,
-        alt: 'W.A.T.A - Juno and C.B. Character Concept Art',
-        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -55,13 +45,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: seoMetadata.home.title,
-    description: seoMetadata.home.description,
-    images: [
-      '/images/Wata/WhereAreTheAlices.JPG',
-      '/Gameplay/Case00-CB.jpg',
-      '/ConceptArt/ConceptJunoAndCB.png'
-    ],
+    title: 'ZimmZimm Games | Indie Studio Specialized in Psychological Horror and Mystery',
+    description: 'ZimmZimm Games is an indie studio specialized in creating unique psychological horror and mystery experiences. Discover W.A.T.A: Where Are The Alices? and other immersive games.',
+    images: ['/images/Wata/WhereAreTheAlices.JPG'], // Imagen que SÍ existe
     creator: '@ZimmZimmGames',
   },
   robots: {

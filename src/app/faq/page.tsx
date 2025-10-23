@@ -1,18 +1,15 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ | W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Game',
-  description: 'Frequently asked questions about W.A.T.A - Where Are The Alices?, Alice in Wonderland horror visual novel, C.B. detective game, and ZimmZimm Games development.',
+  title: 'FAQ | ZimmZimm Games',
+  description: 'Frequently asked questions about ZimmZimm Games, W.A.T.A: Where Are The Alices?, and our development process.',
   keywords: [
-    'W.A.T.A', 'Where Are The Alices', 'Alice in Wonderland', 'FAQ', 'frequently asked questions',
-    'C.B.', 'Juno Hare', 'rabbit detective', 'corrupted Wonderland', 'dark Wonderland',
-    'Cheshire Cat', 'Queen of Hearts', 'Alice Maine', 'Alice Queenstone', 'Alice Ludwig',
-    'Alice Deeps', 'Alice Dinner', 'Blue Hare', 'Ashu Star', 'cannibals', 'trauma',
-    'psychological horror', 'visual novel', 'Steam', 'ZimmZimm Games'
+    'ZimmZimm Games', 'FAQ', 'frequently asked questions', 'W.A.T.A',
+    'Where Are The Alices', 'game support', 'indie games', 'visual novel'
   ],
   openGraph: {
-    title: 'FAQ | W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Game',
-    description: 'Frequently asked questions about W.A.T.A - Where Are The Alices?, Alice in Wonderland horror visual novel, C.B. detective game, and ZimmZimm Games development.',
+    title: 'FAQ | ZimmZimm Games',
+    description: 'Frequently asked questions about ZimmZimm Games, W.A.T.A: Where Are The Alices?, and our development process.',
     url: 'https://zimmzimmgames.com/faq',
     siteName: 'ZimmZimm Games',
     images: [
@@ -20,13 +17,7 @@ export const metadata: Metadata = {
         url: '/images/Wata/WhereAreTheAlices.JPG',
         width: 1200,
         height: 630,
-        alt: 'W.A.T.A - Where Are The Alices? FAQ'
-      },
-      {
-        url: '/Gameplay/Case00-CB.jpg',
-        width: 1280,
-        height: 720,
-        alt: 'W.A.T.A - C.B. Detective FAQ'
+        alt: 'ZimmZimm Games FAQ'
       }
     ],
     locale: 'en_US',
@@ -34,12 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQ | W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Game',
-    description: 'Frequently asked questions about W.A.T.A - Where Are The Alices?, Alice in Wonderland horror visual novel, C.B. detective game.',
-    images: [
-      '/images/Wata/WhereAreTheAlices.JPG',
-      '/Gameplay/Case00-CB.jpg'
-    ],
+    title: 'FAQ | ZimmZimm Games',
+    description: 'Frequently asked questions about ZimmZimm Games and W.A.T.A.',
+    images: ['/images/Wata/WhereAreTheAlices.JPG'],
     creator: '@ZimmZimmGames'
   },
   alternates: {

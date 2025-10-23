@@ -1,13 +1,15 @@
 import { Metadata } from 'next';
-import { seoMetadata } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: seoMetadata.about.title,
-  description: seoMetadata.about.description,
-  keywords: seoMetadata.about.keywords,
+  title: 'Sobre ZimmZimm Games | Estudio de Videojuegos Indie Especializado en Terror',
+  description: 'Conoce a ZimmZimm Games, estudio independiente especializado en crear experiencias únicas de terror psicológico y novelas visuales como W.A.T.A.',
+  keywords: [
+    'ZimmZimm Games', 'estudio indie', 'desarrollo de videojuegos', 
+    'terror psicológico', 'novelas visuales', 'juegos únicos'
+  ],
   openGraph: {
-    title: seoMetadata.about.title,
-    description: seoMetadata.about.description,
+    title: 'Sobre ZimmZimm Games | Estudio de Videojuegos Indie Especializado en Terror',
+    description: 'Conoce a ZimmZimm Games, estudio independiente especializado en crear experiencias únicas de terror psicológico y novelas visuales como W.A.T.A.',
     url: 'https://zimmzimmgames.com/about',
     siteName: 'ZimmZimm Games',
     images: [
@@ -15,28 +17,18 @@ export const metadata: Metadata = {
         url: '/images/Wata/WhereAreTheAlices.JPG',
         width: 1200,
         height: 630,
-        alt: 'ZimmZimm Games - Alice in Wonderland Horror Game Studio',
-        type: 'image/jpeg',
-      },
-      {
-        url: '/Gameplay/Case00-CB.jpg',
-        width: 1280,
-        height: 720,
-        alt: 'W.A.T.A - C.B. Detective Scene',
+        alt: 'ZimmZimm Games - Estudio de Desarrollo de Videojuegos',
         type: 'image/jpeg',
       },
     ],
-    locale: 'en_US',
+    locale: 'es_ES',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: seoMetadata.about.title,
-    description: seoMetadata.about.description,
-    images: [
-      '/images/Wata/WhereAreTheAlices.JPG',
-      '/Gameplay/Case00-CB.jpg'
-    ],
+    title: 'Sobre ZimmZimm Games | Estudio de Videojuegos Indie Especializado en Terror',
+    description: 'Conoce a ZimmZimm Games, estudio independiente especializado en crear experiencias únicas de terror psicológico y novelas visuales como W.A.T.A.',
+    images: ['/images/Wata/WhereAreTheAlices.JPG'],
     creator: '@ZimmZimmGames',
   },
   alternates: {
