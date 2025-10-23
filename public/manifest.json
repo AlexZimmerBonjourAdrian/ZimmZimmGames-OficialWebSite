@@ -1,7 +1,7 @@
 {
-    "name": "W.A.T.A - Where Are The Alices? | ZimmZimm Games",
+    "name": "W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Visual Novel",
     "short_name": "W.A.T.A",
-    "description": "A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl's kidnapping, in a twisted psychological game where sanity is the greatest threat.",
+    "description": "Play as June Hare Star, a Wonderland Hare detective and protagonist investigating missing Alices in a corrupted Wonderland, forced by the villain Dominic Conejo Blanco (Dominic White Rabbit). A psychological horror visual novel featuring Cheshire Cat, Queen of Hearts, and dark Wonderland themes.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#000000",
@@ -28,14 +28,28 @@
             "sizes": "1280x720",
             "type": "image/jpeg",
             "form_factor": "wide",
-            "label": "W.A.T.A - Where Are The Alices?"
+            "label": "W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror"
+        },
+        {
+            "src": "/Gameplay/Case00-CB.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "W.A.T.A - C.B. Detective Interrogation Scene"
+        },
+        {
+            "src": "/ConceptArt/ConceptJunoAndCB.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "W.A.T.A - Juno and C.B. Character Concept Art"
         },
         {
             "src": "/images/Wata/Door.PNG",
             "sizes": "1280x720",
             "type": "image/png",
             "form_factor": "wide",
-            "label": "The door to mystery"
+            "label": "W.A.T.A - The Door to Corrupted Wonderland"
         }
     ],
     "shortcuts": []

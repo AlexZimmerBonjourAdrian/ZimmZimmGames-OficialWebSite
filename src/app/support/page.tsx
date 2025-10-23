@@ -1,15 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Support | ZimmZimm Games',
-  description: 'Get support for ZimmZimm Games and W.A.T.A: Where Are The Alices?. Find help, report bugs, and contact our team.',
+  title: 'Support | W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Game',
+  description: 'Get support for W.A.T.A - Where Are The Alices?, Alice in Wonderland horror visual novel, C.B. detective game. Report bugs, get help, and contact ZimmZimm Games team.',
   keywords: [
-    'ZimmZimm Games', 'support', 'help', 'bug report', 'W.A.T.A',
-    'Where Are The Alices', 'game support', 'customer service', 'technical support'
+    'W.A.T.A', 'Where Are The Alices', 'Alice in Wonderland', 'support', 'help', 'bug report',
+    'C.B.', 'Juno Hare', 'rabbit detective', 'corrupted Wonderland', 'dark Wonderland',
+    'Cheshire Cat', 'Queen of Hearts', 'Alice Maine', 'Alice Queenstone', 'Alice Ludwig',
+    'Alice Deeps', 'Alice Dinner', 'Blue Hare', 'Ashu Star', 'cannibals', 'trauma',
+    'psychological horror', 'visual novel', 'Steam', 'ZimmZimm Games', 'game support'
   ],
   openGraph: {
-    title: 'Support | ZimmZimm Games',
-    description: 'Get support for ZimmZimm Games and W.A.T.A: Where Are The Alices?. Find help, report bugs, and contact our team.',
+    title: 'Support | W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Game',
+    description: 'Get support for W.A.T.A - Where Are The Alices?, Alice in Wonderland horror visual novel, C.B. detective game. Report bugs, get help, and contact ZimmZimm Games team.',
     url: 'https://zimmzimmgames.com/support',
     siteName: 'ZimmZimm Games',
     images: [
@@ -17,7 +20,13 @@ export const metadata: Metadata = {
         url: '/images/Wata/WhereAreTheAlices.JPG',
         width: 1200,
         height: 630,
-        alt: 'ZimmZimm Games Support'
+        alt: 'W.A.T.A - Where Are The Alices? Support'
+      },
+      {
+        url: '/Gameplay/Case00-CB.jpg',
+        width: 1280,
+        height: 720,
+        alt: 'W.A.T.A - C.B. Detective Support'
       }
     ],
     locale: 'en_US',
@@ -25,9 +34,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Support | ZimmZimm Games',
-    description: 'Get support for ZimmZimm Games and W.A.T.A.',
-    images: ['/images/Wata/WhereAreTheAlices.JPG'],
+    title: 'Support | W.A.T.A - Where Are The Alices? | Alice in Wonderland Horror Game',
+    description: 'Get support for W.A.T.A - Where Are The Alices?, Alice in Wonderland horror visual novel, C.B. detective game.',
+    images: [
+      '/images/Wata/WhereAreTheAlices.JPG',
+      '/Gameplay/Case00-CB.jpg'
+    ],
     creator: '@ZimmZimmGames'
   },
   alternates: {

@@ -1,15 +1,13 @@
 import { Metadata } from 'next';
+import { seoMetadata } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Sobre ZimmZimm Games | Estudio de Videojuegos Indie Especializado en Terror',
-  description: 'Conoce a ZimmZimm Games, estudio independiente especializado en crear experiencias únicas de terror psicológico y novelas visuales como W.A.T.A.',
-  keywords: [
-    'ZimmZimm Games', 'estudio indie', 'desarrollo de videojuegos', 
-    'terror psicológico', 'novelas visuales', 'juegos únicos'
-  ],
+  title: seoMetadata.about.title,
+  description: seoMetadata.about.description,
+  keywords: seoMetadata.about.keywords,
   openGraph: {
-    title: 'Sobre ZimmZimm Games | Estudio de Videojuegos Indie Especializado en Terror',
-    description: 'Conoce a ZimmZimm Games, estudio independiente especializado en crear experiencias únicas de terror psicológico y novelas visuales como W.A.T.A.',
+    title: seoMetadata.about.title,
+    description: seoMetadata.about.description,
     url: 'https://zimmzimmgames.com/about',
     siteName: 'ZimmZimm Games',
     images: [
@@ -17,18 +15,28 @@ export const metadata: Metadata = {
         url: '/images/Wata/WhereAreTheAlices.JPG',
         width: 1200,
         height: 630,
-        alt: 'ZimmZimm Games - Estudio de Desarrollo de Videojuegos',
+        alt: 'ZimmZimm Games - Alice in Wonderland Horror Game Studio',
+        type: 'image/jpeg',
+      },
+      {
+        url: '/Gameplay/Case00-CB.jpg',
+        width: 1280,
+        height: 720,
+        alt: 'W.A.T.A - C.B. Detective Scene',
         type: 'image/jpeg',
       },
     ],
-    locale: 'es_ES',
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sobre ZimmZimm Games | Estudio de Videojuegos Indie Especializado en Terror',
-    description: 'Conoce a ZimmZimm Games, estudio independiente especializado en crear experiencias únicas de terror psicológico y novelas visuales como W.A.T.A.',
-    images: ['/images/Wata/WhereAreTheAlices.JPG'],
+    title: seoMetadata.about.title,
+    description: seoMetadata.about.description,
+    images: [
+      '/images/Wata/WhereAreTheAlices.JPG',
+      '/Gameplay/Case00-CB.jpg'
+    ],
     creator: '@ZimmZimmGames',
   },
   alternates: {
