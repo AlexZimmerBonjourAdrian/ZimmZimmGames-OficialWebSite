@@ -157,7 +157,7 @@ const nextConfig: NextConfig = {
 
   // Configuración de experimental features
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
     optimizePackageImports: ['framer-motion', 'react-icons'],
     // Optimizaciones de preloading
     webpackBuildWorker: true,
