@@ -26,7 +26,7 @@ const DevJournalPage = () => {
             COMING SOON
           </h2>
           <p className="text-gray-500 font-gothic">
-            We're working on bringing you behind-the-scenes content, development updates, and insights into our creative process. Stay tuned!
+            We&apos;re working on bringing you behind-the-scenes content, development updates, and insights into our creative process. Stay tuned!
           </p>
         </motion.div>
       </div>

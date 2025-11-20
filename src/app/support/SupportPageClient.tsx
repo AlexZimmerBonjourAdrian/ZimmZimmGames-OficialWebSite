@@ -26,7 +26,7 @@ const SupportPageClient = () => {
             COMING SOON
           </h2>
           <p className="text-gray-500 font-gothic">
-            We're setting up our support system to help you with any questions or issues. In the meantime, you can reach us through our Discord community or social media.
+            We&apos;re setting up our support system to help you with any questions or issues. In the meantime, you can reach us through our Discord community or social media.
           </p>
         </motion.div>
       </div>

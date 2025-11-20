@@ -26,7 +26,7 @@ const FAQPageClient = () => {
             COMING SOON
           </h2>
           <p className="text-gray-500 font-gothic">
-            We're preparing a comprehensive FAQ section to answer all your questions about our games and development process. Check back soon!
+            We&apos;re preparing a comprehensive FAQ section to answer all your questions about our games and development process. Check back soon!
           </p>
         </motion.div>
       </div>
