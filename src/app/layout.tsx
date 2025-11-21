@@ -79,6 +79,34 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Resource hints para recursos externos */}
+        <link rel="dns-prefetch" href="https://forms.gle" />
+        <link rel="preconnect" href="https://forms.gle" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://store.steampowered.com" />
+        <link rel="preconnect" href="https://store.steampowered.com" crossOrigin="anonymous" />
+        
+        {/* Preload de recursos críticos para carga rápida */}
+        <link
+          rel="preload"
+          href="/Font/Alice_in_Wonderland_3.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/Font/CourierPrime-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/images/Wata/Door.PNG"
+          as="image"
+        />
+        
         {/* DATOS ESTRUCTURADOS CRÍTICOS PARA VISIBILIDAD */}
         <script
           type="application/ld+json"

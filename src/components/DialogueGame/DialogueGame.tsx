@@ -12,8 +12,15 @@ export interface DialogueGameProps {
 }
 
 const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', className, onSkip }) => {
+  const { currentNode, selectChoice, getIsChoiceDisabled } = useDialogueEngine(graph, locale);
+  
+  const choices = useMemo(() => currentNode?.choices ?? [], [currentNode]);
+
   // Validar que el graph existe y tiene la estructura correcta
-  if (!graph || !graph.start || !graph.nodes) {
+  // Se hace después de llamar a los hooks para evitar errores de "hooks condicionales"
+  const isValidGraph = graph && graph.start && graph.nodes;
+  
+  if (!isValidGraph) {
     console.error('DialogueGame: Invalid graph structure', graph);
     return (
       <div className={[styles.container, className].filter(Boolean).join(' ')}>
@@ -21,8 +28,6 @@ const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', class
       </div>
     );
   }
-
-  const { currentNode, selectChoice, getIsChoiceDisabled } = useDialogueEngine(graph, locale);
 
   // Validar que currentNode existe
   if (!currentNode) {
@@ -33,8 +38,6 @@ const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', class
       </div>
     );
   }
-
-  const choices = useMemo(() => currentNode.choices ?? [], [currentNode]);
 
   // Nota: el botón Skip ahora redirige a Steam; la lógica anterior de avance se removió.
 
@@ -82,5 +85,3 @@ const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', class
 };
 
 export default DialogueGame;
-
-

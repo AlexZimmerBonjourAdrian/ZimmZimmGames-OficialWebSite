@@ -63,33 +63,23 @@ export function useDialogueEngine(
   graph: DialogueGraph,
   locale: 'en' | 'es' = 'en'
 ): UseDialogueEngineReturn {
-  // Validar que el graph tiene la estructura correcta
-  if (!graph || !graph.start || !graph.nodes) {
-    console.error('useDialogueEngine: Invalid graph structure', graph);
-    // Retornar un estado por defecto seguro
-    return {
-      currentNode: {
-        id: 'error',
-        speaker: 'System',
-        text: 'Error: Invalid dialogue data',
-        choices: []
-      },
-      askedChoicesByNode: {},
-      nodeHistory: [],
-      selectChoice: () => {},
-      goBack: () => {},
-      reset: () => {},
-      getIsChoiceDisabled: () => false
-    };
-  }
+  const isValidGraph = graph && graph.start && graph.nodes;
 
   const unknownRouteText = getLocalizedText(
-    graph.unknownRouteText ?? { en: "I can't tell you that.", es: 'Eso no te lo puedo decir.' },
+    graph?.unknownRouteText ?? { en: "I can't tell you that.", es: 'Eso no te lo puedo decir.' },
     locale
   );
 
   const getNodeSafe = useCallback(
     (nodeId: string): DialogueNode => {
+      if (!isValidGraph) {
+        return {
+          id: 'error',
+          speaker: 'System',
+          text: 'Error: Invalid dialogue data',
+          choices: []
+        };
+      }
       const node = graph.nodes[nodeId];
       if (node) return node;
       // Fallback a un nodo temporal de respuesta desconocida
@@ -106,11 +96,13 @@ export function useDialogueEngine(
         ],
       };
     },
-    [graph.nodes, unknownRouteText]
+    [graph?.nodes, unknownRouteText, isValidGraph]
   );
 
   // Validar que el nodo inicial existe
-  const initialNodeId = graph.nodes[graph.start] ? graph.start : Object.keys(graph.nodes)[0] || 'error';
+  const initialNodeId = isValidGraph && graph.nodes[graph.start] 
+    ? graph.start 
+    : (isValidGraph && Object.keys(graph.nodes)[0]) || 'error';
   
   const [currentNodeId, setCurrentNodeId] = useState<string>(initialNodeId);
   const [askedChoicesByNode, setAskedChoicesByNode] = useState<Record<string, Set<string>>>(
@@ -120,11 +112,12 @@ export function useDialogueEngine(
 
   // Resetear el estado si el graph cambia
   useEffect(() => {
+    if (!isValidGraph) return;
     const newInitialNodeId = graph.nodes[graph.start] ? graph.start : Object.keys(graph.nodes)[0] || 'error';
     setCurrentNodeId(newInitialNodeId);
     setAskedChoicesByNode({});
     nodeHistoryRef.current = [];
-  }, [graph.start, graph.nodes]);
+  }, [graph?.start, graph?.nodes, isValidGraph]);
 
   const currentNode = useMemo<ResolvedNode>(() => {
     const raw = getNodeSafe(currentNodeId);
@@ -138,6 +131,8 @@ export function useDialogueEngine(
 
   const selectChoice = useCallback(
     (choiceId: string) => {
+      if (!isValidGraph) return;
+      
       const node = getNodeSafe(currentNodeId);
       const choice = (node.choices ?? []).find((c) => c.id === choiceId);
 
@@ -172,19 +167,21 @@ export function useDialogueEngine(
 
       setCurrentNodeId(targetId);
     },
-    [currentNodeId, getNodeSafe, graph.nodes, graph.start]
+    [currentNodeId, getNodeSafe, graph?.nodes, graph?.start, isValidGraph]
   );
 
   const goBack = useCallback(() => {
+    if (!isValidGraph) return;
     const prevId = nodeHistoryRef.current.pop();
     setCurrentNodeId(prevId ?? graph.start);
-  }, [graph.start]);
+  }, [graph?.start, isValidGraph]);
 
   const reset = useCallback(() => {
+    if (!isValidGraph) return;
     nodeHistoryRef.current = [];
     setAskedChoicesByNode({});
     setCurrentNodeId(graph.start);
-  }, [graph.start]);
+  }, [graph?.start, isValidGraph]);
 
   const getIsChoiceDisabled = useCallback(
     (choiceId: string): boolean => {
@@ -193,6 +190,24 @@ export function useDialogueEngine(
     },
     [askedChoicesByNode, currentNodeId]
   );
+
+  if (!isValidGraph) {
+    console.error('useDialogueEngine: Invalid graph structure', graph);
+    return {
+      currentNode: {
+        id: 'error',
+        speaker: 'System',
+        text: 'Error: Invalid dialogue data',
+        choices: []
+      },
+      askedChoicesByNode: {},
+      nodeHistory: [],
+      selectChoice: () => {},
+      goBack: () => {},
+      reset: () => {},
+      getIsChoiceDisabled: () => false
+    };
+  }
 
   return {
     currentNode,
@@ -206,5 +221,3 @@ export function useDialogueEngine(
 }
 
 export default useDialogueEngine;
-
-

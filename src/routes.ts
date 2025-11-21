@@ -18,10 +18,10 @@ export const routes: Route[] = [
 		exists: true
 	},
 	{
-		path: '/wata',
-		name: 'W.A.T.A',
-		description: 'Página principal del juego W.A.T.A',
-		component: 'WATA',
+		path: '/where-are-the-alices',
+		name: 'Where Are The Alices',
+		description: 'W.A.T.A game landing page',
+		component: 'WhereAreTheAlices',
 		exists: true
 	},
 	{

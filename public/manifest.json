@@ -1,7 +1,7 @@
 {
     "name": "W.A.T.A - Where Are The Alices? | ZimmZimm Games",
     "short_name": "W.A.T.A",
-    "description": "Un juego de terror psicológico independiente que desafía la realidad",
+    "description": "A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl's kidnapping, in a twisted psychological game where sanity is the greatest threat.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#000000",
@@ -35,28 +35,8 @@
             "sizes": "1280x720",
             "type": "image/png",
             "form_factor": "wide",
-            "label": "La puerta hacia el misterio"
+            "label": "The door to mystery"
         }
     ],
-    "shortcuts": [{
-            "name": "Descargar Demo",
-            "short_name": "Demo",
-            "description": "Descarga la demo de W.A.T.A",
-            "url": "/wata/demo",
-            "icons": [{
-                "src": "/Icon/ajuste_avatar_Documents-3.png",
-                "sizes": "96x96"
-            }]
-        },
-        {
-            "name": "Galería",
-            "short_name": "Galería",
-            "description": "Ver concept art y capturas",
-            "url": "/wata/gallery",
-            "icons": [{
-                "src": "/Icon/ajuste_avatar_Documents-3.png",
-                "sizes": "96x96"
-            }]
-        }
-    ]
+    "shortcuts": []
 }
