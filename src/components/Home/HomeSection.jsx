@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import styles from './HomeSection.module.css';
 import { SteamWishlistButton, ReserveCopyButton } from '@/components';
+import graph from '@/components/DialogueGame/dialogue.example.json';
 import { getWishlistFromCookie, setWishlistCookie, removeWishlistCookie } from '@/lib/cookies';
 
 // Cargas diferidas para reducir el JS inicial
@@ -54,7 +55,6 @@ const HomeSection = () => {
   const [wishlistEnabled, setWishlistEnabled] = useState(false); // Controla si el wishlist está habilitado
   const [particleMode, setParticleMode] = useState('auto'); // Controla el modo de partículas
   const [isTransitioning, setIsTransitioning] = useState(false); // Controla si está en transición
-  const [dialogueGraph, setDialogueGraph] = useState(null);
 
   // Memoizar transitionKey para evitar recálculos innecesarios
   const transitionKey = useMemo(
@@ -71,23 +71,12 @@ const HomeSection = () => {
     }
   }, []);
 
-  // Cargar JSON de diálogo solo cuando sea necesario
-  useEffect(() => {
-    if (showDialogue && !dialogueGraph) {
-      import('@/components/DialogueGame/dialogue.example.json').then((module) => {
-        setDialogueGraph(module.default);
-      }).catch((error) => {
-        console.error('Error loading dialogue graph:', error);
-      });
-    }
-  }, [showDialogue, dialogueGraph]);
-
   // Debug: Log cuando se muestra el diálogo
   useEffect(() => {
-    if (showDialogue && dialogueGraph) {
-      console.log('DialogueGame: Showing dialogue', { graph: dialogueGraph, showDialogue });
+    if (showDialogue) {
+      console.log('DialogueGame: Showing dialogue', { graph, showDialogue });
     }
-  }, [showDialogue, dialogueGraph]);
+  }, [showDialogue, graph]);
 
   // Función para completar la carga
   const handleLoadingComplete = () => {
@@ -179,9 +168,9 @@ const HomeSection = () => {
 
           {showDialogue && (
             <div className={styles.dialogueInline}>
-              {dialogueGraph && dialogueGraph.start && dialogueGraph.nodes ? (
+              {graph && graph.start && graph.nodes ? (
                 <DialogueGame
-                  graph={dialogueGraph}
+                  graph={graph}
                   onSkip={() => {
                     setShowDialogue(false);
                     setShowSteam(true);

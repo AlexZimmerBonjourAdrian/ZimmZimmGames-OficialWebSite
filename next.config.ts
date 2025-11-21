@@ -162,9 +162,8 @@ const nextConfig: NextConfig = {
 
   // Configuración de experimental features
   experimental: {
-    // optimizeCss: true - Requiere critters. Si causa errores, desactivar.
-    // Next.js 15 puede manejarlo automáticamente en algunos casos
-    optimizeCss: true,
+    // optimizeCss: true - Requiere critters que no está instalado, desactivado para evitar errores
+    // optimizeCss: true,
     optimizePackageImports: ['framer-motion', 'react-icons'],
     // Optimizaciones de preloading
     webpackBuildWorker: true,
