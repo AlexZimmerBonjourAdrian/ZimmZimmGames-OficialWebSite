@@ -177,11 +177,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
 
-  // Configuración de ESLint
-  // @ts-ignore
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
+  // ESLint is configured outside of next.config.ts (use .eslintrc or lint scripts)
 
   // Configuración de output
   output: 'standalone',
@@ -204,4 +200,4 @@ const nextConfig: NextConfig = {
   // Nota: swcMinify es obsoleto en Next 15
 };
 
-export default nextConfig as any;
+export default nextConfig;
