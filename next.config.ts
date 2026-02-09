@@ -178,6 +178,7 @@ const nextConfig: NextConfig = {
   },
 
   // Configuración de ESLint
+  // @ts-ignore
   eslint: {
     ignoreDuringBuilds: false,
   },
@@ -203,4 +204,4 @@ const nextConfig: NextConfig = {
   // Nota: swcMinify es obsoleto en Next 15
 };
 
-export default nextConfig;
+export default nextConfig as any;
