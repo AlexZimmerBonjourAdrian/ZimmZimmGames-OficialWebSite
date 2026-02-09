@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Game } from '@/types/game';
 import Image from 'next/image';
 import Link from 'next/link';
 
