@@ -5,6 +5,16 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+interface Game {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  status?: 'coming_soon' | 'released';
+  platforms: string[];
+  features: string[];
+}
+
 interface GameCardProps {
   game: Game;
   isSelected?: boolean;
