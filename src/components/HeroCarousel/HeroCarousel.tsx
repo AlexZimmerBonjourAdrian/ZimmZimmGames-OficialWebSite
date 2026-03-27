@@ -16,7 +16,7 @@ const carouselItems: CarouselItem[] = [
   {
     id: 1,
     image: '/Steam/Capsulas de Steam/Capsula de Cabecera/Capsula_de_Cabecera.jpg',
-    title: 'Where Are The Alices?',
+    title: 'W.A.T.A: Where are the Alices?',
     description: 'A psychological horror visual novel where nothing is what it seems.',
   },
   {

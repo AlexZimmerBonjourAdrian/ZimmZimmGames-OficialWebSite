@@ -18,51 +18,51 @@ export interface NavigationItem {
  */
 export const mainNavigation: NavigationItem[] = [
   {
-    label: 'Inicio',
+    label: 'Home',
     href: '/',
-    description: 'Página principal'
+    description: 'Main page'
   },
   {
     label: 'W.A.T.A',
     href: '/wata',
-    description: 'Where Are The Alices?',
+    description: 'W.A.T.A: Where are the Alices?',
     children: [
       {
-        label: 'Juego',
+        label: 'Game',
         href: '/wata',
-        description: 'Página principal del juego'
+        description: 'Main game page'
       },
       {
-        label: 'Opciones',
+        label: 'Options',
         href: '/wata/options',
-        description: 'Configuración del juego'
+        description: 'Game settings'
       }
     ]
   }
 ];
 
 /**
- * Configuración del menú de W.A.T.A
+ * W.A.T.A navigation configuration
  */
 export const wataNavigation: NavigationItem[] = [
   {
-    label: 'Inicio',
+    label: 'Home',
     href: '/wata',
-    description: 'Página principal de W.A.T.A'
+    description: 'W.A.T.A main page'
   },
   {
-    label: 'Opciones',
+    label: 'Options',
     href: '/wata/options',
-    description: 'Configuración del juego'
+    description: 'Game settings'
   }
 ];
 
 /**
- * Configuración del footer
+ * Footer navigation configuration
  */
 export const footerNavigation: NavigationItem[] = [
   {
-    label: 'Inicio',
+    label: 'Home',
     href: '/'
   },
   {
@@ -70,7 +70,7 @@ export const footerNavigation: NavigationItem[] = [
     href: '/wata'
   },
   {
-    label: 'Opciones',
+    label: 'Options',
     href: '/wata/options'
   }
 ];

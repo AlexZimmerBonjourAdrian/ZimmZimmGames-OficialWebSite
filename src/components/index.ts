@@ -9,5 +9,7 @@ export * from './Header';
 export * from './SupportButtons';
 export * from './HeroCarousel';
 export * from './ContactForm';
+export * from './Copyright';
+export * from './Footer';
 
 

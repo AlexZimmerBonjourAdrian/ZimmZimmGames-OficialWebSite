@@ -7,7 +7,13 @@ const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/">W.A.T.A</Link>
+          <Link href="/">
+            <img 
+              src="/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png" 
+              alt="W.A.T.A" 
+              className={styles.logoImage}
+            />
+          </Link>
         </div>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
@@ -15,7 +21,19 @@ const Header: React.FC = () => {
               <Link href="/">Home</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#about">About</Link>
+              <Link href="#characters">Characters</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="#concept-art">Concept Art</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="#team">Team</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="#contact">Contact</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="#support">Support</Link>
             </li>
           </ul>
         </nav>

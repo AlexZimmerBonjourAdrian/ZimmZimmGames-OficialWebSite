@@ -46,7 +46,7 @@ const ParticleControls = ({ onPerformanceChange, currentMode }) => {
           zIndex: 1000,
           fontSize: '12px',
         }}
-        title="Configuración de partículas"
+        title="Particle Settings"
       >
         ⚙️
       </button>
@@ -70,7 +70,7 @@ const ParticleControls = ({ onPerformanceChange, currentMode }) => {
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-        <h4 style={{ margin: 0, fontSize: '14px' }}>Partículas</h4>
+        <h4 style={{ margin: 0, fontSize: '14px' }}>Particles</h4>
         <button
           onClick={() => setIsVisible(false)}
           style={{
@@ -93,52 +93,60 @@ const ParticleControls = ({ onPerformanceChange, currentMode }) => {
             onChange={toggleParticles}
             style={{ marginRight: '8px' }}
           />
-          Activar partículas
+          Enable Particles
         </label>
       </div>
 
       {preferences.enabled && (
-        <div>
-          <div style={{ marginBottom: '8px', fontSize: '11px', opacity: 0.8 }}>
-            Modo de rendimiento:
-          </div>
-          {[
-            { key: 'auto', label: 'Automático', desc: 'Detecta automáticamente' },
-            { key: 'high', label: 'Alto', desc: '30 partículas, alta calidad' },
-            { key: 'medium', label: 'Medio', desc: '20 partículas, calidad media' },
-            { key: 'low', label: 'Bajo', desc: '10 partículas, baja calidad' },
-            { key: 'ultra_low', label: 'Ultra Bajo', desc: '5 partículas, máximo ahorro CPU' },
-          ].map(({ key, label, desc }) => (
-            <label
-              key={key}
-              style={{
-                display: 'block',
-                marginBottom: '5px',
-                cursor: 'pointer',
-                padding: '5px',
-                borderRadius: '3px',
-                backgroundColor: preferences.mode === key ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
-              }}
-            >
-              <input
-                type="radio"
-                name="performanceMode"
-                value={key}
-                checked={preferences.mode === key}
-                onChange={() => handleModeChange(key)}
-                style={{ marginRight: '8px' }}
-              />
-              <div>
-                <div style={{ fontWeight: 'bold' }}>{label}</div>
-                <div style={{ fontSize: '10px', opacity: 0.7 }}>{desc}</div>
-              </div>
-            </label>
-          ))}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+          <span style={{ marginBottom: '5px', opacity: 0.7 }}>Performance:</span>
+          <button
+            onClick={() => handleModeChange('low')}
+            style={{
+              background: preferences.mode === 'low' ? 'white' : 'rgba(255, 255, 255, 0.1)',
+              color: preferences.mode === 'low' ? 'black' : 'white',
+              border: 'none',
+              padding: '5px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '10px',
+            }}
+          >
+            Low (Performance)
+          </button>
+          <button
+            onClick={() => handleModeChange('auto')}
+            style={{
+              background: preferences.mode === 'auto' ? 'white' : 'rgba(255, 255, 255, 0.1)',
+              color: preferences.mode === 'auto' ? 'black' : 'white',
+              border: 'none',
+              padding: '5px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '10px',
+            }}
+          >
+            Auto (Balanced)
+          </button>
+          <button
+            onClick={() => handleModeChange('high')}
+            style={{
+              background: preferences.mode === 'high' ? 'white' : 'rgba(255, 255, 255, 0.1)',
+              color: preferences.mode === 'high' ? 'black' : 'white',
+              border: 'none',
+              padding: '5px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '10px',
+            }}
+          >
+            High (Quality)
+          </button>
         </div>
       )}
 
       <div style={{ marginTop: '10px', fontSize: '10px', opacity: 0.6 }}>
-        Modo actual: {currentMode}
+        Current Mode: {currentMode}
       </div>
     </div>
   );

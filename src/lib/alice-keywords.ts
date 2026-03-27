@@ -83,18 +83,15 @@ export const aliceKeywords = {
     'mobile',
   ],
 
-  // Elementos específicos del juego W.A.T.A
+  // Specific elements of W.A.T.A
   wataSpecific: [
     'W.A.T.A',
-    'Where Are The Alices?',
-    '¿Dónde están las Alicias?',
-    'Alicias perdidas',
+    'W.A.T.A: Where are the Alices?',
+    'Where are the Alices',
+    'Where are the Alices?',
     'Lost Alices',
-    'múltiples Alicias',
     'multiple Alices',
-    'realidad desvanecida',
     'fading reality',
-    'misterio Alicia',
     'Alice mystery',
   ],
 

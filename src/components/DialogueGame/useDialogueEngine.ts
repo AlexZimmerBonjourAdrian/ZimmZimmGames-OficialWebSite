@@ -92,7 +92,7 @@ export function useDialogueEngine(
         choices: [
           {
             id: 'back',
-            text: 'Volver',
+            text: { en: 'Back', es: 'Volver' },
             next: '__back__',
           },
         ],

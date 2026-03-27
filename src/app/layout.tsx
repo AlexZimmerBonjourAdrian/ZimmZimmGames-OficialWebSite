@@ -1,18 +1,18 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
-import { Header } from '@/components';
+import { Header, Footer } from '@/components';
 import { structuredData } from '@/lib/seo-config';
 
 export const metadata = {
   title: {
-    default: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
+    default: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
     template: '%s | ZimmZimm Games'
   },
-  description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+  description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
   keywords: [
-    'ZimmZimm Games', 'W.A.T.A', 'novela visual', 'terror psicológico', 
-    'Alicia en el País de las Maravillas', 'juego indie', 'Steam', 
-    'fantasía oscura', 'furry', 'noir', 'thriller político', 'videojuegos indie'
+    'ZimmZimm Games', 'W.A.T.A', 'Where are the Alices', 'visual novel', 'psychological horror', 
+    'Alice in Wonderland', 'indie game', 'Steam', 
+    'dark fantasy', 'furry', 'noir', 'political thriller', 'indie games'
   ],
   authors: [{ name: 'ZimmZimm Games' }],
   creator: 'ZimmZimm Games',
@@ -27,8 +27,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
-    description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+    title: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
+    description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
     url: 'https://zimmzimmgames.com',
     siteName: 'ZimmZimm Games',
     images: [
@@ -36,17 +36,17 @@ export const metadata = {
         url: '/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg',
         width: 1200,
         height: 630,
-        alt: 'ZimmZimm Games - W.A.T.A Novela Visual de Terror Psicológico',
+        alt: 'ZimmZimm Games - W.A.T.A: Where are the Alices? Psychological Horror Visual Novel',
         type: 'image/jpeg',
       },
     ],
-    locale: 'es_ES',
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
-    description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
+    title: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
+    description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
     images: ['/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg'],
     creator: '@ZimmZimmGames',
   },
@@ -72,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <link rel="icon" href="/Steam/Capsulas de Steam/Icono de App y Icono Acceso directo/icono-de-acceso-directo.png" />
         <link rel="apple-touch-icon" href="/Steam/Capsulas de Steam/Icono de App y Icono Acceso directo/icono-de-acceso-directo.png" />
@@ -121,6 +121,7 @@ export default function RootLayout({
       <body className="bg-black">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

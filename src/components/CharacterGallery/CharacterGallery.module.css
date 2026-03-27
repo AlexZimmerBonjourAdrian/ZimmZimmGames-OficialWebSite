@@ -51,22 +51,23 @@
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    color: #c7d5e0;
+    color: #ffffff;
     margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(45deg, #c7d5e0, #66c0f4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    font-family: var(--font-alice);
+    letter-spacing: 2px;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: #8f98a0;
+    font-size: 1.2rem;
+    color: #ffffff;
     margin: 0;
     font-style: italic;
+    font-family: var(--font-courier);
+    opacity: 0.8;
+    letter-spacing: 1px;
 }
 
 .section {
@@ -74,25 +75,26 @@
 }
 
 .sectionTitle {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 600;
-    color: #c7d5e0;
-    margin-bottom: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
     text-align: center;
     position: relative;
     font-family: var(--font-alice);
+    letter-spacing: 1px;
 }
 
 .sectionTitle::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #66c0f4, #c7d5e0);
-    border-radius: 2px;
+    width: 80px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
 }
 
 
@@ -162,12 +164,12 @@
 }
 
 .characterName {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
     font-family: var(--font-alice);
+    letter-spacing: 1px;
 }
 
 .characterDescription {
@@ -226,68 +228,79 @@
 }
 
 
-/* Concept Art */
+/* Concept Art en formato de columna para mayor legibilidad */
 
 .conceptGrid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: center;
-}
-
-.conceptCard {
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
-    text-align: center;
-    transition: none;
-    border: none;
-    backdrop-filter: none;
-}
-
-.conceptCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    border-color: rgba(102, 192, 244, 0.3);
-}
-
-.conceptImage {
-    width: 480px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0;
-    transition: transform 0.3s ease;
-    display: block;
+    gap: 3rem;
+    width: 100%;
+    max-width: 900px; /* Limitamos el ancho para que no sea excesivamente grande en pantallas anchas */
     margin: 0 auto;
 }
 
+.conceptCard {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.conceptCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-color: rgba(102, 192, 244, 0.4);
+}
+
+.conceptCard .imageContainer {
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.conceptImage {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
 .conceptCard:hover .conceptImage {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .conceptInfo {
-    padding: 1rem 0.5rem 0;
+    padding: 1rem;
 }
 
 .conceptName {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.8rem;
     font-family: var(--font-alice);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .conceptDescription {
-    font-size: 0.9rem;
-    color: #ffffff;
-    line-height: 1.4;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
     margin: 0;
     font-family: var(--font-courier);
+    max-width: 700px;
+    margin: 0 auto;
 }
-
-
-/* Responsive */
 
 @media (max-width: 768px) {
     .characterGallery {
@@ -300,12 +313,7 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    .conceptGrid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .characterCard,
-    .conceptCard {
+    .characterCard {
         padding: 1rem;
     }
 }

@@ -8,21 +8,41 @@ interface SupportButtonsProps {
 
 const SupportButtons: React.FC<SupportButtonsProps> = ({ className = '' }) => {
   return (
-    <div className={`${styles.supportContainer} ${className}`}>
-      <h3 className={styles.title}>Support the Project</h3>
+    <div id="support" className={`${styles.supportContainer} ${className}`}>
+      <h3 className={styles.title}>Support Us</h3>
+      <p className={styles.description}>
+        Your support helps us continue developing W.A.T.A. Every contribution allows us to improve the art, voice acting, and narrative of this twisted psychological journey.
+      </p>
       <div className={styles.buttonGrid}>
-        <button className={`${styles.supportBtn} ${styles.kofi}`} aria-label="Support on Ko-fi">
+        <a 
+          href="https://ko-fi.com/zimmzimmgames/tip" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={`${styles.supportBtn} ${styles.kofi}`} 
+          aria-label="Support on Ko-fi"
+        >
           <FaCoffee className={styles.icon} />
           <span>Ko-fi</span>
-        </button>
+        </a>
+        
+        {/* PayPal desactivado temporalmente por petición del usuario */}
+        {/* 
         <button className={`${styles.supportBtn} ${styles.paypal}`} aria-label="Support on PayPal">
           <FaPaypal className={styles.icon} />
           <span>PayPal</span>
         </button>
-        <button className={`${styles.supportBtn} ${styles.discord}`} aria-label="Join Discord">
+        */}
+
+        <a 
+          href="https://discord.gg/cNM9brehGR" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={`${styles.supportBtn} ${styles.discord}`} 
+          aria-label="Join Discord"
+        >
           <FaDiscord className={styles.icon} />
           <span>Discord</span>
-        </button>
+        </a>
       </div>
     </div>
   );

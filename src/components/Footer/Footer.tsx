@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaTwitter, FaGithub, FaDiscord, FaYoutube } from 'react-icons/fa';
+import Copyright from '../Copyright/Copyright';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -14,48 +15,48 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 font-gothic tracking-wider">ZIMMZIMM GAMES</h3>
             <p className="text-gray-400 font-gothic text-sm">
-              Estudio independiente especializado en experiencias únicas de terror y misterio.
+              Independent studio specialized in unique horror and mystery experiences.
             </p>
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-4 font-gothic">Enlaces</h4>
+            <h4 className="text-lg font-bold mb-4 font-gothic">Navigation</h4>
             <ul className="space-y-2 font-gothic">
               <li>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-                  Inicio
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  Sobre Nosotros
+                <Link href="#characters" className="text-gray-400 hover:text-white transition-colors">
+                  Characters
                 </Link>
               </li>
               <li>
-                <Link href="/wata" className="text-gray-400 hover:text-white transition-colors">
-                  W.A.T.A
+                <Link href="#concept-art" className="text-gray-400 hover:text-white transition-colors">
+                  Concept Art
                 </Link>
               </li>
               <li>
-                <Link href="/dev-journal" className="text-gray-400 hover:text-white transition-colors">
-                  Dev Journal
+                <Link href="#team" className="text-gray-400 hover:text-white transition-colors">
+                  Team
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-gray-400 hover:text-white transition-colors">
-                  FAQ
+                <Link href="#contact" className="text-gray-400 hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link href="/support" className="text-gray-400 hover:text-white transition-colors">
-                  Soporte
+                <Link href="#support" className="text-gray-400 hover:text-white transition-colors">
+                  Support
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-4 font-gothic">Síguenos</h4>
+            <h4 className="text-lg font-bold mb-4 font-gothic">Follow Us</h4>
             <div className="flex gap-4">
               <a
                 href="https://twitter.com/ZimmZimmGames"
@@ -76,7 +77,7 @@ const Footer: React.FC = () => {
                 <FaGithub size={24} />
               </a>
               <a
-                href="https://discord.gg/zimmzimm"
+                href="https://discord.gg/cNM9brehGR"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -99,10 +100,11 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 font-gothic text-sm">
-            © {currentYear} ZimmZimm Games. Todos los derechos reservados.
+            © {currentYear} ZimmZimm Games. All rights reserved.
           </p>
         </div>
       </div>
+      <Copyright />
     </footer>
   );
 };

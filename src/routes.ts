@@ -12,22 +12,22 @@ export const routes: Route[] = [
 	// Existing routes
 	{
 		path: '/',
-		name: 'Inicio',
-		description: 'Página principal',
+		name: 'Home',
+		description: 'Main page',
 		component: 'HomeSection',
 		exists: true
 	},
 	{
 		path: '/where-are-the-alices',
-		name: 'Where Are The Alices',
+		name: 'W.A.T.A: Where are the Alices?',
 		description: 'W.A.T.A game landing page',
 		component: 'WhereAreTheAlices',
 		exists: true
 	},
 	{
 		path: '/wata/options',
-		name: 'Opciones',
-		description: 'Configuración del juego',
+		name: 'Options',
+		description: 'Game settings',
 		component: 'WATAOptions',
 		exists: true
 	},
@@ -40,21 +40,21 @@ export const routes: Route[] = [
 	},
 
 	// Planned routes
-	{ path: '/wata/download', name: 'Descarga', description: 'Página de descarga', component: 'WATADownload', exists: false },
-	{ path: '/wata/steam', name: 'Steam', description: 'Página de Steam', component: 'WATASteam', exists: false },
-	{ path: '/wata/itchio', name: 'itch.io', description: 'Página de Itch.io', component: 'WATAItch', exists: false },
-	{ path: '/wata/gamejolt', name: 'GameJolt', description: 'Página de GameJolt', component: 'WATAGameJolt', exists: false },
-	{ path: '/wata/demo', name: 'Demo', description: 'Demo del juego', component: 'WATADemo', exists: false },
-	{ path: '/wata/gallery', name: 'Galería', description: 'Galería de imágenes', component: 'WATAGallery', exists: false },
-	{ path: '/wata/story', name: 'Historia', description: 'Historia del juego', component: 'WATAStory', exists: false },
-	{ path: '/wata/extras', name: 'Extras', description: 'Contenido extra', component: 'WATAExtras', exists: false },
-	{ path: '/wata/credits', name: 'Créditos', description: 'Créditos', component: 'WATACredits', exists: false },
-	{ path: '/about', name: 'Sobre Nosotros', description: 'Sobre ZimmZimm Games', component: 'About', exists: false },
-	{ path: '/dev-journal', name: 'Dev Journal', description: 'Diario de desarrollo', component: 'DevJournal', exists: false },
-	{ path: '/faq', name: 'FAQ', description: 'Preguntas frecuentes', component: 'FAQ', exists: false },
-	{ path: '/support', name: 'Soporte', description: 'Soporte y ayuda', component: 'Support', exists: false },
-	{ path: '/donaciones', name: 'Donaciones', description: 'Apoya el proyecto', component: 'Donations', exists: false },
-	{ path: '/draconiano', name: 'Draconiano', description: 'Proyecto Draconiano', component: 'Draconiano', exists: false }
+	{ path: '/wata/download', name: 'Download', description: 'Download page', component: 'WATADownload', exists: false },
+	{ path: '/wata/steam', name: 'Steam', description: 'Steam page', component: 'WATASteam', exists: false },
+	{ path: '/wata/itchio', name: 'itch.io', description: 'Itch.io page', component: 'WATAItch', exists: false },
+	{ path: '/wata/gamejolt', name: 'GameJolt', description: 'GameJolt page', component: 'WATAGameJolt', exists: false },
+	{ path: '/wata/demo', name: 'Demo', description: 'Game demo', component: 'WATADemo', exists: false },
+	{ path: '/wata/gallery', name: 'Gallery', description: 'Image gallery', component: 'WATAGallery', exists: false },
+	{ path: '/wata/story', name: 'Story', description: 'Game story', component: 'WATAStory', exists: false },
+	{ path: '/wata/extras', name: 'Extras', description: 'Extra content', component: 'WATAExtras', exists: false },
+	{ path: '/wata/credits', name: 'Credits', description: 'Credits', component: 'WATACredits', exists: false },
+	{ path: '/about', name: 'About Us', description: 'About ZimmZimm Games', component: 'About', exists: false },
+	{ path: '/dev-journal', name: 'Dev Journal', description: 'Development journal', component: 'DevJournal', exists: false },
+	{ path: '/faq', name: 'FAQ', description: 'Frequently asked questions', component: 'FAQ', exists: false },
+	{ path: '/support', name: 'Support', description: 'Support and help', component: 'Support', exists: false },
+	{ path: '/donations', name: 'Donations', description: 'Support the project', component: 'Donations', exists: false },
+	{ path: '/draconiano', name: 'Draconiano', description: 'Draconiano project', component: 'Draconiano', exists: false }
 ];
 
 export function getExistingRoutes(): Route[] {

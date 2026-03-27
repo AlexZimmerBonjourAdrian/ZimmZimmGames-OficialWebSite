@@ -20,13 +20,26 @@
     align-items: center;
 }
 
-.logo a {
-    font-family: var(--font-alice);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    letter-spacing: 2px;
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    height: 40px; /* Ajusta según sea necesario */
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .logoImage {
+        height: 30px;
+    }
 }
 
 .nav {

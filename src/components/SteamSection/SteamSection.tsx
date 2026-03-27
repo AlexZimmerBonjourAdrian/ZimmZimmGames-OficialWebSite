@@ -18,12 +18,12 @@ const SteamSection: React.FC<SteamSectionProps> = ({
   return (
     <section className={`${styles.steamSection} ${className}`}>
       <div className={styles.container}>
-        {/* Botón de Steam */}
+        {/* Steam Button */}
         <div className={styles.steamButtonContainer}>
           <SteamWishlistButton size={buttonSize} enabled={false} />
         </div>
         
-        {/* Galería de personajes */}
+        {/* Character Gallery */}
         {showCharacterGallery && (
           <div className={styles.characterGalleryContainer}>
             <CharacterGallery 

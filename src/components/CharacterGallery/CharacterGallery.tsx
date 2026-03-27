@@ -6,9 +6,9 @@ interface CharacterGalleryProps {
   className?: string;
   showTitles?: boolean;
   layout?: 'grid' | 'carousel' | 'stacked';
-  /** variante visual. 'heroInline' quita fondos y usa fuentes del DialogueGame */
+  /** Visual variant. 'heroInline' removes backgrounds and uses DialogueGame fonts */
   variant?: 'default' | 'heroInline';
-  /** textos opcionales para sobrescribir descripciones/títulos */
+  /** Optional texts to override descriptions/titles */
   overrides?: {
     cbDesc?: string;
     junoDesc?: string;
@@ -29,7 +29,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
       id: 'cb',
       name: 'C.B.',
       image: '/Characters/CB.png',
-      description: overrides?.cbDesc ?? 'El conejo elegante y astuto',
+      description: overrides?.cbDesc ?? 'The elegant and astute rabbit',
       quotes: [
         "Hello, Detective, how have you been? How is Cheshire? Are you still unemployed?",
         "Was it for being a good guy? Or for looking weak? Maybe both?",
@@ -42,7 +42,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
       id: 'juno',
       name: 'Juno',
       image: '/Characters/Juno.png',
-      description: overrides?.junoDesc ?? 'La coneja determinada y valiente',
+      description: overrides?.junoDesc ?? 'The determined and brave rabbit',
       quotes: [
         "I have violent fantasies, I have desires and dreams that scare me. [...] Every day I tell myself in the mirror: 'I am a good person'.",
         "I WANT TO KILL HIM! I WANT TO BEAT HIM UNTIL HE BLEEDS! BUT IT'S WRONG! And he... he laughs at me!..",
@@ -65,6 +65,24 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
       name: 'Main Characters',
       image: '/ConceptArt/ConceptJunoAndCB.png',
       description: overrides?.duoDesc ?? 'Juno and C.B. together'
+    },
+    {
+      id: 'main-menu-gameplay',
+      name: 'Main Menu Concept',
+      image: '/Gameplay/MainMenu.jpg',
+      description: 'The entrance to the rabbit hole.'
+    },
+    {
+      id: 'menu-case-gameplay',
+      name: 'Menu Case Concept',
+      image: '/Gameplay/MenuCase.png',
+      description: 'Analyze the evidence.'
+    },
+    {
+      id: 'storyboard-1',
+      name: 'Storyboard Concept',
+      image: '/Gameplay/Storyboard.png',
+      description: 'Visualizing the narrative.'
     }
   ];
 
@@ -75,7 +93,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
   };
 
   return (
-    <div className={`${styles.characterGallery} ${layoutClasses[layout]} ${variant === 'heroInline' ? styles.heroInline : ''} ${className}`}>
+    <div id="characters" className={`${styles.characterGallery} ${layoutClasses[layout]} ${variant === 'heroInline' ? styles.heroInline : ''} ${className}`}>
       {showTitles && (
         <div className={styles.header}>
           <h2 className={styles.title}>Concept Art</h2>
@@ -105,7 +123,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
                 
                 {character.quotes && character.quotes.length > 0 && (
                   <div className={styles.quotesContainer}>
-                    <h5 className={styles.quotesTitle}>Diálogos</h5>
+                    <h5 className={styles.quotesTitle}>Dialogues</h5>
                     <div className={styles.quotesList}>
                       {character.quotes.map((quote, index) => (
                         <div key={index} className={styles.quoteWrapper}>
@@ -123,7 +141,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
       </section>
 
       {/* Concept Art */}
-      <section className={styles.section}>
+      <section id="concept-art" className={styles.section}>
         <h3 className={styles.sectionTitle}>Concept Art</h3>
         <div className={styles.conceptGrid}>
           {conceptArt.map((art) => (

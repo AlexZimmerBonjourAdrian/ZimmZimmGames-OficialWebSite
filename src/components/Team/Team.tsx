@@ -8,12 +8,12 @@ export interface TeamMember {
 }
 
 const members: TeamMember[] = [
-	{ name: 'Alex Zimmer', role: 'PM, Programador y escritor' },
-	{ name: 'Lily', role: 'Traductora' },
-	{ name: 'Pama', role: 'Consultora literaria' },
-	{ name: 'Yahjix', role: 'Artista principal' },
-	{ name: 'EveChan', role: 'Actriz de doblaje: CB y Juno' },
-	{ name: 'Father', role: 'Marketing y PostProducer' }
+	{ name: 'Alex Zimmer', role: 'PM, Programmer and Writer' },
+	{ name: 'Lily', role: 'Translator' },
+	{ name: 'Pama', role: 'Literary Consultant' },
+	{ name: 'Yahjix', role: 'Lead Artist' },
+	{ name: 'EveChan', role: 'Voice Actress: CB and Juno' },
+	{ name: 'Father', role: 'Marketing and PostProducer' }
 ];
 
 export interface TeamProps {
@@ -22,13 +22,13 @@ export interface TeamProps {
 	members?: TeamMember[];
 }
 
-const Team: React.FC<TeamProps> = ({ className = '', title = 'Equipo', members: membersProp }) => {
+const Team: React.FC<TeamProps> = ({ className = '', title = 'Team', members: membersProp }) => {
     const effectiveMembers = (membersProp ?? members).slice().sort((a, b) => a.name.localeCompare(b.name));
 	// Duplicamos los miembros para el efecto de scroll infinito
 	const displayMembers = [...effectiveMembers, ...effectiveMembers];
 
 	return (
-		<section className={`${styles.teamSection} ${className}`}>
+		<section id="team" className={`${styles.teamSection} ${className}`}>
 			<h2 className={styles.title}>{title}</h2>
 			
 			<div className={styles.carouselContainer}>

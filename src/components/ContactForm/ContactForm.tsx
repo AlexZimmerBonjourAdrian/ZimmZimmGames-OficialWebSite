@@ -42,20 +42,20 @@ const ContactForm: React.FC<ContactFormProps> = ({
       });
       
       if (!response.ok) {
-        throw new Error('Error al enviar el mensaje');
+        throw new Error('Error sending the message');
       }
 
       setIsSubmitted(true);
     } catch (err) {
       console.error('Submission error:', err);
-      setError("Algo salió mal. Por favor, inténtalo de nuevo más tarde o escribe directamente a zimmzimmgames@gmail.com.");
+      setError("Something went wrong. Please try again later or write directly to zimmzimmgames@gmail.com.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section className={`${styles.contactContainer} ${className || ''}`}>
+    <section id="contact" className={`${styles.contactContainer} ${className || ''}`}>
       <AnimatePresence mode="wait">
         {!isSubmitted ? (
           <motion.div
@@ -65,14 +65,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className={styles.contactTitle}>Contacta con el País de las Maravillas</h2>
+            <h2 className={styles.contactTitle}>Contact Wonderland</h2>
             <p className={styles.contactSubtitle}>
-              Únete al equipo, envía evidencias o recibe promociones desde el abismo.
+              Join the team, send evidence, or receive promotions from the abyss.
             </p>
 
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="name" className={styles.label}>Nombre</label>
+                <label htmlFor="name" className={styles.label}>Name</label>
                 <input
                   type="text"
                   id="name"
@@ -84,35 +84,35 @@ const ContactForm: React.FC<ContactFormProps> = ({
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.label}>Correo Electrónico</label>
+                <label htmlFor="email" className={styles.label}>Email Address</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   required
-                  placeholder="conejo@madriguera.com"
+                  placeholder="rabbit@hole.com"
                   className={styles.input}
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="subject" className={styles.label}>Asunto</label>
-                <select id="subject" name="subject" className={styles.select} defaultValue="Consulta General">
-                  <option value="Consulta General">Consulta General</option>
-                  <option value="Unirse al Equipo">Unirse al Equipo</option>
-                  <option value="Promociones">Recibir Promociones</option>
-                  <option value="Reporte de Error">Evidencia (Reporte de Error)</option>
-                  <option value="Otro">Otro</option>
+                <label htmlFor="subject" className={styles.label}>Subject</label>
+                <select id="subject" name="subject" className={styles.select} defaultValue="General Inquiry">
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Join the Team">Join the Team</option>
+                  <option value="Promotions">Receive Promotions</option>
+                  <option value="Bug Report">Evidence (Bug Report)</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="message" className={styles.label}>Mensaje</label>
+                <label htmlFor="message" className={styles.label}>Message</label>
                 <textarea
                   id="message"
                   name="message"
                   required
-                  placeholder="Tu mensaje aquí..."
+                  placeholder="Your message here..."
                   className={styles.textarea}
                 />
               </div>
@@ -124,7 +124,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                 disabled={isSubmitting}
                 className={styles.submitButton}
               >
-                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.div>
@@ -136,16 +136,16 @@ const ContactForm: React.FC<ContactFormProps> = ({
             className={styles.successMessage}
           >
             <span className={styles.successIcon}>🐇</span>
-            <h3 className={styles.contactTitle}>Mensaje Recibido</h3>
+            <h3 className={styles.contactTitle}>Message Received</h3>
             <p className={styles.contactSubtitle}>
-              Tu mensaje ha sido enviado a la madriguera del conejo. Te responderemos... si encontramos el camino de vuelta.
+              Your message has been sent into the rabbit hole. We will get back to you... if we find our way back.
             </p>
             <button 
               onClick={() => setIsSubmitted(false)}
               className={styles.submitButton}
               style={{ marginTop: '2rem' }}
             >
-              Enviar otro mensaje
+              Send another message
             </button>
           </motion.div>
         )}

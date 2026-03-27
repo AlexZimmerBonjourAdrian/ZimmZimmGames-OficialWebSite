@@ -68,22 +68,25 @@
 }
 
 .heroTitle {
-    font-size: 6rem;
-    font-weight: 900;
-    color: #FFFFFF;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
-    letter-spacing: 0.1em;
-    font-family: var(--font-alice);
-    animation: glow 2s ease-in-out infinite alternate;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes glow {
+.heroLogo {
+    max-width: min(600px, 90vw);
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+    animation: glowLogo 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowLogo {
     from {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
     }
     to {
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.5), 0 0 70px rgba(255, 255, 255, 0.3);
+        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
     }
 }
 
@@ -238,6 +241,39 @@
 
 .gameplayCaptionText {
     opacity: 0.95;
+}
+
+/* Wishlist Disabled Styles */
+.disabledWishlistContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.disabledWishlistImage {
+    width: 300px;
+    height: auto;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.comingSoonBadge {
+    background: rgba(102, 192, 244, 0.15);
+    color: #66c0f4;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: var(--font-courier);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid rgba(102, 192, 244, 0.3);
+    box-shadow: 0 0 15px rgba(102, 192, 244, 0.1);
 }
 
 @keyframes enterSmooth {
@@ -575,6 +611,57 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.projectDetail {
+    margin-bottom: 2.5rem;
+}
+
+.detailTitle {
+    font-family: var(--font-alice);
+    font-size: 1.5rem;
+    color: #66c0f4;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.warningBox {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+}
+
+.warningText {
+    color: #ef4444;
+    font-size: 0.9rem;
+    font-family: var(--font-courier);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+.featuresList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.featuresList li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.featuresList li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #66c0f4;
 }
 
 .aboutText {

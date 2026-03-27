@@ -76,50 +76,50 @@ const LoadingPage: React.FC<LoadingPageProps> = ({
 
   useEffect(() => {
     const loadingTexts = [
-      // Frases del Conejo Blanco
-      "¡Dios mío! ¡Dios mío! ¡Voy a llegar tarde!",
-      "¡Oh, mi pelo y mis bigotes! ¡Qué tarde se está haciendo!",
-      "¡La Duquesa! ¡La Duquesa! ¡Oh, mi querida! ¡Oh, mi querida!",
+      // White Rabbit Quotes
+      "Oh dear! Oh dear! I shall be too late!",
+      "Oh, my fur and whiskers! I'm late, I'm late, I'm late!",
+      "The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers!",
       
-      // Frases de Alicia
-      "¿Cuánto tiempo es para siempre? A veces, solo un segundo.",
-      "A veces pienso hasta seis cosas imposibles antes del desayuno.",
-      "Si no sabes a dónde vas, cualquier camino te llevará allí.",
-      "La imaginación es la única arma en la guerra contra la realidad.",
-      "Creo que sí, que has perdido la cabeza, estás completamente loco. Pero te diré un secreto: las mejores personas lo están.",
+      // Alice Quotes
+      "How long is forever? Sometimes, just one second.",
+      "Sometimes I've believed as many as six impossible things before breakfast.",
+      "If you don't know where you are going, any road will get you there.",
+      "Imagination is the only weapon in the war against reality.",
+      "I'm afraid so. You're entirely bonkers. But I'll tell you a secret. All the best people are.",
       
-      // Frases del Gato de Cheshire
-      "Todos estamos locos aquí. Yo estoy loco. Tú estás loca.",
-      "¿Cómo sabes que estoy loca? -preguntó Alicia. -Debes estarlo -dijo el Gato- o no habrías venido aquí.",
-      "Siempre llegas a alguna parte si caminas lo suficiente.",
+      // Cheshire Cat Quotes
+      "We're all mad here. I'm mad. You're mad.",
+      "How do you know I'm mad? -said Alice. -You must be, -said the Cat, -or you wouldn't have come here.",
+      "Always get to somewhere if you only walk far enough.",
       
-      // Frases de la Reina de Corazones
-      "¡Que le corten la cabeza!",
-      "¡Aquí todos ganan y todos tienen premios!",
-      "¡Antes de que termine la frase, que le corten la cabeza!",
+      // Queen of Hearts Quotes
+      "Off with her head!",
+      "Here everyone wins and all have prizes!",
+      "Before I'm finished with the sentence, off with his head!",
       
-      // Frases generales del libro
-      "Curioser y curioser...",
-      "¡Qué extraño es todo hoy!",
-      "En el País de las Maravillas, todo es posible.",
-      "¿Quién eres tú? -preguntó la Oruga.",
-      "¡Come de mí! -dijo la Oruga, señalando el hongo.",
+      // General Book Quotes
+      "Curiouser and curiouser...",
+      "What a strange world we live in...",
+      "In Wonderland, everything is possible.",
+      "Who are YOU? -said the Caterpillar.",
+      "Eat me! -said the Caterpillar, pointing to the mushroom.",
       
-      // Frases de transición
-      "Descendiendo por la madriguera del conejo...",
-      "Encontrando el País de las Maravillas...",
-      "Preparando la aventura más curiosa...",
-      "Casi listo para la locura..."
+      // Transition Phrases
+      "Descending through the rabbit hole...",
+      "Finding Wonderland...",
+      "Preparing the most curious adventure...",
+      "Almost ready for the madness..."
     ];
 
-    // Textos específicos para preloading
+    // Preloading specific texts
     const preloadTexts = [
-      "Cargando imágenes del País de las Maravillas...",
-      "Preparando las fuentes mágicas...",
-      "Descargando los secretos de Alicia...",
-      "Cargando los personajes más curiosos...",
-      "Preparando la experiencia visual...",
-      "Casi listo para la aventura..."
+      "Loading images from Wonderland...",
+      "Preparing the magic fonts...",
+      "Downloading Alice's secrets...",
+      "Loading the most curious characters...",
+      "Preparing the visual experience...",
+      "Almost ready for the adventure..."
     ];
 
     const allTexts = enablePreloading ? [...preloadTexts, ...loadingTexts] : loadingTexts;

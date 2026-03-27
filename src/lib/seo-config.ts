@@ -13,7 +13,7 @@ export const siteConfig = {
 };
 
 export const gameConfig = {
-  name: 'W.A.T.A - Where Are The Alices?',
+  name: 'W.A.T.A: Where are the Alices?',
   description: 'A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl\'s kidnapping, in a twisted psychological game where sanity is the greatest threat.',
   genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
   platform: ['PC', 'Windows', 'Android'],
@@ -28,19 +28,19 @@ export const gameConfig = {
   themes: ['Alice in Wonderland', 'Dark Fantasy', 'Furry', 'Noir', 'Political Thriller', 'Psychological Horror'],
 };
 
-// SEO metadata optimizada para máxima visibilidad en navegadores
+// SEO metadata optimized for maximum visibility in browsers
 export const seoMetadata = {
   home: {
-    title: 'ZimmZimm Games - W.A.T.A | Psychological Horror Visual Novel Indie',
-    description: 'Discover W.A.T.A, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry and political thriller elements. Available on Steam.',
+    title: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel Indie',
+    description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
     keywords: [
-      'ZimmZimm Games', 'W.A.T.A', 'visual novel', 'psychological horror', 
+      'ZimmZimm Games', 'W.A.T.A', 'Where are the Alices', 'visual novel', 'psychological horror', 
       'Alice in Wonderland', 'indie game', 'Steam', 
       'dark fantasy', 'furry', 'noir', 'political thriller', 'indie games'
     ],
   },
   wata: {
-    title: 'W.A.T.A - Where Are The Alices? | Psychological Horror Visual Novel',
+    title: 'W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
     description: 'A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl\'s kidnapping, in a twisted psychological game where sanity is the greatest threat.',
     keywords: [
       'W.A.T.A', 'Where Are The Alices', 'visual novel', 'psychological horror', 
@@ -50,7 +50,7 @@ export const seoMetadata = {
   },
   about: {
     title: 'About ZimmZimm Games | Indie Game Studio Specialized in Horror',
-    description: 'Meet ZimmZimm Games, an independent studio specialized in creating unique psychological horror and visual novel experiences like W.A.T.A.',
+    description: 'Meet ZimmZimm Games, an independent studio specialized in creating unique psychological horror and visual novel experiences like W.A.T.A: Where are the Alices?.',
     keywords: [
       'ZimmZimm Games', 'indie studio', 'game development', 
       'psychological horror', 'visual novels', 'unique games'
@@ -58,7 +58,7 @@ export const seoMetadata = {
   },
 };
 
-// Datos estructurados CRÍTICOS para visibilidad en navegadores
+// CRITICAL structured data for browser visibility
 export const structuredData = {
   organization: {
     '@context': 'https://schema.org',
@@ -77,7 +77,7 @@ export const structuredData = {
   videoGame: {
     '@context': 'https://schema.org',
     '@type': 'VideoGame',
-    name: 'W.A.T.A - Where Are The Alices?',
+    name: 'W.A.T.A: Where are the Alices?',
     description: 'A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl\'s kidnapping, in a twisted psychological game where sanity is the greatest threat.',
     genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
     gamePlatform: ['PC', 'Windows', 'Android'],
