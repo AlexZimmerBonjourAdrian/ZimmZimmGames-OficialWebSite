@@ -562,19 +562,45 @@
     }
 }
 
+.aboutSection {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    max-width: 800px;
+    background: rgba(10, 10, 10, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.aboutText {
+    font-family: var(--font-courier);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e6e6e6;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .aboutSection {
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+    .aboutText {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 480px) {
     .heroSection {
         padding: 1rem;
     }
     .heroTitle {
         font-size: 3rem;
-    }
-    .gameInfoSection,
-    .featuresSection {
-        padding: 3rem 1rem;
-    }
-    .featureCard {
-        padding: 2rem;
     }
     .gameplayTitle {
         font-size: 1.8rem;

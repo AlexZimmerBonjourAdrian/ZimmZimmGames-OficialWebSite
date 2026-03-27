@@ -19,13 +19,20 @@ export interface PreloadConfig {
 // Configuración de recursos críticos para preloading
 export const criticalResources: PreloadConfig = {
   images: [
+    '/Steam/Capsulas de Steam/Capsula de Cabecera/Capsula_de_Cabecera.jpg',
+    '/Gameplay/MainMenu.jpg',
+    '/Gameplay/MenuCase.png',
+    '/Gameplay/Storyboard.png',
+    '/Gameplay/Storyboard-2.png',
+    '/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png',
+    '/Steam/Capsulas de Steam/Icono de App y Icono Acceso directo/icono-de-acceso-directo.png',
+    '/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg',
     '/images/Wata/WhereAreTheAlices.JPG',
     '/images/Wata/Door.PNG',
     '/images/Wata/Menu.PNG',
     '/Characters/Profile/CB.png',
     '/Characters/Profile/Juno.png',
     '/ConceptArt/ConceptJunoAndCB.png',
-    '/Gameplay/Case00-CB.jpg',
     '/Icon/ajuste_avatar_Documents-3-Black.png',
     '/Icon/ryanlerch-Alice-In-Wonderland-2-the-white-rabbit.svg'
   ],

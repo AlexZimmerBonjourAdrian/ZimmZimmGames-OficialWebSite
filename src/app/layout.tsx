@@ -1,6 +1,6 @@
 import './globals.css';
 import { GeistSans, GeistMono } from 'geist/font';
-// import Navigation from '@/components/Navigation'; // Componente no existe aún
+import { Header } from '@/components';
 import { structuredData } from '@/lib/seo-config';
 
 export const metadata = {
@@ -33,7 +33,7 @@ export const metadata = {
     siteName: 'ZimmZimm Games',
     images: [
       {
-        url: '/images/Wata/WhereAreTheAlices.JPG', // Imagen que SÍ existe
+        url: '/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg',
         width: 1200,
         height: 630,
         alt: 'ZimmZimm Games - W.A.T.A Novela Visual de Terror Psicológico',
@@ -47,7 +47,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'ZimmZimm Games - W.A.T.A | Novela Visual de Terror Psicológico Indie',
     description: 'Descubre W.A.T.A, novela visual de terror psicológico inspirada en Alicia en el País de las Maravillas. Juego indie único con fantasía oscura, furry y thriller político. Disponible en Steam.',
-    images: ['/images/Wata/WhereAreTheAlices.JPG'], // Imagen que SÍ existe
+    images: ['/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg'],
     creator: '@ZimmZimmGames',
   },
   robots: {
@@ -74,8 +74,8 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/Steam/Capsulas de Steam/Icono de App y Icono Acceso directo/icono-de-acceso-directo.png" />
+        <link rel="apple-touch-icon" href="/Steam/Capsulas de Steam/Icono de App y Icono Acceso directo/icono-de-acceso-directo.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -103,20 +103,23 @@ export default function RootLayout({
         />
         <link
           rel="preload"
+          href="/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png"
+          as="image"
+        />
+        <link
+          rel="preload"
           href="/images/Wata/Door.PNG"
           as="image"
         />
         
-        {/* DATOS ESTRUCTURADOS CRÍTICOS PARA VISIBILIDAD */}
+        {/* Structured Data para SEO */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData.organization),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body className="bg-black">
-        {/* <Navigation /> */}
+        <Header />
         {children}
       </body>
     </html>

@@ -4,14 +4,19 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './HomeSection.module.css';
 
-const GameplayBlock = () => {
+const GameplayBlock = ({ 
+  title = "Gameplay", 
+  image = "/Gameplay/Case00-CB.jpg", 
+  captionTitle = "Juno:", 
+  captionText = "Where is Alice Rabbit??!! Answer me!" 
+}) => {
   return (
     <div className={`${styles.enterContainer} ${styles.enterGallery} ${styles.gameplaySection}`}>
-      <h2 className={styles.gameplayTitle}>Gameplay</h2>
+      <h2 className={styles.gameplayTitle}>{title}</h2>
       <div className={styles.gameplayCard}>
         <Image
-          src="/Gameplay/Case00-CB.jpg"
-          alt="W.A.T.A - CB interrogation - gameplay still"
+          src={image}
+          alt={`W.A.T.A - ${title} - gameplay still`}
           width={1280}
           height={720}
           className={styles.gameplayImage}
@@ -19,8 +24,8 @@ const GameplayBlock = () => {
         />
       </div>
       <div className={styles.gameplayCaption}>
-        <div className={styles.gameplayCaptionTitle}>Juno:</div>
-        <div className={styles.gameplayCaptionText}>Where is Alice Rabbit??!! Answer me!</div>
+        <div className={styles.gameplayCaptionTitle}>{captionTitle}</div>
+        <div className={styles.gameplayCaptionText}>{captionText}</div>
       </div>
     </div>
   );

@@ -24,17 +24,24 @@ export interface TeamProps {
 
 const Team: React.FC<TeamProps> = ({ className = '', title = 'Equipo', members: membersProp }) => {
     const effectiveMembers = (membersProp ?? members).slice().sort((a, b) => a.name.localeCompare(b.name));
+	// Duplicamos los miembros para el efecto de scroll infinito
+	const displayMembers = [...effectiveMembers, ...effectiveMembers];
+
 	return (
 		<section className={`${styles.teamSection} ${className}`}>
 			<h2 className={styles.title}>{title}</h2>
-			<div className={styles.grid}>
-				{effectiveMembers.map((m) => (
-					<div key={m.name} className={styles.card}>
-						<h3 className={styles.name}>{m.name}</h3>
-						<p className={styles.role}>{m.role}</p>
-					</div>
-				))}
+			
+			<div className={styles.carouselContainer}>
+				<div className={styles.carouselTrack}>
+					{displayMembers.map((m, index) => (
+						<div key={`${m.name}-${index}`} className={styles.card}>
+							<h3 className={styles.name}>{m.name}</h3>
+							<p className={styles.role}>{m.role}</p>
+						</div>
+					))}
+				</div>
 			</div>
+
 			{effectiveMembers.some((m) => m.note) && (
 				<footer className={styles.notesFooter}>
 					{effectiveMembers.filter((m) => m.note).map((m) => (

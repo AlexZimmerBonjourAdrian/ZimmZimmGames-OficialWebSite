@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './LoadingPage.module.css';
 import { ResourcePreloader, criticalResources, pagePreloadConfigs } from '@/lib/preloader';
@@ -141,7 +143,11 @@ const LoadingPage: React.FC<LoadingPageProps> = ({
       <div className={styles.loadingContent}>
         {/* Logo/Título */}
         <div className={styles.logoContainer}>
-          <h1 className={styles.logo}>W.A.T.A</h1>
+          <img 
+            src="/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png" 
+            alt="W.A.T.A" 
+            className={styles.logoImage}
+          />
           <div className={styles.logoSubtitle}>Where are the Alices?</div>
         </div>
 

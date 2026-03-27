@@ -28,19 +28,22 @@
 /* Logo y título */
 
 .logoContainer {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoImage {
+    max-width: 400px;
+    height: auto;
+    animation: glow 2s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 .logo {
-    font-family: var(--font-alice);
-    font-size: 4rem;
-    font-weight: 900;
-    color: #ffffff;
-    margin: 0;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
-    letter-spacing: 0.1em;
-    animation: glow 2s ease-in-out infinite alternate;
+    display: none;
 }
 
 .logoSubtitle {

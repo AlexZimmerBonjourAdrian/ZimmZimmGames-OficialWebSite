@@ -1,0 +1,78 @@
+.supportContainer {
+    width: 100%;
+    padding: 2rem;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.title {
+    font-family: var(--font-alice);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.buttonGrid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.supportBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-family: var(--font-courier);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon {
+    font-size: 1.25rem;
+}
+
+.supportBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.kofi:hover {
+    background: #ff5e5b;
+    border-color: #ff5e5b;
+}
+
+.paypal:hover {
+    background: #0070ba;
+    border-color: #0070ba;
+}
+
+.discord:hover {
+    background: #5865f2;
+    border-color: #5865f2;
+}
+
+@media (max-width: 768px) {
+    .buttonGrid {
+        gap: 1rem;
+    }
+    .supportBtn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useMemo, useRef, useState, useEffect } from 'react';
 
 export type LocalizedText = string | { en?: string; es?: string };
