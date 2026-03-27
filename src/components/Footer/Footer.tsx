@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FaTwitter, FaGithub, FaDiscord, FaYoutube } from 'react-icons/fa';
+import { FaDiscord } from 'react-icons/fa';
 import Copyright from '../Copyright/Copyright';
 
 const Footer: React.FC = () => {
@@ -59,24 +59,6 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-4 font-gothic">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="https://twitter.com/ZimmZimmGames"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <FaTwitter size={24} />
-              </a>
-              <a
-                href="https://github.com/ZimmZimmGames"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="GitHub"
-              >
-                <FaGithub size={24} />
-              </a>
-              <a
                 href="https://discord.gg/cNM9brehGR"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -84,15 +66,6 @@ const Footer: React.FC = () => {
                 aria-label="Discord"
               >
                 <FaDiscord size={24} />
-              </a>
-              <a
-                href="https://youtube.com/@zimmzimmgames"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="YouTube"
-              >
-                <FaYoutube size={24} />
               </a>
             </div>
           </div>
