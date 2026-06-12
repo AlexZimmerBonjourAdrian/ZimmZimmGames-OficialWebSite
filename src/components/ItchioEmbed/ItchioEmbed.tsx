@@ -13,16 +13,17 @@ const ItchioEmbed: React.FC<ItchioEmbedProps> = ({ className = '' }) => {
         <>
           <h3 className={styles.ctaText}>{content.ctaText}</h3>
           <div className={styles.itchioFrameWrapper}>
-            <iframe
-              src={content.embedUrl}
-              title="Itch.io Game Embed"
-              width={content.width}
-              height={content.height}
-              className={styles.itchioFrame}
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; fullscreen; payment"
-            />
+            <div className={styles.iframeContainer}>
+              <iframe
+                src={content.embedUrl}
+                title="Where Are The Alices? - Play Demo"
+                className={styles.itchioFrame}
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; fullscreen; payment"
+                loading="lazy"
+              />
+            </div>
           </div>
           <div className={styles.steamDemoSection}>
             <p className={styles.steamDemoText}>{content.steamDemoText}</p>

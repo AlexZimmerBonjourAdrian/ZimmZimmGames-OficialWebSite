@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -26,7 +27,7 @@
 }
 
 .logoImage {
-    height: 40px; /* Ajusta según sea necesario */
+    height: 40px;
     width: auto;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
     transition: transform 0.3s ease;
@@ -36,10 +37,14 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .logoImage {
-        height: 30px;
-    }
+.mobileMenuButton {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
 }
 
 .nav {
@@ -75,6 +80,47 @@
     transform: translateY(-2px);
 }
 
+/* Menú móvil */
+.mobileNav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+.mobileNavList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobileNavItem a {
+    font-family: var(--font-courier);
+    font-size: 1rem;
+    font-weight: 500;
+    color: #cccccc;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+}
+
+.mobileNavItem a:hover {
+    color: #FFD700;
+    background: rgba(255, 215, 0, 0.1);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
 @media (max-width: 1024px) {
     .navList {
         gap: 1rem;
@@ -91,17 +137,15 @@
         padding: 0 1rem;
     }
     
-    .navList {
-        gap: 0.75rem;
+    .mobileMenuButton {
+        display: block;
     }
     
-    .navItem a {
-        font-size: 0.75rem;
-        padding: 0.3rem 0.6rem;
-        letter-spacing: 1px;
+    .nav {
+        display: none;
     }
     
-    .logo a {
-        font-size: 1.5rem;
+    .logoImage {
+        height: 30px;
     }
 }
