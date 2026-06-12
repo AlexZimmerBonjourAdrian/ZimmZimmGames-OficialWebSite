@@ -1,6 +1,6 @@
 {
   "title": "Contact Wonderland",
-  "subtitle": "Join the team, send evidence, or receive promotions from the abyss.",
+  "subtitle": "Join the team, send messages, tell us about your promotion. We're listening—after all, we're all ears, at least 20% of us are.",
   "labels": {
     "name": "Name",
     "email": "Email Address",
@@ -13,9 +13,9 @@
     "message": "Your message here..."
   },
   "subjectOptions": [
-    "General Inquiry",
     "Join the Team",
-    "Receive Promotions",
+    "Send a Message",
+    "Tell Us About Your Promotion",
     "Evidence (Bug Report)",
     "Other"
   ],
@@ -30,6 +30,6 @@
   },
   "success": {
     "title": "Message Received",
-    "subtitle": "Your message has been sent into the rabbit hole. We will get back to you... if we find our way back."
+    "subtitle": "Your message has been sent into the rabbit hole. We're all ears (well, 20% of us) and will get back to you soon!"
   }
 }
