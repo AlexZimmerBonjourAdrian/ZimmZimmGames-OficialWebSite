@@ -11,5 +11,6 @@ export * from './HeroCarousel';
 export * from './ContactForm';
 export * from './Copyright';
 export * from './Footer';
-
-
+export * from './GameStages';
+export * from './FundingGoals';
+export * from './ItchioEmbed';

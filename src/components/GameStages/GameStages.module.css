@@ -1,0 +1,197 @@
+.stagesContainer {
+    width: 100%;
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-alice);
+}
+
+.stagesTimeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.stagesTimeline::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    background: linear-gradient(to bottom, #66c0f4 0%, #FFD700 50%, #66c0f4 100%);
+    border-radius: 2px;
+}
+
+.stageCard {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 1.25rem;
+    z-index: 1;
+    padding-left: 40px;
+}
+
+.stageNumber {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    border: 3px solid #66c0f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-courier);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.currentStage .stageNumber {
+    background: #FFD700;
+    border-color: #FFD700;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.stageDivider {
+    position: absolute;
+    left: 56px;
+    width: 16px;
+    height: 3px;
+    background: #444;
+    border-radius: 1.5px;
+    z-index: 0;
+}
+
+.currentStage .stageDivider {
+    background: #FFD700;
+}
+
+.stageInfo {
+    flex: 1;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.3s ease;
+}
+
+.stageInfo:hover {
+    border-color: #FFD700;
+}
+
+.currentStage .stageInfo {
+    border-color: #FFD700;
+}
+
+.stageSection {
+    font-family: var(--font-courier);
+    font-size: 0.8rem;
+    color: #66c0f4;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stageName {
+    font-size: 1.1rem;
+    color: #FFD700;
+    margin-bottom: 0.3rem;
+    font-family: var(--font-alice);
+}
+
+.stagePrice {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: var(--font-courier);
+}
+
+@media (max-width: 768px) {
+    .stagesTimeline::before {
+        left: 24px;
+    }
+
+    .stageCard {
+        padding-left: 30px;
+        gap: 1rem;
+    }
+
+    .stageNumber {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+
+    .stageDivider {
+        left: 48px;
+        width: 14px;
+    }
+
+    .stageInfo {
+        padding: 0.875rem 1.25rem;
+    }
+
+    .stageName {
+        font-size: 1rem;
+    }
+
+    .stagePrice {
+        font-size: 1.25rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stagesTimeline::before {
+        left: 20px;
+    }
+
+    .stageCard {
+        padding-left: 24px;
+        gap: 0.875rem;
+    }
+
+    .stageNumber {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .stageDivider {
+        left: 42px;
+        width: 12px;
+    }
+
+    .stageInfo {
+        padding: 0.75rem 1rem;
+    }
+
+    .stageName {
+        font-size: 0.95rem;
+    }
+
+    .stagePrice {
+        font-size: 1.1rem;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+}

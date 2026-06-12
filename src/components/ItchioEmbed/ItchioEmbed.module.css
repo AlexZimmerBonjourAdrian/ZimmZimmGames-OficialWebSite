@@ -1,0 +1,41 @@
+.itchioContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.itchioTitle {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-family: 'Courier Prime', monospace;
+}
+
+.itchioDescription {
+  font-size: 1rem;
+  color: #ccc;
+  text-align: center;
+  font-family: 'Courier Prime', monospace;
+}
+
+.itchioFrameWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.itchioFrame {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.comingSoonText {
+  color: #888;
+  font-style: italic;
+  font-family: 'Courier Prime', monospace;
+}

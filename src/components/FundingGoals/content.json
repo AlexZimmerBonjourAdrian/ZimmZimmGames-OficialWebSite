@@ -1,0 +1,161 @@
+{
+  "title": "Stretch Goals & Backer Rewards",
+  "description": "Unlock these goals as we reach funding milestones! Plus, check out our special rewards for backers!",
+  "goals": [
+    {
+      "id": 1,
+      "amount": "$10,000",
+      "title": "Fireflies",
+      "description": "Unlock the Fireflies feature",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "amount": "$12,500",
+      "title": "Wishes",
+      "description": "Unlock Wishes for all",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "amount": "$15,000",
+      "title": "Devil Ship",
+      "description": "Unlock Devil Ship from Hell",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "amount": "$17,000",
+      "title": "3 Boats",
+      "description": "Unlock 3 more Boats!",
+      "completed": true
+    },
+    {
+      "id": 5,
+      "amount": "$20,000",
+      "title": "The Skull Children",
+      "description": "Meet the Skull Children",
+      "completed": true
+    },
+    {
+      "id": 6,
+      "amount": "$22,500",
+      "title": "The Grotto",
+      "description": "Unlock the secret Grotto",
+      "completed": true
+    },
+    {
+      "id": 7,
+      "amount": "$27,500",
+      "title": "Cthulhu",
+      "description": "Say Hi to Cthulhu!",
+      "completed": true
+    },
+    {
+      "id": 8,
+      "amount": "$30,000",
+      "title": "The Gallows",
+      "description": "Unlock the Full Gallows",
+      "completed": true
+    },
+    {
+      "id": 9,
+      "amount": "$32,500",
+      "title": "7 Turd Path",
+      "description": "Unlock 7 Turd Path",
+      "completed": false
+    },
+    {
+      "id": 10,
+      "amount": "$37,500",
+      "title": "Drew Dragon",
+      "description": "Find Drew the Dragon",
+      "completed": false
+    },
+    {
+      "id": 11,
+      "amount": "$42,500",
+      "title": "Spiders!",
+      "description": "Oh No! Spiders!",
+      "completed": false
+    },
+    {
+      "id": 12,
+      "amount": "$45,000",
+      "title": "Into the Maelstrom",
+      "description": "Enter the Maelstrom",
+      "completed": false
+    },
+    {
+      "id": 13,
+      "amount": "$47,500",
+      "title": "Page One",
+      "description": "Page One: Burn Burnout!",
+      "completed": false
+    },
+    {
+      "id": 14,
+      "amount": "$52,500",
+      "title": "Et Guard",
+      "description": "Et Guard Comes Home",
+      "completed": false
+    },
+    {
+      "id": 15,
+      "amount": "$57,500",
+      "title": "The Fishes",
+      "description": "Time for Fishing!",
+      "completed": false
+    },
+    {
+      "id": 16,
+      "amount": "$60,000",
+      "title": "The Bridge",
+      "description": "The Bridge is Here!",
+      "completed": false
+    },
+    {
+      "id": 17,
+      "amount": "$62,500",
+      "title": "The Well",
+      "description": "Time to Jump in the Well!",
+      "completed": false
+    },
+    {
+      "id": 18,
+      "amount": "$68,000",
+      "title": "Hew One Page Dungeon",
+      "description": "Unlock the full Page Dungeon",
+      "completed": false
+    },
+    {
+      "id": 19,
+      "amount": "$80,000",
+      "title": "Final Goal",
+      "description": "Complete all goals and finish the game!",
+      "completed": false
+    }
+  ],
+  "backerRewards": [
+    {
+      "tier": "Complete Game + Chibi Thank You",
+      "price": "$6.99",
+      "description": "Get the full game + a personalized Chibi-style thank you drawing from the team!"
+    },
+    {
+      "tier": "Game + Chibi + Plushie",
+      "price": "$45",
+      "description": "Everything above + an official Wata plushie!"
+    },
+    {
+      "tier": "Background Cameo",
+      "price": "$600",
+      "description": "Your character (adapted to Wata's style) appears as a background character! Non-canon, everyone sees it!"
+    },
+    {
+      "tier": "Custom Non-Canon DLC",
+      "price": "$3,000",
+      "description": "We create a custom, non-canon DLC based on your ideas! Everyone gets to play it!"
+    }
+  ]
+}

@@ -5,6 +5,8 @@
   },
   "nav": {
     "home": "Home",
+    "gameplay": "Gameplay",
+    "roadmap": "Roadmap",
     "characters": "Characters",
     "conceptArt": "Concept Art",
     "team": "Team",

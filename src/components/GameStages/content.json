@@ -1,0 +1,76 @@
+{
+  "title": "Release Stages & Pricing",
+  "currentStage": 1,
+  "sections": [
+    {
+      "name": "Setup",
+      "stages": [
+        {
+          "id": 1,
+          "name": "Demo & Fund",
+          "price": "FREE"
+        },
+        {
+          "id": 2,
+          "name": "Case 02",
+          "price": "$5.99"
+        }
+      ]
+    },
+    {
+      "name": "Act 1",
+      "stages": [
+        {
+          "id": 3,
+          "name": "Case 03",
+          "price": "$6.99"
+        },
+        {
+          "id": 4,
+          "name": "Case 04",
+          "price": "$7.99"
+        }
+      ]
+    },
+    {
+      "name": "Act 2",
+      "stages": [
+        {
+          "id": 5,
+          "name": "Case 05",
+          "price": "$8.99"
+        },
+        {
+          "id": 6,
+          "name": "Case 06",
+          "price": "$9.99"
+        }
+      ]
+    },
+    {
+      "name": "Act 3/Resolution",
+      "stages": [
+        {
+          "id": 7,
+          "name": "Case 07",
+          "price": "$11.99"
+        },
+        {
+          "id": 8,
+          "name": "Case 08",
+          "price": "$15.99"
+        }
+      ]
+    },
+    {
+      "name": "The High End",
+      "stages": [
+        {
+          "id": 9,
+          "name": "DLC & Minor Updates",
+          "price": "TBA"
+        }
+      ]
+    }
+  ]
+}

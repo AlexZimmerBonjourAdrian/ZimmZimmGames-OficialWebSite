@@ -8,13 +8,130 @@
   },
   "wishlist": {
     "image": "/WishList/WishList.png",
-    "badge": "Coming Soon 2026",
-    "altText": "Wishlist on Steam"
+    "altText": "Add to Wishlist on Steam"
   },
   "characters": {
     "dominic": "Did you know this white rabbit?",
     "juno": "A detective from Wonderland?",
     "expression": "He is odious, don't you think?",
     "duo": "They are adorable, I would love to see them together... oh, perhaps they already were?"
+  },
+  "platforms": {
+    "title": "Available Platforms",
+    "items": [
+      { "name": "Windows", "icon": "windows" },
+      { "name": "Linux", "icon": "linux" }
+    ]
+  },
+  "gameplay": {
+    "title": "Gameplay Screenshots",
+    "items": [
+      {
+        "id": 1,
+        "image": "/Steam/Capsulas de Steam/Capsula de Cabecera/Capsula_de_Cabecera.jpg",
+        "title": "The Rabbit Hole",
+        "description": "Enter the dark world of Wonderland and uncover the truth."
+      },
+      {
+        "id": 2,
+        "image": "/Gameplay/MainMenu.jpg",
+        "title": "Main Menu",
+        "description": "The entrance to the psychological horror experience."
+      },
+      {
+        "id": 3,
+        "image": "/Gameplay/MenuCase.png",
+        "title": "Case Analysis",
+        "description": "Analyze evidence and make critical decisions in real-time."
+      },
+      {
+        "id": 4,
+        "image": "/Gameplay/Storyboard.png",
+        "title": "Storyboard",
+        "description": "Experience the narrative through immersive scenes and visuals."
+      },
+      {
+        "id": 5,
+        "image": "/Gameplay/Storyboard-2.png",
+        "title": "Visual Storytelling",
+        "description": "Every choice matters in this kemono-noir thriller."
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "Release Roadmap & Pricing",
+    "currentStage": 1,
+    "sections": [
+      {
+        "name": "Setup",
+        "stages": [
+          {
+            "id": 1,
+            "name": "Demo & Fund",
+            "price": "FREE"
+          },
+          {
+            "id": 2,
+            "name": "Case 02",
+            "price": "$5.99"
+          }
+        ]
+      },
+      {
+        "name": "Act 1",
+        "stages": [
+          {
+            "id": 3,
+            "name": "Case 03",
+            "price": "$6.99"
+          },
+          {
+            "id": 4,
+            "name": "Case 04",
+            "price": "$7.99"
+          }
+        ]
+      },
+      {
+        "name": "Act 2",
+        "stages": [
+          {
+            "id": 5,
+            "name": "Case 05",
+            "price": "$8.99"
+          },
+          {
+            "id": 6,
+            "name": "Case 06",
+            "price": "$9.99"
+          }
+        ]
+      },
+      {
+        "name": "Act 3/Resolution",
+        "stages": [
+          {
+            "id": 7,
+            "name": "Case 07",
+            "price": "$11.99"
+          },
+          {
+            "id": 8,
+            "name": "Case 08",
+            "price": "$15.99"
+          }
+        ]
+      },
+      {
+        "name": "The High End",
+        "stages": [
+          {
+            "id": 9,
+            "name": "DLC & Minor Updates",
+            "price": "TBA"
+          }
+        ]
+      }
+    ]
   }
 }

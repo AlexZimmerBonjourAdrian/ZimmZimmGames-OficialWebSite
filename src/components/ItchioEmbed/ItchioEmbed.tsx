@@ -1,0 +1,32 @@
+import React from 'react';
+import styles from './ItchioEmbed.module.css';
+import content from './content.json';
+
+interface ItchioEmbedProps {
+  className?: string;
+}
+
+const ItchioEmbed: React.FC<ItchioEmbedProps> = ({ className = '' }) => {
+  return (
+    <div className={`${styles.itchioContainer} ${className}`}>
+      {content.enabled ? (
+        <div className={styles.itchioFrameWrapper}>
+          <iframe
+            src={content.embedUrl}
+            title="Itch.io Game Embed"
+            width={content.width}
+            height={content.height}
+            className={styles.itchioFrame}
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; fullscreen; payment"
+          />
+        </div>
+      ) : (
+        <p className={styles.comingSoonText}>Coming Soon</p>
+      )}
+    </div>
+  );
+};
+
+export default ItchioEmbed;
