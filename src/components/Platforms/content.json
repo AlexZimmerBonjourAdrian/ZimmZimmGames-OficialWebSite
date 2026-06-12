@@ -1,0 +1,26 @@
+{
+  "title": "Available Platforms",
+  "categories": [
+    {
+      "title": "PC Platforms",
+      "items": [
+        { "name": "Windows", "icon": "windows", "status": "available" },
+        { "name": "Mac", "icon": "apple", "status": "planned" },
+        { "name": "Linux", "icon": "linux", "status": "planned" }
+      ]
+    },
+    {
+      "title": "Mobile Platforms",
+      "items": [
+        { "name": "Android", "icon": "android", "status": "considering" },
+        { "name": "iOS", "icon": "ios", "status": "considering" }
+      ]
+    },
+    {
+      "title": "Console Platforms",
+      "items": [
+        { "name": "Nintendo Switch", "icon": "nintendo", "status": "publisher" }
+      ]
+    }
+  ]
+}

@@ -48,34 +48,59 @@
 
 .navList {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .navItem a {
     font-family: var(--font-courier);
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 500;
     color: #cccccc;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 .navItem a:hover {
     color: #FFD700;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    background: rgba(255, 215, 0, 0.1);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .navList {
+        gap: 1rem;
+    }
+    
+    .navItem a {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+    }
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
     }
+    
     .navList {
-        gap: 1.5rem;
+        gap: 0.75rem;
     }
+    
+    .navItem a {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+        letter-spacing: 1px;
+    }
+    
     .logo a {
         font-size: 1.5rem;
     }

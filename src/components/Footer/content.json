@@ -1,11 +1,13 @@
 {
   "studio": {
     "name": "ZIMMZIMM GAMES",
-    "description": "Independent studio specialized in unique horror and mystery experiences."
+    "description": "Independent studio specialized in unique horror and mystery experiences.",
+    "email": "zimmzimmgames@gmail.com"
   },
   "sections": {
     "navigation": "Navigation",
-    "followUs": "Follow Us"
+    "followUs": "Follow Us",
+    "contactUs": "Contact Us"
   },
   "nav": {
     "home": "Home",

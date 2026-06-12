@@ -13,9 +13,9 @@ export const siteConfig = {
 };
 
 export const gameConfig = {
-  name: 'W.A.T.A: Where are the Alices?',
-  description: 'A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl\'s kidnapping, in a twisted psychological game where sanity is the greatest threat.',
-  genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
+  name: 'Where are The Alices?',
+  description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+  genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Cinematic', 'Political Thriller', 'Furry', 'Bad Romance'],
   platform: ['PC', 'Windows', 'Android'],
   releaseDate: '2025',
   developer: 'ZimmZimm Games',
@@ -25,26 +25,26 @@ export const gameConfig = {
   price: '0',
   currency: 'USD',
   stores: ['Steam', 'itch.io', 'GameJolt'],
-  themes: ['Alice in Wonderland', 'Dark Fantasy', 'Furry', 'Noir', 'Political Thriller', 'Psychological Horror'],
+  themes: ['Alice in Wonderland', 'Dark Fantasy', 'Furry', 'Noir', 'Cinematic', 'Political Thriller', 'Psychological Horror'],
 };
 
 // SEO metadata optimized for maximum visibility in browsers
 export const seoMetadata = {
   home: {
-    title: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel Indie',
-    description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
+    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
     keywords: [
-      'ZimmZimm Games', 'W.A.T.A', 'Where are the Alices', 'visual novel', 'psychological horror', 
-      'Alice in Wonderland', 'indie game', 'Steam', 
-      'dark fantasy', 'furry', 'noir', 'political thriller', 'indie games'
+      'Where are The Alices', 'visual novel', 'psychological horror', 
+      'Alice in Wonderland', 'Noir', 'cinematic', 'indie game', 'Steam', 
+      'dark fantasy', 'furry', 'political thriller', 'indie games'
     ],
   },
   wata: {
-    title: 'W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
-    description: 'A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl\'s kidnapping, in a twisted psychological game where sanity is the greatest threat.',
+    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
     keywords: [
-      'W.A.T.A', 'Where Are The Alices', 'visual novel', 'psychological horror', 
-      'Alice in Wonderland', 'detective rabbit', 'evil rabbit', 
+      'Where Are The Alices', 'visual novel', 'psychological horror', 
+      'Alice in Wonderland', 'Noir', 'cinematic', 'detective rabbit', 'evil rabbit', 
       'corrupt Wonderland', 'Steam', 'indie game', 'ZimmZimm Games'
     ],
   },
@@ -67,6 +67,12 @@ export const structuredData = {
     url: 'https://zimmzimmgames.com',
     logo: 'https://zimmzimmgames.com/Icon/ajuste_avatar_Documents-3.png',
     description: 'Indie studio specialized in psychological horror and unique visual novels',
+    email: 'zimmzimmgames@gmail.com',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'zimmzimmgames@gmail.com',
+      contactType: 'general contact'
+    },
     sameAs: [
       'https://twitter.com/ZimmZimmGames',
       'https://github.com/ZimmZimmGames',
@@ -77,9 +83,9 @@ export const structuredData = {
   videoGame: {
     '@context': 'https://schema.org',
     '@type': 'VideoGame',
-    name: 'W.A.T.A: Where are the Alices?',
-    description: 'A sadistic villain forces a detective, who hides a past of madness, to return to her own Wonderland to solve a girl\'s kidnapping, in a twisted psychological game where sanity is the greatest threat.',
-    genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Political Thriller', 'Furry', 'Bad Romance'],
+    name: 'Where are The Alices?',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+    genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Cinematic', 'Political Thriller', 'Furry', 'Bad Romance'],
     gamePlatform: ['PC', 'Windows', 'Android'],
     applicationCategory: 'Game',
     operatingSystem: 'Windows',

@@ -2,5 +2,8 @@
   "embedUrl": "https://itch.io/embed-upload/17897987?color=333333",
   "width": 960,
   "height": 620,
-  "enabled": true
+  "enabled": true,
+  "ctaText": "Step into Wonderland and uncover the mystery",
+  "steamDemoText": "Also available on Steam:",
+  "steamDemoUrl": "https://store.steampowered.com/app/4468410/Where_Are_The_Alices__Demo/"
 }

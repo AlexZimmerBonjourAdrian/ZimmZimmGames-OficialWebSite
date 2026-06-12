@@ -2,34 +2,34 @@
   "title": "Team",
   "members": [
     {
-      "name": "Alex Zimmer",
-      "role": "PM, Programmer and Writer",
-      "note": "Rabbit, femboy son of a bitch, my boy — so proud."
-    },
-    {
-      "name": "Lily",
-      "role": "Translator",
-      "note": "I make cursed Dominic memes."
-    },
-    {
-      "name": "Pami",
-      "role": "Literary Consultant",
-      "note": "I LOVE IT! Then I remember he's a politician and it goes away."
-    },
-    {
-      "name": "EveChan",
-      "role": "Voice Actress: Dominic White and Juno",
-      "note": "Look at this idiot, I want a PILLOW."
-    },
-    {
-      "name": "Father",
-      "role": "Marketing and Post-Producer",
-      "note": "It's fine."
+      "name": "Alex Zimmer Bonour",
+      "role": "Game Director, Lead Writer & Programmer",
+      "note": "Everyone needs therapy. I love how cute Juno and Cheshire are."
     },
     {
       "name": "Yahjix",
-      "role": "Lead Artist",
+      "role": "Main Artist",
       "note": "Yeah, right — 'warrior mom' Juno."
+    },
+    {
+      "name": "Eevee",
+      "role": "Dub Director & Voice of Juno",
+      "note": "Look at this idiot, I want a PILLOW."
+    },
+    {
+      "name": "La Wea Astral",
+      "role": "Voice of Dominic",
+      "note": "He's not bad, just pregnant. Haha!"
+    },
+    {
+      "name": "Lily",
+      "role": "English Localizer",
+      "note": "I make cursed Dominic memes."
+    },
+    {
+      "name": "Pam Kur Van",
+      "role": "Writer & Writing Consultant",
+      "note": "I LOVE IT! Then I remember he's a politician and it goes away."
     }
   ]
 }

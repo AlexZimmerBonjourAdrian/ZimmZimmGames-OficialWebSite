@@ -10,18 +10,32 @@ const ItchioEmbed: React.FC<ItchioEmbedProps> = ({ className = '' }) => {
   return (
     <div className={`${styles.itchioContainer} ${className}`}>
       {content.enabled ? (
-        <div className={styles.itchioFrameWrapper}>
-          <iframe
-            src={content.embedUrl}
-            title="Itch.io Game Embed"
-            width={content.width}
-            height={content.height}
-            className={styles.itchioFrame}
-            frameBorder="0"
-            allowFullScreen
-            allow="autoplay; fullscreen; payment"
-          />
-        </div>
+        <>
+          <h3 className={styles.ctaText}>{content.ctaText}</h3>
+          <div className={styles.itchioFrameWrapper}>
+            <iframe
+              src={content.embedUrl}
+              title="Itch.io Game Embed"
+              width={content.width}
+              height={content.height}
+              className={styles.itchioFrame}
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; fullscreen; payment"
+            />
+          </div>
+          <div className={styles.steamDemoSection}>
+            <p className={styles.steamDemoText}>{content.steamDemoText}</p>
+            <a
+              href={content.steamDemoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.steamDemoButton}
+            >
+              Play Demo on Steam
+            </a>
+          </div>
+        </>
       ) : (
         <p className={styles.comingSoonText}>Coming Soon</p>
       )}

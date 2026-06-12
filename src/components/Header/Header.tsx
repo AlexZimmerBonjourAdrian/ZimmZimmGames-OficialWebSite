@@ -25,9 +25,6 @@ const Header = () => {
                             <Link href="#gameplay">{content.nav.gameplay}</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link href="#roadmap">{content.nav.roadmap}</Link>
-                        </li>
-                        <li className={styles.navItem}>
                             <Link href="#characters">{content.nav.characters}</Link>
                         </li>
                         <li className={styles.navItem}>

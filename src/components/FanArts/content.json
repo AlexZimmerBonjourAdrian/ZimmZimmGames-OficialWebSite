@@ -1,0 +1,35 @@
+{
+  "title": "son hermosos sus dibujos sigan enviandonos! inicio dle universo Fan de Where are the Alices! :3",
+  "fanArts": [
+    {
+      "id": 1,
+      "image": "/images/Wata/WhereAreTheAlices.JPG",
+      "title": "Fan Art 1",
+      "artist": "Anonymous"
+    },
+    {
+      "id": 2,
+      "image": "/images/Wata/WhereAreTheAlices.JPG",
+      "title": "Fan Art 2",
+      "artist": "Anonymous"
+    },
+    {
+      "id": 3,
+      "image": "/images/Wata/WhereAreTheAlices.JPG",
+      "title": "Fan Art 3",
+      "artist": "Anonymous"
+    },
+    {
+      "id": 4,
+      "image": "/images/Wata/WhereAreTheAlices.JPG",
+      "title": "Fan Art 4",
+      "artist": "Anonymous"
+    },
+    {
+      "id": 5,
+      "image": "/images/Wata/WhereAreTheAlices.JPG",
+      "title": "Fan Art 5",
+      "artist": "Anonymous"
+    }
+  ]
+}

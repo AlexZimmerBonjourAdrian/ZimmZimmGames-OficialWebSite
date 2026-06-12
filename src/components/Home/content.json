@@ -16,13 +16,6 @@
     "expression": "He is odious, don't you think?",
     "duo": "They are adorable, I would love to see them together... oh, perhaps they already were?"
   },
-  "platforms": {
-    "title": "Available Platforms",
-    "items": [
-      { "name": "Windows", "icon": "windows" },
-      { "name": "Linux", "icon": "linux" }
-    ]
-  },
   "gameplay": {
     "title": "Gameplay Screenshots",
     "items": [

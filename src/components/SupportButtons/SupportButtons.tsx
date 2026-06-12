@@ -15,6 +15,8 @@ const SupportButtons: React.FC<SupportButtonsProps> = ({ className = '' }) => {
       <p className={styles.description}>
         {content.description}
       </p>
+      <p className={styles.signature}>{content.signature}</p>
+      <blockquote className={styles.quote}>{content.quote}</blockquote>
       <div className={styles.buttonGrid}>
         <a 
           href={links.kofi} 

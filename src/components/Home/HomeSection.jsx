@@ -2,10 +2,8 @@
 
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { FaWindows, FaLinux } from 'react-icons/fa';
 import styles from './HomeSection.module.css';
-import { HeroCarousel, ContactForm, SupportButtons, ItchioEmbed } from '@/components';
-import GameStages from '@/components/GameStages';
+import { HeroCarousel, ContactForm, SupportButtons, ItchioEmbed, Platforms } from '@/components';
 import content from './content.json';
 import links from './links.json';
 
@@ -54,18 +52,7 @@ const HomeSection = () => {
 
                             <ItchioEmbed className={`${styles.enterContainer}`} />
 
-                            <section id="platforms" className={`${styles.enterContainer} ${styles.platformsSection}`}>
-                                <h3 className={styles.sectionTitle}>{content.platforms.title}</h3>
-                                <div className={styles.platformsGrid}>
-                                    {content.platforms.items.map((platform) => (
-                                        <div key={platform.icon} className={styles.platformCard}>
-                                            {platform.icon === 'windows' && <FaWindows className={styles.platformIcon} />}
-                                            {platform.icon === 'linux' && <FaLinux className={styles.platformIcon} />}
-                                            <span className={styles.platformName}>{platform.name}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+                            <Platforms className={styles.enterContainer} />
 
                             <section id="gameplay" className={`${styles.enterContainer} ${styles.gameplaySection}`}>
                                 <h3 className={styles.sectionTitle}>{content.gameplay.title}</h3>
@@ -88,9 +75,7 @@ const HomeSection = () => {
                                 </div>
                             </section>
 
-                            <section id="roadmap" className={styles.enterContainer}>
-                                <GameStages />
-                            </section>
+
 
                             <CharacterGallery
                                 className={`${styles.enterContainer} ${styles.enterGallery}`}

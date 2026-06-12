@@ -14,3 +14,5 @@ export * from './Footer';
 export * from './GameStages';
 export * from './FundingGoals';
 export * from './ItchioEmbed';
+export { default as Platforms } from './Platforms';
+export { default as FanArts } from './FanArts';

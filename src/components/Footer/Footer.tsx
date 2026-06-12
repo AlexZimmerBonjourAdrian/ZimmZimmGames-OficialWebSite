@@ -58,6 +58,13 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
+            <h4 className="text-lg font-bold mb-4 font-gothic">{content.sections.contactUs}</h4>
+            <a
+              href={`mailto:${content.studio.email}`}
+              className="text-gray-400 hover:text-white transition-colors font-gothic text-sm block mb-4"
+            >
+              {content.studio.email}
+            </a>
             <h4 className="text-lg font-bold mb-4 font-gothic">{content.sections.followUs}</h4>
             <div className="flex gap-4">
               <a

@@ -5,14 +5,14 @@ import { structuredData } from '@/lib/seo-config';
 
 export const metadata = {
   title: {
-    default: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
-    template: '%s | ZimmZimm Games'
+    default: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
+    template: '%s | Where are The Alices?'
   },
-  description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
+  description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
   keywords: [
-    'ZimmZimm Games', 'W.A.T.A', 'Where are the Alices', 'visual novel', 'psychological horror', 
-    'Alice in Wonderland', 'indie game', 'Steam', 
-    'dark fantasy', 'furry', 'noir', 'political thriller', 'indie games'
+    'Where are The Alices', 'visual novel', 'psychological horror', 
+    'Alice in Wonderland', 'Noir', 'cinematic', 'indie game', 'Steam', 
+    'dark fantasy', 'furry', 'political thriller', 'indie games'
   ],
   authors: [{ name: 'ZimmZimm Games' }],
   creator: 'ZimmZimm Games',
@@ -27,16 +27,16 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
-    description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
+    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
     url: 'https://zimmzimmgames.com',
-    siteName: 'ZimmZimm Games',
+    siteName: 'Where are The Alices?',
     images: [
       {
         url: '/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg',
         width: 1200,
         height: 630,
-        alt: 'ZimmZimm Games - W.A.T.A: Where are the Alices? Psychological Horror Visual Novel',
+        alt: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
         type: 'image/jpeg',
       },
     ],
@@ -45,8 +45,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZimmZimm Games - W.A.T.A: Where are the Alices? | Psychological Horror Visual Novel',
-    description: 'Discover W.A.T.A: Where are the Alices?, a psychological horror visual novel inspired by Alice in Wonderland. Unique indie game with dark fantasy, furry, and political thriller elements. Available on Steam.',
+    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
     images: ['/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg'],
     creator: '@ZimmZimmGames',
   },
