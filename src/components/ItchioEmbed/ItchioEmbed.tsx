@@ -16,9 +16,9 @@ const ItchioEmbed: React.FC<ItchioEmbedProps> = ({ className = '' }) => {
 
   const handleSteamDemoClick = useCallback(() => {
     event({
-      action: 'click_steam_demo',
+      action: 'click_play_steam_demo',
       category: 'game',
-      label: 'Steam Demo Button',
+      label: 'Play Steam Demo Button',
     });
   }, []);
 
