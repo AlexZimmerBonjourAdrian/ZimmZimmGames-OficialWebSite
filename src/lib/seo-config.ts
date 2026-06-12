@@ -14,9 +14,9 @@ export const siteConfig = {
 
 export const gameConfig = {
   name: 'Where are The Alices?',
-  description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+  description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad. Play the free web demo now!',
   genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Cinematic', 'Political Thriller', 'Furry', 'Bad Romance'],
-  platform: ['PC', 'Windows', 'Android'],
+  platform: ['PC', 'Windows', 'Android', 'Web'],
   releaseDate: '2025',
   developer: 'ZimmZimm Games',
   publisher: 'ZimmZimm Games',
@@ -24,28 +24,28 @@ export const gameConfig = {
   ratingCount: '150',
   price: '0',
   currency: 'USD',
-  stores: ['Steam', 'itch.io', 'GameJolt'],
-  themes: ['Alice in Wonderland', 'Dark Fantasy', 'Furry', 'Noir', 'Cinematic', 'Political Thriller', 'Psychological Horror'],
+  stores: ['Steam', 'itch.io', 'GameJolt', 'Web'],
+  themes: ['Alice in Wonderland', 'Dark Fantasy', 'Furry', 'Noir', 'Cinematic', 'Political Thriller', 'Psychological Horror', 'Free Demo', 'Web Game'],
 };
 
 // SEO metadata optimized for maximum visibility in browsers
 export const seoMetadata = {
   home: {
-    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
-    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+    title: 'Where are The Alices? Free Web Demo - Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad. Play the free web demo directly on the site!',
     keywords: [
       'Where are The Alices', 'visual novel', 'psychological horror', 
       'Alice in Wonderland', 'Noir', 'cinematic', 'indie game', 'Steam', 
-      'dark fantasy', 'furry', 'political thriller', 'indie games'
+      'dark fantasy', 'furry', 'political thriller', 'indie games', 'free demo', 'web demo', 'play online'
     ],
   },
   wata: {
-    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
-    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+    title: 'Where are The Alices? Free Web Demo - Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad. Play the free web demo directly on the site!',
     keywords: [
       'Where Are The Alices', 'visual novel', 'psychological horror', 
       'Alice in Wonderland', 'Noir', 'cinematic', 'detective rabbit', 'evil rabbit', 
-      'corrupt Wonderland', 'Steam', 'indie game', 'ZimmZimm Games'
+      'corrupt Wonderland', 'Steam', 'indie game', 'ZimmZimm Games', 'free demo', 'web demo', 'play online'
     ],
   },
   about: {
@@ -84,11 +84,11 @@ export const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'VideoGame',
     name: 'Where are The Alices?',
-    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad. Play the free web demo now!',
     genre: ['Visual Novel', 'Psychological Horror', 'Dark Fantasy', 'Noir', 'Cinematic', 'Political Thriller', 'Furry', 'Bad Romance'],
-    gamePlatform: ['PC', 'Windows', 'Android'],
+    gamePlatform: ['PC', 'Windows', 'Android', 'Web'],
     applicationCategory: 'Game',
-    operatingSystem: 'Windows',
+    operatingSystem: ['Windows', 'Web'],
     datePublished: '2025',
     publisher: {
       '@type': 'Organization',
@@ -99,14 +99,17 @@ export const structuredData = {
       name: 'ZimmZimm Games',
     },
     image: 'https://zimmzimmgames.com/images/Wata/WhereAreTheAlices.JPG',
-    url: 'https://zimmzimmgames.com/wata',
+    url: 'https://zimmzimmgames.com',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      url: 'https://zimmzimmgames.com/wata',
+      url: 'https://zimmzimmgames.com',
     },
+    accessibilityAPI: 'Web',
+    accessibilityControl: 'Web',
+    accessibilityHazard: 'noHazard',
   },
 };
 

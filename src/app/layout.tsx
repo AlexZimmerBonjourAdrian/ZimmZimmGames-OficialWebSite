@@ -5,14 +5,14 @@ import { structuredData } from '@/lib/seo-config';
 
 export const metadata = {
   title: {
-    default: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
+    default: 'Where are The Alices? Free Web Demo - Cinematic Noir Psychological Horror Visual Novel',
     template: '%s | Where are The Alices?'
   },
-  description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+  description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad. Play the free web demo directly on the site!',
   keywords: [
     'Where are The Alices', 'visual novel', 'psychological horror', 
     'Alice in Wonderland', 'Noir', 'cinematic', 'indie game', 'Steam', 
-    'dark fantasy', 'furry', 'political thriller', 'indie games'
+    'dark fantasy', 'furry', 'political thriller', 'indie games', 'free demo', 'web demo', 'play online'
   ],
   authors: [{ name: 'ZimmZimm Games' }],
   creator: 'ZimmZimm Games',
@@ -27,8 +27,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
-    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+    title: 'Where are The Alices? Free Web Demo - Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad. Play the free web demo directly on the site!',
     url: 'https://zimmzimmgames.com',
     siteName: 'Where are The Alices?',
     images: [
@@ -45,8 +45,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Where are The Alices? Cinematic Noir Psychological Horror Visual Novel',
-    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad.',
+    title: 'Where are The Alices? Free Web Demo - Cinematic Noir Psychological Horror Visual Novel',
+    description: 'Where are The Alices? A cinematic Noir psychological horror visual novel in a Wonderland gone mad. Play the free web demo directly on the site!',
     images: ['/Steam/Capsulas de Steam/Capsula de Biblioteca/Capsula_de_Biblioteca.jpg'],
     creator: '@ZimmZimmGames',
   },
