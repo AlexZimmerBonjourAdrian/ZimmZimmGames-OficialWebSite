@@ -1,0 +1,20 @@
+{
+  "site": {
+    "title": "Where Are The Alices?",
+    "logo": "/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png"
+  },
+  "hero": {
+    "subtitle": "Where are the Alices?"
+  },
+  "wishlist": {
+    "image": "/WishList/WishList.png",
+    "badge": "Coming Soon 2026",
+    "altText": "Wishlist on Steam"
+  },
+  "characters": {
+    "dominic": "Did you know this white rabbit?",
+    "juno": "A detective from Wonderland?",
+    "expression": "He is odious, don't you think?",
+    "duo": "They are adorable, I would love to see them together... oh, perhaps they already were?"
+  }
+}

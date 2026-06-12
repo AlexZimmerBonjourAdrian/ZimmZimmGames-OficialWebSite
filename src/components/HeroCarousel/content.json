@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "image": "/Steam/Capsulas de Steam/Capsula de Cabecera/Capsula_de_Cabecera.jpg",
+      "title": "W.A.T.A: Where are the Alices?",
+      "description": "A psychological horror visual novel where nothing is what it seems."
+    },
+    {
+      "id": 2,
+      "image": "/Gameplay/MainMenu.jpg",
+      "title": "Main Menu",
+      "description": "The entrance to the rabbit hole."
+    },
+    {
+      "id": 3,
+      "image": "/Gameplay/MenuCase.png",
+      "title": "Menu Case",
+      "description": "Analyze the evidence and solve the mysteries."
+    },
+    {
+      "id": 4,
+      "image": "/Gameplay/Storyboard.png",
+      "title": "Storyboard",
+      "description": "Visualizing the narrative and atmosphere."
+    },
+    {
+      "id": 5,
+      "image": "/Gameplay/Storyboard-2.png",
+      "title": "Visual Storytelling",
+      "description": "Uncover the secrets through immersive scenes."
+    }
+  ],
+  "ariaLabels": {
+    "previous": "Previous slide",
+    "next": "Next slide"
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Team.module.css';
+import content from './content.json';
 
 export interface TeamMember {
 	name: string;
@@ -7,29 +8,20 @@ export interface TeamMember {
 	note?: string;
 }
 
-const members: TeamMember[] = [
-	{ name: 'Alex Zimmer', role: 'PM, Programmer and Writer' },
-	{ name: 'Lily', role: 'Translator' },
-	{ name: 'Pama', role: 'Literary Consultant' },
-	{ name: 'Yahjix', role: 'Lead Artist' },
-	{ name: 'EveChan', role: 'Voice Actress: CB and Juno' },
-	{ name: 'Father', role: 'Marketing and PostProducer' }
-];
-
 export interface TeamProps {
 	className?: string;
 	title?: string;
 	members?: TeamMember[];
 }
 
-const Team: React.FC<TeamProps> = ({ className = '', title = 'Team', members: membersProp }) => {
-    const effectiveMembers = (membersProp ?? members).slice().sort((a, b) => a.name.localeCompare(b.name));
+const Team: React.FC<TeamProps> = ({ className = '', title, members: membersProp }) => {
+    const effectiveMembers = (membersProp ?? content.members).slice().sort((a, b) => a.name.localeCompare(b.name));
 	// Duplicamos los miembros para el efecto de scroll infinito
 	const displayMembers = [...effectiveMembers, ...effectiveMembers];
 
 	return (
 		<section id="team" className={`${styles.teamSection} ${className}`}>
-			<h2 className={styles.title}>{title}</h2>
+			<h2 className={styles.title}>{title ?? content.title}</h2>
 			
 			<div className={styles.carouselContainer}>
 				<div className={styles.carouselTrack}>
@@ -56,5 +48,3 @@ const Team: React.FC<TeamProps> = ({ className = '', title = 'Team', members: me
 };
 
 export default Team;
-
-

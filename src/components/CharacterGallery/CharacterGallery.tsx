@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './CharacterGallery.module.css';
+import content from './content.json';
 
 interface CharacterGalleryProps {
   className?: string;
@@ -26,63 +27,51 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
 }) => {
   const characters = [
     {
-      id: 'cb',
-      name: 'C.B.',
+      id: 'dominic',
+      name: content.characters[0].name,
       image: '/Characters/CB.png',
-      description: overrides?.cbDesc ?? 'The elegant and astute rabbit',
-      quotes: [
-        "Hello, Detective, how have you been? How is Cheshire? Are you still unemployed?",
-        "Was it for being a good guy? Or for looking weak? Maybe both?",
-        "We could be frank, starting with you, Junie. Can you be yourself with me?",
-        "Maybe I just wanted to see you…",
-        "Do you want to know who I really am, 'Heroine'?"
-      ]
+      description: overrides?.cbDesc ?? content.characters[0].description,
+      quotes: content.characters[0].quotes
     },
     {
       id: 'juno',
-      name: 'Juno',
+      name: content.characters[1].name,
       image: '/Characters/Juno.png',
-      description: overrides?.junoDesc ?? 'The determined and brave rabbit',
-      quotes: [
-        "I have violent fantasies, I have desires and dreams that scare me. [...] Every day I tell myself in the mirror: 'I am a good person'.",
-        "I WANT TO KILL HIM! I WANT TO BEAT HIM UNTIL HE BLEEDS! BUT IT'S WRONG! And he... he laughs at me!..",
-        "We have suspicions about your involvement and we wish to... clear things up.",
-        "...I have to lie to my kids again.",
-        "Done... this human whiskey is terrible, it tastes like gasoline with sugar. Too bad they know how to make quality whiskey in Wonderland... Shit... I miss that taste."
-      ]
+      description: overrides?.junoDesc ?? content.characters[1].description,
+      quotes: content.characters[1].quotes
     }
   ];
 
   const conceptArt = [
     {
       id: 'expression-sheet',
-      name: 'Expression Sheet - C.B.',
+      name: content.conceptArtPieces[0].name,
       image: '/ConceptArt/ConceptExpressionSheetCB.png',
-      description: overrides?.expressionDesc ?? 'Expressions and moods of C.B.'
+      description: overrides?.expressionDesc ?? content.conceptArtPieces[0].description
     },
     {
       id: 'main-characters',
-      name: 'Main Characters',
+      name: content.conceptArtPieces[1].name,
       image: '/ConceptArt/ConceptJunoAndCB.png',
-      description: overrides?.duoDesc ?? 'Juno and C.B. together'
+      description: overrides?.duoDesc ?? content.conceptArtPieces[1].description
     },
     {
       id: 'main-menu-gameplay',
-      name: 'Main Menu Concept',
+      name: content.conceptArtPieces[2].name,
       image: '/Gameplay/MainMenu.jpg',
-      description: 'The entrance to the rabbit hole.'
+      description: content.conceptArtPieces[2].description
     },
     {
       id: 'menu-case-gameplay',
-      name: 'Menu Case Concept',
+      name: content.conceptArtPieces[3].name,
       image: '/Gameplay/MenuCase.png',
-      description: 'Analyze the evidence.'
+      description: content.conceptArtPieces[3].description
     },
     {
       id: 'storyboard-1',
-      name: 'Storyboard Concept',
+      name: content.conceptArtPieces[4].name,
       image: '/Gameplay/Storyboard.png',
-      description: 'Visualizing the narrative.'
+      description: content.conceptArtPieces[4].description
     }
   ];
 
@@ -96,14 +85,14 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
     <div id="characters" className={`${styles.characterGallery} ${layoutClasses[layout]} ${variant === 'heroInline' ? styles.heroInline : ''} ${className}`}>
       {showTitles && (
         <div className={styles.header}>
-          <h2 className={styles.title}>Concept Art</h2>
-          <p className={styles.subtitle}>Meet the world of W.A.T.A</p>
+          <h2 className={styles.title}>{content.header.title}</h2>
+          <p className={styles.subtitle}>{content.header.subtitle}</p>
         </div>
       )}
 
       {/* Main Characters */}
       <section className={styles.section}>
-        <h3 className={styles.sectionTitle}>Main Characters</h3>
+        <h3 className={styles.sectionTitle}>{content.mainCharacters}</h3>
         <div className={styles.characterGrid}>
           {characters.map((character) => (
             <div key={character.id} className={styles.characterCard}>
@@ -123,7 +112,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
                 
                 {character.quotes && character.quotes.length > 0 && (
                   <div className={styles.quotesContainer}>
-                    <h5 className={styles.quotesTitle}>Dialogues</h5>
+                    <h5 className={styles.quotesTitle}>{content.dialogues}</h5>
                     <div className={styles.quotesList}>
                       {character.quotes.map((quote, index) => (
                         <div key={index} className={styles.quoteWrapper}>
@@ -142,7 +131,7 @@ const CharacterGallery: React.FC<CharacterGalleryProps> = ({
 
       {/* Concept Art */}
       <section id="concept-art" className={styles.section}>
-        <h3 className={styles.sectionTitle}>Concept Art</h3>
+        <h3 className={styles.sectionTitle}>{content.conceptArt}</h3>
         <div className={styles.conceptGrid}>
           {conceptArt.map((art) => (
             <div key={art.id} className={styles.conceptCard}>

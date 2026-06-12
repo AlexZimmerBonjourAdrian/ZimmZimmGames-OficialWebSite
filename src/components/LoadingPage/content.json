@@ -1,0 +1,10 @@
+{
+  "site": {
+    "title": "Where Are The Alices?",
+    "logo": "/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png"
+  },
+  "hero": {
+    "subtitle": "Where are the Alices?"
+  },
+  "progressText": "%"
+}

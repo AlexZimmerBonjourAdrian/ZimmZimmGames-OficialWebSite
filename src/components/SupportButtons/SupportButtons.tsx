@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './SupportButtons.module.css';
 import { FaCoffee, FaPaypal, FaDiscord } from 'react-icons/fa';
+import content from './content.json';
+import links from './links.json';
 
 interface SupportButtonsProps {
   className?: string;
@@ -9,39 +11,39 @@ interface SupportButtonsProps {
 const SupportButtons: React.FC<SupportButtonsProps> = ({ className = '' }) => {
   return (
     <div id="support" className={`${styles.supportContainer} ${className}`}>
-      <h3 className={styles.title}>Support Us</h3>
+      <h3 className={styles.title}>{content.title}</h3>
       <p className={styles.description}>
-        Your support helps us continue developing W.A.T.A. Every contribution allows us to improve the art, voice acting, and narrative of this twisted psychological journey.
+        {content.description}
       </p>
       <div className={styles.buttonGrid}>
         <a 
-          href="https://ko-fi.com/zimmzimmgames/tip" 
+          href={links.kofi} 
           target="_blank" 
           rel="noopener noreferrer" 
           className={`${styles.supportBtn} ${styles.kofi}`} 
           aria-label="Support on Ko-fi"
         >
           <FaCoffee className={styles.icon} />
-          <span>Ko-fi</span>
+          <span>{content.buttons.kofi}</span>
         </a>
         
         {/* PayPal desactivado temporalmente por petición del usuario */}
         {/* 
         <button className={`${styles.supportBtn} ${styles.paypal}`} aria-label="Support on PayPal">
           <FaPaypal className={styles.icon} />
-          <span>PayPal</span>
+          <span>{content.buttons.paypal}</span>
         </button>
         */}
 
         <a 
-          href="https://discord.gg/cNM9brehGR" 
+          href={links.discord} 
           target="_blank" 
           rel="noopener noreferrer" 
           className={`${styles.supportBtn} ${styles.discord}`} 
           aria-label="Join Discord"
         >
           <FaDiscord className={styles.icon} />
-          <span>Discord</span>
+          <span>{content.buttons.discord}</span>
         </a>
       </div>
     </div>

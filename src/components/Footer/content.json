@@ -1,0 +1,19 @@
+{
+  "studio": {
+    "name": "ZIMMZIMM GAMES",
+    "description": "Independent studio specialized in unique horror and mystery experiences."
+  },
+  "sections": {
+    "navigation": "Navigation",
+    "followUs": "Follow Us"
+  },
+  "nav": {
+    "home": "Home",
+    "characters": "Characters",
+    "conceptArt": "Concept Art",
+    "team": "Team",
+    "contact": "Contact",
+    "support": "Support"
+  },
+  "copyright": "© {currentYear} ZimmZimm Games. All rights reserved."
+}

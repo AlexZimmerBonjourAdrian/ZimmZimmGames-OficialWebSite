@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
+import content from './content.json';
 
 const Header: React.FC = () => {
   return (
@@ -9,8 +10,8 @@ const Header: React.FC = () => {
         <div className={styles.logo}>
           <Link href="/">
             <img 
-              src="/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png" 
-              alt="W.A.T.A" 
+              src={content.logo.src} 
+              alt={content.logo.alt} 
               className={styles.logoImage}
             />
           </Link>
@@ -18,22 +19,22 @@ const Header: React.FC = () => {
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href="/">Home</Link>
+              <Link href="/">{content.nav.home}</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#characters">Characters</Link>
+              <Link href="#characters">{content.nav.characters}</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#concept-art">Concept Art</Link>
+              <Link href="#concept-art">{content.nav.conceptArt}</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#team">Team</Link>
+              <Link href="#team">{content.nav.team}</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#contact">Contact</Link>
+              <Link href="#contact">{content.nav.contact}</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="#support">Support</Link>
+              <Link href="#support">{content.nav.support}</Link>
             </li>
           </ul>
         </nav>

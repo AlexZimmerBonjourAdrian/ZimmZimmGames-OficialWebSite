@@ -1,0 +1,62 @@
+{
+  "header": {
+    "title": "Concept Art",
+    "subtitle": "Meet the world of Where Are The Alices?"
+  },
+  "mainCharacters": "Main Characters",
+  "conceptArt": "Concept Art",
+  "dialogues": "Dialogues",
+  "characters": [
+    {
+      "id": "dominic",
+      "name": "Dominic White",
+      "description": "Did you know this white rabbit?",
+      "quotes": [
+        "Hello, Detective, how have you been? How is Cheshire? Are you still unemployed?",
+        "Was it for being a good guy? Or for looking weak? Maybe both?",
+        "We could be frank, starting with you, Junie. Can you be yourself with me?",
+        "Maybe I just wanted to see you…",
+        "Do you want to know who I really am, 'Heroine'?"
+      ]
+    },
+    {
+      "id": "juno",
+      "name": "Juno",
+      "description": "A detective from Wonderland?",
+      "quotes": [
+        "I have violent fantasies, I have desires and dreams that scare me. [...] Every day I tell myself in the mirror: 'I am a good person'.",
+        "I WANT TO KILL HIM! I WANT TO BEAT HIM UNTIL HE BLEEDS! BUT IT'S WRONG! And he... he laughs at me!..",
+        "We have suspicions about your involvement and we wish to... clear things up.",
+        "...I have to lie to my kids again.",
+        "Done... this human whiskey is terrible, it tastes like gasoline with sugar. Too bad they know how to make quality whiskey in Wonderland... Shit... I miss that taste."
+      ]
+    }
+  ],
+  "conceptArtPieces": [
+    {
+      "id": "expression-sheet",
+      "name": "Expression Sheet - Dominic White",
+      "description": "He is odious, don't you think?"
+    },
+    {
+      "id": "main-characters",
+      "name": "Main Characters",
+      "description": "They are adorable, I would love to see them together... oh, perhaps they already were?"
+    },
+    {
+      "id": "main-menu-gameplay",
+      "name": "Main Menu Concept",
+      "description": "The entrance to the rabbit hole."
+    },
+    {
+      "id": "menu-case-gameplay",
+      "name": "Menu Case Concept",
+      "description": "Analyze the evidence."
+    },
+    {
+      "id": "storyboard-1",
+      "name": "Storyboard Concept",
+      "description": "Visualizing the narrative."
+    }
+  ]
+}

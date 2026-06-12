@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './ContactForm.module.css';
+import content from './content.json';
 
 interface ContactFormProps {
   className?: string;
@@ -27,7 +28,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
     // Basic validation
     if (!data.email || !data.message) {
-      setError("Please fill in all required fields.");
+      setError(content.errors.required);
       setIsSubmitting(false);
       return;
     }
@@ -48,7 +49,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
       setIsSubmitted(true);
     } catch (err) {
       console.error('Submission error:', err);
-      setError("Something went wrong. Please try again later or write directly to zimmzimmgames@gmail.com.");
+      setError(content.errors.general);
     } finally {
       setIsSubmitting(false);
     }
@@ -65,54 +66,52 @@ const ContactForm: React.FC<ContactFormProps> = ({
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className={styles.contactTitle}>Contact Wonderland</h2>
+            <h2 className={styles.contactTitle}>{content.title}</h2>
             <p className={styles.contactSubtitle}>
-              Join the team, send evidence, or receive promotions from the abyss.
+              {content.subtitle}
             </p>
 
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="name" className={styles.label}>Name</label>
+                <label htmlFor="name" className={styles.label}>{content.labels.name}</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
-                  placeholder="Detective..."
+                  placeholder={content.placeholders.name}
                   className={styles.input}
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.label}>Email Address</label>
+                <label htmlFor="email" className={styles.label}>{content.labels.email}</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   required
-                  placeholder="rabbit@hole.com"
+                  placeholder={content.placeholders.email}
                   className={styles.input}
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="subject" className={styles.label}>Subject</label>
-                <select id="subject" name="subject" className={styles.select} defaultValue="General Inquiry">
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Join the Team">Join the Team</option>
-                  <option value="Promotions">Receive Promotions</option>
-                  <option value="Bug Report">Evidence (Bug Report)</option>
-                  <option value="Other">Other</option>
+                <label htmlFor="subject" className={styles.label}>{content.labels.subject}</label>
+                <select id="subject" name="subject" className={styles.select} defaultValue={content.subjectOptions[0]}>
+                  {content.subjectOptions.map((option, index) => (
+                    <option key={index} value={option}>{option}</option>
+                  ))}
                 </select>
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="message" className={styles.label}>Message</label>
+                <label htmlFor="message" className={styles.label}>{content.labels.message}</label>
                 <textarea
                   id="message"
                   name="message"
                   required
-                  placeholder="Your message here..."
+                  placeholder={content.placeholders.message}
                   className={styles.textarea}
                 />
               </div>
@@ -124,7 +123,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                 disabled={isSubmitting}
                 className={styles.submitButton}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? content.buttons.sending : content.buttons.submit}
               </button>
             </form>
           </motion.div>
@@ -136,16 +135,16 @@ const ContactForm: React.FC<ContactFormProps> = ({
             className={styles.successMessage}
           >
             <span className={styles.successIcon}>🐇</span>
-            <h3 className={styles.contactTitle}>Message Received</h3>
+            <h3 className={styles.contactTitle}>{content.success.title}</h3>
             <p className={styles.contactSubtitle}>
-              Your message has been sent into the rabbit hole. We will get back to you... if we find our way back.
+              {content.success.subtitle}
             </p>
             <button 
               onClick={() => setIsSubmitted(false)}
               className={styles.submitButton}
               style={{ marginTop: '2rem' }}
             >
-              Send another message
+              {content.buttons.newMessage}
             </button>
           </motion.div>
         )}

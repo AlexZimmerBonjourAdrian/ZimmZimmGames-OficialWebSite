@@ -1,0 +1,14 @@
+{
+  "logo": {
+    "src": "/Steam/Capsulas de Steam/Título del juego/titulo-wata-editable.png",
+    "alt": "Where Are The Alices?"
+  },
+  "nav": {
+    "home": "Home",
+    "characters": "Characters",
+    "conceptArt": "Concept Art",
+    "team": "Team",
+    "contact": "Contact",
+    "support": "Support"
+  }
+}

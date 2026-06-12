@@ -7,10 +7,21 @@
     font-family: 'Geist Sans', sans-serif;
     position: relative;
     overflow-x: hidden;
+    opacity: 0;
+    animation: pageFadeIn 0.8s ease forwards;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
-/* Fondo con Door.PNG apenas visible */
+/* Fondo (opcional - Door.PNG no disponible actualmente */
 
 .homeContainer::before {
     content: '';
@@ -19,7 +30,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/Wata/Door.PNG');
+    background-image: url('/images/Wata/WhereAreTheAlices.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -51,14 +62,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     z-index: 1;
 }
 
 .heroContent {
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
     z-index: 2;
     position: relative;
 }
@@ -68,14 +79,14 @@
 }
 
 .heroTitle {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .heroLogo {
-    max-width: min(600px, 90vw);
+    max-width: min(700px, 95vw);
     height: auto;
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
     animation: glowLogo 2s ease-in-out infinite alternate;
@@ -91,9 +102,9 @@
 }
 
 .heroSubtitle {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #FFFFFF;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
     font-weight: 300;
     font-family: var(--font-courier);
@@ -191,10 +202,10 @@
 }
 
 .gameplayTitle {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #FFD700;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
     font-family: var(--font-alice);
@@ -254,7 +265,7 @@
 }
 
 .disabledWishlistImage {
-    width: 300px;
+    width: 220px;
     height: auto;
     opacity: 0.5;
     filter: grayscale(100%);
@@ -599,9 +610,9 @@
 }
 
 .aboutSection {
-    margin-top: 4rem;
-    padding: 3rem 2rem;
-    max-width: 800px;
+    margin-top: 2.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 700px;
     background: rgba(10, 10, 10, 0.4);
     border-radius: 12px;
     border: 1px solid rgba(255, 0, 0, 0.1);
@@ -610,21 +621,21 @@
 .aboutContent {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 800px;
+    gap: 1.2rem;
+    max-width: 700px;
     margin: 0 auto;
     text-align: left;
 }
 
 .projectDetail {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.8rem;
 }
 
 .detailTitle {
     font-family: var(--font-alice);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #66c0f4;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -632,14 +643,14 @@
 .warningBox {
     background: rgba(220, 38, 38, 0.1);
     border: 1px solid rgba(220, 38, 38, 0.3);
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 8px;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .warningText {
     color: #ef4444;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-family: var(--font-courier);
     line-height: 1.6;
     margin: 0;
@@ -652,9 +663,9 @@
 }
 
 .featuresList li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.3rem;
 }
 
 .featuresList li::before {
@@ -666,7 +677,7 @@
 
 .aboutText {
     font-family: var(--font-courier);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: #e6e6e6;
     text-align: center;

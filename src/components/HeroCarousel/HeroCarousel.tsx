@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import styles from './HeroCarousel.module.css';
+import content from './content.json';
 
 interface CarouselItem {
   id: number;
@@ -12,38 +13,7 @@ interface CarouselItem {
   description: string;
 }
 
-const carouselItems: CarouselItem[] = [
-  {
-    id: 1,
-    image: '/Steam/Capsulas de Steam/Capsula de Cabecera/Capsula_de_Cabecera.jpg',
-    title: 'W.A.T.A: Where are the Alices?',
-    description: 'A psychological horror visual novel where nothing is what it seems.',
-  },
-  {
-    id: 2,
-    image: '/Gameplay/MainMenu.jpg',
-    title: 'Main Menu',
-    description: 'The entrance to the rabbit hole.',
-  },
-  {
-    id: 3,
-    image: '/Gameplay/MenuCase.png',
-    title: 'Menu Case',
-    description: 'Analyze the evidence and solve the mysteries.',
-  },
-  {
-    id: 4,
-    image: '/Gameplay/Storyboard.png',
-    title: 'Storyboard',
-    description: 'Visualizing the narrative and atmosphere.',
-  },
-  {
-    id: 5,
-    image: '/Gameplay/Storyboard-2.png',
-    title: 'Visual Storytelling',
-    description: 'Uncover the secrets through immersive scenes.',
-  },
-];
+const carouselItems: CarouselItem[] = content.items;
 
 interface HeroCarouselProps {
   className?: string;
@@ -119,14 +89,14 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({ className }) => {
         <button
           className={styles.controlButton}
           onClick={() => paginate(-1)}
-          aria-label="Previous slide"
+          aria-label={content.ariaLabels.previous}
         >
           <HiChevronLeft size={24} />
         </button>
         <button
           className={styles.controlButton}
           onClick={() => paginate(1)}
-          aria-label="Next slide"
+          aria-label={content.ariaLabels.next}
         >
           <HiChevronRight size={24} />
         </button>
