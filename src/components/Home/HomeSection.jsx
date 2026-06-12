@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './HomeSection.module.css';
 import { HeroCarousel, ContactForm, SupportButtons, ItchioEmbed, Platforms } from '@/components';
+import { event } from '@/lib/analytics';
 import content from './content.json';
 import links from './links.json';
 
@@ -18,6 +19,14 @@ const Team = dynamic(() => import('@/components/Team/Team'), {
 });
 
 const HomeSection = () => {
+    const handleWishlistClick = useCallback(() => {
+        event({
+            action: 'click_wishlist',
+            category: 'game',
+            label: 'Steam Wishlist Button',
+        });
+    }, []);
+
     return (
         <main className={styles.homeContainer}>
             <section className={styles.heroSection}>
@@ -42,6 +51,7 @@ const HomeSection = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`${styles.enterContainer} ${styles.wishlistButton}`}
+                                onClick={handleWishlistClick}
                             >
                                 <img
                                     src={content.wishlist.image}

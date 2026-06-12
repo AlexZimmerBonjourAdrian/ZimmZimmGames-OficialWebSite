@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useRef, useCallback } from 'react';
 import styles from './DialogueGame.module.css';
 import useDialogueEngine, { DialogueGraph, ResolvedNode } from './useDialogueEngine';
+import { trackGameEvent } from '@/lib/analytics';
 
 export interface DialogueGameProps {
   graph: DialogueGraph;
@@ -12,14 +13,40 @@ export interface DialogueGameProps {
 }
 
 const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', className, onSkip }) => {
-  const { currentNode, selectChoice, getIsChoiceDisabled } = useDialogueEngine(graph, locale);
-  
+  const { currentNode, selectChoice, getIsChoiceDisabled, reset } = useDialogueEngine(graph, locale);
+  const startTimeRef = useRef<number>(Date.now());
+  const hasTrackedStartRef = useRef(false);
   const choices = useMemo(() => currentNode?.choices ?? [], [currentNode]);
 
   // Validar que el graph existe y tiene la estructura correcta
-  // Se hace después de llamar a los hooks para evitar errores de "hooks condicionales"
   const isValidGraph = graph && graph.start && graph.nodes;
-  
+
+  const handleChoiceSelect = useCallback((choiceId: string) => {
+    selectChoice(choiceId);
+    trackGameEvent('choice_selected', { choice_id: choiceId, node_id: currentNode?.id });
+  }, [selectChoice, currentNode]);
+
+  const handleSkipClick = useCallback(() => {
+    trackGameEvent('skip_clicked');
+    const playTime = Math.floor((Date.now() - startTimeRef.current) / 1000);
+    trackGameEvent('play_time', { seconds: playTime });
+    onSkip?.();
+  }, [onSkip]);
+
+  useEffect(() => {
+    if (!hasTrackedStartRef.current && isValidGraph) {
+      trackGameEvent('game_started');
+      hasTrackedStartRef.current = true;
+    }
+
+    return () => {
+      if (hasTrackedStartRef.current) {
+        const playTime = Math.floor((Date.now() - startTimeRef.current) / 1000);
+        trackGameEvent('play_time', { seconds: playTime });
+      }
+    };
+  }, [isValidGraph]);
+
   if (!isValidGraph) {
     console.error('DialogueGame: Invalid graph structure', graph);
     return (
@@ -29,7 +56,6 @@ const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', class
     );
   }
 
-  // Validar que currentNode existe
   if (!currentNode) {
     console.error('DialogueGame: No current node available');
     return (
@@ -38,8 +64,6 @@ const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', class
       </div>
     );
   }
-
-  // Nota: el botón Skip ahora redirige a Steam; la lógica anterior de avance se removió.
 
   const renderHeader = (node: ResolvedNode) => (
     <div className={styles.header}>
@@ -63,7 +87,7 @@ const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', class
               ]
                 .filter(Boolean)
                 .join(' ')}
-              onClick={() => selectChoice(choice.id)}
+              onClick={() => handleChoiceSelect(choice.id)}
             >
               {choice.text}
             </button>
@@ -74,7 +98,7 @@ const DialogueGame: React.FC<DialogueGameProps> = ({ graph, locale = 'en', class
         <button
           type="button"
           className={styles.skipButton}
-          onClick={onSkip}
+          onClick={handleSkipClick}
           aria-label="Skip"
         >
           {locale === 'es' ? 'Saltar' : 'Skip'}
