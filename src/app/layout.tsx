@@ -80,6 +80,15 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJDFXMGVD4"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PJDFXMGVD4');
+        ` }} />
+        
         {/* Resource hints para recursos externos */}
         <link rel="dns-prefetch" href="https://forms.gle" />
         <link rel="preconnect" href="https://forms.gle" crossOrigin="anonymous" />
