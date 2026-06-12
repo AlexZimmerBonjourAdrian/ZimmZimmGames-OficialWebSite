@@ -10,6 +10,12 @@
       ]
     },
     {
+      "title": "Web Platform",
+      "items": [
+        { "name": "Web", "icon": "web", "status": "demo" }
+      ]
+    },
+    {
       "title": "Mobile Platforms",
       "items": [
         { "name": "Android", "icon": "android", "status": "considering" },

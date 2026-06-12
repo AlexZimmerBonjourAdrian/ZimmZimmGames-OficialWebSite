@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaWindows, FaLinux, FaApple, FaAndroid, FaMobileAlt, FaGamepad } from 'react-icons/fa';
+import { FaWindows, FaLinux, FaApple, FaAndroid, FaMobileAlt, FaGamepad, FaGlobe } from 'react-icons/fa';
 import styles from './Platforms.module.css';
 import content from './content.json';
 
@@ -22,6 +22,8 @@ const Platforms: React.FC<PlatformsProps> = ({ className = '' }) => {
         return <FaMobileAlt className={styles.platformIcon} />;
       case 'nintendo':
         return <FaGamepad className={styles.platformIcon} />;
+      case 'web':
+        return <FaGlobe className={styles.platformIcon} />;
       default:
         return null;
     }
@@ -37,6 +39,8 @@ const Platforms: React.FC<PlatformsProps> = ({ className = '' }) => {
         return 'Under Consideration';
       case 'publisher':
         return 'Only with Publisher';
+      case 'demo':
+        return 'Demo Only';
       default:
         return '';
     }

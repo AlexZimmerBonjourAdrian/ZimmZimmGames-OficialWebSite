@@ -69,6 +69,11 @@
   opacity: 0.7;
 }
 
+.platformCard.demo {
+  border-color: rgba(0, 255, 127, 0.4);
+  background: rgba(0, 255, 127, 0.05);
+}
+
 .platformCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -97,6 +102,11 @@
   opacity: 1;
 }
 
+.platformCard.demo:hover {
+  border-color: #00ff7f;
+  box-shadow: 0 15px 35px rgba(0, 255, 127, 0.2);
+}
+
 .platformIcon {
   font-size: 3.6rem;
   transition: all 0.3s ease;
@@ -116,6 +126,10 @@
 
 .platformCard.publisher .platformIcon {
   color: #e6007e;
+}
+
+.platformCard.demo .platformIcon {
+  color: #00ff7f;
 }
 
 .platformName {
@@ -152,6 +166,11 @@
 .platformStatus.publisher {
   color: #e6007e;
   background: rgba(230, 0, 126, 0.1);
+}
+
+.platformStatus.demo {
+  color: #00ff7f;
+  background: rgba(0, 255, 127, 0.1);
 }
 
 @media (max-width: 768px) {
