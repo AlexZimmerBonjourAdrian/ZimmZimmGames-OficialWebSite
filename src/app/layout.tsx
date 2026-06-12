@@ -62,7 +62,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'HDPNeSBJ5V-Ky_nmGbiWlhO1gteiXdTwhSeuR5IhL9w',
+    google: 'tod3oqo1hTN_jmqRw1EmaC8Jy6WbVi3rWRV6ffIpsXw',
   },
 };
 
