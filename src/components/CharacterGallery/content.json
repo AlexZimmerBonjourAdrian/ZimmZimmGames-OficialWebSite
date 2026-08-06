@@ -30,6 +30,72 @@
         "...I have to lie to my kids again.",
         "Done... this human whiskey is terrible, it tastes like gasoline with sugar. Too bad they know how to make quality whiskey in Wonderland... Shit... I miss that taste."
       ]
+    },
+    {
+      "id": "markus",
+      "name": "Markus Lavinny",
+      "description": "Also known as Mark",
+      "quotes": []
+    },
+    {
+      "id": "mock-turtle",
+      "name": "The Mock Turtle",
+      "description": "The false turtle",
+      "quotes": []
+    },
+    {
+      "id": "jabberwocky",
+      "name": "Jaberwocky",
+      "description": "A fearsome creature",
+      "quotes": []
+    },
+    {
+      "id": "clyde",
+      "name": "Clyde Pembroke",
+      "description": "A mysterious figure",
+      "quotes": []
+    },
+    {
+      "id": "mad-hatter",
+      "name": "The Mad Hatter",
+      "description": "The eccentric hatter",
+      "quotes": []
+    },
+    {
+      "id": "jenny",
+      "name": "Jenny White",
+      "description": "A White family member",
+      "quotes": []
+    },
+    {
+      "id": "jack",
+      "name": "Jack White",
+      "description": "A White family member",
+      "quotes": []
+    },
+    {
+      "id": "kotic",
+      "name": "Ko-tic",
+      "description": "A unique character",
+      "quotes": []
+    },
+    {
+      "id": "cheshire",
+      "name": "Cheshire",
+      "description": "The mysterious cat",
+      "quotes": []
+    },
+    {
+      "id": "shu",
+      "name": "Shu",
+      "description": "A character from the game",
+      "quotes": []
+    },
+    {
+      "id": "lion",
+      "name": "The Lion",
+      "description": "A powerful creature",
+      "quotes": []
     }
   ],
   "conceptArtPieces": [
