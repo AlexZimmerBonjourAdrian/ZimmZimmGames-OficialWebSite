@@ -1,0 +1,173 @@
+# Plan de Rediseño - Basado en The Song of Saya
+
+## Análisis de Referencia Exitosa
+
+**The Song of Saya (songofsaya.com)**
+- Visual novel de horror psicológico exitoso
+- Navegación minimalista: 4 items (Story, Characters, Gallery, Buy)
+- Enfoque en storytelling y conversión
+- Diseño oscuro, limpio y directo
+
+## Problema Actual
+
+**Navegación sobrecargada (7 items):**
+- Home, Gameplay, Characters, Concept Art, Team, Contact, Support
+- Demasiadas secciones distraen al usuario
+- Funnel de conversión poco claro
+- Team y Contact no son críticos para conversión
+
+## Solución Propuesta
+
+### Fase 1: Simplificación de Navegación
+
+**Nueva estructura (4-5 items):**
+- Story (hero + narrativa inmersiva)
+- Characters (con concept art integrado)
+- Gallery (gameplay + concept art combinados)
+- Buy (CTA principal + plataformas)
+- Support (opcional, o mover a footer)
+
+**Cambios:**
+- Eliminar "Concept Art" como sección separada (integrar en Characters)
+- Mover "Team" a footer
+- Combinar "Contact" con "Support" o mover a footer
+- Renombrar "Gameplay" a "Gallery" para mayor claridad
+
+### Fase 2: Rediseño de Secciones
+
+#### 1. Hero/Story Section
+- Narrativa inmersiva estilo The Song of Saya
+- Propuesta de valor clara: "Cinematic Noir Psychological Horror Visual Novel"
+- CTA principal: "Add to Wishlist" (sticky)
+- Background visual impactante con overlay oscuro
+
+#### 2. Characters Section
+- Descripciones detalladas de personajes (estilo The Song of Saya)
+- Integrar concept art en la misma sección
+- Mostrar quotes/personalidad de cada personaje
+- Layout: Grid o carousel optimizado
+
+#### 3. Gallery Section
+- Combinar gameplay screenshots + concept art
+- Grid responsive con hover effects
+- Mostrar variedad de contenido (UI, escenas, personajes)
+- Categorización opcional (Gameplay, Concept Art, UI)
+
+#### 4. Buy Section
+- CTA principal "Add to Wishlist" prominente
+- Links a plataformas (Steam, Itch.io)
+- Cards para cada plataforma con iconos
+- Información de pricing/availability
+
+#### 5. Footer
+- Team section (mover desde navegación principal)
+- Contact information
+- Social links
+- Copyright
+
+### Fase 3: Implementación Técnica
+
+#### Archivos a Modificar
+
+**1. src/components/Header/Header.tsx**
+- Simplificar navList de 7 a 4-5 items
+- Actualizar content.json del Header
+- Mantener responsive mobile menu
+
+**2. src/components/Home/HomeSection.jsx**
+- Reestructurar orden de secciones
+- Eliminar sección Gameplay actual
+- Crear nueva sección Story/Hero mejorada
+- Integrar Characters con concept art
+- Crear sección Gallery combinada
+- Crear sección Buy dedicada
+- Mover Team y Contact a footer
+
+**3. src/components/Home/HomeSection.module.css**
+- Añadir estilos para nueva sección Story
+- Añadir estilos para sección Buy
+- Añadir estilos para sticky CTA button
+- Ajustar responsive breakpoints
+
+**4. src/components/Home/content.json**
+- Añadir contenido narrativo para Story section
+- Expandir descripciones de personajes
+- Añadir contenido para Buy section
+- Reorganizar estructura de datos
+
+**5. src/components/Footer/Footer.tsx**
+- Añadir Team section
+- Añadir Contact information
+- Añadir Social links
+
+### Fase 4: Sticky CTA Button
+
+**Implementación:**
+- Botón "Add to Wishlist" sticky en esquina superior derecha
+- Siempre visible durante scroll
+- Usar componente SteamWishlistButton existente
+- Añadir estilos CSS para position: fixed/sticky
+- Asegurar z-index correcto
+
+### Fase 5: Responsive Optimization
+
+**Breakpoints:**
+- Desktop: 1920px+ (4 columnas)
+- Laptop: 1024px-1919px (3 columnas)
+- Tablet: 768px-1023px (2 columnas)
+- Mobile: <768px (1 columna, stack vertical)
+
+**Ajustes:**
+- Navegación: Hamburger menu en mobile
+- Hero: Texto más corto en mobile
+- Characters: Stack vertical en mobile
+- Gallery: 1 columna en mobile
+- Buy: CTA full-width en mobile
+
+## Cronograma Sugerido
+
+### Día 1-2: Fase 1 (Navegación)
+- Simplificar Header.tsx
+- Actualizar content.json del Header
+
+### Día 3-4: Fase 2 (Secciones)
+- Rediseñar Hero/Story section
+- Integrar Characters con concept art
+- Crear Gallery combinada
+- Crear Buy section
+
+### Día 5: Fase 3 (Footer)
+- Mover Team a Footer
+- Mover Contact a Footer
+- Añadir social links
+
+### Día 6: Fase 4 (Sticky CTA)
+- Implementar botón sticky
+- Ajustar estilos CSS
+
+### Día 7: Fase 5 (Testing)
+- Testing responsive
+- Ajustes finales
+- Verificar conversión
+
+## Métricas de Éxito
+
+- Reducir bounce rate
+- Aumentar tiempo en página
+- Aumentar CTR de wishlist button
+- Mejorar navegación (menos clicks para llegar a contenido)
+- Mejorar score de Lighthouse mobile
+
+## Referencias
+
+- The Song of Saya: https://songofsaya.com/
+- ddlc.moe: https://ddlc.moe/
+- Plan existente: Plan.txt (marketing improvements)
+
+## Notas
+
+- Mantener estética de terror/noir existente
+- Preservar fuentes personalizadas (Alice, CourierPrime)
+- No romper optimizaciones de rendimiento existentes
+- Mantener SEO configurado
+- Preservar animaciones existentes donde apliquen
