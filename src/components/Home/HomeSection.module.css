@@ -7,17 +7,12 @@
     font-family: 'Geist Sans', sans-serif;
     position: relative;
     overflow-x: hidden;
-    opacity: 0;
-    animation: pageFadeIn 0.8s ease forwards;
+    width: 100%;
+    max-width: 100vw;
 }
 
-@keyframes pageFadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.homeContainer *, .homeContainer *::before, .homeContainer *::after {
+    box-sizing: border-box;
 }
 
 
@@ -72,6 +67,8 @@
     max-width: 1200px;
     z-index: 2;
     position: relative;
+    width: 100%;
+    padding: 0 1rem;
 }
 
 .heroStack {
@@ -88,27 +85,14 @@
 .heroLogo {
     max-width: min(700px, 95vw);
     height: auto;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
-    animation: glowLogo 2s ease-in-out infinite alternate;
-}
-
-@keyframes glowLogo {
-    from {
-        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
-    }
-    to {
-        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
-    }
 }
 
 .heroSubtitle {
     font-size: 1.1rem;
     color: #FFFFFF;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
     font-weight: 300;
     font-family: var(--font-courier);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .steamSectionInline {
@@ -117,48 +101,33 @@
     justify-content: center;
 }
 
-/* Transiciones profesionales para wishlist + galería */
+.steamContentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.5rem;
+}
+
+/* Container for sections */
 .enterContainer {
-    opacity: 0;
-    transform: translateY(10px) scale(0.98);
-    filter: blur(4px);
-    animation: enterSmooth 600ms ease forwards;
-}
-
-.enterWishlist {
-    animation-delay: 80ms;
-}
-
-.enterGallery {
-    animation-delay: 180ms;
-}
-
-.enterButton {
-    animation-delay: 260ms;
+    margin-top: 1.5rem;
 }
 
 /* Wishlist Button Styles */
 .wishlistButton {
     display: inline-block;
-    transition: all 0.3s ease;
     cursor: pointer;
     margin: 1.5rem 0;
 }
 
-.wishlistButton:hover {
-    transform: scale(1.08);
-}
-
 .wishlistImage {
     width: 350px;
+    max-width: 90vw;
     height: auto;
     border-radius: 12px;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 0 20px rgba(102, 192, 244, 0.3));
-}
-
-.wishlistButton:hover .wishlistImage {
-    filter: drop-shadow(0 0 35px rgba(102, 192, 244, 0.5));
 }
 
 /* Section Title */
@@ -168,158 +137,192 @@
     color: #FFD700;
     margin-bottom: 2.5rem;
     font-weight: 700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
     font-family: var(--font-alice);
-}
-
-/* Platforms Section */
-.platformsSection {
-    width: 100%;
-    padding: 3rem 1rem;
-}
-
-.platformsGrid {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-}
-
-.platformCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    background: rgba(20, 20, 20, 0.5);
-    transition: all 0.3s ease;
-}
-
-.platformCard:hover {
-    transform: translateY(-8px);
-    border-color: #66c0f4;
-    box-shadow: 0 15px 35px rgba(102, 192, 244, 0.15);
-}
-
-.platformIcon {
-    font-size: 4rem;
-    color: #66c0f4;
-}
-
-.platformName {
-    font-size: 1.3rem;
-    font-family: var(--font-courier);
-    color: #ffffff;
 }
 
 /* Gameplay Section */
 .gameplaySection {
     width: 100%;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
 }
 
-.gameplayGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
+/* Gameplay Viewer con menú/archivador */
+.gameplayViewer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.gameplayCard {
-    border: 1px solid rgba(255, 255, 255, 0.12);
+.gameplayMenu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gameplayMenuItem {
+    padding: 0.6rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-courier);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.gameplayMenuItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.gameplayMenuItemActive {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
+    color: #FFD700;
+}
+
+.gameplayDisplay {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    overflow: hidden;
-    background: #0d0d0d;
-    transition: all 0.3s ease;
-}
-
-.gameplayCard:hover {
-    transform: translateY(-8px);
-    border-color: #FFD700;
-    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15);
-}
-
-.gameplayImageContainer {
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    aspect-ratio: 16 / 9;
+    max-width: 100%;
     overflow: hidden;
 }
 
-.gameplayImage {
+.gameplayImageWrapper {
+    flex: 1;
+    min-width: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameplayDisplayImage {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
-    transition: transform 0.3s ease;
 }
 
-.gameplayCard:hover .gameplayImage {
-    transform: scale(1.08);
+.gameplayDescriptionWrapper {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.gameplayInfo {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.gameplayCardTitle {
+.gameplayDisplayTitle {
     font-size: 1.4rem;
     color: #FFD700;
-    margin-bottom: 0.75rem;
+    margin: 0;
     font-family: var(--font-alice);
 }
 
-.gameplayDescription {
-    font-size: 1rem;
+.gameplayDisplayDescription {
+    font-size: 0.95rem;
     color: #cccccc;
-    font-family: var(--font-courier);
     line-height: 1.5;
-}
-
-@keyframes enterSmooth {
-    0% {
-        opacity: 0;
-        transform: translateY(10px) scale(0.98);
-        filter: blur(4px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateY(0) scale(1.0);
-        filter: blur(0.5px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1.0);
-        filter: blur(0);
-    }
-}
-
-.fadeIn {
-    animation: fadeIn var(--flow-duration, 0.45s) ease forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    margin: 0;
+    font-family: var(--font-courier);
 }
 
 /* Responsive Design */
+
+@media (min-width: 1440px) {
+    .heroContent {
+        max-width: 1400px;
+    }
+    .heroLogo {
+        max-width: min(800px, 95vw);
+    }
+    .sectionTitle {
+        font-size: 2.8rem;
+    }
+    .gameplayViewer {
+        max-width: 1400px;
+    }
+    .gameplayDescriptionWrapper {
+        flex: 0 0 350px;
+    }
+    .gameplayDisplayTitle {
+        font-size: 1.6rem;
+    }
+    .gameplayDisplayDescription {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .heroContent {
+        max-width: 1000px;
+    }
+    .gameplayGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .heroContent {
+        max-width: 900px;
+    }
+    .heroLogo {
+        max-width: min(600px, 95vw);
+    }
+    .sectionTitle {
+        font-size: 2.2rem;
+    }
+    .gameplayGrid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet landscape optimization */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .heroSection {
+        padding: 0.5rem;
+    }
+    .heroLogo {
+        max-width: min(500px, 95vw);
+    }
+    .sectionTitle {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .gameplaySection {
+        padding: 1.5rem 1rem;
+    }
+    .gameplayDisplay {
+        gap: 1.5rem;
+    }
+}
 
 @media (max-width: 768px) {
     .heroLogo {
         max-width: min(500px, 95vw);
     }
     .heroSubtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .sectionTitle {
         font-size: 2rem;
@@ -327,37 +330,161 @@
     .wishlistImage {
         width: 280px;
     }
-    .platformsGrid {
-        gap: 2rem;
+    .gameplayDisplay {
+        flex-direction: column;
+        gap: 1rem;
     }
-    .platformCard {
-        padding: 1.5rem 2.5rem;
+    .gameplayDescriptionWrapper {
+        flex: 1;
+        width: 100%;
     }
-    .platformIcon {
-        font-size: 3.5rem;
+    .gameplayMenu {
+        gap: 0.25rem;
     }
-    .gameplayGrid {
-        grid-template-columns: 1fr;
+    .gameplayMenuItem {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .heroSection {
+        padding: 0.75rem;
+    }
+    .heroLogo {
+        max-width: min(450px, 95vw);
+    }
+    .heroSubtitle {
+        font-size: 0.95rem;
+    }
+    .sectionTitle {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    .wishlistImage {
+        width: 250px;
+    }
+    .gameplaySection {
+        padding: 2rem 0.75rem;
+    }
+    .gameplayDisplay {
+        padding: 1rem;
+    }
+    .gameplayDisplayTitle {
+        font-size: 1.2rem;
+    }
+    .gameplayDisplayDescription {
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 480px) {
     .heroSection {
-        padding: 1rem;
+        padding: 0.5rem;
+    }
+    .heroContent {
+        padding: 0 0.5rem;
     }
     .heroLogo {
-        max-width: min(400px, 95vw);
+        max-width: calc(100vw - 2rem);
+    }
+    .heroSubtitle {
+        font-size: 0.9rem;
     }
     .sectionTitle {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
     }
     .wishlistImage {
         width: 220px;
+        max-width: calc(100vw - 2rem);
     }
-    .platformCard {
-        padding: 1.25rem 2rem;
+    .gameplaySection {
+        padding: 1.5rem 0.5rem;
     }
-    .platformIcon {
-        font-size: 3rem;
+    .gameplayDisplay {
+        padding: 1rem;
+    }
+    .gameplayDisplayTitle {
+        font-size: 1.1rem;
+    }
+    .gameplayDisplayDescription {
+        font-size: 0.8rem;
+    }
+    .gameplayMenuItem {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .heroSection {
+        padding: 0.25rem;
+    }
+    .heroContent {
+        padding: 0 0.25rem;
+    }
+    .heroLogo {
+        max-width: calc(100vw - 1rem);
+    }
+    .sectionTitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .wishlistImage {
+        width: 160px;
+        max-width: calc(100vw - 1rem);
+    }
+    .gameplaySection {
+        padding: 1rem 0.25rem;
+    }
+    .gameplayDisplay {
+        padding: 0.75rem;
+    }
+    .gameplayDisplayTitle {
+        font-size: 0.9rem;
+    }
+    .gameplayDisplayDescription {
+        font-size: 0.7rem;
+    }
+    .gameplayMenuItem {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .heroSection {
+        padding: 0.2rem;
+    }
+    .heroContent {
+        padding: 0 0.2rem;
+    }
+    .heroLogo {
+        max-width: calc(100vw - 0.8rem);
+    }
+    .sectionTitle {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    .wishlistImage {
+        width: 140px;
+        max-width: calc(100vw - 0.8rem);
+    }
+    .gameplaySection {
+        padding: 0.75rem 0.2rem;
+    }
+    .gameplayDisplay {
+        padding: 0.5rem;
+    }
+    .gameplayDisplayTitle {
+        font-size: 0.8rem;
+    }
+    .gameplayDisplayDescription {
+        font-size: 0.65rem;
+    }
+    .gameplayMenuItem {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.6rem;
     }
 }

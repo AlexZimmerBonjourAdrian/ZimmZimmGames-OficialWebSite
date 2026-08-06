@@ -2,10 +2,16 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.characterGallery *, .characterGallery *::before, .characterGallery *::after {
+    box-sizing: inherit;
 }
 
 .heroInline {
@@ -15,13 +21,15 @@
 }
 
 
-/* Estilo vertical sin marcos para personajes en variante heroInline */
+/* Estilo horizontal sin marcos para personajes en variante heroInline */
 
 .heroInline .characterGrid {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .heroInline .characterCard {
@@ -30,6 +38,7 @@
     padding: 0;
     box-shadow: none;
     backdrop-filter: none;
+    width: auto;
 }
 
 .heroInline .imageContainer {
@@ -39,8 +48,8 @@
 }
 
 .heroInline .characterImage {
-    width: 300px;
-    max-width: 90vw;
+    width: 200px;
+    max-width: calc(100vw - 4rem);
     height: auto;
     display: block;
     margin: 0 auto;
@@ -48,11 +57,11 @@
 
 .header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 0.5rem;
@@ -62,7 +71,7 @@
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #ffffff;
     margin: 0;
     font-style: italic;
@@ -72,14 +81,14 @@
 }
 
 .section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .sectionTitle {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: #ffffff;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     position: relative;
     font-family: var(--font-alice);
@@ -130,15 +139,9 @@
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
-    transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-}
-
-.characterCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    border-color: rgba(102, 192, 244, 0.3);
+    min-height: 44px;
 }
 
 .imageContainer {
@@ -153,11 +156,6 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.characterCard:hover .characterImage {
-    transform: scale(1.05);
 }
 
 .characterInfo {
@@ -181,141 +179,61 @@
     font-family: var(--font-courier);
 }
 
-.quotesContainer {
-    margin-top: 1.5rem;
-    text-align: left;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    border-left: 3px solid #66c0f4;
-}
-
-.quotesTitle {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    color: #66c0f4;
-    margin-bottom: 0.75rem;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
-.quotesList {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.quoteWrapper {
-    position: relative;
-    padding-left: 1rem;
-}
-
-.quoteIcon {
-    position: absolute;
-    left: -0.2rem;
-    top: -0.2rem;
-    font-size: 1.5rem;
-    color: rgba(102, 192, 244, 0.4);
-    font-family: serif;
-}
-
-.characterQuote {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #c7d5e0;
-    line-height: 1.4;
-    margin: 0;
-    font-family: var(--font-courier);
-}
-
-
-/* Concept Art en formato de columna para mayor legibilidad */
-
-.conceptGrid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    width: 100%;
-    max-width: 900px; /* Limitamos el ancho para que no sea excesivamente grande en pantallas anchas */
-    margin: 0 auto;
-}
-
-.conceptCard {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.conceptCard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    border-color: rgba(102, 192, 244, 0.4);
-}
-
-.conceptCard .imageContainer {
-    background: rgba(0, 0, 0, 0.2);
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
-
-.conceptImage {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    transition: transform 0.5s ease;
-}
-
-.conceptCard:hover .conceptImage {
-    transform: scale(1.02);
-}
-
-.conceptInfo {
-    padding: 1rem;
-}
-
-.conceptName {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 0.8rem;
-    font-family: var(--font-alice);
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-}
-
-.conceptDescription {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin: 0;
-    font-family: var(--font-courier);
-    max-width: 700px;
-    margin: 0 auto;
+@media (min-width: 1440px) {
+    .characterGallery {
+        max-width: 1400px;
+    }
+    .title {
+        font-size: 4rem;
+    }
+    .sectionTitle {
+        font-size: 2.5rem;
+    }
+    .characterName {
+        font-size: 2rem;
+    }
+    .heroInline .characterImage {
+        width: 300px;
+    }
 }
 
 @media (max-width: 768px) {
     .characterGallery {
-        padding: 1rem;
+        padding: 0.75rem;
     }
     .title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .characterGrid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
     }
     .characterCard {
         padding: 1rem;
+    }
+    .heroInline .characterGrid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .heroInline .characterImage {
+        width: 200px;
+        max-width: calc(100vw - 4rem);
+    }
+}
+
+/* Tablet landscape optimization */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .characterGallery {
+        padding: 1rem;
+    }
+    .title {
+        font-size: 2.2rem;
+    }
+    .sectionTitle {
+        font-size: 1.8rem;
+    }
+    .heroInline .characterImage {
+        width: 180px;
     }
 }
 
@@ -324,36 +242,45 @@
         padding: 0.5rem;
     }
     .title {
-        font-size: 1.8rem;
-    }
-    .sectionTitle {
         font-size: 1.5rem;
     }
-}
-
-
-/* Animaciones */
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    .sectionTitle {
+        font-size: 1.3rem;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .heroInline .characterImage {
+        width: 180px;
+        max-width: calc(100vw - 3rem);
     }
 }
 
-.characterCard,
-.conceptCard {
-    animation: fadeInUp 0.6s ease-out;
+@media (max-width: 360px) {
+    .characterGallery {
+        padding: 0.25rem;
+    }
+    .title {
+        font-size: 1.2rem;
+    }
+    .sectionTitle {
+        font-size: 1rem;
+    }
+    .heroInline .characterImage {
+        width: 150px;
+        max-width: calc(100vw - 2rem);
+    }
 }
 
-.characterCard:nth-child(2) {
-    animation-delay: 0.1s;
-}
-
-.conceptCard:nth-child(2) {
-    animation-delay: 0.2s;
+@media (max-width: 320px) {
+    .characterGallery {
+        padding: 0.2rem;
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .sectionTitle {
+        font-size: 0.9rem;
+    }
+    .heroInline .characterImage {
+        width: 130px;
+        max-width: calc(100vw - 1.5rem);
+    }
 }

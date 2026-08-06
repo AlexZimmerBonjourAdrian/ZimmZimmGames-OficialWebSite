@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import styles from './HomeSection.module.css';
-import { HeroCarousel, ContactForm, SupportButtons, ItchioEmbed, Platforms } from '@/components';
+import { HeroCarousel, ContactForm, SupportButtons } from '@/components';
 import content from './content.json';
 import links from './links.json';
 
@@ -18,11 +18,23 @@ const Team = dynamic(() => import('@/components/Team/Team'), {
 });
 
 const HomeSection = () => {
+    const [selectedGameplayIndex, setSelectedGameplayIndex] = useState(0);
+
+    const characterGalleryProps = useMemo(() => ({
+        layout: "grid",
+        showTitles: true,
+        variant: "heroInline",
+        overrides: {
+            cbDesc: content.characters.dominic,
+            junoDesc: content.characters.juno,
+        }
+    }), [content.characters]);
+
     return (
         <main className={styles.homeContainer}>
             <section className={styles.heroSection}>
                 <div className={styles.heroContent}>
-                    <div className={`${styles.heroStack} ${styles.fadeIn}`}>
+                    <div className={styles.heroStack}>
                         <h1 className={styles.heroTitle}>
                             <img
                                 src={content.site.logo}
@@ -33,8 +45,8 @@ const HomeSection = () => {
                         <h2 className={styles.heroSubtitle}>{content.hero.subtitle}</h2>
                     </div>
 
-                    <div className={`${styles.steamSectionInline} ${styles.fadeIn}`} style={{ ['--flow-duration']: '600ms' }}>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', alignItems: 'center' }}>
+                    <div className={styles.steamSectionInline}>
+                        <div className={styles.steamContentWrapper}>
                             <HeroCarousel className={styles.enterContainer} />
 
                             <a
@@ -50,28 +62,36 @@ const HomeSection = () => {
                                 />
                             </a>
 
-                            <ItchioEmbed className={`${styles.enterContainer}`} />
-
-                            <Platforms className={styles.enterContainer} />
-
                             <section id="gameplay" className={`${styles.enterContainer} ${styles.gameplaySection}`}>
                                 <h3 className={styles.sectionTitle}>{content.gameplay.title}</h3>
-                                <div className={styles.gameplayGrid}>
-                                    {content.gameplay.items.map((item) => (
-                                        <div key={item.id} className={styles.gameplayCard}>
-                                            <div className={styles.gameplayImageContainer}>
-                                                <img
-                                                    src={item.image}
-                                                    alt={item.title}
-                                                    className={styles.gameplayImage}
-                                                />
-                                            </div>
-                                            <div className={styles.gameplayInfo}>
-                                                <h4 className={styles.gameplayCardTitle}>{item.title}</h4>
-                                                <p className={styles.gameplayDescription}>{item.description}</p>
-                                            </div>
+                                <div className={styles.gameplayViewer}>
+                                    {/* Menu/Archiver */}
+                                    <div className={styles.gameplayMenu}>
+                                        {content.gameplay.items.map((item, index) => (
+                                            <button
+                                                key={item.id}
+                                                className={`${styles.gameplayMenuItem} ${index === selectedGameplayIndex ? styles.gameplayMenuItemActive : ''}`}
+                                                onClick={() => setSelectedGameplayIndex(index)}
+                                            >
+                                                {item.title}
+                                            </button>
+                                        ))}
+                                    </div>
+                                    
+                                    {/* Viewer with image left, description right */}
+                                    <div className={styles.gameplayDisplay}>
+                                        <div className={styles.gameplayImageWrapper}>
+                                            <img
+                                                src={content.gameplay.items[selectedGameplayIndex].image}
+                                                alt={content.gameplay.items[selectedGameplayIndex].title}
+                                                className={styles.gameplayDisplayImage}
+                                            />
                                         </div>
-                                    ))}
+                                        <div className={styles.gameplayDescriptionWrapper}>
+                                            <h4 className={styles.gameplayDisplayTitle}>{content.gameplay.items[selectedGameplayIndex].title}</h4>
+                                            <p className={styles.gameplayDisplayDescription}>{content.gameplay.items[selectedGameplayIndex].description}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
 
@@ -79,15 +99,7 @@ const HomeSection = () => {
 
                             <CharacterGallery
                                 className={`${styles.enterContainer} ${styles.enterGallery}`}
-                                layout="grid"
-                                showTitles={true}
-                                variant="heroInline"
-                                overrides={{
-                                    cbDesc: content.characters.dominic,
-                                    junoDesc: content.characters.juno,
-                                    expressionDesc: content.characters.expression,
-                                    duoDesc: content.characters.duo,
-                                }}
+                                {...characterGalleryProps}
                             />
 
                             <Team className={styles.enterContainer} />
@@ -103,4 +115,4 @@ const HomeSection = () => {
     );
 };
 
-export default HomeSection;
+export default React.memo(HomeSection);
