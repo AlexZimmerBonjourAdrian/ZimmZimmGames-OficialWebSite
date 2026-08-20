@@ -1,173 +1,222 @@
-# Plan de Rediseño - Basado en The Song of Saya
+# PLAN PARA PRESS KIT - W.A.T.A
 
-## Análisis de Referencia Exitosa
+## ASSETS FALTANTES (IMÁGENES)
 
-**The Song of Saya (songofsaya.com)**
-- Visual novel de horror psicológico exitoso
-- Navegación minimalista: 4 items (Story, Characters, Gallery, Buy)
-- Enfoque en storytelling y conversión
-- Diseño oscuro, limpio y directo
+### Screenshots Gameplay (6-8 mínimo)
+- [ ] Crear 6-8 screenshots en resolución 1920x1080 mínimo
+- [ ] Formato PNG sin watermarks ni logos superpuestos
+- [ ] Variedad: diferentes entornos, mecánicas, estados de UI
+- [ ] Ubicación: /public/press/screenshots/
 
-## Problema Actual
+### Key Art
+- [ ] Key art en ratio 16:9 para headers de artículos
+- [ ] Key art en ratio 1:1 para thumbnails de redes sociales
+- [ ] Versiones para fondo claro y oscuro
+- [ ] Ubicación: /public/press/keyart/
 
-**Navegación sobrecargada (7 items):**
-- Home, Gameplay, Characters, Concept Art, Team, Contact, Support
-- Demasiadas secciones distraen al usuario
-- Funnel de conversión poco claro
-- Team y Contact no son críticos para conversión
+### Logo
+- [ ] Logo PNG transparente (sin fondo)
+- [ ] Versión para fondo claro
+- [ ] Versión para fondo oscuro
+- [ ] Icono 1:1 para algunos usos
+- [ ] Ubicación: /public/press/logos/
 
-## Solución Propuesta
+### Concept Art
+- [ ] Arte conceptual de personajes
+- [ ] Arte conceptual de escenarios
+- [ ] Progresión de sketches a final
+- [ ] Ubicación: /public/ConceptArt/ (actualmente vacío)
 
-### Fase 1: Simplificación de Navegación
+### Character Art
+- [ ] Retratos de personajes principales
+- [ ] Hojas de sprites/expressions
+- [ ] Ubicación: /public/Characters/ (actualmente vacío)
 
-**Nueva estructura (4-5 items):**
-- Story (hero + narrativa inmersiva)
-- Characters (con concept art integrado)
-- Gallery (gameplay + concept art combinados)
-- Buy (CTA principal + plataformas)
-- Support (opcional, o mover a footer)
+## ASSETS FALTANTES (VIDEOS)
 
-**Cambios:**
-- Eliminar "Concept Art" como sección separada (integrar en Characters)
-- Mover "Team" a footer
-- Combinar "Contact" con "Support" o mover a footer
-- Renombrar "Gameplay" a "Gallery" para mayor claridad
+### Trailers
+- [ ] Gameplay trailer (enfoque en mecánicas)
+- [ ] Promo trailer (enfoque en historia/atmósfera)
+- [ ] Raw gameplay footage (sin editar, sin música) para content creators
+- [ ] B-roll footage para videos
+- [ ] Ubicación: /public/press/trailers/
 
-### Fase 2: Rediseño de Secciones
+## ESTRUCTURA DE CARPETAS
 
-#### 1. Hero/Story Section
-- Narrativa inmersiva estilo The Song of Saya
-- Propuesta de valor clara: "Cinematic Noir Psychological Horror Visual Novel"
-- CTA principal: "Add to Wishlist" (sticky)
-- Background visual impactante con overlay oscuro
+### Crear estructura:
+```
+/public/press/
+  /screenshots/     - 6-8 imágenes gameplay
+  /logos/          - Logo PNG transparente (claro/oscuro)
+  /keyart/         - Key art 16:9 y 1:1
+  /trailers/       - Videos descargables
+  /press-kit.zip   - ZIP con todos los assets
+```
 
-#### 2. Characters Section
-- Descripciones detalladas de personajes (estilo The Song of Saya)
-- Integrar concept art en la misma sección
-- Mostrar quotes/personalidad de cada personaje
-- Layout: Grid o carousel optimizado
+## CONTENIDO PARA PRESS KIT
 
-#### 3. Gallery Section
-- Combinar gameplay screenshots + concept art
-- Grid responsive con hover effects
-- Mostrar variedad de contenido (UI, escenas, personajes)
-- Categorización opcional (Gameplay, Concept Art, UI)
+### Información del Juego
+- [ ] Descripción corta (1-2 frrases - elevator pitch)
+- [ ] Descripción larga (2-3 párrafos)
+- [ ] Fact sheet completo:
+  - Nombre del juego
+  - Desarrollador: ZimmZimm Games
+  - Plataformas: PC, Windows, Android, Web
+  - Fecha de lanzamiento: 2025 (o más específico)
+  - Precio: $0 (Free to play) o TBD
+  - Género: Visual Novel, Psychological Horror, Dark Fantasy, Noir, Cinematic, Political Thriller, Furry, Bad Romance
 
-#### 4. Buy Section
-- CTA principal "Add to Wishlist" prominente
-- Links a plataformas (Steam, Itch.io)
-- Cards para cada plataforma con iconos
-- Información de pricing/availability
+### Información del Estudio
+- [ ] Nombre: ZimmZimm Games
+- [ ] Ubicación del estudio
+- [ ] Tamaño del equipo
+- [ ] Biografías breves de project leads
+- [ ] Email de contacto real (no formulario)
 
-#### 5. Footer
-- Team section (mover desde navegación principal)
-- Contact information
-- Social links
-- Copyright
+### Enlaces
+- [ ] Steam store page URL
+- [ ] Website URL
+- [ ] Social media links (Twitter/X, Discord, Bluesky, YouTube)
+- [ ] Development blog (si existe)
 
-### Fase 3: Implementación Técnica
+## COMPONENTE PRESS (PÁGINA)
 
-#### Archivos a Modificar
+### Estructura del componente
+- [ ] Crear /src/components/Press/Press.tsx
+- [ ] Crear /src/components/Press/content.json
+- [ ] Crear /src/components/Press/Press.module.css
+- [ ] Crear /src/components/Press/index.ts
+- [ ] Agregar export a /src/components/index.ts
 
-**1. src/components/Header/Header.tsx**
-- Simplificar navList de 7 a 4-5 items
-- Actualizar content.json del Header
-- Mantener responsive mobile menu
+### Contenido del componente
+- [ ] Header con logo y key art
+- [ ] Sección de descripción (corta y larga)
+- [ ] Fact sheet en formato claro
+- [ ] Galería de screenshots descargables
+- [ ] Sección de logos descargables
+- [ ] Trailer embed + link de descarga
+- [ ] Información del estudio
+- [ ] Contacto y enlaces
+- [ ] Botón de descarga ZIP completo
 
-**2. src/components/Home/HomeSection.jsx**
-- Reestructurar orden de secciones
-- Eliminar sección Gameplay actual
-- Crear nueva sección Story/Hero mejorada
-- Integrar Characters con concept art
-- Crear sección Gallery combinada
-- Crear sección Buy dedicada
-- Mover Team y Contact a footer
+## SEO Y DESCUBRIMIENTO
 
-**3. src/components/Home/HomeSection.module.css**
-- Añadir estilos para nueva sección Story
-- Añadir estilos para sección Buy
-- Añadir estilos para sticky CTA button
-- Ajustar responsive breakpoints
+### Optimización SEO
+- [ ] URL clara: /press o /press-kit
+- [ ] Meta tags optimizados para búsqueda
+- [ ] Title: "Press Kit - W.A.T.A | ZimmZimm Games"
+- [ ] Description: "Official press kit for W.A.T.A - Where Are The Alices? Download screenshots, trailers, logos, and game information."
+- [ ] Keywords: press kit, media kit, screenshots, trailer, game assets
 
-**4. src/components/Home/content.json**
-- Añadir contenido narrativo para Story section
-- Expandir descripciones de personajes
-- Añadir contenido para Buy section
-- Reorganizar estructura de datos
+### Structured Data
+- [ ] Schema.org para press kit
+- [ ] Organization schema actualizado
+- [ ] VideoGame schema actualizado
 
-**5. src/components/Footer/Footer.tsx**
-- Añadir Team section
-- Añadir Contact information
-- Añadir Social links
+### Integración
+- [ ] Agregar a sitemap.xml
+- [ ] Link desde Steam page "Visit Website"
+- [ ] Link desde redes sociales (bios)
+- [ ] Link desde footer del sitio
 
-### Fase 4: Sticky CTA Button
+## IMPLEMENTACIÓN TÉCNICA
 
-**Implementación:**
-- Botón "Add to Wishlist" sticky en esquina superior derecha
-- Siempre visible durante scroll
-- Usar componente SteamWishlistButton existente
-- Añadir estilos CSS para position: fixed/sticky
-- Asegurar z-index correcto
+### Archivos a crear:
+1. /src/components/Press/Press.tsx
+2. /src/components/Press/content.json
+3. /src/components/Press/Press.module.css
+4. /src/components/Press/index.ts
 
-### Fase 5: Responsive Optimization
+### Actualizaciones:
+1. /src/components/index.ts (agregar export)
+2. /src/lib/seo-config.ts (actualizar structured data)
+3. /public/sitemap.xml (agregar página press)
 
-**Breakpoints:**
-- Desktop: 1920px+ (4 columnas)
-- Laptop: 1024px-1919px (3 columnas)
-- Tablet: 768px-1023px (2 columnas)
-- Mobile: <768px (1 columna, stack vertical)
+## ORDEN RECOMENDADO DE IMPLEMENTACIÓN
 
-**Ajustes:**
-- Navegación: Hamburger menu en mobile
-- Hero: Texto más corto en mobile
-- Characters: Stack vertical en mobile
-- Gallery: 1 columna en mobile
-- Buy: CTA full-width en mobile
+1. ✅ Investigación de requisitos de Press Kit
+2. ⏳ Crear estructura de carpetas /public/press/
+3. ⏳ Crear componente Press con placeholders
+4. ⏳ Preparar content.json con información actual
+5. ⏳ Crear CSS module para estilos
+6. ⏳ Agregar a exports y SEO
+7. ⏳ Generar assets faltantes (screenshots, logos, trailers)
+8. ⏳ Crear ZIP descargable con todos los assets
+9. ⏳ Testing y revisión final
 
-## Cronograma Sugerido
+## NOTAS IMPORTANTES
 
-### Día 1-2: Fase 1 (Navegación)
-- Simplificar Header.tsx
-- Actualizar content.json del Header
+- El Press Kit debe ser fácil de encontrar (1 click desde Steam, redes sociales)
+- Los assets deben ser de alta calidad y sin watermarks
+- El contacto debe ser un email real, no un formulario
+- La información debe estar clara y organizada para periodistas
+- El ZIP debe contener todos los assets para descarga fácil
+- La página debe funcionar bien en móvil también
 
-### Día 3-4: Fase 2 (Secciones)
-- Rediseñar Hero/Story section
-- Integrar Characters con concept art
-- Crear Gallery combinada
-- Crear Buy section
+## REFERENCIAS Y RECURSOS
 
-### Día 5: Fase 3 (Footer)
-- Mover Team a Footer
-- Mover Contact a Footer
-- Añadir social links
+### Guías de Press Kit
+- **The blueprint for building a press kit** - GamesIndustry.biz
+  https://www.gamesindustry.biz/the-blueprint-for-building-a-press-kit
+  - Guía completa sobre qué incluir en un press kit
+  - Explicación de por qué son importantes
+  - Consejos de publishers y desarrolladores
 
-### Día 6: Fase 4 (Sticky CTA)
-- Implementar botón sticky
-- Ajustar estilos CSS
+- **How to Assemble an Organized and Effective Press Kit** - GameDeveloper.com
+  https://www.gamedeveloper.com/business/how-to-assemble-an-organized-and-effective-press-kit
+  - Detalles sobre organización y presentación
+  - Diferentes métodos de distribución (ZIP vs web)
+  - Requisitos mínimos vs press kit fuerte
 
-### Día 7: Fase 5 (Testing)
-- Testing responsive
-- Ajustes finales
-- Verificar conversión
+- **Press Kit vs Press Release** - presskit.gg
+  https://presskit.gg/field-guides/press-kit-vs-press-release
+  - Diferencia entre press kit y press release
+  - Cuándo usar cada uno
+  - Cómo integrar ambos en estrategia de marketing
 
-## Métricas de Éxito
+- **What Game Journalists Actually Want in a Press Kit** - Gamebase
+  https://gamebasehq.com/blog/press-kit-checklist
+  - Checklist basado en encuestas a periodistas
+  - Consejos de personas en ambos lados (desarrolladores y periodistas)
+  - Errores comunes a evitar
 
-- Reducir bounce rate
-- Aumentar tiempo en página
-- Aumentar CTR de wishlist button
-- Mejorar navegación (menos clicks para llegar a contenido)
-- Mejorar score de Lighthouse mobile
+- **How to Create a Video Game Press Kit** - Enjin Blog
+  https://enjin.io/blog/video-game-press-kit
+  - Enfoque en las preguntas clave (What, Who, Where, When, Why)
+  - Estructura recomendada de contenido
+  - Consideraciones de branding
 
-## Referencias
+### Herramientas y Servicios
+- **presskit.gg** - Plataforma para crear y alojar press kits
+  https://presskit.gg
+  - Plantillas profesionales
+  - Hosting de assets
+  - Analytics de descargas
 
-- The Song of Saya: https://songofsaya.com/
-- ddlc.moe: https://ddlc.moe/
-- Plan existente: Plan.txt (marketing improvements)
+- **IGDB (Internet Game Database)** - Base de datos de juegos
+  https://www.igdb.com
+  - Permite crear perfiles de juegos con press kits
+  - Usado por muchos periodistas para investigación
 
-## Notas
+- **DoPresskit** - Herramienta open source para press kits
+  https://dopresskit.com
+  - Solución simple y efectiva
+  - Fácil de integrar en sitios web
 
-- Mantener estética de terror/noir existente
-- Preservar fuentes personalizadas (Alice, CourierPrime)
-- No romper optimizaciones de rendimiento existentes
-- Mantener SEO configurado
-- Preservar animaciones existentes donde apliquen
+### Ejemplos de Press Kits Exitosos
+- **Nuclear Throne** - Press kit indie de referencia
+- **Prey** - Ejemplo AAA bien estructurado
+- Buscar "press kit" en Steam pages de juegos similares para inspiración
+
+### Resoluciones y Formatos Técnicos
+- **Screenshots**: 1920x1080 mínimo, 4K preferido, PNG
+- **Key art**: 16:9 (1920x1080) y 1:1 (1080x1080)
+- **Logos**: PNG transparente, versiones claro/oscuro
+- **Trailers**: YouTube/Vimeo embed + descarga directa (MP4)
+- **ZIP**: Incluir todos los assets organizados por carpeta
+
+### Contacto y Networking
+- **Email de prensa**: Usar dirección real (press@tudominio.com)
+- **Steam Press Access**: Solicitar acceso para periodistas
+- **Discord para prensa**: Crear canal específico si tienes comunidad activa
+- **Twitter/X**: Usar hashtag del juego + #indiegame #presskit
