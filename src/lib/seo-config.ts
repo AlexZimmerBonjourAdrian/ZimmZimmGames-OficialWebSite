@@ -73,6 +73,38 @@ export const structuredData = {
       email: 'zimmzimmgames@gmail.com',
       contactType: 'general contact'
     },
+    member: [
+      {
+        '@type': 'Person',
+        name: 'Alex Zimmer .Boss',
+        jobTitle: 'Game Director, Lead Programmer & Producer'
+      },
+      {
+        '@type': 'Person',
+        name: 'Yahjix',
+        jobTitle: 'Concept Artist, Art Director & Character Designer'
+      },
+      {
+        '@type': 'Person',
+        name: 'Eevee',
+        jobTitle: 'Dub Director & Voice of Juno'
+      },
+      {
+        '@type': 'Person',
+        name: 'La Wea Astral',
+        jobTitle: 'Voice of Dominic'
+      },
+      {
+        '@type': 'Person',
+        name: 'Boingle',
+        jobTitle: 'Translator & Localizer'
+      },
+      {
+        '@type': 'Person',
+        name: 'Pam Kur Van',
+        jobTitle: 'Narrative Lead'
+      }
+    ],
     sameAs: [
       'https://twitter.com/ZimmZimmGames',
       'https://github.com/ZimmZimmGames',
