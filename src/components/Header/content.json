@@ -5,11 +5,9 @@
   },
   "nav": {
     "home": "Home",
-    "gameplay": "Gameplay",
-    "characters": "Characters",
-    "conceptArt": "Concept Art",
-    "team": "Team",
+    "pressKit": "Press Kit",
     "contact": "Contact",
+    "team": "Team",
     "support": "Support"
   }
 }

@@ -131,6 +131,12 @@
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
+.mobileNavItem.active a {
+    color: #FFD700;
+    background: rgba(255, 215, 0, 0.15);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
 @media (max-width: 1024px) {
     .navList {
         gap: 1rem;

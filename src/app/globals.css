@@ -101,6 +101,13 @@ a {
 
 button {
     font-family: inherit;
+    border-radius: 0;
+}
+
+input,
+textarea,
+select {
+    border-radius: 0;
 }
 
 

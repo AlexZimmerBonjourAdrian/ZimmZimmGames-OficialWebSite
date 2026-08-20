@@ -123,11 +123,173 @@
     margin: 1.5rem 0;
 }
 
+/* High Concept Section */
+.highConcept {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.highConceptTitle {
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin: 0 0 1rem 0;
+    font-family: var(--font-alice);
+    text-align: center;
+    font-weight: normal;
+}
+
+.highConceptText {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    font-family: var(--font-courier);
+    line-height: 1.8;
+    text-align: center;
+}
+
 .wishlistImage {
     width: 350px;
     max-width: 90vw;
     height: auto;
-    border-radius: 12px;
+    border-radius: 0;
+}
+
+/* Contact Section */
+.contactSection {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+/* Image Carousel Section */
+.imageCarouselSection {
+    margin: 2rem auto;
+}
+
+/* Simple Carousel Section */
+.simpleCarouselSection {
+    margin: 2rem auto;
+}
+
+/* Press Kit Section */
+.pressKitSection {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+}
+
+.pressKitContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.pressKitDescription {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    font-family: var(--font-courier);
+    line-height: 1.8;
+}
+
+.pressKitContact {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-family: var(--font-courier);
+}
+
+.pressKitEmail {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pressKitEmail:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
+.pressKitButton {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-courier);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin: 1rem auto 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.pressKitButton:hover {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Support Section */
+.supportSection {
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+/* Override ContactForm styles to match page aesthetic */
+.contactSection .contactContainer {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.contactSection .contactTitle {
+    color: #FFD700;
+    text-shadow: none;
+}
+
+.contactSection .contactSubtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contactSection .input,
+.contactSection .select,
+.contactSection .textarea {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.contactSection .input:focus,
+.contactSection .select:focus,
+.contactSection .textarea:focus {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.contactSection .submitButton {
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFD700;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.contactSection .submitButton:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
 }
 
 /* Section Title */
@@ -146,104 +308,97 @@
     padding: 2rem 1rem;
 }
 
-/* Gameplay Viewer con menú/archivador */
-.gameplayViewer {
-    display: flex;
-    flex-direction: column;
+/* Simple Gallery Layout */
+.simpleGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.gameplayMenu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.gameplayMenuItem {
-    padding: 0.6rem 1.2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.7);
-    font-family: var(--font-courier);
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    min-height: 44px;
-    min-width: 44px;
-}
-
-.gameplayMenuItem:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.gameplayMenuItemActive {
-    background: rgba(255, 215, 0, 0.2);
-    border-color: rgba(255, 215, 0, 0.5);
-    color: #FFD700;
-}
-
-.gameplayDisplay {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.gameplayImageWrapper {
-    flex: 1;
-    min-width: 0;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
+.galleryItem {
+    position: relative;
     aspect-ratio: 16 / 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-.gameplayDisplayImage {
+.galleryItem:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.galleryItemActive {
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.galleryImage {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.gameplayDescriptionWrapper {
-    flex: 0 0 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.galleryItem:hover .galleryImage {
+    transform: scale(1.05);
 }
 
-.gameplayDisplayTitle {
-    font-size: 1.4rem;
+.galleryOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.galleryItem:hover .galleryOverlay {
+    opacity: 1;
+}
+
+.galleryTitle {
+    font-size: 1.1rem;
     color: #FFD700;
-    margin: 0;
+    margin: 0 0 0.5rem 0;
     font-family: var(--font-alice);
 }
 
-.gameplayDisplayDescription {
-    font-size: 0.95rem;
+.galleryDescription {
+    font-size: 0.85rem;
     color: #cccccc;
-    line-height: 1.5;
     margin: 0;
     font-family: var(--font-courier);
+    line-height: 1.4;
+}
+
+/* Featured Sections - Hollow Knight Style */
+.featuredSections {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.mainTitle {
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 0 3rem 0;
+    font-family: var(--font-alice);
+    font-weight: normal;
+    line-height: 1.2;
 }
 
 /* Responsive Design */
@@ -258,17 +413,19 @@
     .sectionTitle {
         font-size: 2.8rem;
     }
-    .gameplayViewer {
+    .simpleGallery {
+        max-width: 1400px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .featuredSections {
         max-width: 1400px;
     }
-    .gameplayDescriptionWrapper {
-        flex: 0 0 350px;
+    .featuredSection {
+        gap: 4rem;
+        padding: 3rem;
     }
-    .gameplayDisplayTitle {
-        font-size: 1.6rem;
-    }
-    .gameplayDisplayDescription {
-        font-size: 1rem;
+    .featuredTitle {
+        font-size: 2.2rem;
     }
 }
 
@@ -276,8 +433,15 @@
     .heroContent {
         max-width: 1000px;
     }
-    .gameplayGrid {
+    .simpleGallery {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .featuredSection {
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .featuredTitle {
+        font-size: 1.8rem;
     }
 }
 
@@ -291,9 +455,17 @@
     .sectionTitle {
         font-size: 2.2rem;
     }
-    .gameplayGrid {
+    .simpleGallery {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.5rem;
+    }
+    .featuredSection {
+        flex-direction: column !important;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .featuredImageWrapper {
+        aspect-ratio: 16 / 10;
     }
 }
 
@@ -312,8 +484,16 @@
     .gameplaySection {
         padding: 1.5rem 1rem;
     }
-    .gameplayDisplay {
+    .simpleGallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .featuredSections {
+        gap: 3rem;
+    }
+    .featuredSection {
+        flex-direction: column !important;
         gap: 1.5rem;
+        padding: 1.5rem;
     }
 }
 
@@ -330,20 +510,32 @@
     .wishlistImage {
         width: 280px;
     }
-    .gameplayDisplay {
-        flex-direction: column;
+    .simpleGallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1rem;
     }
-    .gameplayDescriptionWrapper {
-        flex: 1;
-        width: 100%;
+    .galleryTitle {
+        font-size: 1rem;
     }
-    .gameplayMenu {
-        gap: 0.25rem;
+    .galleryDescription {
+        font-size: 0.8rem;
     }
-    .gameplayMenuItem {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.75rem;
+    .featuredSections {
+        gap: 2rem;
+    }
+    .featuredSection {
+        flex-direction: column !important;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    .featuredTitle {
+        font-size: 1.5rem;
+    }
+    .featuredSubtitle {
+        font-size: 1rem;
+    }
+    .featuredDescription {
+        font-size: 0.9rem;
     }
 }
 
@@ -367,13 +559,31 @@
     .gameplaySection {
         padding: 2rem 0.75rem;
     }
-    .gameplayDisplay {
-        padding: 1rem;
+    .simpleGallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
-    .gameplayDisplayTitle {
-        font-size: 1.2rem;
+    .galleryTitle {
+        font-size: 0.95rem;
     }
-    .gameplayDisplayDescription {
+    .galleryDescription {
+        font-size: 0.75rem;
+    }
+    .featuredSections {
+        gap: 1.5rem;
+    }
+    .featuredSection {
+        flex-direction: column !important;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+    .featuredTitle {
+        font-size: 1.3rem;
+    }
+    .featuredSubtitle {
+        font-size: 0.9rem;
+    }
+    .featuredDescription {
         font-size: 0.85rem;
     }
 }
@@ -402,18 +612,35 @@
     .gameplaySection {
         padding: 1.5rem 0.5rem;
     }
-    .gameplayDisplay {
+    .simpleGallery {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .galleryOverlay {
         padding: 1rem;
     }
-    .gameplayDisplayTitle {
-        font-size: 1.1rem;
+    .galleryTitle {
+        font-size: 0.9rem;
     }
-    .gameplayDisplayDescription {
-        font-size: 0.8rem;
-    }
-    .gameplayMenuItem {
-        padding: 0.3rem 0.6rem;
+    .galleryDescription {
         font-size: 0.7rem;
+    }
+    .featuredSections {
+        gap: 1.25rem;
+    }
+    .featuredSection {
+        flex-direction: column !important;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    .featuredTitle {
+        font-size: 1.2rem;
+    }
+    .featuredSubtitle {
+        font-size: 0.85rem;
+    }
+    .featuredDescription {
+        font-size: 0.8rem;
     }
 }
 
@@ -438,18 +665,35 @@
     .gameplaySection {
         padding: 1rem 0.25rem;
     }
-    .gameplayDisplay {
+    .simpleGallery {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    .galleryOverlay {
         padding: 0.75rem;
     }
-    .gameplayDisplayTitle {
-        font-size: 0.9rem;
+    .galleryTitle {
+        font-size: 0.85rem;
     }
-    .gameplayDisplayDescription {
-        font-size: 0.7rem;
-    }
-    .gameplayMenuItem {
-        padding: 0.25rem 0.5rem;
+    .galleryDescription {
         font-size: 0.65rem;
+    }
+    .featuredSections {
+        gap: 1rem;
+    }
+    .featuredSection {
+        flex-direction: column !important;
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+    .featuredTitle {
+        font-size: 1.1rem;
+    }
+    .featuredSubtitle {
+        font-size: 0.8rem;
+    }
+    .featuredDescription {
+        font-size: 0.75rem;
     }
 }
 
@@ -474,17 +718,34 @@
     .gameplaySection {
         padding: 0.75rem 0.2rem;
     }
-    .gameplayDisplay {
+    .simpleGallery {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    .galleryOverlay {
         padding: 0.5rem;
     }
-    .gameplayDisplayTitle {
+    .galleryTitle {
         font-size: 0.8rem;
     }
-    .gameplayDisplayDescription {
-        font-size: 0.65rem;
-    }
-    .gameplayMenuItem {
-        padding: 0.2rem 0.4rem;
+    .galleryDescription {
         font-size: 0.6rem;
+    }
+    .featuredSections {
+        gap: 0.75rem;
+    }
+    .featuredSection {
+        flex-direction: column !important;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    .featuredTitle {
+        font-size: 1rem;
+    }
+    .featuredSubtitle {
+        font-size: 0.75rem;
+    }
+    .featuredDescription {
+        font-size: 0.7rem;
     }
 }

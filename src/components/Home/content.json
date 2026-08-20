@@ -10,121 +10,59 @@
     "image": "/WishList/WishList.png",
     "altText": "Add to Wishlist on Steam"
   },
-  "characters": {
-    "dominic": "Did you know this white rabbit?",
-    "juno": "A detective from Wonderland?",
-    "expression": "He is odious, don't you think?",
-    "duo": "They are adorable, I would love to see them together... oh, perhaps they already were?"
-  },
   "gameplay": {
     "title": "Gameplay Screenshots",
     "items": [
       {
         "id": 1,
-        "image": "/Steam/Capsulas de Steam/Capsula de Cabecera/Capsula_de_Cabecera.jpg",
-        "title": "The Rabbit Hole",
-        "description": "Enter the dark world of Wonderland and uncover the truth."
+        "image": "/Gameplay/Storyboard.png",
+        "title": "Confront the Past",
+        "description": "Confront the past for the Storyboard section where she's drinking coffee. Use of cinematic language. Mature themes. Protagonist Wonder."
       },
       {
         "id": 2,
-        "image": "/Gameplay/MainMenu.jpg",
-        "title": "Main Menu",
-        "description": "The entrance to the psychological horror experience."
+        "image": "/Gameplay/Gameplay-1.jpg",
+        "title": "Intellectual Duel",
+        "description": "Intellectual duel in search of the truth. Features: Investigation mechanics (evidence, contradictions, precision) that guide the narrative. Female protagonist (Mother and Detective Noir). Emotion system (Anger, Fear, Hope) (only in interrogation)."
       },
       {
         "id": 3,
-        "image": "/Gameplay/MenuCase.png",
-        "title": "Case Analysis",
-        "description": "Analyze evidence and make critical decisions in real-time."
+        "image": "/Gameplay/Gameplay-2.jpg",
+        "title": "You're Not Crazy Rabbit",
+        "description": "You're not crazy Rabbit. Deep characters. Weighted decisions. Visual novel mechanics."
       },
       {
         "id": 4,
-        "image": "/Gameplay/Storyboard.png",
-        "title": "Storyboard",
-        "description": "Experience the narrative through immersive scenes and visuals."
-      },
-      {
-        "id": 5,
-        "image": "/Gameplay/Storyboard-2.png",
-        "title": "Visual Storytelling",
-        "description": "Every choice matters in this kemono-noir thriller."
+        "image": "/Gameplay/Gamplay-3.jpg",
+        "title": "You Can't Forget Who You Were",
+        "description": "You can't forget who you were... he never forgot... Flashback. Limited exploration. Search for evidence. Case 02!"
       }
     ]
   },
-  "roadmap": {
-    "title": "Release Roadmap & Pricing",
-    "currentStage": 1,
-    "sections": [
-      {
-        "name": "Setup",
-        "stages": [
-          {
-            "id": 1,
-            "name": "Demo & Fund",
-            "price": "FREE"
-          },
-          {
-            "id": 2,
-            "name": "Case 02",
-            "price": "$5.99"
-          }
-        ]
-      },
-      {
-        "name": "Act 1",
-        "stages": [
-          {
-            "id": 3,
-            "name": "Case 03",
-            "price": "$6.99"
-          },
-          {
-            "id": 4,
-            "name": "Case 04",
-            "price": "$7.99"
-          }
-        ]
-      },
-      {
-        "name": "Act 2",
-        "stages": [
-          {
-            "id": 5,
-            "name": "Case 05",
-            "price": "$8.99"
-          },
-          {
-            "id": 6,
-            "name": "Case 06",
-            "price": "$9.99"
-          }
-        ]
-      },
-      {
-        "name": "Act 3/Resolution",
-        "stages": [
-          {
-            "id": 7,
-            "name": "Case 07",
-            "price": "$11.99"
-          },
-          {
-            "id": 8,
-            "name": "Case 08",
-            "price": "$15.99"
-          }
-        ]
-      },
-      {
-        "name": "The High End",
-        "stages": [
-          {
-            "id": 9,
-            "name": "DLC & Minor Updates",
-            "price": "TBA"
-          }
-        ]
-      }
-    ]
-  }
+  "sections": [
+    {
+      "id": 1,
+      "title": "Confront the Past",
+      "description": "The past you tried to bury crashes through your office door. Dominic White—the White Rabbit who haunts your nightmares—stands before you, accused of kidnapping Alice Dinner. Every question cuts deeper than the last. Can you face the truth without losing yourself? Your children are waiting. Don't let them down.",
+      "image": "/Gameplay/Storyboard.png"
+    },
+    {
+      "id": 2,
+      "title": "Intellectual Duel in Search of the Truth",
+      "description": "Feel the tension as you break down suspects' defenses. Every word matters—choose Anger to intimidate, Fear to manipulate, Hope to redeem. Watch them crack under pressure as you expose their lies. The satisfaction of forcing a confession is addictive, but each victory comes at a cost. How far will you go for the truth?",
+      "image": "/Gameplay/Gameplay-1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "You're Not Crazy Rabbit",
+      "description": "Everyone lies. Everyone hides something. In this Wonderland gone mad, you'll question your own sanity as you face characters who blur the line between friend and monster. The dark humor keeps you laughing through the tears, but the tragedy never lets you forget—nothing is as it seems, and trust is the most dangerous weapon of all.",
+      "image": "/Gameplay/Gameplay-2.jpg"
+    },
+    {
+      "id": 4,
+      "title": "You Can't Forget Who You Were",
+      "description": "Case 2 isn't just another file—it's the moment everything changes. Your past shadows every choice, every revelation cuts deeper. The conspiracy you uncover will shatter your reality. Are you ready to learn who you really are? The truth waits in the darkness. Will you dare to face it?",
+      "image": "/Gameplay/Gamplay-3.jpg"
+    }
+  ]
 }

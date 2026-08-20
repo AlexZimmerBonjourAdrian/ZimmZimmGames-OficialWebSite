@@ -13,87 +13,74 @@
 	text-align: center;
 }
 
-.carouselContainer {
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-	padding: 1rem 0;
-}
-
-.carouselTrack {
-	display: flex;
+.membersGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 1rem;
-	width: max-content;
-	animation: scroll 30s linear infinite;
+	margin-bottom: 2rem;
 }
 
-.carouselContainer:hover .carouselTrack {
-	animation-play-state: paused;
-}
-
-.card {
-	flex: 0 0 220px;
+.memberCard {
 	background: rgba(255, 255, 255, 0.03);
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: 8px;
-	padding: 1rem;
-	transition: all 0.3s ease;
-}
-
-.card:hover {
-	background: rgba(255, 255, 255, 0.08);
-	border-color: rgba(255, 255, 255, 0.2);
-	transform: translateY(-4px);
-}
-
-@keyframes scroll {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(calc(-50% - 0.5rem));
-	}
-}
-
-.grid {
-	display: none; /* Reemplazado por carrusel */
+	border-radius: 0;
+	padding: 1.25rem;
 }
 
 .name {
-	font-size: 0.95rem;
+	font-size: 1rem;
 	font-weight: 600;
-	margin: 0 0 0.25rem 0;
+	margin: 0 0 0.5rem 0;
+	color: #ffffff;
 }
 
 .role {
 	font-size: 0.85rem;
 	opacity: 0.85;
 	margin: 0;
+	line-height: 1.4;
 }
 
 .notesFooter {
-	margin-top: 0.75rem;
-	padding-top: 0.5rem;
+	margin-top: 2rem;
+	padding-top: 1.5rem;
 	border-top: 1px solid rgba(255, 255, 255, 0.12);
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 0.25rem;
+	gap: 0.5rem;
+}
+
+.notesTitle {
+	font-size: 1rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	color: rgba(255, 255, 255, 0.9);
 }
 
 .noteItem {
-	font-size: 0.75rem;
+	font-size: 0.8rem;
 	opacity: 0.8;
+	padding: 0.5rem;
+	background: rgba(255, 255, 255, 0.02);
+	border-radius: 0;
 }
 
 .noteName {
     font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .noteText {
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 @media (min-width: 768px) {
+	.membersGrid {
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 1.25rem;
+	}
+
 	.notesFooter {
 		grid-template-columns: repeat(2, 1fr);
 	}

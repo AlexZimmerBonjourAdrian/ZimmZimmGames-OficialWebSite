@@ -1,4 +1,90 @@
-# PLAN PARA PRESS KIT - W.A.T.A
+# PLAN ACTUALIZADO - PÁGINA PRINCIPAL SIMPLIFICADA ESTILO HOLLOW KNIGHT
+
+## ✅ CAMBIOS REALIZADOS
+
+### Simplificación de Página Principal
+- **Eliminados componentes complejos**: CharacterGallery, Team, ContactForm, SupportButtons
+- **Mantenidos elementos esenciales**: Logo, subtítulo, botón Steam Wishlist, HeroCarousel
+- **Nueva galería simple**: Grid responsivo con hover effects para gameplay screenshots
+- **Contenido simplificado**: Removido roadmap y characters data no utilizados
+
+### Mejoras de Diseño
+- **Layout limpio**: Grid responsivo con aspecto 16:10 para imágenes
+- **Hover effects**: Transformación y overlay con información al pasar mouse
+- **Estilo consistente**: Mantenido tema oscuro/rojo con fuentes Alice/CourierPrime
+- **Responsive**: Adaptado para todos los tamaños de pantalla (320px a 1440px+)
+
+### Archivos Modificados
+1. `/src/components/Home/HomeSection.jsx` - Simplificado componente principal
+2. `/src/components/Home/HomeSection.module.css` - Nuevos estilos de galería
+3. `/src/components/Home/content.json` - Contenido simplificado
+
+## ESTRUCTURA ACTUAL DE PÁGINA
+
+### Hero Section
+- Logo principal del juego
+- Subtítulo "Where are the Alices?"
+- HeroCarousel (mantenido)
+- Botón Steam Wishlist
+
+### Gameplay Section  
+- Título "Gameplay Screenshots"
+- Galería grid con 5 screenshots:
+  - The Rabbit Hole
+  - Main Menu
+  - Case Analysis
+  - Storyboard
+  - Visual Storytelling
+
+## ESTILO GLOBAL CONSISTENTE
+
+### Colores
+- Background: #000000
+- Acento: #ff0000 (rojo)
+- Texto: #ffffff
+- Secundario: #cccccc
+- Gold: #FFD700 (para títulos)
+
+### Fuentes
+- Alice: Serif para títulos
+- CourierPrime: Monospace para texto
+
+### Animaciones
+- fadeIn, slideUp, glow, pulse (globales)
+- Hover effects en galería (transform, scale)
+- Overlay transitions suaves
+
+## PRÓXIMOS PASOS OPCIONALES
+
+### Mejoras Adicionales
+- [ ] Agregar sección de características del juego (estilo Hollow Knight)
+- [ ] Sección de prensa/reviews
+- [ ] Información del equipo/desarrolladores
+- [ ] Links a redes sociales y contacto
+- [ ] Trailer embed de YouTube
+
+### Press Kit (Plan Original)
+- [ ] Crear estructura /public/press/
+- [ ] Generar assets faltantes (screenshots, logos, trailers)
+- [ ] Crear componente Press dedicado
+- [ ] Implementar descarga ZIP de assets
+
+## ESTADO DEL PROYECTO
+
+### Completado
+- ✅ Página principal simplificada con buen diseño
+- ✅ Galería de gameplay screenshots responsive
+- ✅ Estilo global consistente mantenido
+- ✅ Layout limpio y bien distribuido
+
+### Pendiente
+- ⏳ Testing en navegador (requiere detener instancia Next.js existente)
+- ⏳ Opcional: Agregar más secciones estilo Hollow Knight
+- ⏳ Opcional: Implementar Press Kit completo
+
+---
+
+## PLAN ORIGINAL PARA PRESS KIT - W.A.T.A (Referencia)
 
 ## ASSETS FALTANTES (IMÁGENES)
 

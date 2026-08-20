@@ -1,0 +1,129 @@
+.pressKitContainer {
+  min-height: 100vh;
+  background: var(--dark-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.pressKitSection {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pressKitImage {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pressKitImage:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.contact {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.emailLink {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.emailLink:hover {
+  color: #cccccc;
+  text-decoration: underline;
+}
+
+.pressKitButton {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-family: var(--font-courier);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  max-width: fit-content;
+  text-decoration: none;
+}
+
+.pressKitButton:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.pressKitButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .pressKitSection {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .pressKitButton {
+    margin: 0 auto;
+  }
+
+  .pressKitImage {
+    max-height: 300px;
+  }
+}
